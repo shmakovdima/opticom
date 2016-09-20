@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+
 module.exports = {
   devtool: 'source-map',
 
@@ -18,6 +19,7 @@ module.exports = {
   },
 
   plugins: [
+
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"',

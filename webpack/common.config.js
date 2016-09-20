@@ -3,6 +3,8 @@ const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
 const merge = require('webpack-merge');
 
+var SpritesmithPlugin = require('webpack-spritesmith');
+
 const development = require('./dev.config.js');
 const production = require('./prod.config.js');
 
@@ -16,6 +18,8 @@ const PATHS = {
   app: path.join(__dirname, '../src'),
   build: path.join(__dirname, '../dist'),
 };
+
+
 
 process.env.BABEL_ENV = TARGET;
 
@@ -69,18 +73,16 @@ const common = {
       test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file',
     }, {
-      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=image/svg+xml',
-    }, {
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+    } 
+    ,{
       test: /\.js$/,
       loaders: ['babel-loader'],
       exclude: /node_modules/,
-    }, {
-      test: /\.png$/,
-      loader: 'file?name=[name].[ext]',
-    }, {
-      test: /\.jpg$/,
-      loader: 'file?name=[name].[ext]',
     },
     {
       test: /\.styl$/,

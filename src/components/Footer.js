@@ -10,7 +10,7 @@ export default class Footer extends Component {
             </div>
           </nav>
           <div className='container'>
-            <div className='pull-left'></div>
+            <div className='pull-left icon-204275-digital-marketing'></div>
           </div>
 
         </footer>
