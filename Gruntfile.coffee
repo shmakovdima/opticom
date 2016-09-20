@@ -41,8 +41,9 @@ module.exports = (grunt) ->
           "node_modules/bootstrap/dist/js/bootstrap.js"
           "node_modules/react/dist/react.js"
           "node_modules/react-dom/dist/react-dom.js"
+          "node_modules/react-router/umd/ReactRouter.js"
           "vendor/app.js"
-          "dist/views/react.js"
+          "dist/views/*.js"
           "tmp/script.js"
         ]
         dest: "dist/scripts/script.js"

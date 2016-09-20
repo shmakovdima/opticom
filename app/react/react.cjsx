@@ -1,20 +1,18 @@
+ROOT = React.createClass
+  render: ()->
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <Route path="*" component={NotFound} />
+      </Route>
+    </Router>
 
 
+App = React.createClass
+  render:->
+    <div>ok</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ReactDOM.render <ROOT/>, document.getElementById('root')
 
 
 ###
@@ -253,3 +251,4 @@ Add = React.createClass
 ReactDOM.render <App/>, document.getElementById('root')
 
 
+###
