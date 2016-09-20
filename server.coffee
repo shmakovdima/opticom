@@ -12,7 +12,7 @@ app.set "views", "app/views"
 app.set 'view engine', 'jade'
 
 
-app.get '/', (req, res) ->
+app.get '*', (req, res) ->
   res.render "index"
 
 
