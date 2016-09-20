@@ -20,6 +20,12 @@ const PATHS = {
 process.env.BABEL_ENV = TARGET;
 
 const common = {
+   watchOptions: {
+    aggregateTimeout: 300,
+    poll: 300
+  },
+
+  watch: true,
   entry: [
     PATHS.app,
   ],
