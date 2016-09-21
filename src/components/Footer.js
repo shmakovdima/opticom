@@ -14,8 +14,6 @@ class FooterLink extends Component {
   }
 }
 
-
-
 class Footer extends Component {
 
   scrollTop()  {

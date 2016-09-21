@@ -58,129 +58,108 @@ ul
   &:active:before
     opacity 1
 
-
 .green_underline
   border-bottom 1px solid #c3e782
+
+section
+  margin-top 100px
+
+h1
+h2
+h3
+h4
+h5
+h6
+  margin 0px
+  padding 0px
+
+h2
+  font-family FuturaPTHeavy
+  color black
+  font-size 62px
+  line-height 60px
+  
+h3
+  font-family FuturaPTBold
+  color black
+
+
+
+
+
 
 @media (min-width:  1300px)
   .container
     width 1280px
 
 @media (max-width: 991px)
+
+  h2
+    font-size 72px
+  h3
+    font-size 48px
+
   .container
     padding-left 45px
     padding-right 45px
-  
-
-.footer
-  margin-top 1400px
-  font-size 18px
-  color black
-  vertical-align middle
-  line-height 22px
-  
-  &_fb
-  &_vk
-    display inline-block
-    position relative
-    width 24px
-    top 2px
-    height 20px
-    margin-right 13px
-
-  &_fb
-    background url(../../images/sprites/footer_facebook.png)
-    width 18px
-    height 21px
-    
-  &_vk
-    background url(../../images/sprites/footer_vk.png)
-
-  &_love
-    display inline-block
-    margin-left 3px
-    position relative
-    top 2px
-    margin-right 3px
-    width 16px
-    height 15px
-    background url(../../images/sprites/footer_heart.png)
-    
-  &_up
-    width 27px
-    height 17px
-    vertical-align: bottom
-    display: inline-block
-    top: 4px
-    position: relative
-    cursor pointer
-    background url(../../images/sprites/footer_up.png)
-
-  &_addons
-    padding-top 35px
-    padding-bottom 50px
-  
-  & nav
-    background-color #f2f3f3
-    padding-top 25px
-    padding-bottom 28px
-    font-family FuturaPTDemi
-    
-    & .container
-      position relative
-    
-    & ul
-    
-      & li
-        margin-left 0px
-        padding-left 0px
-        font-size 13px
-        display inline-block
-        text-transform uppercase
-        
-        
-        & + li
-          margin-left 40px
-          
-    
  
-  
-@media (max-width: 991px)
-  
-  .footer
-    font-size 22px
-    line-height 22px
+
+.catalog
+  &_preferences
+    overflow hidden
     
-    &_addons
-      padding-top 50px
-      padding-bottom 120px
+    &_item
+      padding-top 180px
       
-      & div:last-child
-        clear both
-        margin-top 25px
+      h3
+        margin-right -30px
+      
 
-    &_up
-      position absolute
-      right 45px
-      width 44px
-      height 35px
-      background url(../../images/sprites/mobile_footer_up.png)
+      div
+        z-index -1
+        position absolute
+        top -30px
+        left -100px
+        right -100px
+        height 200%
         
+        
+      &_1
+        div
+          background url(../../images/sprites/catalog_complex_assortiment.png) center -20px no-repeat
+        
+      &_2
+        div
+          background url(../../images/sprites/catalog_complex_education.png) center 20px no-repeat
+        
+      &_3
+        div
+          background url(../../images/sprites/catalog_complex_delivery.png) center 20px no-repeat
+        
+      &_4
+        div
+          background url(../../images/sprites/catalog_complex_servis.png) center -20px no-repeat
 
+      & + &
+        margin-left 6.66666666667%
+      
+      & p
+        font-size 16px
+        line-height 24px
+        font-family LeksaPro
+        margin-top 15px  
+
+@media (max-width: 991px)
+  .catalog
+    &_preferences
+      &_item
+        padding-top 270px
         
-@media (max-width: 1000px)
-  .footer
-    & nav
-      padding-top 37px
-      padding-bottom 37px
-      & ul
-        margin-right 50px
-        & li
-          width 200px
-          font-size 16px
-          
-          &+li
-            margin-top 10px
-            margin-left 0px
-    
+        & p
+          margin-top 30px
+          font-size 32px
+          line-height 40px
+
+        & + &
+          margin-left 0px
 

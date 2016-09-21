@@ -32,7 +32,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div className='container'>
+        <div>
           <h1>
             <Link to='/'>App</Link>
           </h1>

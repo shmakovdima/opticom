@@ -1,0 +1,111 @@
+.footer
+  font-size 18px
+  color black
+  vertical-align middle
+  line-height 22px
+  margin-top 100px
+  
+  &_fb
+  &_vk
+    display inline-block
+    position relative
+    width 24px
+    top 2px
+    height 20px
+    margin-right 13px
+
+  &_fb
+    background url(../../images/sprites/footer_facebook.png)
+    width 18px
+    height 21px
+    
+  &_vk
+    background url(../../images/sprites/footer_vk.png)
+
+  &_love
+    display inline-block
+    margin-left 3px
+    position relative
+    top 2px
+    margin-right 3px
+    width 16px
+    height 15px
+    background url(../../images/sprites/footer_heart.png)
+    
+  &_up
+    width 27px
+    height 17px
+    vertical-align: bottom
+    display: inline-block
+    top: 4px
+    position: relative
+    cursor pointer
+    background url(../../images/sprites/footer_up.png)
+
+  &_addons
+    padding-top 35px
+    padding-bottom 50px
+  
+  & nav
+    background-color #f2f3f3
+    padding-top 25px
+    padding-bottom 28px
+    font-family FuturaPTDemi
+    
+    & .container
+      position relative
+    
+    & ul
+    
+      & li
+        margin-left 0px
+        padding-left 0px
+        font-size 13px
+        display inline-block
+        text-transform uppercase
+        
+        
+        & + li
+          margin-left 40px
+          
+    
+ 
+  
+@media (max-width: 991px)
+  
+  .footer
+    font-size 22px
+    line-height 22px
+    
+    &_addons
+      padding-top 50px
+      padding-bottom 120px
+      
+      & div:last-child
+        clear both
+        margin-top 25px
+
+    &_up
+      position absolute
+      right 45px
+      width 44px
+      height 35px
+      background url(../../images/sprites/mobile_footer_up.png)
+        
+
+        
+@media (max-width: 1000px)
+  .footer
+    & nav
+      padding-top 37px
+      padding-bottom 37px
+      & ul
+        margin-right 50px
+        & li
+          width 200px
+          font-size 16px
+          
+          &+li
+            margin-top 10px
+            margin-left 0px
+    
