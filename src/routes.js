@@ -12,6 +12,7 @@ import NotFound from './components/NotFound'
 export const routes = (
   <div>
     <Route path='/' component={App}>
+      
       <IndexRoute component={Home} />
       <Route path='/admin' component={Admin} />
       <Route path='/list' component={List} />
@@ -19,6 +20,10 @@ export const routes = (
         <Route path='/:genre/:name' component={ReleaseItem} />
       </Route>
     </Route>
+
+
+
+
     <Route path='*' component={NotFound} />
   </div>
 )

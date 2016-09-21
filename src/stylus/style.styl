@@ -3,14 +3,184 @@
 
 import_tree('./components')
 
+*
+  margin 0
+  padding 0
+
 body
   padding 0px
   margin 0px
+  font-family FuturaPTBook
   min-height 100vh
   background linear-gradient(0deg, #f9f9f9 0%, #ffffff 100%)
+  /*background url(../../images/sprites/sdf.png) no-repeat*/
 
 a
-  color blue
-  background url(../../images/sprites/footer/1-freepik.png) no-repeat
-
+  color black
+  transition 150ms all ease-in
   
+  &.green_underline:hover
+  &.green_underline:active
+    color color_green
+  
+a:hover
+a:active
+  text-decoration none
+  color black
+ 
+ul
+  list-style none 
+  margin-bottom 0px
+
+.gradient_underlinehover
+  position relative
+  display inline-block
+  z-index 1
+  
+  &:before
+    opacity 0
+    display block
+    transition 200ms all ease-in
+    z-index -1
+    right -4px
+    bottom 3px
+    background: -webkit-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background: -moz-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background: -o-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background: -ms-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background: linear-gradient(-90deg, #4d9bc0 0%, #98c04d 100%)
+    content ''
+    position absolute
+    width 100%
+    height 50%
+
+  &:hover:before
+  &:active:before
+    opacity 1
+
+
+.green_underline
+  border-bottom 1px solid #c3e782
+
+@media (min-width:  1300px)
+  .container
+    width 1280px
+
+@media (max-width: 991px)
+  .container
+    padding-left 45px
+    padding-right 45px
+  
+
+.footer
+  margin-top 1400px
+  font-size 18px
+  color black
+  vertical-align middle
+  line-height 22px
+  
+  &_fb
+  &_vk
+    display inline-block
+    position relative
+    width 24px
+    top 2px
+    height 20px
+    margin-right 13px
+
+  &_fb
+    background url(../../images/sprites/footer_facebook.png)
+    width 18px
+    height 21px
+    
+  &_vk
+    background url(../../images/sprites/footer_vk.png)
+
+  &_love
+    display inline-block
+    margin-left 3px
+    position relative
+    top 2px
+    margin-right 3px
+    width 16px
+    height 15px
+    background url(../../images/sprites/footer_heart.png)
+    
+  &_up
+    width 27px
+    height 17px
+    vertical-align: bottom
+    display: inline-block
+    top: 4px
+    position: relative
+    cursor pointer
+    background url(../../images/sprites/footer_up.png)
+
+  &_addons
+    padding-top 35px
+    padding-bottom 50px
+  
+  & nav
+    background-color #f2f3f3
+    padding-top 25px
+    padding-bottom 28px
+    font-family FuturaPTDemi
+    
+    & .container
+      position relative
+    
+    & ul
+    
+      & li
+        margin-left 0px
+        padding-left 0px
+        font-size 13px
+        display inline-block
+        text-transform uppercase
+        
+        
+        & + li
+          margin-left 40px
+          
+    
+ 
+  
+@media (max-width: 991px)
+  
+  .footer
+    font-size 22px
+    line-height 22px
+    
+    &_addons
+      padding-top 50px
+      padding-bottom 120px
+      
+      & div:last-child
+        clear both
+        margin-top 25px
+
+    &_up
+      position absolute
+      right 45px
+      width 44px
+      height 35px
+      background url(../../images/sprites/mobile_footer_up.png)
+        
+
+        
+@media (max-width: 1000px)
+  .footer
+    & nav
+      padding-top 37px
+      padding-bottom 37px
+      & ul
+        margin-right 50px
+        & li
+          width 200px
+          font-size 16px
+          
+          &+li
+            margin-top 10px
+            margin-left 0px
+    
+
