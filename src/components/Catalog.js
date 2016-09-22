@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-
+import HeaderDark from '../components/Headers/HeaderDark'
+import CatalogHeader from './SubItems/Catalog/CatalogHeader'
 
 export default class Catalog extends Component {
   render() {
     return (
       <div>
+        <HeaderDark/>
+        <CatalogHeader/>
         <Preferences/>
         <AllIsReady/>
       </div>

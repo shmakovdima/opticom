@@ -1,36 +1,21 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
 import Footer from '../components/Footer'
 
-var FooterLinks = [
-  {
-    title: 'Компания',
-    href: 'company'
-  }, {
-    title: 'Сотрудничество',
-    href: 'cooperation'
-  }, {
-    title: 'Производство',
-    href: 'manufacturing'
-  }, {
-    title: 'Пресс-центр',
-    href: 'press-room'
-  }, {
-    title: 'Блог',
-    href: 'blog'
-  }, {
-    title: 'Отвественность',
-    href: 'responsibility'
-  }, {
-    title: 'Экология',
-    href: 'ecology'
-  }
-];
+
 
 
 export default class App extends Component {
   render() {
     return (
+      <div>
+        {this.props.children}
+        <Footer/>
+      </div>
+    )
+  }
+}
+
+    {/*
       <div>
         <div>
           <h1>
@@ -42,9 +27,6 @@ export default class App extends Component {
           </ul>
           {this.props.children}
         </div>
-        <Footer FooterLinks={FooterLinks}/>
+        <Footer/>
       </div>
-
-    )
-  }
-}
+        */}

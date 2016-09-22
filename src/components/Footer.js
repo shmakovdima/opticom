@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-
 import $ from 'jquery';
 
 class FooterLink extends Component {
@@ -15,11 +14,10 @@ class FooterLink extends Component {
 }
 
 class Footer extends Component {
-
   scrollTop()  {
     $('html, body').animate({
-            scrollTop: 0
-        }, 600);
+      scrollTop: 0
+    }, 600);
     return false;
   }
 

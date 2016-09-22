@@ -1,4 +1,10 @@
 const initialState = {
+  user: {
+    settings: {
+      only_eco: false
+    }
+  }
+  ,
   FooterLinks: [
     {
       title: 'Компания',
@@ -26,6 +32,21 @@ const initialState = {
       title: 'Экология',
       href: 'ecology'
     }
+  ],
+  HeaderLinks: [
+    {
+      title: 'Каталог',
+      href: 'catalog'
+    },
+    {
+      title: 'Настоящее',
+      href: 'today'
+    },
+    {
+      title: 'Будушее',
+      href: 'future'
+    }
+
   ]
 };
 
