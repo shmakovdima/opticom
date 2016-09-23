@@ -1,0 +1,133 @@
+@import '../sprite.styl'
+@import '../variables.styl'
+
+.catalog
+  &_header
+    color white
+    height 704px
+    width 100%
+    background url(../../images/catalog_header.png) no-repeat
+    background-position center
+    background-size cover
+    margin-top 0px
+    padding-top 216px
+    
+    &_consult
+      font-family FuturaPTBold
+      margin-top 30px
+      min-width 230px
+      text-transform uppercase
+      font-size 16px
+      color white
+      line-height 24px
+
+
+      &_link
+        margin-top 20px
+        max-width 250px
+        display inline-block
+        font-size: 18px
+        color white
+        font-family FuturaPTBook
+        line-height 28px
+        
+        &:hover
+        &:active
+          span
+            color color_green
+        
+        & span
+          transition 150ms all ease-in
+          color white
+          font-family FuturaPTBook
+
+        &:hover
+        &:active
+          color color_green
+
+    &_leed
+      display block
+      font-family LeksaPro
+      font-size: 18px
+      line-height 
+      color white
+      line-height 22px
+      margin-top 32px
+    
+
+  &_preferences
+    overflow hidden
+    
+    &_item
+      padding-top 180px
+      
+      h3
+        margin-right -30px
+
+      div
+        z-index -1
+        position absolute
+        top -30px
+        left -100px
+        right -100px
+        height 200%
+        
+        
+      &_1
+        div
+          background url(../../images/preferences/catalog_complex_assortiment.png) center -20px no-repeat
+        
+      &_2
+        div
+          background url(../../images/preferences/catalog_complex_education.png) center 20px no-repeat
+        
+      &_3
+        div
+          background url(../../images/preferences/catalog_complex_delivery.png) center 20px no-repeat
+        
+      &_4
+        div
+          background url(../../images/preferences/catalog_complex_servis.png) center -20px no-repeat
+
+      & + &
+        margin-left 6.66666666667%
+      
+      & p
+        font-size 16px
+        line-height 24px
+        font-family LeksaPro
+        margin-top 15px  
+
+@media (max-width: 991px)
+  .catalog
+    &_preferences
+      &_item
+        padding-top 270px
+        margin-top 80px
+        
+        & p
+          margin-top 30px
+          font-size 32px
+          line-height 40px
+          
+        & div
+          top -60px
+
+        & + &
+          margin-left 0px
+          
+        &_1
+          div
+            background url(../../images/preferences/mobile_catalog_complex_assortiment.png) center -90px no-repeat
+          
+        &_2
+          div
+            background url(../../images/preferences/mobile_catalog_complex_education.png) center 0px no-repeat
+          
+        &_3
+          div
+            background url(../../images/preferences/mobile_catalog_complex_delivery.png) center -80px no-repeat
+          
+        &_4
+          div
+            background url(../../images/preferences/mobile_catalog_complex_servis.png) center -70px no-repeat

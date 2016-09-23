@@ -9,8 +9,6 @@ export default class AllIsReady extends Component {
           <div className='row'>
             <h2 className='col20-lg-offset-1'>Все уже готово</h2>
             <span><Link to='catalog/readyset'></Link></span>
-
-
             <div className='catalog_preferences_item catalog_preferences_item_1 col20-lg-4 col20-md-4 col-sm-6'>
               <div></div>
               <h3>Подбор ассортимента</h3>

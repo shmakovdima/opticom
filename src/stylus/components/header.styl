@@ -1,3 +1,6 @@
+@import '../sprite.styl'
+@import '../variables.styl'
+
 .header
   position absolute
   width 100%
@@ -15,9 +18,9 @@
     cursor pointer
     font-family FuturaPTBold
     
-    &:hover
-    &:active
-    &:visited
+    &:not(.header_phone):hover
+    &:not(.header_phone):active
+    &:not(.header_phone):visited
       color white
 
   .container
@@ -55,7 +58,10 @@
     
     &:hover
     &:active
-      color color_green
+      color color_green!important
+      
+    &:visited
+      text-decoration none
 
   &_basket
     margin-top 17px
