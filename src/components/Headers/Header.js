@@ -37,14 +37,14 @@ class HeaderCount extends Component {
 class Header extends Component {
 
   showMenu(){
-    console.log('show menu')
+    alert('menu');
   }
 
   render() {
     return (
         <div className='container'>
           <Link className='header_logo pull-left' to='/'></Link>
-          <button className='header_menu pull-left' onClick='showMenu'></button>
+          <button className='header_menu pull-left' onClick={this.showMenu.bind(this)}></button>
 
           <ul className='header_links pull-left'>
             {
@@ -55,7 +55,7 @@ class Header extends Component {
           </ul>
           <Link className='header_user pull-right' title='Личный кабинет' to='/user'></Link>
           <HeaderCount/>
-          <a href='tel:+74959800648' className='hidden-md hidden-xs hidden-sm header_phone pull-right'>+7-495-980-06-48</a>
+          <a href='tel:+74959800648' className='hidden-xs hidden-sm header_phone pull-right'>+7-495-980-06-48</a>
           <HeaderSearch/>
           
           
@@ -67,7 +67,7 @@ class Header extends Component {
 
 function mapStateToProps (state) {
   return {
-    FooterLinks: state.HeaderLinks
+    FooterLinks: state.pageData.HeaderLinks
   }
 }
 

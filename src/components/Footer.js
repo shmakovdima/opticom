@@ -22,14 +22,14 @@ class Footer extends Component {
   }
 
   render() {
-    console.log(this.props.FooterLinks)
+    const FooterLinks = this.props.FooterLinks
     return(
         <footer className='footer'>
           <nav>
             <div className='container'>
                 <ul className='pull-left'>
-                 {
-                    this.props.FooterLinks.map(function(item, index) {
+                  {
+                    FooterLinks.map(function(item, index) {
                       return <FooterLink data={item} key={index}/>
                     })
                   }
@@ -45,7 +45,7 @@ class Footer extends Component {
               <div className='col-md-4 col-xs-6 text-center text-right-xs text-right-sm'>
                 <a title='Мы в ВКонтакте' href='https://vk.com/gk_opticom' className='footer_vk'></a>
                 <a title='Мы в Facebook' href='https://www.facebook.com/Opticom.ru' className='footer_fb'></a>
-                — мы в соцсетях
+                <span>— мы в соцсетях</span>
               </div>
               <div className='col-md-4 col-xs-6 text-right text-left-xs text-left-sm'>
                 С <span className='footer_love'></span> от&nbsp;
@@ -62,8 +62,9 @@ class Footer extends Component {
 
 function mapStateToProps (state) {
   return {
-    FooterLinks: state.FooterLinks
+    FooterLinks: state.pageData.FooterLinks
   }
 }
+
 
 export default connect(mapStateToProps)(Footer)

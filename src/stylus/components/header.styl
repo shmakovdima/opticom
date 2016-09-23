@@ -1,0 +1,132 @@
+.header
+  position absolute
+  width 100%
+  top 0px
+  font-size 13px
+  color white
+  transform scaleY(1.0038)
+  padding-top 68px
+  font-family FuturaPTBold
+  text-transform uppercase
+  
+  & a
+    color white
+    font-size 13px
+    cursor pointer
+    font-family FuturaPTBold
+    
+    &:hover
+    &:active
+    &:visited
+      color white
+
+  .container
+    line-height 56px
+    
+  &_search
+    margin-top 13px
+    width 17%
+    padding-left 30px
+    margin-right 5.5%
+    line-height 30px
+    background url(../../images/sprites/header_dark_search.png) left center no-repeat 
+    
+    & input
+      width 100%
+      color white
+      font-size 14px
+      border-bottom 2px solid white
+      
+      &:-ms-input-placeholder
+      &::-moz-placeholder
+      &:-moz-placeholder
+      &::-webkit-input-placeholder
+        font-family FuturaPTBold
+        font-size 10px
+        color rgba(132, 148, 154, 0.5) 
+        
+  &_phone
+    font-size 14px
+    padding-left 25px
+    margin-right 2.1%
+    line-height 16px
+    margin-top 22px
+    background url(../../images/sprites/header_dark_phone.png) no-repeat
+    
+    &:hover
+    &:active
+      color color_green
+
+  &_basket
+    margin-top 17px
+    padding-left 30px
+    font-family FuturaPTMedium
+    position relative
+    background url(../../images/sprites/header_dark_basket.png) no-repeat
+    margin-right 1.8%
+    width 60px
+    height 24px
+    font-size 14px
+    line-height 20px
+
+    & span
+      position relative
+      line-height 27px
+
+  &_menu
+    position relative
+    float left
+    background url(../../images/sprites/header_dark_menu.png) no-repeat
+    display inline-block
+    margin-left 8%
+    margin-top 22px
+    width 15px
+    height 13px
+    
+  &_user
+    width 14px
+    height 15px
+    margin-top 22px
+    position relative
+    background url(../../images/sprites/header_dark_user.png) no-repeat
+    position relative
+
+  &_links
+    margin-left 3%
+    position relative
+    float left
+    letter-spasing 1px
+
+    & li
+      float left
+      display inline-block
+        
+      
+      & + li
+        margin-left 40px
+
+  &_logo
+    width 169px
+    height 51px
+    background url(../../images/sprites/header_dark_logo.png) no-repeat
+    background-size contain
+    background-position center
+    
+
+@media (max-width: 1200px)
+  .header
+    font-size 12px
+
+    &_search
+      width 12%
+      
+    &_links li 
+      & + li
+        margin-left 20px
+
+    &_menu
+      margin-left 4%
+
+    &_links
+      margin-left 3.5%
+

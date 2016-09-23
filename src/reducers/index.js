@@ -1,55 +1,8 @@
-const initialState = {
-  user: {
-    settings: {
-      only_eco: false
-    }
-  }
-  ,
-  FooterLinks: [
-    {
-      title: 'Компания',
-      href: 'company'
-    },
-    {
-      title: 'Сотрудничество',
-      href: 'cooperation'
-    },
-    {
-      title: 'Производство',
-      href: 'manufacturing'
-    },
-    {
-      title: 'Пресс-центр',
-      href:  'press-room'
-    }
-    ,{
-      title: 'Блог',
-      href: 'blog'
-    },{
-      title: 'Отвественность',
-      href: 'responsibility'
-    },{
-      title: 'Экология',
-      href: 'ecology'
-    }
-  ],
-  HeaderLinks: [
-    {
-      title: 'Каталог',
-      href: 'catalog'
-    },
-    {
-      title: 'Настоящее',
-      href: 'today'
-    },
-    {
-      title: 'Будушее',
-      href: 'future'
-    }
+import { combineReducers } from 'redux'
+import pageData from './pageData'
+import user from './user'
 
-  ]
-};
-
-export default function userstate(state = initialState) {
-  return state;
-}
+export default combineReducers({
+  pageData,
+  user
+})
