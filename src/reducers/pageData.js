@@ -41,6 +41,50 @@ const initialState = {
       href: 'future'
     }
 
+  ],
+  Allisready:[
+    {
+      title: '',
+      count: '',
+      link: 'readyset/forhotel',
+      image: '',
+      hoverimage: ''
+    },
+    {
+      title: '',
+      count: '',
+      link: 'readyset/forhotel',
+      image: '',
+      hoverimage: ''
+    },
+    {
+      title: '',
+      count: '',
+      link: 'readyset/forhotel',
+      image: '',
+      hoverimage: ''
+    },
+    {
+      title: '',
+      count: '',
+      link: 'readyset/forhotel',
+      image: '',
+      hoverimage: ''
+    },
+    {
+      title: '',
+      count: '',
+      link: 'readyset/forhotel',
+      image: '',
+      hoverimage: ''
+    },
+    {
+      title: '',
+      count: '',
+      link: 'readyset/forclining',
+      image: '',
+      hoverimage: ''
+    }
   ]
 };
 

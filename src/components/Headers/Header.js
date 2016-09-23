@@ -45,22 +45,21 @@ class Header extends Component {
     return (
         <div className='container'>
           <Link className='header_logo pull-left' to='/'></Link>
-          <button className='header_menu pull-left' onClick={this.showMenu.bind(this)}></button>
+          <button className='header_menu pull-left pull-right-xs' onClick={this.showMenu.bind(this)}></button>
 
-          <ul className='header_links pull-left'>
+          <ul className='header_links pull-left hidden-xs'>
             {
               this.props.FooterLinks.map(function(item, index) {
                 return <HeaderLink data={item} key={index}/>
               })
             }
           </ul>
-          <Link className='header_user pull-right' title='Личный кабинет' to='/user'></Link>
-          <HeaderCount/>
-          <a href='tel:+74959800648' className='hidden-xs hidden-sm header_phone pull-right'>+7-495-980-06-48</a>
-          <HeaderSearch/>
-          
-          
-          
+          <div>
+            <Link className='header_user pull-right' title='Личный кабинет' to='/user'></Link>
+            <HeaderCount/>
+            <a href='tel:+74959800648' className='hidden-xs hidden-sm header_phone pull-right'>+7-495-980-06-48</a>
+            <HeaderSearch/>   
+          </div>
         </div>
     )
   }

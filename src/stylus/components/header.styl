@@ -119,6 +119,46 @@
     background-position center
     
 
+  &_light
+    color black
+    
+    .header
+      &_phone
+        background url(../../images/sprites/header_phone.png) no-repeat
+        
+      &_basket
+        background url(../../images/sprites/header_basket.png) no-repeat
+
+      &_menu
+        background url(../../images/sprites/header_menu.png) no-repeat
+     
+      &_user
+        background url(../../images/sprites/header_user.png) no-repeat
+
+      &_logo
+        background url(../../images/sprites/header_logo.png) no-repeat
+      
+      &_search
+        background url(../../images/sprites/header_search.png) left center no-repeat 
+        
+      & input
+        color black
+        border-bottom 2px solid black
+
+    
+    & a
+      color black
+      
+      &:not(.header_phone):hover
+      &:not(.header_phone):active
+      &:not(.header_phone):visited
+        color black
+
+    
+            
+
+    
+
 @media (max-width: 1200px)
   .header
     font-size 12px
@@ -136,3 +176,52 @@
     &_links
       margin-left 3.5%
 
+@media (max-width: 768px)
+  .header
+    padding-top 50px
+    &_logo
+      width 206px
+      height 62px
+      background url(../../images/sprites/mobile_header_dark_logo.png) no-repeat
+      
+    &_menu
+      margin-top 27px
+      margin-left 9%
+      float right!important
+      width 33px
+      height 27px
+      background url(../../images/sprites/mobile_header_dark_menu.png) no-repeat
+      
+    &_user
+      margin-top 25px
+      margin-left 6%
+      width 28px
+      height 29px
+      background url(../../images/sprites/mobile_header_dark_user.png) no-repeat
+      
+    &_basket
+      margin-top 24px
+      padding-left 42px
+      height 28px
+      width 34px
+      background url(../../images/sprites/mobile_header_dark_basket.png) no-repeat
+      
+      & span
+        font-family FuturaPTBook
+        font-size 26px
+        line-height 28px
+      
+    &_light
+      .header
+        &_logo
+          background url(../../images/sprites/mobile_header_logo.png) no-repeat
+          
+        &_menu
+          background url(../../images/sprites/mobile_header_menu.png) no-repeat
+          
+        &_user
+          background url(../../images/sprites/mobile_header_user.png) no-repeat
+          
+        &_basket
+          background url(../../images/sprites/mobile_header_basket.png) no-repeat
+   
