@@ -1,6 +1,9 @@
 require('!style!css!slick-carousel/slick/slick.css'); 
 require('!style!css!slick-carousel/slick/slick-theme.css');
+
+import '../stylus/components/slick.styl';
 import '../stylus/components/catalog.styl';
+
 
 import React, { Component } from 'react'
 import HeaderDark from '../components/Headers/HeaderDark'

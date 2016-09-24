@@ -87,6 +87,33 @@ input[type='checkbox']
     height 50%
   
 
+.greenborderbottom
+  & span
+    display inline-block
+    position relative
+    padding-bottom 4px
+    
+    &:after
+      transition 150ms all ease-in
+      content ""
+      width 100%
+      bottom 0px
+      position absolute
+      left 0px
+      height 3px
+      background color_green
+     
+  &:hover
+  &:active
+    span
+      &:after
+        height 5px
+        background: -webkit-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
+        background: -moz-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
+        background: -o-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
+        background: -ms-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
+        background: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%)
+
 
 
 .greenlighted_left  
@@ -131,10 +158,15 @@ input[type='checkbox']
     opacity 1
 
 .green_underline
-  border-bottom 1px solid #c3e782
+  border-bottom 1px solid color_green
   
   &.opacity
     border-bottom 1px solid color_green_opacity
+    
+    &:hover
+    &:active
+      border-bottom 1px solid color_green
+      
   
 section
   margin-top 100px
@@ -209,4 +241,14 @@ h3
     font-size 18px
     line-height 22px
     
+@media (max-width: 768px)
+  .green_underline
+    border-bottom 2px solid color_green
+    
+    &.opacity
+      border-bottom 2px solid color_green_opacity
+      
+      &:hover
+      &:active
+        border-bottom 2px solid color_green
  

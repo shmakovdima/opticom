@@ -1,0 +1,67 @@
+.slick
+  &-prev
+  &-next
+    transition 150ms all ease-in
+    width 17px!important
+    height 26px!important
+    top 0px!important
+    position absolute!important
+    right 0px!important
+    left inherit!important
+    
+    &:before
+      display none
+    
+  &-next
+    background url(../../../images/sprites/arrow_right.png) center no-repeat!important
+    
+    &.slick-disabled
+      margin-top -12px
+      transform rotate(180deg)!important
+      background url(../../../images/sprites/arrow_left_disabled.png) center no-repeat!important
+  
+  &-prev
+    margin-top 0px
+    transform rotate(180deg)!important
+    right 28px!important
+    background url(../../../images/sprites/arrow_right.png) center no-repeat!important
+    
+    &.slick-disabled
+      transform none!important
+      background url(../../../images/sprites/arrow_left_disabled.png) center no-repeat!important
+
+  &-list
+    overflow visible!important
+    position absolute  
+
+
+  &-slider
+    overflow visible!important
+    
+  
+
+  &_white
+    .slick
+      &-prev
+      &-next
+        top 200px!important
+
+        
+      &-next
+        background url(../../../images/sprites/catalog_slider_right.png) center no-repeat!important
+        
+        &.slick-disabled
+          background url(../../../images/sprites/catalog_slider_left_disable.png) center no-repeat!important
+          
+      &-prev
+        background url(../../../images/sprites/catalog_slider_right.png) center no-repeat!important
+        
+        &.slick-disabled
+          transform none!important
+          background url(../../../images/sprites/catalog_slider_left_disable.png) center no-repeat!important
+          
+@media (max-width: 768px)
+  .slick
+    &-prev
+    &-next
+      display none!important
