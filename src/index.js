@@ -11,7 +11,6 @@ import configureStore from './store/configureStore'
 
 const store = configureStore();
 
-
 if (module.hot) {
   module.hot.accept('./routes', () => {
     // won't work... need solution to replacing routes...
@@ -19,7 +18,6 @@ if (module.hot) {
     Router.createRoutes(nextRoutes)
   })
 }
-
 
 render(
    <Provider store={store}><Router history={browserHistory} routes={routes}/></Provider>,

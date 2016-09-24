@@ -1,6 +1,12 @@
 @import '../sprite.styl'
 @import '../variables.styl'
 
+
+.slick
+  &-slider
+    width 100%
+    overflow hidden
+
 .catalog
   &_header
     color white
@@ -98,7 +104,17 @@
         font-family LeksaPro
         margin-top 15px  
 
-@media (max-width: 991px)
+
+@media (max-width: 1000px)
+  .catalog
+    &_preferences
+      &_item
+        min-height 400px
+        & + &
+          margin-left 0px
+
+
+@media (max-width: 768px)
   .catalog
     &_preferences
       &_item

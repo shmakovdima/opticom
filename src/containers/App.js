@@ -1,10 +1,32 @@
 import React, { Component } from 'react'
 import Footer from '../components/Footer'
 
+import $ from 'jquery'
+
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as pageActions from '../actions/setWindowWidth'
 
 
 
-export default class App extends Component {
+class App extends Component {
+
+  updateDimensions() {
+    this.props.pageActions.setWindowWidth($('body').width())
+  }
+
+  componentWillMount() {
+    this.updateDimensions()
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions.bind(this))
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions.bind(this))
+  }
+
   render() {
     return (
       <div>
@@ -14,6 +36,21 @@ export default class App extends Component {
     )
   }
 }
+
+function mapStateToProps (state) {
+  return {
+    windowWidth: state.pageData.windowWidth
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    pageActions: bindActionCreators(pageActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
 
     {/*
       <div>

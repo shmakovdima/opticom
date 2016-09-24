@@ -18,11 +18,8 @@ export const routes = (
       <Route path='/:genre/' component={Release}>
         <Route path='/:genre/:name' component={ReleaseItem} />
       </Route>*/}
+      <Route path='*' component={NotFound} />
     </Route>
-
-
-
-
-    <Route path='*' component={NotFound} />
+    
   </div>
 )

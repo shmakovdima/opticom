@@ -2,8 +2,49 @@ import React, { Component } from 'react'
 import EcoCheckbox from './EcoCheckbox'
 import {Link} from 'react-router'
 
-export default class CatalogHeader extends Component {
+import { connect } from 'react-redux'
+
+import Slider from 'react-slick'
+
+
+class CarouselCatalog extends Component {
   render() {
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+
+    const windowWidth = this.props.windowWidth
+    const Categories = this.props.Categories
+
+    console.log(windowWidth);
+    console.log(Categories);
+    
+    return(
+      <div>
+        <Slider  {...settings}>
+          <h1>safdsf</h1>
+          <h1>safdsf</h1>
+          <h1>safdsf</h1>
+          <h1>safdsf</h1>
+          <h1>safdsf</h1>
+          <h1>safdsf</h1>
+        </Slider>
+      </div>
+    )
+  }
+}
+
+class CatalogHeader extends Component {
+  render() {
+
+    const windowWidth = this.props.windowWidth
+
+    const Categories = this.props.Categories
+
     return(
       <section className='catalog_header'>
         <div className='container'>
@@ -25,8 +66,18 @@ export default class CatalogHeader extends Component {
             </div>
           </div>
         </div>
+        <CarouselCatalog windowWidth={windowWidth} Categories={Categories}/>
       </section>
     )
   }
-
 }
+
+function mapStateToProps (state) {
+  return {
+    windowWidth: state.pageData.windowWidth,
+    Categories: state.pageData.Categories
+  }
+}
+
+
+export default connect(mapStateToProps)(CatalogHeader)

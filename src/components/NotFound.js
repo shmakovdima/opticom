@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import Footer from './Footer'
+import HeaderLight from './Headers/HeaderLight'
+
 
 export default class NotFound extends Component {
   render() {
     return (
       <div>
+        <HeaderLight/>
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>
@@ -13,7 +15,7 @@ export default class NotFound extends Component {
             </div>
           </div>
         </div>
-        <Footer/>
+      
       </div>
     )
   }

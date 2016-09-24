@@ -2,7 +2,7 @@ import '../stylus/components/footer.styl';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import $ from 'jquery';
+import $ from 'jquery'
 
 class FooterLink extends Component {
   render() {
