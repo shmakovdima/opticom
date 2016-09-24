@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import EcoCheckbox from './EcoCheckbox'
 import {Link} from 'react-router'
 
-import { connect } from 'react-redux'
+import {connect } from 'react-redux'
 import Slider from 'react-slick'
 
 
@@ -98,9 +98,6 @@ class CarouselCatalog extends Component {
     )
   }
 }
-
-
-
 
 
 class CatalogHeader extends Component {
