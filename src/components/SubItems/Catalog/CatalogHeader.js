@@ -7,18 +7,55 @@ import { connect } from 'react-redux'
 import Slider from 'react-slick'
 
 
+
+class Carousel_Item extends Component {
+
+
+
+  wordend(num, words){
+    return words[((num%100 > 10 && num%100 < 15) || num%10 > 4 || num%10 == 0)? 2 : (num%10 == 1)? 0 : 1]
+  }
+
+  render() {
+    const image = '/images/Categories/'+this.props.Category.image
+    const title = this.props.Category.title
+    const count = this.wordend(this.props.Category.count,['товар','товара','товаров'])
+    const link = this.props.Category.link
+
+    return(
+      <div className='catalog_header_carousel_item slick-slide'>
+        <Link title={title} to={'catalog/'+link}>
+          <div style={{backgroundImage: 'url(' + image + ')'}} className='catalog_header_carousel_item_image'>
+
+          </div>
+        </Link>
+        <Link title={title} to={'catalog/'+link} className='catalog_header_carousel_item_title'>
+          {title}
+        </Link>
+        <span className='catalog_header_carousel_item_count'>{count}</span>
+      </div>
+
+    )
+
+  }
+
+}
+
 class CarouselCatalog extends Component {
   render() {
     var settings = {
-      dots: true,
-      infinite: true,
+      draggable: true,
+      slidesToShow: 10,
+      autoplay: false,
+      dots: false,
+      infinite: false,
       speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 5
     };
 
     const windowWidth = this.props.windowWidth
     const Categories = this.props.Categories
+    let slidernumber = 0
 
     console.log(windowWidth);
     console.log(Categories);
@@ -26,25 +63,28 @@ class CarouselCatalog extends Component {
     return(
       <div>
         <Slider  {...settings}>
-          <h1>safdsf</h1>
-          <h1>safdsf</h1>
-          <h1>safdsf</h1>
-          <h1>safdsf</h1>
-          <h1>safdsf</h1>
-          <h1>safdsf</h1>
+          <div>
+            <button>Показать все категории</button>
+          </div>
+          {
+            Categories.map(function(item) {
+              return (<div><Carousel_Item Category={item} key={++slidernumber}/></div>)
+            })
+          }
         </Slider>
       </div>
     )
   }
 }
 
+
+
+
+
 class CatalogHeader extends Component {
   render() {
-
     const windowWidth = this.props.windowWidth
-
     const Categories = this.props.Categories
-
     return(
       <section className='catalog_header'>
         <div className='container'>
