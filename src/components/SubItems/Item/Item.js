@@ -5,6 +5,8 @@ import {Link} from 'react-router'
 import { bindActionCreators } from 'redux'
 import * as pageActions from '../../../actions/setLove'
 
+import wordlenght from '../../function/wordlenght'
+
 import $ from 'jquery'
 
 Array.prototype.removeByValue = function(item){
@@ -151,16 +153,7 @@ class Item extends Component {
       return text.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     }
 
-    function kitcut( text, limit) {
-      text = text.trim();
-      if( text.length <= limit) return text;
-      text = text.slice( 0, limit); // тупо отрезать по лимиту
-      var lastSpace = text.lastIndexOf(' ');
-      if( lastSpace > 0) { // нашлась граница слов, ещё укорачиваем
-        text = text.substr(0, lastSpace);
-      }
-      return text + '...';
-    }
+
 
     const data = this.props
     const {setLove} = this.props.pageActions
@@ -196,8 +189,7 @@ class Item extends Component {
 
 
     var textcost = cutnumber(this.props.item.cost.one) + ' ₽'
-    
-
+  
     var cost;
 
     if (this.props.item.discount == false) {
@@ -215,7 +207,7 @@ class Item extends Component {
       </div>)
     }
 
-    const titleshow = kitcut(title, 50)
+    const titleshow = wordlenght(title, 50)
 
 
 

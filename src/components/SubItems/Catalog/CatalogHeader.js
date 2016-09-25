@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import EcoCheckbox from './EcoCheckbox'
 import {Link} from 'react-router'
-
+import wordend from '../../function/wordend'
 import {connect } from 'react-redux'
 import Slider from 'react-slick'
 
@@ -10,15 +10,10 @@ import Slider from 'react-slick'
 class Carousel_Item extends Component {
 
 
-
-  wordend(num, words){
-    return words[((num%100 > 10 && num%100 < 15) || num%10 > 4 || num%10 == 0)? 2 : (num%10 == 1)? 0 : 1]
-  }
-
   render() {
     const image = '/images/categories/'+this.props.Category.image
     const title = this.props.Category.title
-    const count = this.props.Category.count + ' ' + this.wordend(this.props.Category.count,['товар','товара','товаров'])
+    const count = this.props.Category.count + ' ' + wordend(this.props.Category.count,['товар','товара','товаров'])
     const link = this.props.Category.link
 
     return(

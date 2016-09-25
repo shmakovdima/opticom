@@ -620,48 +620,51 @@ const initialState = {
   }
   ,
 
-  Allisready:[
+  AllIsReady:[
     {
-      title: '',
-      count: '',
+      title: 'Для вашей гостиницы или отеля',
+      count: '13',
       link: 'readyset/forhotel',
-      image: '',
-      hoverimage: ''
+      image: 'images/ready_item/catalog_allready_hotel.png',
+      hoverimage: 'images/ready_item/catalog_allready_hotel.png'
     },
     {
-      title: '',
-      count: '',
-      link: 'readyset/forhotel',
-      image: '',
-      hoverimage: ''
+      title: 'В зеленый офис ежемесячно',
+      count: '23',
+      link: 'readyset/greenoffice',
+      image: 'images/ready_item/catalog_allready_greenoffice.png',
+      hoverimage: 'images/ready_item/catalog_allready_greenoffice.png'
+
     },
     {
-      title: '',
-      count: '',
-      link: 'readyset/forhotel',
-      image: '',
-      hoverimage: ''
+      title: 'Экологичный бизнес-центр',
+      count: '18',
+      link: 'readyset/ecocenter',
+      image: 'images/ready_item/catalog_allready_ecobisness.png',
+      hoverimage: 'images/ready_item/catalog_allready_ecobisness_hover.png'
+    },
+
+    {
+      title: 'Ассортимент для небольшого магазина',
+      count: '46',
+      link: 'readyset/forsmallshop',
+      image: 'images/ready_item/catalog_allready_smallshop.png',
+      hoverimage: 'images/ready_item/catalog_allready_smallshop.png'
+      
     },
     {
-      title: '',
-      count: '',
-      link: 'readyset/forhotel',
-      image: '',
-      hoverimage: ''
+      title: 'Полный комплект для уборки квартиры',
+      count: '32',
+      link: 'readyset/forcomplect',
+      image: 'images/ready_item/catalog_allready_fullcomplect.png',
+      hoverimage: 'images/ready_item/catalog_allready_fullcomplect.png'
     },
     {
-      title: '',
-      count: '',
-      link: 'readyset/forhotel',
-      image: '',
-      hoverimage: ''
-    },
-    {
-      title: '',
-      count: '',
+      title: 'Для клининговых сервисов',
+      count: '47',
       link: 'readyset/forclining',
-      image: '',
-      hoverimage: ''
+      image: 'images/ready_item/catalog_allready_clining.png',
+      hoverimage: 'images/ready_item/catalog_allready_clining.png'
     }
   ]
 };

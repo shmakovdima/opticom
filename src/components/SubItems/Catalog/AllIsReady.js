@@ -1,37 +1,53 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router'
+import {connect } from 'react-redux'
+import Ready from '../Item/Ready'
 
-export default class AllIsReady extends Component {
+import '../../../stylus/components/set.styl';
+
+class AllIsReady extends Component {
   render(){
+    const windowWidth = this.props.windowWidth
+    let allIsReady = JSON.parse(JSON.stringify(this.props.AllIsReady))
+  
+
+    if (windowWidth<=768) {
+      allIsReady = [allIsReady[0],allIsReady[1],allIsReady[2]]
+    }
+
+    let key = 14000
     return(
       <section className='catalog_preferences'>
         <div className='container'>
           <div className='row'>
             <h2 className='col20-lg-offset-1'>Все уже готово</h2>
-            <span><Link to='catalog/readyset'></Link></span>
-            <div className='catalog_preferences_item catalog_preferences_item_1 col20-lg-4 col20-md-4 col-sm-6'>
-              <div></div>
-              <h3>Подбор ассортимента</h3>
-              <p>Адаптивный и большой ассортимент товаров собственного производства и от ведущих производителей</p>
-            </div>
-            <div className='catalog_preferences_item catalog_preferences_item_2 col20-lg-4 col20-md-4 col-sm-6'>
-              <div></div>
-              <h3>Обучение</h3>
-              <p>Обучающие программы по разным направлениям профессиональной уборки</p>
-            </div>
-            <div className='catalog_preferences_item catalog_preferences_item_3 col20-lg-4 col20-md-4 col-sm-6'>
-              <div></div>
-              <h3>Доставка</h3>
-              <p>Наличие и доставка в кратчайшие сроки, благодаря собственному логистическому хабу</p>
-            </div>
-            <div className='catalog_preferences_item catalog_preferences_item_4 col20-lg-4 col20-md-4 col-sm-6'>
-              <div></div>
-              <h3>Сервис</h3>
-              <p>Отсрочка платежа, удобный личный кабинет, персональный менеджер</p>
-            </div>
+            <span className='catalog_preferences_link'>
+              <span className='col20-lg-offset-1'>Попробуйте наши </span>
+              <Link  to='catalog/ready_set' className='green_underline' title='Готовые наборы' >готовые наборы</Link>
+            </span>
+          </div>
+        </div>
+        <div className='container'>
+          <div className='row ready_main'>
+          {
+            allIsReady.map(function(item){
+              return(<div className='col-lg-4'><Ready data={item} key={++key}/></div>)
+            })
+          }
           </div>
         </div>
       </section>
     )
   }
 }
+
+
+function mapStateToProps (state) {
+  return {
+    AllIsReady: state.pageData.AllIsReady,
+    windowWidth: state.pageData.windowWidth
+  }
+}
+
+
+export default connect(mapStateToProps)(AllIsReady)

@@ -20,8 +20,9 @@ export default class Catalog extends Component {
         <HeaderDark/>
         <CatalogHeader/>
         <Preferences/>
-        <SpecialOffer className='hidden-xs'/>
         <AllIsReady/>
+        <SpecialOffer className='hidden-xs'/>
+        
         <Interesed/>
       </div>
     )
