@@ -1,9 +1,7 @@
 const initialState = {
   windowWidth:0,
 
-  lovedItems: [
-
-  ],
+  lovedItems: new Array(),
 
   FooterLinks: [
     {

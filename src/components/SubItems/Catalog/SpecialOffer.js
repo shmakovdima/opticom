@@ -28,7 +28,7 @@ class SpecialOffer extends Component {
               specialOffer.map(function(item) {
                 return (
                   <div className='col20-lg-4'>
-                    <Item Category={item} key={++specialofferkey}/>
+                    <Item item={item} key={++specialofferkey}/>
                 </div>)
               })
             }

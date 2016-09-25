@@ -31,7 +31,6 @@ class EcoCheckbox extends Component {
   render() {
     const {only_eco} = this.props
     const {setEco} = this.props.pageActions
-    console.log(only_eco)
     return(
       <div>
         <EcoCheckbox_Block only_eco={only_eco} setEco={setEco}/>

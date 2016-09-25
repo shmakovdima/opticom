@@ -1,4 +1,4 @@
-export function setLOVE(id) {
+export function setLove(loved) {
   console.log('id: '+ loved)
   return {
     type: 'SET_LOVE',
