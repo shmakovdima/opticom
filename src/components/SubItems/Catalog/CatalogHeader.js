@@ -94,6 +94,7 @@ class CarouselCatalog extends Component {
             </div>
           </div>
         </div>
+
       </div>
     )
   }

@@ -9,8 +9,9 @@ class SpecialOffer extends Component {
   render() {
     let specialofferkey = 1000
     const specialOffer = this.props.specialOffer
+    const only_eco = this.props.only_eco
     return(
-      <section className='specialoffer'>
+      <section className='specialoffer hidden-xs'>
         <div className='container'>
           <div className='row'>
             <div className='specialoffer_before'></div>
@@ -23,11 +24,12 @@ class SpecialOffer extends Component {
         </div>
         <div className='container'>
           <div className='row'>
-            <div className='col20-lg-1'></div>
+            <div className='col20-lg-1 '></div>
             {
               specialOffer.map(function(item) {
+                if ((only_eco == true) && (item.eco!=true)) return false;
                 return (
-                  <div className='col20-lg-4'>
+                  <div className='col20-lg-4 col20-md-5 col-sm-4'>
                     <Item item={item} key={++specialofferkey}/>
                 </div>)
               })
@@ -45,7 +47,8 @@ class SpecialOffer extends Component {
 function mapStateToProps (state) {
   return {
     windowWidth: state.pageData.windowWidth,
-    specialOffer: state.pageData.specialOffer
+    specialOffer: state.pageData.specialOffer,
+    only_eco: state.user.only_eco
   }
 }
 

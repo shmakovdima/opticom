@@ -5,6 +5,12 @@
 @import 'components/20colums.styl'
 @import 'components/text-align-media.styl'
 
+
+.slick
+  &-slider
+    width 100%
+    overflow hidden
+
 *
   margin 0
   padding 0
@@ -88,6 +94,8 @@ input[type='checkbox']
     height 50%
   
 
+
+
 .greenborderbottom
   & span
     display inline-block
@@ -115,8 +123,6 @@ input[type='checkbox']
         background: -ms-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
         background: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%)
 
-
-
 .greenlighted_left  
   transition none
   &:before
@@ -131,6 +137,15 @@ input[type='checkbox']
   &:before
     opacity 1
     
+.greenlighted 
+
+  &:hover:before
+  &:active:before
+    opacity 1
+    
+.greenlighted_left.header_link_active
+  &:before
+    opacity 1
 
 .gradient_underlinehover
   position relative
@@ -168,7 +183,31 @@ input[type='checkbox']
     &:active
       border-bottom 1px solid color_green
       
+
+.greenlighted 
+  position relative
+  display inline-block
+  z-index 1
   
+  &:before
+    opacity 1
+    display block
+    transition 200ms all ease-in
+    z-index -1
+    left -15px
+    bottom 3px
+    background color_green
+  
+    content ''
+    position absolute
+    width 50%
+    height 20%
+
+  &:hover:before
+  &:active:before
+    opacity 1
+    height 45%
+ 
 section
   margin-top 100px
 
@@ -190,6 +229,7 @@ h1
 h2
   font-family FuturaPTHeavy
   color black
+  padding-bottom 60px
   font-size 62px
   line-height 60px
   
@@ -199,7 +239,22 @@ h3
 
 
 
+.load
+  &_more
+    padding-bottom 40px
+    padding-top 20px
 
+    button
+      margin-top 50px
+      background transparent
+      text-transform uppercase
+      max-width 160px
+      display inline-block
+      text-align left
+      color black
+      font-size: 24px
+      line-height 32px
+      font-family FuturaPTBold
 
 
 @media (min-width:  1300px)
@@ -243,6 +298,12 @@ h3
     line-height 22px
     
 @media (max-width: 768px)
+
+  .load
+    &_more
+      button
+        font-size 34px
+
   .green_underline
     border-bottom 2px solid color_green
     

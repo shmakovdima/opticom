@@ -1,16 +1,210 @@
+@import '../sprite.styl'
+@import '../variables.styl'
+
+.interesed
+  overflow hidden
+  h2
+    max-width 500px
+    padding-bottom 60px
+
 .item
+  margin-bottom 10px
+  width 250px
+  max-width 250px
   position relative
-  padding 24px
-  transiton 150ms all ease-in
+  float left
+  width 100%
+  margin-top 20px
+  top 0px
+  transition 150ms all ease-in
   cursor pointer
-  height 300px
-  box-shadow: 0px 10px 46px 0px rgba(0, 0, 0, 0.05)
+  min-height 450px
+  
   //box-shadow: -1px 2px 13px 5px rgba(0, 0, 0, 0.15)
-  border 2px solid #fafafa
-  background-color #ffffff
+
+  
+  &_under
+    position relative
+    padding 24px
+    min-height 450px
+    width 100%
+    box-shadow 0px 10px 46px 0px rgba(0, 0, 0, 0.05)
+    border 2px solid #fafafa
+    background-color #ffffff
+
+  &_slide
+    float left
+    margin-right 25px
+    position relative
+    min-height 500px
+    
+  
+  &_vendorcode
+    font-family FuturaPTBook
+    color color_gray
+    clear left
+    font-size 14px
+    float left
+    line-height 24px 
+    
+  &_eco
+    width 22px
+    height 32px
+    background url(../../../images/sprites/item_eco.png) no-repeat
+
+  &_title 
+    margin-top 10px
+    line-height 22px
+    color black
+    font-family FuturaPTHeavy
+    font-size 18px
+    float left
+    
+    &:hover
+    &:active
+      color color_green
+
+  &_bottom
+    transition 150ms all ease-in 
+    position absolute
+    padding-top 60px
+    bottom 25px
+    
+  &_discount
+    float left 
+    clear left
+    font-family FuturaPTBold
+    text-decoration line-through
+    line-height 24px
+    font-size 16px
+    
+  &_desription
+    margin-top 5px
+    line-height 20px
+    font-size 16px
+    margin-top 60px
+    clear left
+    height 0px
+    overflow hidden
+
+    &_value
+      font-family FuturaPTBook      
+
+    &_title
+      font-family FuturaPTHeavy
+      
+
+  &_order
+    width 100%
+    height 0px
+    overflow hidden
+    margin-top 40px
+    position relative
+    background transition
+    
+
+    
+    &_body
+      width 100%
+      float left
+      background #f0f0f0
+      
+    & button
+      background transparent
+      float left
+      padding-left 8px
+      padding-right 8px
+      
+    &_button
+      text-transform uppercase
+      line-height 40px
+      color white
+      width calc(100% - 70px)
+      float right!important
+      padding-top 0px
+      font-size 12px!important
+      font-family FuturaPTBold
+      background color_green!important
+      transition 150ms all ease-in
+      
+      &:hover
+        background #98c04d!important
+        background: -webkit-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
+        background: -moz-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
+        background: -o-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
+        background: -ms-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
+        background-image: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%)!important
+      
+    & input
+      float left
+      width 20px
+      text-align center
+      line-height 40px
+      font-family FuturaPTHeavy
+      font-size 16px
+      
+    &_minus
+    &_plus
+      font-family FuturaPTHeavy
+      font-size 20px
+      line-height 40px
+    
+    &_buttons
+      & button
+        background transparent
+        line-height 22px
+        font-family FuturaPTBold
+        font-size 10px
+        padding 0px 9px 
+        
+        &.active
+          background #f0f0f0
+
+  &_cost
+    top 436px
+    font-family FuturaPTBold
+    color black
+    line-height 30px
+    font-size 24px
+    float left
+    clear left
+    
+    &_description
+      float left
+      clear left
+      color color_gray
+
+  &_new
+    position absolute
+    bottom -10px
+    left 0px  
+    font-family FuturaPTHeavy
+    font-size 10px
+    line-height 22px
+    text-transform uppercase  
+    
+    color transparent!important
+    -webkit-background-clip text
+    background-clip text
+    background-image: -webkit-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background-image: -moz-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background-image: -o-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background-image: -ms-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background-image: linear-gradient(-90deg, #4d9bc0 0%, #98c04d 100%)
+
+  &_image
+    position relative
+    margin-top 30px
+    height 160px
+    width 100%
+    background-position center
+    background-repeat no-repeat
+    
+    &_block
+      position relative
   
   &_love
-    transiton 150ms all ease-in
+    transition 150ms all ease-in
     width 24px
     height 21px
     background url(../../../images/sprites/item_heart_empty.png) no-repeat
@@ -23,12 +217,206 @@
       background url(../../../images/sprites/item_heart_true.png) no-repeat!important
   
   &:hover
-    top -15px
-    box-shadow: 0px 10px 46px 0px rgba(0, 0, 0, 0.15)
+    
+    z-index 15
+    
+    left 0px
+    width 100%
+    
+    
     
     .item
+      overflow visible
+
+      &_under
+        position absolute
+        top -15px
+        right 0px
+        width 100%
+        box-shadow: 0px 10px 46px 0px rgba(0, 0, 0, 0.15)
+        
+      &_order
+        height auto
+
+      &_bottom
+        bottom inherit
+        position relative
+        padding-top 60px
+        clear left
+        
+      &_desription
+        height auto
+        opacity 1
+
+      &_cost
+        &_description
+          display none
+
       &_love
         background url(../../../images/sprites/item_heart_empty_hover.png) no-repeat
         &:hover
           opacity 0.5
           background url(../../../images/sprites/item_heart_true.png) no-repeat
+          
+
+
+@media (max-width: 768px)
+  .item
+    position relative
+    float none
+    max-width 1000px
+    margin-bottom 40px
+    margin-top 40px
+    width calc(100vw - 100px)
+    
+
+    &_under
+      min-height 830px
+      padding 60px
+    
+    &:hover
+    &:active
+      top 0px
+      position relative
+      width calc(100vw - 100px)
+
+
+    &_love
+      width 44px
+      height 44px
+      background-size contain!important
+
+    &_slide
+      min-height 1000px
+    
+    
+    &_vendorcode
+      margin-top 20px
+      font-size: 28px
+
+      
+    &_eco
+      width 33px
+      height 62px
+      background-size contain
+
+    &_title 
+      margin-top 40px
+      line-height 36px
+      color black
+      font-size: 36px
+      
+
+    &_bottom
+      position absolute
+      padding-top 60px
+      bottom 60px
+      
+    &_discount
+      margin-bottom 20px
+      font-size 36px
+      
+    &_desription
+      margin-top 5px
+      line-height 40px
+      font-size 32px
+      margin-top 60px
+
+        
+
+    &_order
+      width 100%
+      height 0px
+      overflow hidden
+      margin-top 50px
+      position relative
+      background transition
+      
+        
+      & button
+        background transparent
+        float left
+        padding-left 20px
+        padding-right 20px
+        
+      &_button
+        text-transform uppercase
+        line-height 80px
+        color white
+        padding-right inherit!important
+        padding-left inherit!important
+        float right!important
+        padding-top 0px
+        font-size 24px!important
+        font-family FuturaPTBold
+        background color_green!important
+        transition 150ms all ease-in
+        width calc(100% - 160px)
+        
+      & input
+        float left
+        width 40px
+        text-align center
+        line-height 80px
+        font-family FuturaPTHeavy
+        font-size 32px
+        
+      &_minus
+      &_plus
+        font-family FuturaPTHeavy
+        font-size 40px
+        line-height 80px
+      
+      &_buttons
+        & button
+          background transparent
+          line-height 22px
+          font-family FuturaPTBold
+          font-size 20px
+          padding 9px 18px 
+          
+          &.active
+            background #f0f0f0
+
+    &_cost
+      font-size 48px
+      
+      &_description
+        font-size 24px
+        margin-top 20px
+
+    &_new
+      bottom -20px
+      font-size: 20px
+      
+    &_image
+      background-size contain
+      margin-top 60px
+      height 300px
+      width 100%
+      
+@media (max-width: 550px)
+  .item
+  
+
+    &_order
+      
+    
+      input
+        float none
+        margin 0 auto
+        display inline
+        
+      &_body
+        text-align center
+        button
+          padding-left 30px
+          padding-right 30px
+      
+
+      &_plus
+        float right!important
+      &_button
+        width 100%!important
+        float left!important
+        
