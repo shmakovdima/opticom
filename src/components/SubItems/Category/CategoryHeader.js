@@ -78,7 +78,6 @@ class CatalogHeader extends Component {
 
 function mapStateToProps (state) {
   return {
-    categoryData: state.pageData.categoryData,
     windowWidth: state.pageData.windowWidth,
     Categories: state.pageData.Categories,
     show_menu: state.user.show_menu

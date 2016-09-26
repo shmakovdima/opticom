@@ -3,39 +3,107 @@ require('!style!css!slick-carousel/slick/slick-theme.css');
 
 import '../stylus/components/slick.styl';
 import '../stylus/components/category.styl';
-
+import {connect } from 'react-redux'
 
 import React, { Component } from 'react'
 import HeaderLight from '../components/Headers/HeaderLight'
 import CategoryHeader from './SubItems/Category/CategoryHeader'
 import Interesed from './SubItems/Category/Interested'
 
+import Item from './SubItems/Item/Item'
+
 import { Accordion, Panel } from 'react-bootstrap'
 
 
-export default class Catalog extends Component {
+class Catalog_Group extends Component {
+
+  
+
+
   render() {
+
+    const Items = this.props.items.items
+
+    return(
+       <div>
+        {
+          Items.map(function(item, key){
+            return(
+              <div className=''>
+                <Item item={item} key={key}/>
+              </div>
+            )
+            
+          })
+
+        }
+      </div>
+
+    )
+  }
+}
+
+
+class Catalog extends Component {
+
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showgor: false
+     
+    }
+  }
+
+  render() {
+    let categoryData = this.props.categoryData
+
+    let categoryArray = this.props.categoryData.items
+
+
     return (
       <div>
         <HeaderLight/>
-        <CategoryHeader/>
-          <Accordion>
-            <Panel header="Collapsible Group Item #1" eventKey="1">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-            </Panel>
-            <Panel header="Collapsible Group Item #2" eventKey="2">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-            </Panel>
-            <Panel header="Collapsible Group Item #3" eventKey="3">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-            </Panel>
-          </Accordion>
+        <CategoryHeader categoryData={categoryData}/>
+        <section className='category_section'>
+          <div className='container'>
+   
+              <Accordion>
+                {
+                  categoryArray.map(function(item,key){
 
+                    var Items = item
+
+                    return(
+                      <Panel header={item.title} eventKey={key}>
+                        <Catalog_Group items={Items}/>
+                      </Panel>
+                    )
+
+                  }) 
+
+                }
+
+               
+              </Accordion>
+          
+          </div>
+        </section>
 
         <Interesed/>
       </div>
     )
   }
 }
+
+
+function mapStateToProps (state) {
+  return {
+    categoryData: state.pageData.categoryData
+  }
+}
+
+export default connect(mapStateToProps)(Catalog)
 
 
