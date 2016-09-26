@@ -13,8 +13,9 @@ export const routes = (
   <div>
     <Route path='/' component={App}>      
       <IndexRoute component={Home} />
-      <Route path='/Catalog' component={Catalog} />
-
+      <Route path='catalog' component={Catalog} >
+        <Route path='catalog/:category' component={Catalog} />
+      </Route>
       <Route path='*' component={NotFound} />
     </Route>
     

@@ -24,7 +24,7 @@ module.exports = {
 
   plugins: [
 
-     new SpritesmithPlugin({
+    /* new SpritesmithPlugin({
         src: {
             cwd: path.resolve('./images/sprites'),
             glob: '*.png'
@@ -37,6 +37,8 @@ module.exports = {
             cssImageRef: "-sprite.png"
         }
       }),
+
+    */
 
     new webpack.DefinePlugin({
       'process.env': {
