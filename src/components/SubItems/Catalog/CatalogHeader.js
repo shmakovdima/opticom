@@ -4,12 +4,10 @@ import {Link} from 'react-router'
 import wordend from '../../function/wordend'
 import {connect } from 'react-redux'
 import Slider from 'react-slick'
-
-
+import * as pageActions from '../../../actions/showMenu'
+import { bindActionCreators } from 'redux'
 
 class Carousel_Item extends Component {
-
-
   render() {
     const image = '/images/categories/'+this.props.Category.image
     const title = this.props.Category.title
@@ -35,6 +33,12 @@ class Carousel_Item extends Component {
 }
 
 class CarouselCatalog extends Component {
+
+
+  showMenu(){
+
+    this.props.showMenu(!this.props.show_menu)
+  }
 
   render() {
     var settings = {
@@ -65,7 +69,7 @@ class CarouselCatalog extends Component {
             <div className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12 catalog_header_slider slick_white'>
               <Slider  {...settings}>
                 <div  className='hidden-xs' key={slidernumber}>
-                  <button className='text-left catalog_header_slider_loadmore greenborderbottom'>
+                  <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                     <span >Показать все </span>
                     <wbr/>
                     <span >категории</span>
@@ -78,7 +82,7 @@ class CarouselCatalog extends Component {
                 }
               </Slider>
               <div className='hidden-md hidden-lg hidden-sm'>
-                <button className='text-left catalog_header_slider_loadmore greenborderbottom'>
+                <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                   <span >Показать все категории</span>
                 </button>
                  <h3 className='catalog_header_consult'>Нужна консультация?</h3>
@@ -100,6 +104,9 @@ class CatalogHeader extends Component {
   render() {
     const windowWidth = this.props.windowWidth
     const Categories = this.props.Categories
+
+    const {showMenu} = this.props.pageActions
+
     return(
       <section className='catalog_header'>
         <div className='container'>
@@ -125,7 +132,7 @@ class CatalogHeader extends Component {
             </div>
           </div>
         </div>
-        <CarouselCatalog windowWidth={windowWidth} Categories={Categories}/>
+        <CarouselCatalog showMenu={showMenu} windowWidth={windowWidth} Categories={Categories}/>
       </section>
     )
   }
@@ -134,9 +141,16 @@ class CatalogHeader extends Component {
 function mapStateToProps (state) {
   return {
     windowWidth: state.pageData.windowWidth,
-    Categories: state.pageData.Categories
+    Categories: state.pageData.Categories,
+    show_menu: state.user.show_menu
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    pageActions: bindActionCreators(pageActions, dispatch)
+  }
+}
 
-export default connect(mapStateToProps)(CatalogHeader)
+export default connect(mapStateToProps, mapDispatchToProps)(CatalogHeader)
+

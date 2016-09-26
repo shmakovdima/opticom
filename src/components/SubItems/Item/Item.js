@@ -227,8 +227,8 @@ class Item extends Component {
             {
              description.map(function(item) {
                 return (
-                  <div>
-                    <span className='item_desription_value'><span className='item_desription_title'>{item.title}:</span> {item.value}</span>
+                  <div className='text-left'>
+                    <span className='item_desription_value '><span className='item_desription_title'>{item.title}:</span> {item.value}</span>
                   </div>
                 )
               })

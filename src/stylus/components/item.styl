@@ -262,9 +262,6 @@
 
 @media (max-width: 768px)
 
-  .interesed
-    overflow visible
-
   .item
     position relative
     float none
@@ -277,12 +274,16 @@
     &_under
       min-height 830px
       padding 60px
+      top 0px  
     
     &:hover
     &:active
       top 0px
       position relative
       width calc(100vw - 100px)
+     .item 
+        &_under
+          top 0px!important
 
 
     &_love

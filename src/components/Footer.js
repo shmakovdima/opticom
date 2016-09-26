@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import $ from 'jquery'
 
+import Menu from './Menu'
+
 class FooterLink extends Component {
   render() {
     return(
@@ -25,6 +27,7 @@ class Footer extends Component {
   render() {
     const FooterLinks = this.props.FooterLinks
     return(
+      <div>
         <footer className='footer'>
           <nav>
             <div className='container'>
@@ -57,6 +60,8 @@ class Footer extends Component {
           </div>
 
         </footer>
+        <Menu/>
+      </div>
     )
   }
 }

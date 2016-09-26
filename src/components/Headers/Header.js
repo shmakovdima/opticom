@@ -2,8 +2,9 @@ import '../../stylus/components/header.styl';
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
+import * as pageActions from '../../actions/showMenu'
 
-
+import { bindActionCreators } from 'redux'
 
 class HeaderSearch extends Component {
   render() {
@@ -38,15 +39,14 @@ class HeaderCount extends Component {
 class Header extends Component {
 
   showMenu(){
-    alert('menu');
+    this.props.pageActions.showMenu(!this.props.show_menu)
   }
 
   render() {
     return (
         <div className='container'>
           <Link className='header_logo pull-left' to='/'></Link>
-          <button className='header_menu pull-left pull-right-xs' onClick={this.showMenu.bind(this)}></button>
-
+          <button className='header_menu pull-left pull-right-xs' onClick={::this.showMenu}></button>
           <ul className='header_links pull-left hidden-xs'>
             {
               this.props.FooterLinks.map(function(item, index) {
@@ -65,10 +65,17 @@ class Header extends Component {
   }
 } 
 
-function mapStateToProps (state) {
+function mapDispatchToProps(dispatch) {
   return {
-    FooterLinks: state.pageData.HeaderLinks
+    pageActions: bindActionCreators(pageActions, dispatch)
   }
 }
 
-export default connect(mapStateToProps)(Header)
+function mapStateToProps (state) {
+  return {
+    FooterLinks: state.pageData.HeaderLinks,
+    showMenu: state.user.show_menu
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

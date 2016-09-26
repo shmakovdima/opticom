@@ -69,7 +69,7 @@ export default class Ready extends Component  {
               </Link>
               <div className='ready_count hidden-xs'>{count}</div>
             </div>
-             <div className='ready_count_xs'>{count}</div>
+             <div className='ready_count_xs hidden-sm hidden-md hidden-lg'>{count}</div>
           </div>
         </div>
       </div>
