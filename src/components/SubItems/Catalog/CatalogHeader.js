@@ -26,11 +26,8 @@ class Carousel_Item extends Component {
         </Link>
         <span className='catalog_header_slider_item_count'>{count}</span>
       </div>
-
     )
-
   }
-
 }
 
 class CarouselCatalog extends Component {
@@ -64,37 +61,40 @@ class CarouselCatalog extends Component {
     console.log(Categories);
     
     return(
-      <div className='catalog_header_slider_block'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12 catalog_header_slider slick_white'>
-              <Slider  {...settings}>
-                <div  className='hidden-xs' key={slidernumber}>
+      <div>
+
+
+        <div className='catalog_header_slider_block'>
+          <div className='container'>
+            <div className='row'>
+              <div className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12 catalog_header_slider slick_white'>
+                <Slider  {...settings}>
+                  <div  className='hidden-xs' key={slidernumber}>
+                    <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
+                      <span >Показать все </span>
+                      <wbr/>
+                      <span >категории</span>
+                    </button>
+                  </div>
+                  {
+                    Categories.map(function(item) {
+                      return (<div><Carousel_Item Category={item} key={++slidernumber}/></div>)
+                    })
+                  }
+                </Slider>
+                <div className='hidden-md hidden-lg hidden-sm'>
                   <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
-                    <span >Показать все </span>
-                    <wbr/>
-                    <span >категории</span>
+                    <span >Показать все категории</span>
                   </button>
+                   <h3 className='catalog_header_consult'>Нужна консультация?</h3>
+                  <Link className='catalog_header_consult_link' to='/order' title='Пригласить торгового представителя'>
+                    <span className='green_underline opacity'>Пригласить торгового представителя</span>
+                  </Link>
                 </div>
-                {
-                  Categories.map(function(item) {
-                    return (<div><Carousel_Item Category={item} key={++slidernumber}/></div>)
-                  })
-                }
-              </Slider>
-              <div className='hidden-md hidden-lg hidden-sm'>
-                <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
-                  <span >Показать все категории</span>
-                </button>
-                 <h3 className='catalog_header_consult'>Нужна консультация?</h3>
-                <Link className='catalog_header_consult_link' to='/order' title='Пригласить торгового представителя'>
-                  <span className='green_underline opacity'>Пригласить торгового представителя</span>
-                </Link>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     )
   }

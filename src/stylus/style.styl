@@ -6,6 +6,27 @@
 @import 'components/text-align-media.styl'
 
 
+.breadcrumb
+  padding-left 0px
+  background none
+  margin-top 40px
+  color color_gray_more
+  
+  &-item
+    a
+      color color_gray_more!important
+      font-family FuturaPTBook
+      font-size 16px
+  
+  & > li + li:before
+    content '•'
+    background none
+    padding 3px 12px
+    font-size 20px
+    position relative
+    display inline-block
+    color color_gray_more
+
 .slick
   &-slider
     width 100%

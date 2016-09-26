@@ -31,10 +31,10 @@ export default class Ready extends Component  {
 
 
   render() {
-    let img = this.props.data.image
+    let img = 'http://' + window.location.host + '/' + this.props.data.image
     let link = this.props.data.link
     let title = wordlenght(this.props.data.title, 50)
-    let hoverimg = this.props.data.hoverimage
+    let hoverimg = 'http://' + window.location.host + '/' + this.props.data.hoverimage
     let count = this.props.data.count + ' ' + wordend(this.props.data.count, ['товар','товара','товаров'])
 
     let imageLeft = {

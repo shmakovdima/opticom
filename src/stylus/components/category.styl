@@ -1,0 +1,113 @@
+@import '../sprite.styl'
+@import '../variables.styl'
+
+
+.interested_slider
+  position relative
+  overflow hidden
+  overflow-y visible
+  padding-bottom 150px
+  margin-bottom -170px
+  
+  & .item
+    min-width 250px
+    
+    &_slide
+      margin-right 8px
+  
+  h2
+    max-width 600px
+    font-size 48px
+    padding-bottom 30px
+    
+
+
+.category
+  &_header
+    padding-top 180px
+    margin-top 0px
+    
+    .row 
+      position relative
+    
+    &_absolute
+      position absolute
+      width 100%
+      top 83px
+      min-height 376px
+
+    &_white
+      position absolute
+      background white
+      width 100%
+      min-height 376px
+
+    &_showmore
+      font-size 20px
+      color: black
+      font-family: FuturaPTHeavy
+      margin-top 65px
+      position relative
+      display inline-block
+      
+      &:before
+        position absolute
+        width 80%
+        height 25%
+        bottom 3px
+        left -25px
+        
+      &:after
+        position absolute
+        content ''
+        width 11px
+        height 17px
+        transform rotate(180deg)
+        left -25px
+        bottom 5px
+        display block
+        background url(../../images/sprites/mobile_menu_left.png)  no-repeat
+        background-size cover
+    
+    &_green
+      width 100%
+      min-height 376px
+      background url(../../images/kitchen.png) no-repeat
+      
+
+      & .ecocheckbox
+        margin-top 0px
+        float right
+        padding-top 40px
+        
+        &:hover
+        &:active
+          .ecocheckbox
+            &-text
+              color black
+        
+        &-text
+          color black
+        
+        &_block
+          margin-left 15px
+        
+        & input[type='checkbox']
+          
+          &+label
+            width 24px
+            opacity 0.8
+            height 24px
+            background url(../../images/sprites/checkbox-1.png)  no-repeat
+            
+
+          &:checked + label
+            width 24px
+            opacity 0.8
+            height 24px
+            background  white url(../../images/sprites/checkbox2_ok.png)  no-repeat!important
+        
+    h1 
+      font-family FuturaPTHeavy
+      color: rgba(0, 0, 0, 0.8)
+      font-size: 72px

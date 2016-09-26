@@ -216,7 +216,7 @@ class Item extends Component {
           <div className='item_image_block'>
             {newitem}
            
-              <div className='item_image' style={{backgroundImage: 'url(' + image + ')'}}></div>
+              <div className='item_image' style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}}></div>
      
             {}
           </div>

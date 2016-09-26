@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 import Slider from 'react-slick'
-import { If, Then, Else } from 'react-if';
 import Item from '../Item/Item'
 
 class Interesed extends Component {
@@ -45,7 +44,6 @@ class Interesed extends Component {
 
     let Interesedkey = 4000
     const Interesed = this.state.Data
-    const windowWidth = this.props.windowWidth
     const only_eco = this.props.only_eco
 
 
@@ -53,7 +51,7 @@ class Interesed extends Component {
 
 
     return(
-      <section className='interesed'>
+      <section className='interested_slider'>
         <div className='container'>
           <div className='row'>
             <div className='Interesed_before'></div>
@@ -66,54 +64,20 @@ class Interesed extends Component {
         </div>
         <div className='container'>
           <div className='row'>
-
-
-             <If condition={windowWidth<=768 }>
-                <Then>
-                  <Slider  {...settings}>
-                    {
-                      Interesed.map(function(item) {
-                        if ((only_eco == true) && (item.eco!=true)) return false;
-                        return (
-                          <div className='item_slide text-center'>
-                            <Item item={item} key={++Interesedkey}/>
-                        </div>)
-                      })
-                    }
-                 
-                  </Slider>
-                </Then>
-                <Else>
-                  <Then>
-                    <div>
-                      {
-                        Interesed.map(function(item) {
-                          if ((only_eco == true) && (item.eco!=true)) return false;
-                          return (
-                            <div className='col20-lg-4 col20-md-5 col-sm-4'>
-                              <Item item={item} key={++Interesedkey}/>
-                          </div>)
-                        })
-                      }
-                    </div>
-                  </Then>
-                </Else>
-            </If>
-
-
-            
+            <Slider  {...settings}>
+              {
+                Interesed.map(function(item) {
+                  if ((only_eco == true) && (item.eco!=true)) return false;
+                  return (
+                    <div className='item_slide text-center'>
+                      <Item item={item} key={++Interesedkey}/>
+                  </div>)
+                })
+              }
+           
+            </Slider>            
           </div>
         </div>
-         <div className='container load_more'>
-            <div className='row text-center'>
-              <If condition={this.state.loadmore == true }>
-                 <Then>
-                   <button onClick={::this.loadMore} className='greenlighted'>Показать Еще 20</button>
-                  </Then>
-              </If>
-            </div>
-          </div>
-
       </section>
     )
   }
@@ -123,7 +87,7 @@ class Interesed extends Component {
 function mapStateToProps (state) {
   return {
     windowWidth: state.pageData.windowWidth,
-    Interesed: state.pageData.Interesed,
+    Interesed: state.pageData.InteresedCategory,
     only_eco: state.user.only_eco,
     loadMore: state.pageData.LoadMore
   }
