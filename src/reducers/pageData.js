@@ -54,7 +54,84 @@ const initialState = {
       title: 'Оптилайн',
       image: 'icon_optiline.png',
       count: '19',
-      childrens: [
+      childrens: [ 
+        {
+          title: 'Канцелярские товары',
+          link: 'optiline',
+          childrens: [
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }   
+          ]
+        } 
+        ,
+        {
+          title: 'Канцелярские товары',
+          link: 'optiline',
+          childrens: [
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }   
+          ]
+        }
+        ,
+        {
+          title: 'Канцелярские товары',
+          link: 'optiline',
+          childrens: [
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }
+            ,
+            {
+              title: 'Канцелярские товары',
+              link: 'optiline'
+            }   
+          ]
+        }     
 
       ]
     },

@@ -1,3 +1,5 @@
+@import '../sprite.styl'
+@import '../variables.styl'
 .menu
   position fixed
   top 0px
@@ -5,4 +7,36 @@
   z-index 1000
   width 100%
   height 100vh
-  background black
+  background rgba(255, 255, 255, 0.95)
+
+  &_close
+    transition 150ms all ease-in
+    position absolute
+    width 20px
+    height 19px
+    right 37px
+    top 37px
+    cursor pointer
+    z-index 2
+    background url(../../../images/sprites/menu_close.png) center no-repeat  
+    
+    &:hover
+      opacity 0.5
+
+  &_green
+  &_white
+    height 100%
+    
+  &_block
+    padding-left 130px
+    padding-top 100px
+    
+  &_green
+    background color_green
+    
+  &_mainlink
+    color: #000000
+    font-size: 20px
+    font-family FuturaPTBook
+    display block
+    clear left
