@@ -626,7 +626,8 @@ const initialState = {
       count: '13',
       link: 'readyset/forhotel',
       image: 'images/ready_item/catalog_allready_hotel.png',
-      hoverimage: 'images/ready_item/catalog_allready_hotel.png'
+      hoverimage: 'images/ready_item/catalog_allready_hotel.png',
+      textleft: '+ 24'
     },
     {
       title: 'В зеленый офис ежемесячно',
@@ -634,14 +635,15 @@ const initialState = {
       link: 'readyset/greenoffice',
       image: 'images/ready_item/catalog_allready_greenoffice.png',
       hoverimage: 'images/ready_item/catalog_allready_greenoffice.png'
-
     },
     {
       title: 'Экологичный бизнес-центр',
       count: '18',
       link: 'readyset/ecocenter',
       image: 'images/ready_item/catalog_allready_ecobisness.png',
-      hoverimage: 'images/ready_item/catalog_allready_ecobisness_hover.png'
+      hoverimage: 'images/ready_item/catalog_allready_ecobisness_hover.png',
+      left: '-64',
+      textleft: '+ 104'
     },
 
     {
@@ -657,14 +659,17 @@ const initialState = {
       count: '32',
       link: 'readyset/forcomplect',
       image: 'images/ready_item/catalog_allready_fullcomplect.png',
-      hoverimage: 'images/ready_item/catalog_allready_fullcomplect.png'
+      hoverimage: 'images/ready_item/catalog_allready_fullcomplect.png',
+      left: '-64',
+      textleft: '+ 100'
     },
     {
       title: 'Для клининговых сервисов',
       count: '47',
       link: 'readyset/forclining',
       image: 'images/ready_item/catalog_allready_clining.png',
-      hoverimage: 'images/ready_item/catalog_allready_clining.png'
+      hoverimage: 'images/ready_item/catalog_allready_clining.png',
+      textleft: '+ 40'
     }
   ]
 };

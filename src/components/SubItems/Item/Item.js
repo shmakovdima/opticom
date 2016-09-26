@@ -59,10 +59,8 @@ $.fn.ForceNumericOnly =function(){
 
 class LoveButton extends Component {
   changeLove() {
-
     let array = JSON.parse(JSON.stringify(this.props.data.lovedItems))
     let id = this.props.data.item.id
-
     if (array.indexOf(id) == -1) {
       this.props.setLove(array.concat(id))
     }else{
