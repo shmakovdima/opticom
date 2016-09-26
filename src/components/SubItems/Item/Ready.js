@@ -65,12 +65,11 @@ export default class Ready extends Component  {
                   words.map(function(item){
                     return (<span>{item+' '}  <div style={height} className='ready_title_adds'></div></span>)
                   })
-                }
-                
-                
+                }                
               </Link>
-              <div className='ready_count'>{count}</div>
+              <div className='ready_count hidden-xs'>{count}</div>
             </div>
+             <div className='ready_count_xs'>{count}</div>
           </div>
         </div>
       </div>

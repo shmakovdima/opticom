@@ -31,7 +31,7 @@ class AllIsReady extends Component {
           <div className='row ready_container'>
           {
             allIsReady.map(function(item){
-              return(<div className='col-lg-4 col-md-4 ready_main'><Ready data={item} key={++key}/></div>)
+              return(<div className='col-lg-4 col-xs-12 col-md-4 col-sm-6 ready_main'><Ready data={item} key={++key}/></div>)
             })
           }
           </div>

@@ -85,6 +85,19 @@
     line-height 22px
     text-transform uppercase
     
+    &_xs
+      z-index 15
+      bottom
+      color #111111
+      left 20%
+      padding-left 60px
+      text-align center
+      font-size 26px
+      bottom 33px
+      text-transform uppercase
+      font-family FuturaPTMedium
+      position absolute
+
   &_hover
     opacity 0
     left 0px
@@ -111,3 +124,40 @@
           background: -o-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
           background: -ms-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
           background: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%)    
+          
+@media (max-width: 1200px)
+  .ready
+    &_image
+    &_hover
+      max-height 205px
+      
+@media (max-width: 991px)
+  .ready
+    &_image
+    &_hover
+      max-height 200px
+      
+    &_addons
+      left 20%!important
+      
+    &_block
+      left 0px!important
+      
+@media (max-width: 768px)
+  .ready
+    margin-bottom 70px
+    
+
+    &_addons
+      width auto
+      top 35px
+
+    &_title
+      font-size 48px
+      line-height 48px
+    &_image
+    &_hover
+      min-height 450px
+      max-height 450px
+    
+      

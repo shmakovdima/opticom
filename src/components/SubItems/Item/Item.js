@@ -220,7 +220,7 @@ class Item extends Component {
      
             {}
           </div>
-          <Link className='item_title' to={link} title={title}>{titleshow}</Link>
+          <Link className='item_title text-left' to={link} title={title}>{titleshow}</Link>
           <span className='item_vendorcode'>{vendorcode}</span>
           {cost}
           <div className='item_desription'>
