@@ -23,7 +23,6 @@ class CatalogHeader extends Component {
 
    var breadcrumb_link =  'http://' + window.location.host + '/'
     return(
-
     <div>
       <section className='category_header'>
         <div className='container'>
