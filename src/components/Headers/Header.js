@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import * as pageActions from '../../actions/showMenu'
-
+import $ from 'jquery'
 import { bindActionCreators } from 'redux'
 
 class HeaderSearch extends Component {
@@ -39,7 +39,8 @@ class HeaderCount extends Component {
 class Header extends Component {
 
   showMenu(){
-    this.props.pageActions.showMenu(!this.props.show_menu)
+    $('body').addClass('overflow');
+    this.props.pageActions.showMenu(!this.props.show_menu);
   }
 
   render() {

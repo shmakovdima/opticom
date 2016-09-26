@@ -57,78 +57,78 @@ const initialState = {
       childrens: [ 
         {
           title: 'Канцелярские товары',
-          link: 'optiline',
+          link: 'catalog/subcategory',
           childrens: [
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }   
           ]
         } 
         ,
         {
           title: 'Канцелярские товары',
-          link: 'optiline',
+          link: 'catalog/subcategory',
           childrens: [
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }   
           ]
         }
         ,
         {
           title: 'Канцелярские товары',
-          link: 'optiline',
+          link: 'catalog/subcategory',
           childrens: [
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }
             ,
             {
               title: 'Канцелярские товары',
-              link: 'optiline'
+              link: 'catalog/subcatalog/category'
             }   
           ]
         }     

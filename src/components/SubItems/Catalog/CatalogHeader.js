@@ -6,13 +6,14 @@ import {connect } from 'react-redux'
 import Slider from 'react-slick'
 import * as pageActions from '../../../actions/showMenu'
 import { bindActionCreators } from 'redux'
+import $ from 'jquery'
 
 class Carousel_Item extends Component {
   render() {
     const image = '/images/categories/'+this.props.Category.image
     const title = this.props.Category.title
     const count = this.props.Category.count + ' ' + wordend(this.props.Category.count,['товар','товара','товаров'])
-    const link = this.props.Category.link
+    const link = '/'+this.props.Category.link
 
     return(
       <div className='catalog_header_slider_item '>
@@ -36,7 +37,7 @@ class CarouselCatalog extends Component {
 
 
   showMenu(){
-
+    $('body').addClass('overflow');
     this.props.showMenu(!this.props.show_menu)
   }
 
