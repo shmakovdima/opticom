@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const path = require('path');
-const SpritesmithPlugin = require('webpack-spritesmith');
+//const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
   devtool: 'source-map',
@@ -22,7 +22,7 @@ module.exports = {
 
   plugins: [
 
-      new SpritesmithPlugin({
+/*      new SpritesmithPlugin({
         src: {
             cwd: path.resolve('./images/sprites'),
             glob: '*.png'
@@ -34,7 +34,7 @@ module.exports = {
         apiOptions: {
             cssImageRef: "-sprite.png"
         }
-    }),
+    }),*/
 
     new webpack.DefinePlugin({
       'process.env': {

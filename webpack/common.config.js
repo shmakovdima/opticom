@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
 const merge = require('webpack-merge');
 
-var SpritesmithPlugin = require('webpack-spritesmith');
+//var SpritesmithPlugin = require('webpack-spritesmith');
 
 const development = require('./dev.config.js');
 const production = require('./prod.config.js');
