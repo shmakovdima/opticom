@@ -431,6 +431,350 @@ const initialState = {
 
   ],
 
+  curItem: {
+    id: 1,
+    eco: true,
+    discount: true,
+    new: true,
+    vendorcode: 'is-29381',
+    description: 'Экономичное средство. Удаляет жир, способствует быстрому высыханию посуды.',
+    cost:{
+        one: 2100,
+        discountone: 1800,
+        discountpackaging: 13000,
+        packaging: 15000
+    },
+    image: '',
+
+    fulldescriptionlink: '/fulldescriptionlink',
+    title: 'Пики декоративные «Булава» «Пласт-Лидер», пластик, 8,5 см, 400 шт. в упаковке, 35 упаковок в коробке',
+    breadcrumbs: [
+      {
+        title: 'Каталог',
+        link: 'catalog'
+      }
+      , 
+      {
+        title: 'Профессиональная химия',
+        link: 'subcatalog'
+      }
+      ,
+      {
+        title: 'Кухня',
+        link: 'subcatalog'
+      }
+    ],
+    allSetReady:[
+      {
+        title: 'Не для вашей гостиницы или отеля',
+        count: '13',
+        link: 'readyset/forhotel',
+        image: 'images/ready_item/catalog_allready_hotel.png',
+        hoverimage: 'images/ready_item/catalog_allready_hotel.png',
+        textleft: '+ 24'
+      },
+      {
+        title: 'В зеленый офис ежемесячно',
+        count: '23',
+        link: 'readyset/greenoffice',
+        image: 'images/ready_item/catalog_allready_greenoffice.png',
+        hoverimage: 'images/ready_item/catalog_allready_greenoffice.png'
+      },
+      {
+        title: 'Экологичный бизнес-центр',
+        count: '18',
+        link: 'readyset/ecocenter',
+        image: 'images/ready_item/catalog_allready_ecobisness.png',
+        hoverimage: 'images/ready_item/catalog_allready_ecobisness_hover.png',
+        left: '-64',
+        textleft: '+ 104'
+      },
+
+      {
+        title: 'Ассортимент для небольшого магазина',
+        count: '46',
+        link: 'readyset/forsmallshop',
+        image: 'images/ready_item/catalog_allready_smallshop.png',
+        hoverimage: 'images/ready_item/catalog_allready_smallshop.png'
+        
+      },
+      {
+        title: 'Полный комплект для уборки квартиры',
+        count: '32',
+        link: 'readyset/forcomplect',
+        image: 'images/ready_item/catalog_allready_fullcomplect.png',
+        hoverimage: 'images/ready_item/catalog_allready_fullcomplect.png',
+        left: '-64',
+        textleft: '+ 100'
+      },
+      {
+        title: 'Для клининговых сервисов',
+        count: '47',
+        link: 'readyset/forclining',
+        image: 'images/ready_item/catalog_allready_clining.png',
+        hoverimage: 'images/ready_item/catalog_allready_clining.png',
+        textleft: '+ 40'
+      }
+    ],
+    BuyToo: [
+      {
+        id: 7,
+        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+        eco: false,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: false,
+        new: false,
+        cost:{
+          one: 2100,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      }
+      ,
+      {
+        id: 6,
+        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров dsgfsdf dsfadsf sdfdafsfsd',
+        eco: true,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: false,
+        new: false,
+        cost:{
+          one: 2100,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: 'Средство для мытья посуды.',
+        eco: false,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: false,
+        new: true,
+        cost:{
+          one: 2100,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      },
+      {
+        id: 9,
+        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+        eco: false,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: true,
+        new: false,
+        cost:{
+          one: 2100,
+          discountone: 1800,
+          discountpackaging: 13000,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      }
+      ,
+      {
+        id: 5,
+        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+        eco: false,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: true,
+        new: false,
+        cost:{
+          one: 2100,
+          discountone: 1800,
+          discountpackaging: 13000,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      }
+      ,
+      {
+        id: 7,
+        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+        eco: false,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: false,
+        new: false,
+        cost:{
+          one: 2100,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      }
+      ,
+      {
+        id: 6,
+        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров dsgfsdf dsfadsf sdfdafsfsd',
+        eco: true,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: false,
+        new: false,
+        cost:{
+          one: 2100,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: 'Средство для мытья посуды.',
+        eco: false,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: false,
+        new: true,
+        cost:{
+          one: 2100,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      },
+      {
+        id: 9,
+        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+        eco: false,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: true,
+        new: false,
+        cost:{
+          one: 2100,
+          discountone: 1800,
+          discountpackaging: 13000,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      }
+      ,
+      {
+        id: 5,
+        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+        eco: false,
+        link: 'catalog/testsubcategory/testcategory/testitem',
+        vendorcode: 'is-29381',
+        image: 'images/items/item_item_example.png',
+        discount: true,
+        new: false,
+        cost:{
+          one: 2100,
+          discountone: 1800,
+          discountpackaging: 13000,
+          packaging: 15000
+        },
+        description:[
+          {
+            title: 'Объем',
+            value: '1л'
+          },
+          {
+            title: 'Тара',
+            value: '1, 10 шт'
+          }
+        ]
+      }
+
+    ]
+
+  }
+  ,
   categoryData: {
     title: 'Кухня'
     ,
