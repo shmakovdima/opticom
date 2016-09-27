@@ -585,12 +585,12 @@
 
 .itempage
   
-  
-  .item_order
-    height auto
-    position relative
-    width 228px
-    clear left
+  .category_header
+    .item_order
+      height auto
+      position relative
+      width 228px
+      clear left
 
   .category_header 
     margin-top -40px
@@ -757,3 +757,21 @@
   h2
     font-size: 56px
     padding-bottom 20px
+    
+
+@media (max-width: 1200px)
+  .itempage
+    .category_header
+      h1
+        font-size 40px
+        line-height 46px
+        
+    &_image
+      background-size cover
+      
+    &_fulldesc
+      right 70px
+      
+    &_addings
+      width 49.0%
+      
