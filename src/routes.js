@@ -18,6 +18,7 @@ export const routes = (
       <IndexRoute component={Home} />
       <Route path='catalog' component={Catalog} />
       <Route path='catalog/subcatalog' component={SubCategory} />
+      <Route path='catalog/subcategory' component={SubCategory} />
       <Route path='catalog/subcatalog/category' component={Category} />
       <Route path='catalog/subcatalog/category/testitem' component={ItemPage} />
 
