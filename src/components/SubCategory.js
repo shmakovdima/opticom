@@ -6,7 +6,7 @@ import '../stylus/components/catalog.styl';
 
 
 import React, { Component } from 'react'
-import HeaderDark from '../components/Headers/HeaderDark'
+import HeaderLight from '../components/Headers/HeaderLight'
 import CategoryHeader from './SubItems/Category/CategoryHeader'
 import AllIsReady from './SubItems/Catalog/AllIsReady'
 import {connect } from 'react-redux'
@@ -17,7 +17,7 @@ class SubCategory extends Component {
     let categoryData= this.props.categoryData
     return (
       <div>
-        <HeaderDark/>
+        <HeaderLight/>
         <CategoryHeader categoryData={categoryData}/>
         <AllIsReady/>
       </div>
