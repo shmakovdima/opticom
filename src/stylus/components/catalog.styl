@@ -188,13 +188,16 @@
 
 @media (max-width: 768px)
 
+  .padding_768
+    padding-left 15px
+
   .interesed
     overflow hidden!important
 
   .catalog
     &_preferences
       &_link
-        top -20px
+        top -40px
         
         & span
         & a
@@ -202,17 +205,25 @@
           font-size 18px
     
     &_header
-      height 500px
+      height 600px
       padding-top 120px
       
+      &_slider
+        &_item
+          &_image
+            margin-bottom 10px
+            height 60px
+            background-size contain
+      
       &_consult
-        margin-top 100px
-        font-size 34px
+        margin-top 50px
+        font-size 16px
       
         &_link
-          margin-top 26px
+          word-break break-word
+          margin-top 0px
           max-width 100%
-          font-size 30px
+          font-size 14px
 
       h1 
         font-size 48px
@@ -224,62 +235,71 @@
         max-width 140px
       
       &_slider
-        padding-top 70px
+        padding-top 35px
         
         &_loadmore
           max-width 1000px
-          margin-top 20px
+          margin-top 0px
+          top 0px
           padding-top 0px
-          font-size 30px
+          font-size 14px
           
           & span
             padding-bottom 8px
         
         &_item
-          padding-right 60px
+          padding-right 30px
           
           &_title
-            max-width 250px
-            font-size 34px
-            line-height 34px
+            max-width 130px
+            font-size 16px
+            line-height 16px
             
           &_count
-            padding-top 12px
-            font-size 20px
+            padding-top 6px
+            font-size 10px
             
 
     &_preferences
-      margin-top 120px
+      margin-top 50px
       
       &_item
-        padding-top 270px
-        margin-top 80px
+        padding-top 250px
+        margin-top 30px
+        
+        & + &
+          margin-top -100px
         
         & p
-          margin-top 30px
-          font-size 32px
-          line-height 40px
+          margin-top 15px
+          font-size 16px
+          line-height 20px
           
         & div
-          top -60px
+          top -30px
+          height 150%
 
         & + &
           margin-left 0px
           
         &_1
           div
-            background url(../../images/preferences/mobile_catalog_complex_assortiment.png) center -90px no-repeat
+            background url(../../images/preferences/mobile_catalog_complex_assortiment.png) center 50px no-repeat
+            background-size 50%
           
         &_2
           div
-            background url(../../images/preferences/mobile_catalog_complex_education.png) center 0px no-repeat
+            background url(../../images/preferences/mobile_catalog_complex_education.png) center 100px no-repeat
+            background-size 50%
           
         &_3
           div
-            background url(../../images/preferences/mobile_catalog_complex_delivery.png) center -80px no-repeat
+            background url(../../images/preferences/mobile_catalog_complex_delivery.png) center 100px no-repeat
+            background-size 50%
           
         &_4
           div
-            background url(../../images/preferences/mobile_catalog_complex_servis.png) center -70px no-repeat
+            background url(../../images/preferences/mobile_catalog_complex_servis.png) center 100px no-repeat
+            background-size 50%
 
 

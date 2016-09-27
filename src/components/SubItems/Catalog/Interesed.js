@@ -57,7 +57,7 @@ class Interesed extends Component {
         <div className='container'>
           <div className='row'>
             <div className='Interesed_before'></div>
-            <h2 className='col20-lg-offset-1'>
+            <h2 className='col-xs-12 col20-lg-offset-1'>
               <span>Вас могут </span>
               <wbr/>
               <span>заинтересовать</span>
@@ -68,9 +68,11 @@ class Interesed extends Component {
           <div className='row'>
 
 
-             <If condition={windowWidth<=768 }>
+             <If condition={windowWidth<768 }>
                 <Then>
                   <Slider  {...settings}>
+                    <div className='padding_768'>
+                    </div>
                     {
                       Interesed.map(function(item) {
                         if ((only_eco == true) && (item.eco!=true)) return false;

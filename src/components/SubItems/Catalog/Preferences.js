@@ -6,7 +6,7 @@ export default class Preferences extends Component {
       <section className='catalog_preferences'>
         <div className='container'>
           <div className='row'>
-            <h2 className='col20-lg-offset-1'>Полный комплекс услуг</h2>
+            <h2 className='col20-lg-offset-1 col-xs-12'>Полный комплекс услуг</h2>
             <div className='catalog_preferences_item catalog_preferences_item_1 col20-lg-4 col20-md-4 col-sm-6'>
               <div></div>
               <h3>Подбор ассортимента</h3>

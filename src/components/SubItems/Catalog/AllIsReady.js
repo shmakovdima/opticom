@@ -20,8 +20,8 @@ class AllIsReady extends Component {
       <section className='catalog_preferences'>
         <div className='container'>
           <div className='row'>
-            <h2 className='col20-lg-offset-1'>Все уже готово</h2>
-            <span className='catalog_preferences_link'>
+            <h2 className='col-xs-12 col20-lg-offset-1'>Все уже готово</h2>
+            <span className='col-xs-12 catalog_preferences_link'>
               <span className='col20-lg-offset-1'>Попробуйте наши </span>
               <Link  to='catalog/ready_set' className='green_underline' title='Готовые наборы' >готовые наборы</Link>
             </span>

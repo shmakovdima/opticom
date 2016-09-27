@@ -416,32 +416,34 @@
 @media (max-width: 768px)
 
   .item
+    transition none!important
     position relative
     float none
     max-width 1000px
-    margin-bottom 40px
-    margin-top 40px
-    width calc(100vw - 100px)
+    margin-bottom 20px
+    margin-top 20px
+    width calc(100vw - 75px)
     
 
     &_under
-      min-height 830px
-      padding 60px
+      min-height 630px
+      padding 30px
       top 0px  
     
     &:hover
     &:active
       top 0px
       position relative
-      width calc(100vw - 100px)
+      width calc(100vw - 75px)
+      
      .item 
         &_under
           top 0px!important
 
 
     &_love
-      width 44px
-      height 44px
+      width 24px
+      height 24px
       background-size contain!important
 
     &_slide
@@ -449,36 +451,37 @@
     
     
     &_vendorcode
-      margin-top 20px
-      font-size: 28px
+      margin-top 10px
+      font-size: 14px
 
       
     &_eco
-      width 33px
-      height 62px
+      width 18px
+      height 31px
       background-size contain
 
     &_title 
-      margin-top 40px
-      line-height 36px
+      margin-top 20px
+      line-height 18px
       color black
-      font-size: 36px
+      font-size: 18px
       
 
     &_bottom
       position absolute
-      padding-top 60px
-      bottom 60px
+      padding-top 30px
+      bottom 30px
       
     &_discount
-      margin-bottom 20px
-      font-size 36px
+      margin-bottom 10px
+      font-size 18px
       
     &_desription
       margin-top 5px
-      line-height 40px
-      font-size 32px
+      line-height 20px
+      font-size 16px
       margin-top 60px
+    
 
         
 
@@ -486,7 +489,7 @@
       width 100%
       height 0px
       overflow hidden
-      margin-top 50px
+      margin-top 25px
       position relative
       background transition
       
@@ -494,44 +497,44 @@
       & button
         background transparent
         float left
-        padding-left 20px
-        padding-right 20px
+        padding-left 10px
+        padding-right 10px
         
       &_button
         text-transform uppercase
-        line-height 80px
+        line-height 40px
         color white
         padding-right inherit!important
         padding-left inherit!important
         float right!important
         padding-top 0px
-        font-size 24px!important
+        font-size 12px!important
         font-family FuturaPTBold
         background color_green!important
         transition 150ms all ease-in
-        width calc(100% - 160px)
+        width calc(100% - 80px)
         
       & input
         float left
         width 40px
         text-align center
-        line-height 80px
+        line-height 60px
         font-family FuturaPTHeavy
-        font-size 32px
+        font-size 16px
         
       &_minus
       &_plus
         font-family FuturaPTHeavy
-        font-size 40px
-        line-height 80px
+        font-size 20px
+        line-height 60px
       
       &_buttons
         & button
           background transparent
           line-height 22px
           font-family FuturaPTBold
-          font-size 20px
-          padding 9px 18px 
+          font-size 10px
+          padding 5px 19px 
           
           &.active
             background #f0f0f0
@@ -545,12 +548,12 @@
 
     &_new
       bottom -20px
-      font-size: 20px
+      font-size: 10px
       
     &_image
       background-size contain
       margin-top 60px
-      height 300px
+      height 150px
       width 100%
       
 @media (max-width: 550px)
