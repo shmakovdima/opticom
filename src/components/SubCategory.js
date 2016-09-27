@@ -7,16 +7,19 @@ import '../stylus/components/catalog.styl';
 
 import React, { Component } from 'react'
 import HeaderDark from '../components/Headers/HeaderDark'
-import CatalogHeader from './SubItems/Category/CategoryHeader'
+import CategoryHeader from './SubItems/Category/CategoryHeader'
 import AllIsReady from './SubItems/Catalog/AllIsReady'
-import Preferences from './SubItems/Catalog/Preferences'
+import {connect } from 'react-redux'
 
-export default class Catalog extends Component {
+
+class SubCategory extends Component {
   render() {
+    let categoryData= this.props.categoryData
     return (
       <div>
         <HeaderDark/>
-        <CategoryHeader/>
+        <CategoryHeader categoryData={categoryData}/>
+        <AllIsReady/>
       </div>
     )
   }
@@ -27,5 +30,16 @@ export default class Catalog extends Component {
 
 
 
+
+
+
+function mapStateToProps (state) {
+  return {
+    categoryData: state.pageData.categoryData,
+    only_eco: state.user.only_eco
+  }
+}
+
+export default connect(mapStateToProps)(SubCategory)
 
 
