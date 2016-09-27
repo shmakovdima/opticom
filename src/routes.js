@@ -5,6 +5,7 @@ import App from './containers/App'
 
 import Catalog from './components/Catalog'
 import Category from './components/Category'
+import SubCategory from './components/SubCategory'
 
 import ItemPage from './components/ItemPage'
 
@@ -16,7 +17,7 @@ export const routes = (
     <Route path='/' component={App}>      
       <IndexRoute component={Home} />
       <Route path='catalog' component={Catalog} />
-      <Route path='catalog/subcatalog' component={Catalog} />
+      <Route path='catalog/subcatalog' component={SubCategory} />
       <Route path='catalog/subcatalog/category' component={Category} />
       <Route path='catalog/subcatalog/category/testitem' component={ItemPage} />
 
