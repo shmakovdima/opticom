@@ -4,7 +4,7 @@ require('!style!css!slick-carousel/slick/slick-theme.css');
 import '../stylus/components/slick.styl';
 import '../stylus/components/category.styl';
 import {connect } from 'react-redux'
-
+import {Link} from 'react-router'
 import React, { Component } from 'react'
 import HeaderLight from '../components/Headers/HeaderLight'
 import CategoryHeader from './SubItems/Category/CategoryHeader'
@@ -79,6 +79,10 @@ class Catalog extends Component {
 
     var showgor = this.state.showgor
 
+    const isLogged = this.props.isLogged
+
+    const showgormargin = (showgor) ?  '' : 'category_nologged_margin'
+
     return (
       <div>
         <HeaderLight/>
@@ -130,8 +134,20 @@ class Catalog extends Component {
                         <div>                        
                          <Catalog_Group only_eco={only_eco} itemgor={showgor} items={Items}/>
                         </div>
-
-
+                        <div>
+                          <If condition={isLogged == false}>
+                            <Then>
+                              <div className={showgormargin}>
+                                <div className='category_nologged'>
+                                  <div className='category_nologged_absolute'>
+                                    <Link className='category_nologged_link' to='/register' title='Регистрация'>Зарегистрируйтесь</Link>
+                                    <span className='category_nologged_description'>Чтобы получать персональные предложения. Это займёт не более 2 минут.</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </Then>
+                          </If>
+                        </div>
                       </Panel>
                     )
 
@@ -155,7 +171,8 @@ class Catalog extends Component {
 function mapStateToProps (state) {
   return {
     categoryData: state.pageData.categoryData,
-    only_eco: state.user.only_eco
+    only_eco: state.user.only_eco,
+    isLogged: state.user.isLogged
   }
 }
 

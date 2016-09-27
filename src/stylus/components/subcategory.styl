@@ -1,0 +1,22 @@
+@import '../sprite.styl'
+@import '../variables.styl'
+
+.subcategory
+  &_popular
+    &_link
+      position relative
+      display block
+      margin-top 45px
+      font-family FuturaPTHeavy
+      font-size 32px
+      line-height 36px
+      color rgba(0, 0, 0, 0.8)
+      
+      & a
+        cursor pointer
+        
+@media (max-width: 991px)
+  .subcategory
+    &_popular
+      &_link
+        margin-bottom 40px

@@ -27,6 +27,47 @@
   z-index 34
 
 .category
+  
+  &_nologged
+    min-height 186px
+    width 100%
+    float left
+    position relative
+    z-index 15
+    
+    &_margin
+      & > .category_nologged
+        padding-top 20px
+        z-index 2
+
+    &_description
+      font-family FuturaPTBook
+      float left
+      margin-top 16px
+      position relative
+      clear left
+      color #ffffff
+      font-size 16px
+
+    &_absolute
+      display block
+      padding-top 77px
+      padding-left 70px
+      height 210px
+      bottom 0px  
+      background url(../../images/planet.png)  no-repeat
+      position absolute
+      width 100%
+      
+    & a
+      height auto
+      color white
+      font-size 30px
+      font-family FuturaPTHeavy
+      position relative
+      display block
+      float left
+
   &_norm
   &_gor
     position relative

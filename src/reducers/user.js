@@ -1,6 +1,7 @@
 const initialState = {
   only_eco: false,
-  show_menu: false
+  show_menu: false,
+  isLogged: false
 }
 
 export default function user(state = initialState, action) {

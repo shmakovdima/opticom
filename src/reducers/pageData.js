@@ -803,6 +803,45 @@ const initialState = {
 
   }
   ,
+  subCategory: {
+    title: 'Кухня'
+    ,
+    popularSet: [
+      {
+        title: 'Для вашей гостиницы или отеля',
+        cost: '35720',
+        description: 'Канцелярские товары, Бытовая химия…',
+        count: '13',
+        link: 'readyset/forhotel',
+        image: 'images/ready_item/catalog_allready_hotel.png',
+        hoverimage: 'images/ready_item/catalog_allready_hotel.png',
+        textleft: '+ 24'
+      },
+      {
+        title: 'В зеленый офис ежемесячно',
+        count: '23',
+        cost: '35720',
+        link: 'readyset/greenoffice',
+        image: 'images/ready_item/catalog_allready_greenoffice.png',
+        hoverimage: 'images/ready_item/catalog_allready_greenoffice.png'
+      }
+    
+    ]
+    ,
+    breadcrumbs: [
+      {
+        title: 'Каталог',
+        link: 'catalog'
+      }
+      , 
+      {
+        title: 'Подкаталог',
+        link: 'subcatalog'
+      }
+    ]
+  }
+
+  ,
   categoryData: {
     title: 'Кухня'
     ,
