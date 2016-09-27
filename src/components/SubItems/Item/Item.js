@@ -6,6 +6,8 @@ import { bindActionCreators } from 'redux'
 import * as pageActions from '../../../actions/setLove'
 
 import wordlenght from '../../function/wordlenght'
+import { DropdownButton, MenuItem} from 'react-bootstrap'
+
 
 import $ from 'jquery'
 
@@ -137,11 +139,13 @@ class Item extends Component {
     this.setState({
       one: true
     })
+    $('.btn-group').removeClass('open')
   }
   setAlot() {
     this.setState({
       one: false
     })
+    $('.btn-group').removeClass('open')
   }
 
   render() {
@@ -151,7 +155,7 @@ class Item extends Component {
       return text.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     }
 
-
+    var dropdownmode = (this.state.one) ? 'поштучно' : 'упаковки' 
 
     const data = this.props
     const {setLove} = this.props.pageActions
@@ -194,6 +198,7 @@ class Item extends Component {
       cost = (<div className='item_bottom'>
         <span className='item_cost'>{textcost}</span>
         <span className='item_cost_description'>{additiontext}</span>
+        <button className='item_hide_gor item_order_button'>в корзину</button>
       </div>)
     }else{
       const discountcost = cutnumber(this.props.item.cost.discountone)+ ' ₽'
@@ -202,48 +207,75 @@ class Item extends Component {
         <span className='item_discount'>{textcost}</span>
         <span className='item_cost'>{discountcost}</span>
         <span className='item_cost_description'>{additiontext}</span>
+        <button className='item_hide_gor item_order_button'>в корзину</button>
       </div>)
     }
+
+    let windowWidth = this.props.windowWidth
 
     const titleshow = wordlenght(title, 50)
 
 
+    console.log(this.props.itemgor+ ' '+windowWidth)
+
+    const itemgor = (this.props.itemgor && (windowWidth>991))  ? 'item_gor' : ''
 
     return(
-      <div className='item'>
-        <div className='item_under'>
-          <LoveButton data={data} setLove={setLove} />
-          <div className='item_image_block'>
-            {newitem}
-           
-              <div className='item_image' style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}}></div>
-     
-            {}
-          </div>
-          <Link className='item_title text-left' to={link} title={title}>{titleshow}</Link>
-          <span className='item_vendorcode'>{vendorcode}</span>
-          {cost}
-          <div className='item_desription'>
-            {
-             description.map(function(item) {
-                return (
-                  <div className='text-left'>
-                    <span className='item_desription_value '><span className='item_desription_title'>{item.title}:</span> {item.value}</span>
-                  </div>
-                )
-              })
-            }
-          </div>
-          <div className='item_order'>
-            <div className='item_order_buttons'>
-              <button className={item_order_buttons_one} onClick={::this.setOne}>штуки</button>
-              <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
+      <div className={itemgor}>        
+        <div className='item '>
+          <div className='item_under'>
+            <LoveButton data={data} setLove={setLove} />
+            <div className='item_image_block'>
+              {newitem}
+             
+               <div className='item_image' style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}}></div>
+              {}
             </div>
-            <div className='item_order_body'>
-              <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-              <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
-              <button className='item_order_plus' onClick={::this.setPlus}>+</button>
-              <button className='item_order_button'>В корзину</button>
+            <div className='item_title_block'>
+              <Link className='item_title text-left' to={link} title={title}>{titleshow}</Link>
+              <span className='item_vendorcode'>{vendorcode}</span>
+            </div>
+             {cost}
+            <div className='item_order_body item_hide_gor pull-right'>
+                <button className='item_order_minus' onClick={::this.setMinus}>-</button>
+                <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
+                <button className='item_order_plus' onClick={::this.setPlus}>+</button>
+            </div>
+
+            <div className='item_dropdown item_hide_gor pull-right'>
+              <DropdownButton title={dropdownmode} id='bg-nested-dropdown'>
+                <div>
+                  <MenuItem onClick={::this.setOne} eventKey='1'>поштучно</MenuItem>
+                  <MenuItem onClick={::this.setAlot} eventKey='2'>упаковки</MenuItem>
+                </div>
+              </DropdownButton>
+            </div>
+
+
+           
+
+            <div className='item_desription'>
+              {
+               description.map(function(item) {
+                  return (
+                    <div className='text-left'>
+                      <span className='item_desription_value '><span className='item_desription_title'>{item.title}:</span> {item.value}</span>
+                    </div>
+                  )
+                })
+              }
+            </div>
+            <div className='item_order'>
+              <div className='item_order_buttons'>
+                <button className={item_order_buttons_one} onClick={::this.setOne}>штуки</button>
+                <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
+              </div>
+              <div className='item_order_body'>
+                <button className='item_order_minus' onClick={::this.setMinus}>-</button>
+                <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
+                <button className='item_order_plus' onClick={::this.setPlus}>+</button>
+                <button className='item_order_button'>В корзину</button>
+              </div>
             </div>
           </div>
         </div>
@@ -260,7 +292,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps (state) {
   return {
-    lovedItems: state.pageData.lovedItems
+    lovedItems: state.pageData.lovedItems,
+    windowWidth: state.pageData.windowWidth
   }
 }
 

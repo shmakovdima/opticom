@@ -11,18 +11,21 @@ import CategoryHeader from './SubItems/Category/CategoryHeader'
 import Interesed from './SubItems/Category/Interested'
 
 import Item from './SubItems/Item/Item'
-
+import { If, Then, Else } from 'react-if';
 import { Accordion, Panel } from 'react-bootstrap'
 
 
 class Catalog_Group extends Component {
 
-  
-
-
   render() {
 
     const Items = this.props.items.items
+    let itemgor = this.props.itemgor
+    const windowWidth = this.props.windowWidth
+
+    if (windowWidth<991) {
+      itemgor = false
+    }
 
     return(
        <div>
@@ -30,7 +33,7 @@ class Catalog_Group extends Component {
           Items.map(function(item, key){
             return(
               <div className=''>
-                <Item item={item} key={key}/>
+                <Item itemgor={itemgor} item={item} key={key}/>
               </div>
             )
             
@@ -52,15 +55,24 @@ class Catalog extends Component {
     super(props);
     this.state = {
       showgor: false
-     
     }
+  }
+
+  setGor() {
+    this.setState({showgor: true})
+  }
+
+  setNorm() {
+    this.setState({showgor: false})
   }
 
   render() {
     let categoryData = this.props.categoryData
 
     let categoryArray = this.props.categoryData.items
+    var self = this
 
+    var showgor = this.state.showgor
 
     return (
       <div>
@@ -68,7 +80,7 @@ class Catalog extends Component {
         <CategoryHeader categoryData={categoryData}/>
         <section className='category_section'>
           <div className='container'>
-   
+    
               <Accordion>
                 {
                   categoryArray.map(function(item,key){
@@ -76,8 +88,45 @@ class Catalog extends Component {
                     var Items = item
 
                     return(
+
                       <Panel header={item.title} eventKey={key}>
-                        <Catalog_Group items={Items}/>
+                        <div className='buttons hidden-sm hidden-xs'>
+                          <If condition={showgor==false}>
+                            <Then>
+                              <div>
+                                <button onClick={::self.setNorm} className='category_norm pull-right active'>
+                                  <div>
+                                  </div>
+                                </button>
+                                <button  onClick={::self.setGor} className='category_gor pull-right'>
+                                  <div>
+                                  </div>
+                                </button>
+                              </div>
+                            </Then>
+                          
+                          <Else>
+                            <Then>
+                              <div>
+                                <button onClick={::self.setNorm} className='category_norm pull-right'>
+                                  <div>
+                                  </div>
+                                </button>
+                              <button  onClick={::self.setGor} className='category_gor pull-right  active'>
+                                <div>
+                                </div>
+                              </button>
+                              </div>
+                            </Then>
+                          </Else>
+                        </If>
+
+                        </div>
+                        <div>                        
+                         <Catalog_Group  itemgor={showgor} items={Items}/>
+                        </div>
+
+
                       </Panel>
                     )
 

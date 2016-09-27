@@ -5,16 +5,51 @@
 @import 'components/20colums.styl'
 @import 'components/text-align-media.styl'
 
+.btn-group.open .dropdown-toggle
+  padding-left 0px
 
+.dropdown-menu
+  border none!important
+  color color_green
+  box-shadow none
+  
+  & .menuitem
+    padding-top 10px
+    padding-left 5px
+    outline none!important
+    border none!important
+    box-shadow none !important
+
+.btn-default
+  padding-left 0px
+  background none!important
+  border none!important
+  font-family FuturaPTBook
+  color rgba(0, 0, 0, 0.8)
+  box-shadow none!important
+  
+  &:hover
+  &:active
+    background none!important
+    box-shadow none!important
+    border none!important
+    color color_green
+
+.panel-group 
+  .panel 
+    & + .panel
+      margin-top 40px
 .panel
   background-color transparent
+  margin-bottom 40px
   
   &-title
-    
     & > a
+      position relative
       font-family: FuturaPTHeavy
-      color: rgba(0, 0, 0, 0.8)
+      color: rgba(0, 0, 0, 0.9)
       font-size: 24px
+      margin-left 5%
 
   &-default
     border none
@@ -31,6 +66,26 @@
     padding 0px
     background-color none
     border none
+    
+    & a
+      
+      &:before
+        position: absolute
+        content: ''
+        width: 11px
+        height: 17px
+        transform: rotate(180deg)
+        left: -30px
+        bottom: 5px
+        display: block
+        background: url(/dist/5cd8cb5e5d4248847addffb0a080e911.png) no-repeat
+        background-size: cover
+      
+      &[aria-expanded="true"]
+        & .buttons
+        &:before
+          transform: rotate(270deg)
+
     
   &-body
     padding-left 0px
