@@ -6,10 +6,16 @@ import { bindActionCreators } from 'redux'
 import * as pageActions from '../../../actions/setLove'
 
 import wordlenght from '../../function/wordlenght'
+
+import cutnumber from '../../function/cutnumber'
+
 import { DropdownButton, MenuItem} from 'react-bootstrap'
-
-
 import $ from 'jquery'
+
+
+
+
+
 
 Array.prototype.removeByValue = function(item){
   var itemIndex = -1;
@@ -150,10 +156,7 @@ class Item extends Component {
 
   render() {
 
-    function cutnumber(text) {
-      text = text.toString();
-      return text.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    }
+
 
     var dropdownmode = (this.state.one) ? 'поштучно' : 'упаковки' 
 

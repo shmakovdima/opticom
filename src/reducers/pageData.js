@@ -434,6 +434,7 @@ const initialState = {
   curItem: {
     id: 1,
     eco: true,
+    boxdescription: 'В коробке 20 штук. В палете 4 коробки.',
     discount: true,
     new: true,
     vendorcode: 'is-29381',
@@ -444,7 +445,7 @@ const initialState = {
         discountpackaging: 13000,
         packaging: 15000
     },
-    image: '',
+    image: 'images/itempage/item.png',
 
     fulldescriptionlink: '/fulldescriptionlink',
     title: 'Пики декоративные «Булава» «Пласт-Лидер», пластик, 8,5 см, 400 шт. в упаковке, 35 упаковок в коробке',
@@ -464,6 +465,33 @@ const initialState = {
         link: 'subcatalog'
       }
     ],
+
+    accordings: [
+      {
+        title: 'Средство для мытья посуды Manudish Lemon',
+        href: 'catalog/subcatalog/category',
+        image: 'images/itempage/needed.png'
+      },
+      {
+        title: 'Средство для мытья посуды Manudish Lemon',
+        href: 'catalog/subcatalog/category',
+        image: 'images/itempage/needed.png'
+      },
+      {
+        title: 'Средство для мытья посуды Manudish Lemon',
+        href: 'catalog/subcatalog/category',
+        image: 'images/itempage/needed.png'
+      }
+      ,     
+      {
+        title: 'Средство для мытья посуды Manudish Lemon',
+        href: 'catalog/subcatalog/category',
+        image: 'images/itempage/needed.png'
+      }
+
+
+    ],
+
     allSetReady:[
       {
         title: 'Не для вашей гостиницы или отеля',
