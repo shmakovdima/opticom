@@ -23,6 +23,8 @@ class Catalog_Group extends Component {
     let itemgor = this.props.itemgor
     const windowWidth = this.props.windowWidth
 
+    const only_eco = this.props.only_eco
+
     if (windowWidth<991) {
       itemgor = false
     }
@@ -31,6 +33,7 @@ class Catalog_Group extends Component {
        <div>
         {
           Items.map(function(item, key){
+            if ((only_eco == true) && (item.eco!=true)) return false;
             return(
               <div className=''>
                 <Item itemgor={itemgor} item={item} key={key}/>
@@ -72,6 +75,8 @@ class Catalog extends Component {
     let categoryArray = this.props.categoryData.items
     var self = this
 
+    const only_eco = this.props.only_eco
+
     var showgor = this.state.showgor
 
     return (
@@ -112,7 +117,7 @@ class Catalog extends Component {
                                   <div>
                                   </div>
                                 </button>
-                              <button  onClick={::self.setGor} className='category_gor pull-right  active'>
+                              <button onClick={::self.setGor} className='category_gor pull-right  active'>
                                 <div>
                                 </div>
                               </button>
@@ -123,7 +128,7 @@ class Catalog extends Component {
 
                         </div>
                         <div>                        
-                         <Catalog_Group  itemgor={showgor} items={Items}/>
+                         <Catalog_Group only_eco={only_eco} itemgor={showgor} items={Items}/>
                         </div>
 
 
@@ -149,7 +154,8 @@ class Catalog extends Component {
 
 function mapStateToProps (state) {
   return {
-    categoryData: state.pageData.categoryData
+    categoryData: state.pageData.categoryData,
+    only_eco: state.user.only_eco
   }
 }
 

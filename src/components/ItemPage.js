@@ -26,6 +26,25 @@ class ItemPage extends Component {
     return(
       <div>
         <HeaderLight/>
+
+        <section className='category_header'>
+          <div className='container'>
+            <div className='row'>
+              <div className='category_header_absolute'>
+                <div className='col20-lg-offset-2 col20-md-offset-2col20-sm-offset-2 col20-lg-16 col20-md-16 col20-sm-16'>
+                <div className='category_header_white'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='row'>
+            
+            </div>
+          </div>
+        </section>
+
+
+
         <BuyToo buyToo={buyToo}/>
         <AllReadySet allSetReady={allSetReady}/>
       </div>
