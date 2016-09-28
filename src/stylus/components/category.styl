@@ -195,3 +195,43 @@
       font-family FuturaPTHeavy
       color: rgba(0, 0, 0, 0.8)
       font-size: 72px
+      
+
+@media (max-width: 768px)
+  
+  .breadcrumb
+    margin-bottom 5px
+    &-item 
+      & a
+        font-size 12px
+        
+    & > 
+      & li 
+        & + li:before
+          font-size 10px
+          padding 3px 7px
+
+
+  .category
+    &_header
+      padding-top 90px
+      
+      &_picture
+        position absolute
+        height 186px
+        right 15px
+        z-index -1
+        width 233px
+        background url(../../images/mobile_subcatalog.png) no-repeat
+        
+
+      
+      &_showmore
+        font-size 15px
+      
+      & h1
+        font-size 36px
+      
+    &_breadcrumb
+      width 100%!important
+      

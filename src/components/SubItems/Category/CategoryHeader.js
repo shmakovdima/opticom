@@ -29,14 +29,14 @@ class CatalogHeader extends Component {
           <div className='row'>
               <div className='category_header_absolute'>
                 <div className='col20-lg-offset-2 col20-md-offset-2col20-sm-offset-2 col20-lg-16 col20-md-16 col20-sm-16'>
-                <div className='category_header_white'>
+                <div className='hidden-xs category_header_white'>
                 </div>
               </div>
             </div>
           </div>
           <div className='row'>
             
-            <div className='col20-lg-offset-1 col15-lg-5  col15-md-6 col15-sm-6'>
+            <div className='category_breadcrumb col20-lg-offset-1 col15-lg-5  col15-md-6 col15-sm-6 '>
               <ol className='breadcrumb'>
                 {
                   breadcrumbs.map(function(item) {
@@ -51,15 +51,19 @@ class CatalogHeader extends Component {
                 }
 
               </ol>
-
+              <div className='hidden-lg hidden-md hidden-sm category_header_picture'></div>
               <h1>{title}</h1>
-              <Link to='/allisready' className='category_header_showmore greenlighted' title ='Показать популярные наборы'>Показать популярные наборы</Link>
+              
+              <Link to='/allisready' className='category_header_showmore greenlighted hidden-xs' title ='Показать популярные наборы'>Показать популярные наборы</Link>
+              <Link to='/allisready' className='category_header_showmore green_underline hidden-lg hidden-md hidden-sm' title ='Показать популярные наборы'>Показать популярные наборы</Link>
             </div>
 
   
-            <div className='col15-lg-9 col15-md-9  col15-sm-9 pull-right '>
+            <div className='col15-lg-9 col15-md-9 hidden-xs  col15-sm-9 pull-right'>
               <div className='category_header_green'>
-                <EcoCheckbox/>
+                <div className='hidden-xs'>
+                  <EcoCheckbox />
+                </div>
               </div>
             </div>
 

@@ -25,10 +25,10 @@ class SubCategory extends Component {
       <div>
         <HeaderLight/>
         <CategoryHeader categoryData={subCategory}/>
-        <section>
+        <section className='subcategory_section'>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-4 col20-md-6 col-sm-12'>
+              <div className='col20-lg-4 col20-md-6 col-sm-12 hidden-xs'>
                 <span className='subcategory_popular_link'>
                   <span>Попробуйте </span>
                   <Link to='allisready' title='Популярные наборы' className='greenborderbottom'>
@@ -53,32 +53,34 @@ class SubCategory extends Component {
           </div>
         </section>
         <section className='subcategory_section'>
-        <div className='container'>
-          <div className='row'>
-
-
-
-           
-            <h2 className='col-xs-12 col20-lg-offset-1'>
-              <span>Выбирайте, то что  </span>
-              <br/>
-              <span>подходит вам</span>
-            </h2>
-          </div>
-        </div>
           <div className='container'>
             <div className='row'>
-              {
-                selectSet.map(function(item, key) {
-                  return(
-                    <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4'>
-                      <ReadySelect data={item} key={++key} />
-                    </div>
-                  )
-                })
-              }
+              <h2 className='col-xs-12 col20-lg-offset-1 hidden-xs'>
+                <span>Выбирайте, то что  </span>
+                <br/>
+                <span>подходит вам</span>
+              </h2>
+
+              <h2 className='col-xs-12 col20-lg-offset-1 hidden-lg hidden-md hidden-sm'>
+                <span>Выбирайте, то что  </span>
+                <wbr/>
+                <span>подходит вам</span>
+              </h2>
             </div>
           </div>
+            <div className='container'>
+              <div className='row'>
+                {
+                  selectSet.map(function(item, key) {
+                    return(
+                      <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+                        <ReadySelect data={item} key={++key} />
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </div>
         </section>        
       </div>
     )

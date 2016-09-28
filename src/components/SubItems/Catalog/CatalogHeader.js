@@ -67,7 +67,7 @@ class CarouselCatalog extends Component {
         <div className='catalog_header_slider_block'>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12 catalog_header_slider slick_white'>
+              <div className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12  catalog_header_slider slick_white'>
                 <Slider  {...settings}>
                   <div  className='hidden-xs' key={slidernumber}>
                     <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>

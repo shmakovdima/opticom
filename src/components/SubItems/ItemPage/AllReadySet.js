@@ -25,7 +25,7 @@ class AllReadySet extends Component {
           <section className='catalog_preferences readyset'>
             <div className='container'>
               <div className='row'>
-                <h2 className='col20-lg-offset-1'>Есть в популярных наборах</h2>
+                <h2 className='col20-lg-offset-1 col-xs-12'>Есть в популярных наборах</h2>
               </div>
             </div>
             <div className='container'>

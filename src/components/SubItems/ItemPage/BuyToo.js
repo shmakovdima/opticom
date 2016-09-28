@@ -57,7 +57,7 @@ class BuyToo extends Component {
         <div className='container'>
           <div className='row'>
             <div className='Interesed_before'></div>
-            <h2 className='col20-lg-offset-1'>
+            <h2 className='col20-lg-offset-1 col-xs-12'>
               <span>С этим товаром </span>
               <wbr/>
               <span>также покупают</span>

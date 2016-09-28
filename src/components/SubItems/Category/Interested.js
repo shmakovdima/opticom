@@ -88,8 +88,7 @@ function mapStateToProps (state) {
   return {
     windowWidth: state.pageData.windowWidth,
     Interesed: state.pageData.InteresedCategory,
-    only_eco: state.user.only_eco,
-    loadMore: state.pageData.LoadMore
+    only_eco: state.user.only_eco
   }
 }
 
