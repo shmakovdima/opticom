@@ -71,38 +71,15 @@
           margin-left 40px
           
     
- 
-  
-@media (max-width: 991px)
-  
-  .footer
-    font-size 22px
-    line-height 22px
-    
-    &_addons
-      padding-top 50px
-      padding-bottom 120px
-      
-      & div:last-child
-        clear both
-        margin-top 25px
-
-    &_up
-      position absolute
-      right 45px
-      width 44px
-      height 35px
-      background url(../../images/sprites/mobile_footer_up.png)
-        
-
-        
 @media (max-width: 1000px)
   .footer
     & nav
       padding-top 37px
       padding-bottom 37px
+      
       & ul
         margin-right 50px
+        
         & li
           width 200px
           font-size 16px
@@ -111,3 +88,57 @@
             margin-top 10px
             margin-left 0px
     
+ 
+  
+@media (max-width: 768px)
+  
+  .footer
+    font-size 12px
+    line-height 22px
+    
+    & nav
+      & ul
+        & li
+          width 120px
+          font-size 12px
+          
+          &+li
+            margin-top 0px
+    
+    &_addons
+      padding-top 25px
+      white-space nowrap
+      padding-bottom 60px
+      
+      & div:last-child
+        clear both
+        margin-top 13px
+
+    &_up
+      position absolute
+      right 23px
+      width 26px
+      height 24px
+      background url(../../images/sprites/mobile_footer_up.png) no-repeat
+      background-size cover
+        
+    &_fb
+    &_vk
+      display inline-block
+      position relative
+      width 12px
+      top 2px
+      height 10px
+      margin-right 5px
+
+    &_fb
+      background url(../../images/sprites/mobile_footer_facebook.png) no-repeat
+      background-size cover
+      width 9px
+      height 12px
+      
+    &_vk
+      background url(../../images/sprites/mobile_footer_vk.png) no-repeat
+      background-size contain
+
+        
