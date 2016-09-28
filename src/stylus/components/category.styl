@@ -2,29 +2,6 @@
 @import '../variables.styl'
 
 
-.interested_slider
-  position relative
-  overflow hidden
-  overflow-y visible
-  padding-bottom 150px
-  margin-bottom -170px
-  
-  & .item
-    min-width 250px
-    
-    &_slide
-      margin-right 8px
-  
-  h2
-    max-width 600px
-    font-size 48px
-    padding-bottom 30px
- 
-.buttons
-  position: relative
-  width: 100%
-  float: left
-  z-index 34
 
 .category
   
@@ -55,7 +32,7 @@
       padding-left 70px
       height 210px
       bottom 0px  
-      background url(../../images/planet.png)  no-repeat
+      background url(../../images/planet.png) right bottom  no-repeat
       position absolute
       width 100%
       
@@ -124,6 +101,7 @@
       position absolute
       background white
       width 100%
+      z-index -1
       min-height 376px
 
     &_showmore
@@ -199,18 +177,6 @@
 
 @media (max-width: 768px)
   
-  .breadcrumb
-    margin-bottom 5px
-    &-item 
-      & a
-        font-size 12px
-        
-    & > 
-      & li 
-        & + li:before
-          font-size 10px
-          padding 3px 7px
-
 
   .category
     &_header

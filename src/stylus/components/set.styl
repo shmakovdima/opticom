@@ -106,6 +106,15 @@
       background color_green_opacity2
     
 
+  &_edit
+    position absolute
+    left 34px
+    display block
+    visibility hidden
+    background url(../../images/sprites/profile_refresh.png)  no-repeat
+    top 34px
+    width 14px
+    height 14px
 
   &_title
     max-width 260px
@@ -213,6 +222,7 @@
           background: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%)    
 
 .ready.readypopular
+  margin-bottom 100px
   .ready
     &_title
       &_adds
@@ -222,6 +232,10 @@
 
   &:hover 
     .ready
+      
+      &_edit
+        visibility visible
+        
       &_title
         &_adds
           margin-top -10px!important
@@ -268,8 +282,7 @@
     &_hover
       max-height 200px
       
-    &_addons
-      left 20%!important
+
       
     &_block
       left 0px!important

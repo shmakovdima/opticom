@@ -105,9 +105,8 @@ class CatalogHeader extends Component {
   render() {
     const windowWidth = this.props.windowWidth
     const Categories = this.props.Categories
-
     const {showMenu} = this.props.pageActions
-
+    
     return(
       <section className='catalog_header'>
         <div className='container'>

@@ -6,11 +6,14 @@ import App from './containers/App'
 import Catalog from './components/Catalog'
 import Category from './components/Category'
 import SubCategory from './components/SubCategory'
-
 import ItemPage from './components/ItemPage'
 
 import Home from './components/Home'
 import NotFound from './components/NotFound'
+
+import ProfileSets from './components/Profile/Sets'
+
+import Profile from './components/Profile'
 
 export const routes = (
   <div>
@@ -21,6 +24,22 @@ export const routes = (
       <Route path='catalog/subcategory' component={SubCategory} />
       <Route path='catalog/subcatalog/category' component={Category} />
       <Route path='catalog/subcatalog/category/testitem' component={ItemPage} />
+
+      <Route path='profile' component={Profile}>
+        <IndexRoute component={Catalog} />
+        <Route path='sets' component={ProfileSets} />
+      </Route>
+
+{/*
+                 <Link className='header_usermenu_link' to='profile' title='Настройки'>Настройки</Link>
+                  <Link className='header_usermenu_link' to='profile/orders' title='Мои заказы'>Мои заказы</Link>
+                  <Link className='header_usermenu_link' to='profile/sets' title='Наборы'>Наборы</Link>
+                  <Link className='header_usermenu_link' to='profile/myitems' title='Мои товары'>Мои товары</Link>
+                  <Link className='header_usermenu_link' to='profile/special' title='Спецпредложения'>Спецпредложения</Link>
+                  <Link className='header_usermenu_link' to='profile/messages' title='Сообщения'>Сообщения</Link>
+
+*/}
+
 
       
       <Route path='*' component={NotFound} />

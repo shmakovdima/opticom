@@ -10,10 +10,8 @@ import wordlenght from '../../function/wordlenght'
 import cutnumber from '../../function/cutnumber'
 
 import { DropdownButton, MenuItem} from 'react-bootstrap'
+
 import $ from 'jquery'
-
-
-
 
 
 

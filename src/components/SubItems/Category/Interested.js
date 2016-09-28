@@ -54,8 +54,7 @@ class Interesed extends Component {
       <section className='interested_slider'>
         <div className='container'>
           <div className='row'>
-            <div className='Interesed_before'></div>
-            <h2 className='col20-lg-offset-1'>
+            <h2 className='col20-lg-offset-1 col-sm-12'>
               <span>Вас могут </span>
               <wbr/>
               <span>заинтересовать</span>

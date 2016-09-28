@@ -7,11 +7,64 @@
   width 100%
   top 0px
   font-size 13px
+  z-index 2
   color white
   transform scaleY(1.0038)
   padding-top 68px
   font-family FuturaPTBold
   text-transform uppercase
+  
+  & div.container
+    position relative
+  
+  &_usermenu
+    position absolute
+    right 0px
+    top 0px
+    padding 30px
+    max-width 90%
+    z-index 100
+    box-shadow: 0px 4.5px 15px 0px rgba(0, 0, 0, 0.46)
+    width 250px
+    background linear-gradient(-54deg, #59a1ad 12%, #98c04d 88%)
+    
+    &_link
+      color black !important
+      font-family FuturaPTBook!important
+      font-size: 16px!important
+      text-transform none
+      clear left
+      width 100%
+      margin-top 24px
+      display block
+      position relative
+      text-align left
+      line-height 20px
+      background none
+      
+      & + &
+        margin-top 15px
+
+    &_close
+      position absolute
+      width 14px
+      z-index 20
+      cursor pointer
+      transition 150ms all ease-in
+      height 14px
+      right 30px
+      top 30px
+      background url(../../images/sprites/item_gor_remove.png) left center no-repeat 
+
+      &:hover
+      &:active
+        opacity 0.8  
+    
+    & h3
+      font-size: 16px
+      line-height: 20px
+      text-transform none
+      font-family FuturaPTBold
   
   & a
     color white
@@ -71,7 +124,7 @@
     font-family FuturaPTMedium
     position relative
     background url(../../images/sprites/header_dark_basket.png) no-repeat
-    margin-right 1.8%
+    
     width 60px
     height 24px
     font-size 14px
@@ -92,6 +145,7 @@
     height 13px
     
   &_user
+    margin-left 1.8%
     width 14px
     height 15px
     margin-top 22px

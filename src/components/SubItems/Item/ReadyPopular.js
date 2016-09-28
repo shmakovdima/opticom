@@ -5,6 +5,7 @@ import wordend from '../../function/wordend'
 import cutnumber from '../../function/cutnumber'
 //import $ from 'jquery'
 
+import { If, Then } from 'react-if';
 
 export default class Ready extends Component  {
   constructor(props) {
@@ -42,7 +43,7 @@ export default class Ready extends Component  {
     let description = (this.props.data.description) ? this.props.data.description : ''
     let cost = (this.props.data.cost) ? cutnumber(this.props.data.cost) + ' ₽' : ''
 
-
+    let editlink = (this.props.data.editlink) ? this.props.data.editlink : ''
 
 
     let imageLeft = {
@@ -72,7 +73,13 @@ export default class Ready extends Component  {
             <div style={textLeft} className='ready_countpopular'>{count}</div>
             
             <div className='ready_addons' style={textLeft}>
-              <Link to={link} title={title} className='ready_title'>
+              <If condition={editlink}>
+                <Then>
+                  <Link to={editlink} title='Редактировать' className='ready_edit'></Link>
+                </Then>
+              </If>
+
+              <Link  to={link} title={title} className='ready_title'>
                 {
                   words.map(function(item){
                     return (<span>{item+' '}  <div style={height} className='ready_title_adds'></div></span>)

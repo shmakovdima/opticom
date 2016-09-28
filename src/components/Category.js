@@ -93,11 +93,8 @@ class Catalog extends Component {
               <Accordion>
                 {
                   categoryArray.map(function(item,key){
-
                     var Items = item
-
                     return(
-
                       <Panel header={item.title} eventKey={key}>
                         <div className='buttons hidden-sm hidden-xs'>
                           <If condition={showgor==false}>
@@ -138,7 +135,7 @@ class Catalog extends Component {
                           <If condition={isLogged == false}>
                             <Then>
                               <div className={showgormargin}>
-                                <div className='category_nologged'>
+                                <div className='category_nologged hidden-xs'>
                                   <div className='category_nologged_absolute'>
                                     <Link className='category_nologged_link' to='/register' title='Регистрация'>Зарегистрируйтесь</Link>
                                     <span className='category_nologged_description'>Чтобы получать персональные предложения. Это займёт не более 2 минут.</span>
@@ -152,7 +149,6 @@ class Catalog extends Component {
                     )
 
                   }) 
-
                 }
 
                
