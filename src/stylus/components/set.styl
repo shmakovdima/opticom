@@ -63,6 +63,48 @@
     padding-bottom 20px
     right -120px
     
+    & ul
+      
+      width 100%
+      color color_black
+      font-size: 14px
+      min-width 300px
+      margin-top 10px
+      color black
+      list-style-type none
+      position relative
+      float left
+      display none
+      column-count 2
+      column-width 50%
+      
+      & li
+        list-style-type none
+        margin-bottom 4px
+        display inline-block
+        position relative
+        
+        & span
+          &:before
+            position absolute
+            content '·'
+            left -15px
+            font-size 34px
+            top -12px
+            display: block
+      
+
+
+        
+    
+    &_block
+      position absolute
+      left 20px
+      top 10px
+      width 105px
+      height 215px
+      background color_green_opacity2
+    
 
 
   &_title
@@ -96,6 +138,7 @@
         & > .ready_title_adds
           display block
   &_countpopular
+  &_countselect
   &_count
     float left
     width 150px
@@ -113,6 +156,11 @@
     padding-left 60px
     position absolute
     color #626e73
+
+  &_countselect
+    position relative
+    margin-top 35px
+
 
   &_count
     &_xs
@@ -146,6 +194,7 @@
         
       &_cost
       &_countpopular
+      &_countselect
         z-index 40
         
       &_addons
@@ -178,6 +227,33 @@
           margin-top -10px!important
           bottom inherit
           height 260px 
+
+.ready.readyselect
+  margin-bottom 100px
+  
+  &:hover
+    display block
+    .ready
+      &_addons
+        height 100%
+        padding-left 50px
+        top 0px
+        width 100%
+        left 0px!important
+        
+        & ul
+          display block
+
+        &_block
+          height 100%
+          width 100%
+          top 0px
+          left 0px
+          
+        & .ready_countselect
+          margin-top 10px
+
+
 
           
 @media (max-width: 1200px)

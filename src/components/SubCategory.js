@@ -11,6 +11,7 @@ import HeaderLight from '../components/Headers/HeaderLight'
 import CategoryHeader from './SubItems/Category/CategoryHeader'
 import {connect } from 'react-redux'
 import ReadyPopular from './SubItems/Item/ReadyPopular'
+import ReadySelect from './SubItems/Item/ReadySelect'
 
 
 class SubCategory extends Component {
@@ -18,6 +19,7 @@ class SubCategory extends Component {
     let subCategory= this.props.subCategory
 
     let popularSet = this.props.subCategory.popularSet
+    let selectSet = this.props.subCategory.SelectSet
 
     return (
       <div>
@@ -47,11 +49,37 @@ class SubCategory extends Component {
                 })
 
               }
-
             </div>
           </div>
         </section>
+        <section className='subcategory_section'>
+        <div className='container'>
+          <div className='row'>
 
+
+
+           
+            <h2 className='col-xs-12 col20-lg-offset-1'>
+              <span>Выбирайте, то что  </span>
+              <br/>
+              <span>подходит вам</span>
+            </h2>
+          </div>
+        </div>
+          <div className='container'>
+            <div className='row'>
+              {
+                selectSet.map(function(item, key) {
+                  return(
+                    <div className='col-xs-12 col-sm-6 col-md-4 col-lg-4'>
+                      <ReadySelect data={item} key={++key} />
+                    </div>
+                  )
+                })
+              }
+            </div>
+          </div>
+        </section>        
       </div>
     )
   }

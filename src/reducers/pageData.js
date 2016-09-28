@@ -828,6 +828,121 @@ const initialState = {
     
     ]
     ,
+
+    SelectSet:[
+      {
+        title: 'Для вашей гостиницы или отеля',
+        count: '13',
+        link: 'readyset/forhotel',
+        image: 'images/ready_item/catalog_allready_hotel.png',
+        hoverimage: 'images/ready_item/catalog_allready_hotel.png',
+        textleft: '+ 24',
+        rubrics: [
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей',
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей'
+        ]
+      },
+      {
+        title: 'В зеленый офис ежемесячно',
+        count: '23',
+        link: 'readyset/greenoffice',
+        image: 'images/ready_item/catalog_allready_greenoffice.png',
+        hoverimage: 'images/ready_item/catalog_allready_greenoffice.png',
+        rubrics: [
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей',
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей'
+        ]
+      },
+      {
+        title: 'Экологичный бизнес-центр',
+        count: '18',
+        link: 'readyset/ecocenter',
+        image: 'images/ready_item/catalog_allready_ecobisness.png',
+        hoverimage: 'images/ready_item/catalog_allready_ecobisness_hover.png',
+        left: '-64',
+        textleft: '+ 104',
+        rubrics: [
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей',
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей'
+        ]
+      },
+
+      {
+        title: 'Ассортимент для небольшого магазина',
+        count: '46',
+        link: 'readyset/forsmallshop',
+        image: 'images/ready_item/catalog_allready_smallshop.png',
+        hoverimage: 'images/ready_item/catalog_allready_smallshop.png',
+        rubrics: [
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей',
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей'
+        ]
+        
+      },
+      {
+        title: 'Полный комплект для уборки квартиры',
+        count: '32',
+        link: 'readyset/forcomplect',
+        image: 'images/ready_item/catalog_allready_fullcomplect.png',
+        hoverimage: 'images/ready_item/catalog_allready_fullcomplect.png',
+        left: '-64',
+        textleft: '+ 100',
+        rubrics: [
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей',
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей'
+        ]
+      },
+      {
+        title: 'Для клининговых сервисов',
+        count: '47',
+        link: 'readyset/forclining',
+        image: 'images/ready_item/catalog_allready_clining.png',
+        hoverimage: 'images/ready_item/catalog_allready_clining.png',
+        textleft: '+ 40',
+        rubrics: [
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей',
+          'Ручная мойка посуды',
+          'ПММ',
+          'Замачивание посуды',
+          'Обезжиривание поверхностей'
+        ]
+      }
+
+    ]
+    ,
     breadcrumbs: [
       {
         title: 'Каталог',
