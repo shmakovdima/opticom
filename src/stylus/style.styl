@@ -183,6 +183,56 @@ input[type='checkbox']
   &:checked + label
     opacity 1
     background url(../../images/sprites/checkbox_ok.png) center no-repeat!important
+    
+  &.checkbox2
+    &+label
+      transition 150ms all ease-in
+      opacity 0.3
+      position relative
+      float left
+      margin-right 12px
+      cursor pointer
+      width 24px
+      top -1px
+      height 24px
+      display block
+      background url(../../images/sprites/checkbox-1.png) center no-repeat
+      
+      &:hover
+        opacity 1
+        background url(../../images/sprites/checkbox2_hover.png) center no-repeat
+        
+    &:checked + label
+      opacity 1
+      background url(../../images/sprites/checkbox2_ok.png) center no-repeat!important
+
+input[type='radio'] 
+  display none
+  
+  &+label
+    transition 150ms all ease-in
+    opacity 0.3
+    position relative
+    float left
+    margin-right 10px
+    cursor pointer
+    width 24px
+    height 24px
+    display block
+    background url(../../images/sprites/radio.png) center no-repeat
+    
+    &:hover
+      opacity 1
+      background url(../../images/sprites/radio_hover.png) center no-repeat
+      
+  &:checked + label
+    opacity 1
+    background url(../../images/sprites/radio_selected.png) center no-repeat!important
+
+.radiolabel
+  color: #000000
+  font-size 16px
+  font-family FuturaPTHeavy
 
 .greenlighted_left  
 .header_link_active

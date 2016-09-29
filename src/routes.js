@@ -12,6 +12,8 @@ import Home from './components/Home'
 import NotFound from './components/NotFound'
 
 import ProfileSets from './components/Profile/Sets'
+import ProfileSettings from './components/Profile/Settings'
+
 
 import Profile from './components/Profile'
 
@@ -26,7 +28,7 @@ export const routes = (
       <Route path='catalog/subcatalog/category/testitem' component={ItemPage} />
 
       <Route path='profile' component={Profile}>
-        <IndexRoute component={Catalog} />
+        <IndexRoute component={ProfileSettings} />
         <Route path='sets' component={ProfileSets} />
       </Route>
 

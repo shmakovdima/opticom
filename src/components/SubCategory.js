@@ -9,7 +9,7 @@ import {Link} from 'react-router'
 import React, { Component } from 'react'
 import HeaderLight from '../components/Headers/HeaderLight'
 import CategoryHeader from './SubItems/Category/CategoryHeader'
-import {connect } from 'react-redux'
+import {connect} from 'react-redux'
 import ReadyPopular from './SubItems/Item/ReadyPopular'
 import ReadySelect from './SubItems/Item/ReadySelect'
 

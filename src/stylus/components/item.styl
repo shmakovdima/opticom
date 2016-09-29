@@ -385,6 +385,56 @@
             &_button
               display block
 
+    &.address
+      position relative
+      
+      .item
+        min-height 144px
+        &_under
+          padding 30px
+          min-height 144px
+          
+        &_title
+          color: #000000
+          clear right
+          margin-top 0px
+          font-size 24px
+          font-family FuturaPTHeavy
+        
+        &_address
+          margin-top 17px
+          font-size: 16px
+          clear left
+          float left
+          font-family FuturaPTBook
+          line-height: 20px
+          
+          &_links
+            float left
+            position absolute
+            bottom 30px
+            margin-top px
+            clear left
+            display none
+            
+            & a
+              color: #000000
+              font-family FuturaPTBook
+              font-size 18px
+              margin-right 30px
+
+      &:hover
+        .item
+          &_under
+            top 0px
+            min-height 170px
+            left -15px
+            width calc(100% + 30px)
+            right -15px
+          &_address
+            &_links
+              display block
+
 @media (max-width: 1300px)
   .item
     &_gor
@@ -583,10 +633,6 @@
         width 100%!important
         float left!important
         
-
-
-
-
 
 .itempage
   
