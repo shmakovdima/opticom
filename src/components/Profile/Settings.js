@@ -21,8 +21,6 @@ class Adress extends Component {
     let editlink = (this.props.item.editlink) ? this.props.item.editlink : ''
     let sendinvite = (this.props.item.sendinvite) ? this.props.item.sendinvite : ''
 
-
-
     return(
       <div className='item_gor address'>
         <div className='item'>

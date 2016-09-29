@@ -5,6 +5,64 @@
 @import 'components/20colums.styl'
 @import 'components/text-align-media.styl'
 
+.slider
+  .item
+    min-width: 250px
+
+.nav
+  &-tabs
+    outline none!important
+    border none
+    & > li 
+    & > li.active
+        border none!important
+        outline none!important
+        background nine!important
+        padding 0px
+        margin-right 50px
+        display block
+        border-radius none
+        
+
+        & a
+        & a:active
+        & a:focus
+        & a:hover
+          border none
+          opacity 1
+          background none
+          color black!important
+          border none!important
+        
+        &:hover
+        &:active
+        &:focus
+          background none
+          color black!important
+          
+          & a
+          & a:active
+          & a:focus
+          & a:hover
+            border none
+            opacity 1
+            background none
+            color black!important
+            border none!important
+          
+
+        & > a
+          display block
+          padding 0px
+          outline none!important
+          display block
+          background-color transparent!important
+          border none
+          color #000000
+          font-family FuturaPTMedium
+          text-transform uppercase
+          font-size 14px
+
 .btn-group.open .dropdown-toggle
   padding-left 0px
 
@@ -305,6 +363,7 @@ input[type='radio']
     opacity 1
 
 .gradient_underlinehover
+.nav-tabs > li > a
   position relative
   display inline-block
   z-index 1
@@ -328,6 +387,16 @@ input[type='radio']
 
   &:hover:before
   &:active:before
+    opacity 1
+
+.nav-tabs > li > a
+  &:before
+    bottom 1px
+    height 45%
+  
+
+.nav-tabs > li.active > a
+  &:before
     opacity 1
 
 .green_underline

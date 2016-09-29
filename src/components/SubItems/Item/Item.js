@@ -153,9 +153,7 @@ class Item extends Component {
   }
 
   render() {
-
-
-
+    
     var dropdownmode = (this.state.one) ? 'поштучно' : 'упаковки' 
 
     const data = this.props

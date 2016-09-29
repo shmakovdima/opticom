@@ -13,7 +13,7 @@ import NotFound from './components/NotFound'
 
 import ProfileSets from './components/Profile/Sets'
 import ProfileSettings from './components/Profile/Settings'
-
+import ProfileMyItems from './components/Profile/myItems'
 
 import Profile from './components/Profile'
 
@@ -30,6 +30,7 @@ export const routes = (
       <Route path='profile' component={Profile}>
         <IndexRoute component={ProfileSettings} />
         <Route path='sets' component={ProfileSets} />
+        <Route path='myitems' component={ProfileMyItems}/>
       </Route>
 
 {/*
