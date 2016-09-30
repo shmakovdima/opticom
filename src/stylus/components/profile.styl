@@ -19,8 +19,56 @@
     padding-bottom: 150px
     margin-bottom: -170px
     
+    & .nav-tabs > li
+    & .nav-tabs > li.active
+      margin-left 65px
+      margin-right 0px
+    
+    &_buyed
+      position relative
+      float right
+      top -32px
+      
+      .dropdown
+        float right
+        
+        .btn.btn-default.dropdown-toggle
+          font-size: 18px
+          font-family FuturaPTHeavy
+          
+          & .caret
+            margin-top 13px
+      
+    &_search
+      padding-top 16px
+      margin-left 35px
+      width 220px
+
+      float right
+      
+      & input 
+        transition 200ms all ease-in
+        padding-left 7px
+        padding-right 7px
+        clear right
+        color black
+        font-size 12px
+        padding-bottom 4px
+        border-bottom 1px solid  rgba(132, 148, 154, 0.3)
+        width 100%
+        
+        &:focus
+        &:active
+        &:hover
+          border-bottom 1px solid  black
+      
+
+    
+    &_panel
+      padding-top 20px
+    
     &_tabs
-      padding-top 50px
+      padding-top 90px
 
   &_addresses
     float left

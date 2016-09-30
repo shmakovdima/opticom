@@ -297,7 +297,16 @@
         padding-top 64px
         margin-right 70px
 
+
+      &_discount
+        position absolute
+        right calc(100% + 15px)
+        line-height 30px
+        white-space nowrap
+
       &_cost
+        clear none
+        
         &_description
           display none
       
@@ -375,7 +384,12 @@
 
       &:hover
       &:active
-        .item
+        .item          
+          &_under
+            left -15px
+            right -15px
+            width calc(100% + 30px)
+
           &_bottom
             transition none!important
             clear none

@@ -11,13 +11,322 @@ const initialState = {
   ],
 
 
+  myOrders: {
+      Orders: [
+        {
+          title: 'Заказ №234535',
+          category: 'Товары для дома от 12 мая',
+          address: 'Москва, Бутырская 46, 8-й этаж',
+          date: '2016-05-13',
+          cost: '1720',
+          vendors: '22',
+          editlink: '/editlink',
+          status: 'working'
+        }
+        ,
+        {
+          title: 'Заказ №234535',
+          category: 'Товары для дома от 12 мая',
+          address: 'Москва, Бутырская 43, 8-й этаж',
+          date: '2016-02-13',
+          cost: '1720',
+          vendors: '22',
+          editlink: '/editlink',
+          status: 'active'
+        },
+        {
+          title: 'Заказ №234535',
+          category: 'Товары для дома от 12 мая',
+          address: 'Москва, Бутырская 42, 8-й этаж',
+          date: '2016-01-13',
+          cost: '1720',
+          vendors: '22',
+          editlink: '/editlink',
+          status: 'active'
+        },
+        {
+          title: 'Заказ №234535',
+          category: 'Товары для дома от 12 мая',
+          address: 'Москва, Бутырская 42, 8-й этаж',
+          date: '2016-05-13',
+          cost: '1720',
+          vendors: '22',
+          editlink: '/editlink',
+          status: 'active'
+        }
+      ],
+      OrdersMore: [
+        {
+          title: 'Заказ №234535',
+          category: 'Товары для дома от 12 мая',
+          address: 'Москва, Бутырская 43, 8-й этаж',
+          date: '2016-02-13',
+          cost: '1720',
+          vendors: '22',
+          editlink: '/editlink',
+          status: 'active'
+        },
+        {
+          title: 'Заказ №234535',
+          category: 'Товары для дома от 12 мая',
+          address: 'Москва, Бутырская 46, 8-й этаж',
+          date: '2014-01-13',
+          cost: '1720',
+          vendors: '22',
+          editlink: '/editlink',
+          status: 'active'
+        },
+        {
+          title: 'Заказ №234535',
+          category: 'Товары для дома от 12 мая',
+          address: 'Москва, Бутырская 46, 8-й этаж',
+          date: '2015-05-13',
+          cost: '1720',
+          vendors: '22',
+          editlink: '/editlink',
+          status: 'active'
+        }
+      ]
+  },
 
 
   myItems: {
+
+
+    Buyed: [
+      {
+          id: 9,
+          date: '2016-03-21',
+          category: 'Обезжиривание поверхностей',
+          title: 'Еще одно средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+          eco: false,
+          link: 'catalog/testsubcategory/testcategory/testitem',
+          vendorcode: 'is-29381',
+          image: 'images/items/item_item_example.png',
+          discount: true,
+          new: false,
+          cost:{
+            one: 2100,
+            discountone: 1800,
+            discountpackaging: 13000,
+            packaging: 15000
+          },
+          description:[
+            {
+              title: 'Объем',
+              value: '1л'
+            },
+            {
+              title: 'Тара',
+              value: '1, 10 шт'
+            }
+          ]
+      },
+      {
+          id: 9,
+          date: '2016-04-27',
+          category: 'Обезжиривание поверхностей',
+          title: 'Свойство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+          eco: false,
+          link: 'catalog/testsubcategory/testcategory/testitem',
+          vendorcode: 'is-29381',
+          image: 'images/items/item_item_example.png',
+          discount: true,
+          new: false,
+          cost:{
+            one: 2100,
+            discountone: 1800,
+            discountpackaging: 13000,
+            packaging: 15000
+          },
+          description:[
+            {
+              title: 'Объем',
+              value: '1л'
+            },
+            {
+              title: 'Тара',
+              value: '1, 10 шт'
+            }
+          ]
+      },
+      {
+          id: 9,
+          date: '2016-04-21',
+          category: 'Средства для мытья рук',
+          title: 'Мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+          eco: false,
+          link: 'catalog/testsubcategory/testcategory/testitem',
+          vendorcode: 'is-29381',
+          image: 'images/items/item_item_example.png',
+          discount: true,
+          new: false,
+          cost:{
+            one: 2100,
+            discountone: 1800,
+            discountpackaging: 13000,
+            packaging: 15000
+          },
+          description:[
+            {
+              title: 'Объем',
+              value: '1л'
+            },
+            {
+              title: 'Тара',
+              value: '1, 10 шт'
+            }
+          ]
+      }
+      ,
+      {
+          id: 9,
+          date: '2016-09-29',
+          category: 'Замачивание посуды',
+          title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+          eco: false,
+          link: 'catalog/testsubcategory/testcategory/testitem',
+          vendorcode: 'is-29381',
+          image: 'images/items/item_item_example.png',
+          discount: true,
+          new: false,
+          cost:{
+            one: 2100,
+            discountone: 1800,
+            discountpackaging: 13000,
+            packaging: 15000
+          },
+          description:[
+            {
+              title: 'Объем',
+              value: '1л'
+            },
+            {
+              title: 'Тара',
+              value: '1, 10 шт'
+            }
+          ]
+      }
+      ,
+      {
+          id: 9,
+          date: '2016-03-21',
+          category: 'Обезжиривание поверхностей',
+          title: 'Еще одно средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+          eco: false,
+          link: 'catalog/testsubcategory/testcategory/testitem',
+          vendorcode: 'is-29381',
+          image: 'images/items/item_item_example.png',
+          discount: true,
+          new: false,
+          cost:{
+            one: 2100,
+            discountone: 1800,
+            discountpackaging: 13000,
+            packaging: 15000
+          },
+          description:[
+            {
+              title: 'Объем',
+              value: '1л'
+            },
+            {
+              title: 'Тара',
+              value: '1, 10 шт'
+            }
+          ]
+      },
+      {
+          id: 9,
+          date: '2016-04-27',
+          category: 'Обезжиривание поверхностей',
+          title: 'Свойство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+          eco: false,
+          link: 'catalog/testsubcategory/testcategory/testitem',
+          vendorcode: 'is-29381',
+          image: 'images/items/item_item_example.png',
+          discount: true,
+          new: false,
+          cost:{
+            one: 2100,
+            discountone: 1800,
+            discountpackaging: 13000,
+            packaging: 15000
+          },
+          description:[
+            {
+              title: 'Объем',
+              value: '1л'
+            },
+            {
+              title: 'Тара',
+              value: '1, 10 шт'
+            }
+          ]
+      },
+      {
+          id: 9,
+          date: '2016-04-21',
+          category: 'Средства для мытья рук',
+          title: 'Мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+          eco: false,
+          link: 'catalog/testsubcategory/testcategory/testitem',
+          vendorcode: 'is-29381',
+          image: 'images/items/item_item_example.png',
+          discount: true,
+          new: false,
+          cost:{
+            one: 2100,
+            discountone: 1800,
+            discountpackaging: 13000,
+            packaging: 15000
+          },
+          description:[
+            {
+              title: 'Объем',
+              value: '1л'
+            },
+            {
+              title: 'Тара',
+              value: '1, 10 шт'
+            }
+          ]
+      }
+      ,
+      {
+          id: 9,
+          date: '2016-09-29',
+          category: 'Замачивание посуды',
+          title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+          eco: false,
+          link: 'catalog/testsubcategory/testcategory/testitem',
+          vendorcode: 'is-29381',
+          image: 'images/items/item_item_example.png',
+          discount: true,
+          new: false,
+          cost:{
+            one: 2100,
+            discountone: 1800,
+            discountpackaging: 13000,
+            packaging: 15000
+          },
+          description:[
+            {
+              title: 'Объем',
+              value: '1л'
+            },
+            {
+              title: 'Тара',
+              value: '1, 10 шт'
+            }
+          ]
+      }
+    ],
+
     Loved: [
       {
         id: 9,
-        title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
+        title: 'И Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
         vendorcode: 'is-29381',
