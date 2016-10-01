@@ -1,15 +1,12 @@
+Date.prototype.getMonthName = function() {
+    var month = ['Января','Февраль','Март','Апрель','Май','Июнь',
+    'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+    return month[this.getMonth()];
+}
 
 
-//import '../stylus/components/catalog.styl';
-//import '../stylus/components/subcategory.styl';
-import '../../stylus/components/profile.styl';
-
-import '../function/getMonthName.js'
-
-//import {Link} from 'react-router'
+import '../../stylus/components/profile.styl'
 import React, { Component } from 'react'
-//import HeaderLight from '../components/Headers/HeaderLight'
-//import CategoryHeader from './SubItems/Category/CategoryHeader'
 import {connect } from 'react-redux'
 import Slider from 'react-slick'
 import {Tabs, Tab, DropdownButton, MenuItem, Accordion, Panel} from 'react-bootstrap'
@@ -17,12 +14,6 @@ import Item from '../SubItems/Item/Item'
 import { If, Then, Else } from 'react-if';
 import sortArray from '../function/sortArray'
 import ReactDOM from 'react-dom';
-
-Date.prototype.getMonthName = function() {
-    var month = ['Январт','Февраль','Март','Апрель','Май','Июнь',
-    'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
-    return month[this.getMonth()];
-}
 
 
 class ItemGor extends Component {

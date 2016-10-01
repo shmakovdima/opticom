@@ -10,7 +10,6 @@ const initialState = {
     }
   ],
 
-
   myOrders: {
       Orders: [
         {
@@ -18,16 +17,18 @@ const initialState = {
           category: 'Товары для дома от 12 мая',
           address: 'Москва, Бутырская 46, 8-й этаж',
           date: '2016-05-13',
+          link: 'catalog/subcategory/testcategory/testitem',
           cost: '1720',
           vendors: '22',
           editlink: '/editlink',
-          status: 'working'
+          status: 'ready'
         }
         ,
         {
           title: 'Заказ №234535',
           category: 'Товары для дома от 12 мая',
           address: 'Москва, Бутырская 43, 8-й этаж',
+          link: 'catalog/subcategory/testcategory/testitem',
           date: '2016-02-13',
           cost: '1720',
           vendors: '22',
@@ -38,6 +39,7 @@ const initialState = {
           title: 'Заказ №234535',
           category: 'Товары для дома от 12 мая',
           address: 'Москва, Бутырская 42, 8-й этаж',
+          link: 'catalog/subcategory/testcategory/testitem',
           date: '2016-01-13',
           cost: '1720',
           vendors: '22',
@@ -48,6 +50,7 @@ const initialState = {
           title: 'Заказ №234535',
           category: 'Товары для дома от 12 мая',
           address: 'Москва, Бутырская 42, 8-й этаж',
+          link: 'catalog/subcategory/testcategory/testitem',
           date: '2016-05-13',
           cost: '1720',
           vendors: '22',
@@ -55,38 +58,45 @@ const initialState = {
           status: 'active'
         }
       ],
-      OrdersMore: [
-        {
-          title: 'Заказ №234535',
-          category: 'Товары для дома от 12 мая',
-          address: 'Москва, Бутырская 43, 8-й этаж',
-          date: '2016-02-13',
-          cost: '1720',
-          vendors: '22',
-          editlink: '/editlink',
-          status: 'active'
-        },
-        {
-          title: 'Заказ №234535',
-          category: 'Товары для дома от 12 мая',
-          address: 'Москва, Бутырская 46, 8-й этаж',
-          date: '2014-01-13',
-          cost: '1720',
-          vendors: '22',
-          editlink: '/editlink',
-          status: 'active'
-        },
-        {
-          title: 'Заказ №234535',
-          category: 'Товары для дома от 12 мая',
-          address: 'Москва, Бутырская 46, 8-й этаж',
-          date: '2015-05-13',
-          cost: '1720',
-          vendors: '22',
-          editlink: '/editlink',
-          status: 'active'
-        }
-      ]
+      OrdersMore: {
+        final: true,
+        Data: [
+
+          {
+            title: 'Заказ №234535',
+            category: 'Товары для дома от 12 мая',
+            address: 'Москва, Бутырская 43, 8-й этаж',
+            link: 'catalog/subcategory/testcategory/testitem',
+            date: '2016-02-13',
+            cost: '1720',
+            vendors: '22',
+            editlink: '/editlink',
+            status: 'ready'
+          },
+          {
+            title: 'Заказ №234535',
+            category: 'Товары для дома от 12 мая',
+            address: 'Москва, Бутырская 46, 8-й этаж',
+            link: 'catalog/subcategory/testcategory/testitem',
+            date: '2014-01-13',
+            cost: '1720',
+            vendors: '22',
+            editlink: '/editlink',
+            status: 'ready'
+          },
+          {
+            title: 'Заказ №234535',
+            category: 'Товары для дома от 12 мая',
+            address: 'Москва, Бутырская 46, 8-й этаж',
+            link: 'catalog/subcategory/testcategory/testitem',
+            date: '2015-05-13',
+            cost: '1720',
+            vendors: '22',
+            editlink: '/editlink',
+            status: 'ready'
+          }
+        ]
+      }
   },
 
 
@@ -772,7 +782,7 @@ const initialState = {
         id: 9,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
-        link: 'catalog/testsubcategory/testcategory/testitem',
+        link: 'catalog/subcategory/testcategory/testitem',
         vendorcode: 'is-29381',
         image: 'images/items/item_item_example.png',
         discount: true,
