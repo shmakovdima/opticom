@@ -546,12 +546,14 @@
       background url(../../../images/sprites/profile_refresh.png) left center no-repeat
 
     &_edit
+      display none
       background url(../../../images/sprites/profile_edit.png) left center no-repeat
       
       &block
         float right
 
     &_remove
+      display none
       background url(../../../images/sprites/profile_remove.png) left center no-repeat
 
     &_title
@@ -581,7 +583,11 @@
         &:hover
           .item
             
+            &_orderblock
             
+              &_edit
+              &_remove
+                display block
 
             &_under
               padding 35px

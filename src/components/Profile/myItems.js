@@ -1,5 +1,5 @@
 Date.prototype.getMonthName = function() {
-    var month = ['Января','Февраль','Март','Апрель','Май','Июнь',
+    var month = ['Январь','Февраль','Март','Апрель','Май','Июнь',
     'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
     return month[this.getMonth()];
 }
@@ -8,13 +8,13 @@ Date.prototype.getMonthName = function() {
 import '../../stylus/components/profile.styl'
 import React, { Component } from 'react'
 import {connect } from 'react-redux'
-import Slider from 'react-slick'
+
 import {Tabs, Tab, DropdownButton, MenuItem, Accordion, Panel} from 'react-bootstrap'
 import Item from '../SubItems/Item/Item'
-import { If, Then, Else } from 'react-if';
+import {If ,Then ,Else } from 'react-if';
 import sortArray from '../function/sortArray'
 import ReactDOM from 'react-dom';
-
+import ItemsSlider from './components/ItemSlider'
 
 class ItemGor extends Component {
   render(){
@@ -55,46 +55,7 @@ class ItemGor extends Component {
 
 }
 
-class ItemsSlider extends Component {
 
-  render(){
-
-    var windowWidth = this.props.windowWidth
-
-    var slides =  (windowWidth > 768) ? 3 : 1
-
-    var settings = {
-      draggable: true,
-      slidesToShow: 1,
-      slidesToScroll: slides,
-      autoplay: false,
-      dots: false,
-      infinite: false,
-      speed: 500,
-      variableWidth: true
-    };
-
-    var data = (this.props.data) ? this.props.data : []
-    return(
-      <div className='slider'>
-        <Slider  {...settings}>
-          <div className='padding_768'>
-          </div>
-          {
-            data.map(function(item) {
-              return (
-                <div className='item_slide text-center'>
-                  <Item item={item} />
-                </div>)
-            })
-          }
-        </Slider>
-    </div>
-
-    )
-  }
-
-}
 
 
 class myItems extends Component {
@@ -250,15 +211,13 @@ class myItems extends Component {
                    </div>
 
                    <DropdownButton title={dropdownmode} id='bg-nested-dropdown'>
-                     <div>
                       <MenuItem onClick={::this.setMonth} eventKey='1'>По месяцам</MenuItem>
                       <MenuItem onClick={::this.setCategory} eventKey='2'>По категориям</MenuItem>
-                    </div>
                    </DropdownButton>
 
 
                   </div>
-                  <div className='profile_items_tabs'>
+                  <div className='profile_items_tabs buyed'>
                     <If condition={search==''}>
                       <Then>
                         <Accordion>

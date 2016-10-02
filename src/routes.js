@@ -15,6 +15,7 @@ import ProfileSets from './components/Profile/Sets'
 import ProfileSettings from './components/Profile/Settings'
 import ProfileMyItems from './components/Profile/myItems'
 import ProfileOrders from './components/Profile/myOrders'
+import ProfileSpecial from './components/Profile/Special'
 
 import Profile from './components/Profile'
 
@@ -32,10 +33,14 @@ export const routes = (
         <IndexRoute component={ProfileSettings} />
         <Route path='sets' component={ProfileSets} />
         <Route path='myitems' component={ProfileMyItems}/>
-         <Route path='orders' component={ProfileOrders} />
+        <Route path='orders' component={ProfileOrders} />
+        <Route path='special' component={ProfileSpecial} />
+        
       </Route>
 
 {/*
+
+  
                  <Link className='header_usermenu_link' to='profile' title='Настройки'>Настройки</Link>
                   <Link className='header_usermenu_link' to='profile/orders' title='Мои заказы'>Мои заказы</Link>
                   <Link className='header_usermenu_link' to='profile/sets' title='Наборы'>Наборы</Link>

@@ -11,6 +11,86 @@
     
   &_orders
     margin-top 45px
+    
+    &_top
+      margin-top 60px
+
+    &_title
+      color: #000000
+      font-size 16px
+      font-family FuturaPTBold
+    
+    &_dropdown
+      height 70px
+      left -20px
+      margin-top 5px
+      position relative
+    
+      &_block
+        position absolute
+          
+        & .btn.btn-default.dropdown-toggle
+          width 100%
+          font-size: 18px
+
+        & .dropdown
+          width 100%
+
+        & .btn.btn-default.dropdown-toggle .caret
+          position absolute
+          top: 15px
+
+    &_datepicker
+      
+      &_block
+        width 100%
+        float left
+        clear left
+        
+        & + &
+          margin-top 7px
+      
+
+      & .input-group
+        float left
+        
+        &:after
+          position absolute
+          content ''
+          right 5px
+          top 12px
+          color black
+          display: inline-block
+          width: 0
+          height: 0
+          margin-left: 2px
+          vertical-align: middle
+          border-top: 4px dashed
+          border-top: 4px solid \9
+          border-right: 4px solid transparent
+          border-left: 4px solid transparent
+
+
+
+      &_span
+        width 15%
+        line-height 29px
+        float left
+        font-size: 16px
+        font-family FuturaPTBold
+
+      & .form-control
+        border-bottom 1px solid #e0e0e0!important
+        background transparent
+        border none
+        color: #000000
+        font-family FuturaPTBook
+        box-shadow none
+        height: 26px
+        padding: 6px 6px
+        
+        
+
     &_block
       float left
       width 100%
@@ -21,12 +101,14 @@
 
   &_items
     overflow: hidden
-    padding-top 50px
+    padding-top 80px
     top -85px
-
     position relative
     padding-bottom: 150px
     margin-bottom: -170px
+    
+    &.special
+      top - 160px
     
     & .nav-tabs > li
     & .nav-tabs > li.active
@@ -52,6 +134,10 @@
       padding-top 16px
       margin-left 35px
       width 220px
+      background url(../../../images/sprites/header_search.png)   no-repeat
+      background-size 10px
+      background-position calc(100% - 10px) 21px
+      
 
       float right
       
@@ -77,7 +163,10 @@
       padding-top 20px
     
     &_tabs
-      padding-top 90px
+      padding-top 50px
+      
+      &.buyed
+        padding-top 90px
 
   &_addresses
     float left

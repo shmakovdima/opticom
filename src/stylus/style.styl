@@ -5,6 +5,25 @@
 @import 'components/20colums.styl'
 @import 'components/text-align-media.styl'
 
+
+.input-group
+  width 66%
+  &-addon
+    display none
+  
+.bg-primary
+  background color_green
+  
+#calendar 
+  border-radius none
+
+  & .popover-title
+    background #f0f0f0
+  & .popover.bottom > .arrow
+    border-bottom-color: #f0f0f0
+    
+
+
 .slider
   .item
     min-width: 250px
@@ -91,6 +110,16 @@
     position relative
     clear left
     
+    & > li
+      & > a
+        padding-left 0px
+        
+        &:hover
+        &:active
+          color color_green
+          background none
+      
+    
     & li
       padding-bottom 7px
       
@@ -99,9 +128,10 @@
         border none
         
         & a
+          padding-left 0px
           outline none
           border none
-  
+
     & .menuitem
       padding-top 10px
       padding-left 5px
