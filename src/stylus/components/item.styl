@@ -564,7 +564,47 @@
       
       &:hover
         color color_green            
-         
+    
+  &_message
+    
+    &_remove
+      position absolute
+      right 30px
+      top 30px
+      width 14px
+      height 14px
+      background url(../../../images/sprites/profile_remove.png) left center no-repeat
+      transition 150ms all ease-in
+      opacity 1
+      
+      &:hover
+        opacity 0.7
+        
+    &_date
+      float left
+      clear left
+      margin-top 13px
+      color color_gray_more
+      font-size: 14px
+      font-family FuturaPTBook
+    
+    &_title
+      font-size: 18px
+      max-width 85%
+      display block
+      font-family FuturaPTBook
+      line-height 24px
+      color black
+
+    &.item_gor
+      & .item
+        min-height 148px
+        &_under
+          min-height 148px
+          padding 30px
+          padding-top 25px
+          padding-bottom 25px
+
   &_orderitem
     
     &.item_gor

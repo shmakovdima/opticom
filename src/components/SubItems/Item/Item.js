@@ -210,8 +210,6 @@ class Item extends Component {
     const titleshow = wordlenght(title, 50)
 
 
-    console.log(this.props.itemgor+ ' '+windowWidth)
-
     const itemgor = (this.props.itemgor && (windowWidth>991))  ? 'item_gor' : ''
 
     return(

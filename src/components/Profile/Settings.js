@@ -40,7 +40,7 @@ class Adress extends Component {
 
 
 class MountPhone extends Component {
-   componentDidMount() {
+  componentDidMount() {
     $('.phone').mask('+7 (999) 999-9999');
   }
   render(){

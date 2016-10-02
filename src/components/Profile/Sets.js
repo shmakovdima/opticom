@@ -1,13 +1,9 @@
 
 
-//import '../stylus/components/catalog.styl';
-//import '../stylus/components/subcategory.styl';
 import '../../stylus/components/profile.styl';
 
 import {Link} from 'react-router'
 import React, { Component } from 'react'
-//import HeaderLight from '../components/Headers/HeaderLight'
-//import CategoryHeader from './SubItems/Category/CategoryHeader'
 import {connect } from 'react-redux'
 import ReadyPopular from '../SubItems/Item/ReadyPopular'
 
