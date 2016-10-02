@@ -16,6 +16,7 @@ import ProfileSettings from './components/Profile/Settings'
 import ProfileMyItems from './components/Profile/myItems'
 import ProfileOrders from './components/Profile/myOrders'
 import ProfileSpecial from './components/Profile/Special'
+import ProfileMessages from './components/Profile/Messages'
 
 import Profile from './components/Profile'
 
@@ -35,6 +36,7 @@ export const routes = (
         <Route path='myitems' component={ProfileMyItems}/>
         <Route path='orders' component={ProfileOrders} />
         <Route path='special' component={ProfileSpecial} />
+        <Route path='messages' component={ProfileMessages} />
         
       </Route>
 

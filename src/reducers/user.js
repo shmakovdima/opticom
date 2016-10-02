@@ -10,6 +10,24 @@ const initialState = {
     }
   ],
 
+  Messages: [
+    {
+      message: 'Ваш заказ №234534 доставляется, ожидаемое время прибытия 13 мая с 10 до 14 часов',
+      date: '2016-10-02',
+      status: 'unreaded'
+    },
+    {
+      message: 'Ваш заказ №234534 доставляется, ожидаемое время прибытия 13 мая с 10 до 14 часов',
+      date: '2016-10-01',
+      status: 'readed'
+    },
+    {
+      message: 'Ваш заказ №234534 доставляется, ожидаемое время прибытия 13 мая с 10 до 14 часов',
+      date: '2016-09-30',
+      status: 'readed'
+    }
+  ],
+
 
   Special: [
     {
@@ -1176,6 +1194,8 @@ export default function user(state = initialState, action) {
       return {...state, isLogged: action.payload}
     case 'SHOW_MENU':
       return {...state, show_menu: action.payload}
+    case 'SET_READED':
+      return {...state, Messages: action.payload}
     default:
       return state;
   }
