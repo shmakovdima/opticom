@@ -92,15 +92,11 @@ class myItems extends Component {
     var Loved = (this.props.myItems.Loved) ? this.props.myItems.Loved : []
     var Ready = (this.props.myItems.Ready) ? this.props.myItems.Ready : []
 
-
     var windowWidth = this.props.windowWidth
 
     var dropdownmode = (this.state.mode == 'month') ? 'По месяцам' : 'По категориям'
 
     var mode = this.state.mode 
-
-
-
 
     var Buyed = (this.props.myItems.Buyed) ? this.props.myItems.Buyed : []
     Buyed = (this.state.mode == 'month') ? Buyed.sort(sortArray('date')) : Buyed.sort(sortArray('category'))

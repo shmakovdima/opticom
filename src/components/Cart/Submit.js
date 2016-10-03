@@ -10,14 +10,10 @@ import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 import CartItem from '../SubItems/Item/CartItem'
 
-class Cart extends Component {
-
-  emptyCart(){
-    this.props.pageActions.emptyCart([])
-  }
+class Submit extends Component {
 
   render(){
-    var CartItems = this.props.Cart
+    var CartItems = this.props.Submit
     return(
       <div>
         <HeaderLight/>
@@ -25,9 +21,9 @@ class Cart extends Component {
           <div className='container'>
             <div className='row'>
               <div className='col-xs-12'>
-                <span className='cart_title active'>Корзина</span>
+                <span className='cart_title'>Корзина</span>
                 <span className='cart_title'>Доставка и оплата</span>
-                <span className='cart_title'>Подтверждение</span>
+                <span className='cart_title  active'>Подтверждение</span>
               </div>
               <div className='col-xs-12'>
                 <Link className='cart_tocatalog green_underline' to='/catalog' title='Вернуться в каталог'>Вернуться в каталог</Link>
@@ -43,7 +39,7 @@ class Cart extends Component {
                   {
                     CartItems.map(function(item, key){
                       return(
-                        <CartItem submit={false} item={item} key={key}/>
+                        <CartItem submit={true} item={item} key={key}/>
                       )
 
                     })
@@ -69,10 +65,6 @@ class Cart extends Component {
                   </Link>
                 </div>
                 <div className='cart_links'>
-                  <button className='cart_trash greenborderbottom' onClick={::this.emptyCart}>
-                    <span>Очистить корзину
-                    </span>
-                    </button>
                   <Link className='cart_add greenborderbottom' to='addtoset' title='Добавить в набор '>
                     <span>Добавить в набор
                     </span>
@@ -102,7 +94,7 @@ class Cart extends Component {
 
 function mapStateToProps (state) {
   return {
-    Cart: state.user.Cart,
+    Submit: state.user.Submit,
     windowWidth: state.pageData.Cart
   }
 }
@@ -114,7 +106,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+export default connect(mapStateToProps, mapDispatchToProps)(Submit)
 
 
 

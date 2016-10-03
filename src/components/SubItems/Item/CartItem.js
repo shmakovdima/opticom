@@ -6,13 +6,13 @@ import { bindActionCreators } from 'redux'
 import * as pageActions from '../../../actions/setLove'
 
 import wordlenght from '../../function/wordlenght'
+import wordend from '../../function/wordend'
 
+import {If ,Then ,Else } from 'react-if';
 import cutnumber from '../../function/cutnumber'
 
 
 import $ from 'jquery'
-
-
 
 Array.prototype.removeByValue = function(item){
   var itemIndex = -1;
@@ -164,9 +164,19 @@ class CartItem extends Component {
         <span className='item_discount'>{textcost}</span>
         <span className='item_cost'>{discountcost}</span>
         <span className='item_cost_description'>{additiontext}</span>
-
       </div>)
     }
+
+    var textcount = ''
+
+    console.log(textcount)
+
+    if ('buyed' in this.props.item) {
+      if ('one' in this.props.item.buyed) textcount = this.props.item.buyed.one+ ' ' + wordend(this.props.item.buyed.one, ['штука','штуки','штук'])
+      if ('packaging' in this.props.item.buyed) textcount = this.props.item.buyed.packaging+ ' ' + wordend(this.props.item.buyed.packaging, ['упаковка','упаковки','упаковок'])
+    } 
+
+    var submit = this.props.submit
 
     const titleshow = wordlenght(title, 50)
 
@@ -192,23 +202,33 @@ class CartItem extends Component {
              {cost}
             <div className='item_order_body item_hide_gor pull-right'>
               <div className='item_order_buttons'>
-                <button className={item_order_buttons_one} onClick={::this.setOne}>штуки</button>
-                <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
-              </div>
-              <div className='item_cart_buttonbody text-center'>
-                <div className='item_cart_buttoninput'>
-                  <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                  <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
-                  <button className='item_order_plus' onClick={::this.setPlus}>+</button>
-                </div>
-              </div>   
+                <If condition={submit==false}>
+                  <Then>
+                    <div>
+                      
+                        <button className={item_order_buttons_one} onClick={::this.setOne}>штуки</button>
+                        <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
+                      </div>
+                      <div className='item_cart_buttonbody text-center'>
+                        <div className='item_cart_buttoninput'>
+                          <button className='item_order_minus' onClick={::this.setMinus}>-</button>
+                          <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
+                          <button className='item_order_plus' onClick={::this.setPlus}>+</button>
+                        </div>
+                      </div>  
+                    
+
+                  </Then>
+                  <Else>
+                    <div>
+                      <span className='item_cart_count'>{textcount}</span>
+                    </div>
+                  </Else>
+                </If>
+              </div> 
+
                 
             </div>
-
-
-
-
-           
 
 
             <div className='item_order'>

@@ -14,7 +14,7 @@ import NotFound from './components/NotFound'
 
 import Cart from './components/Cart/Cart'
 import Delivery from './components/Cart/Delivery'
-
+import Submit from './components/Cart/Submit'
 
 import ProfileSets from './components/Profile/Sets'
 import ProfileSettings from './components/Profile/Settings'
@@ -37,6 +37,9 @@ export const routes = (
 
       <Route path='cart' component={Cart}/>
       <Route path='delivery' component={Delivery}/>
+      <Route path='submit' component={Submit}/>
+
+
       <Route path='profile' component={Profile}>
         <IndexRoute component={ProfileSettings} />
         <Route path='sets' component={ProfileSets} />
