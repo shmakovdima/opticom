@@ -31,7 +31,7 @@ class HeaderLink extends Component {
 class HeaderCount extends Component {
   render() {
     return(
-      <Link className='pull-right header_basket' to='/user/cart'>
+      <Link className='pull-right header_basket' to='/cart'>
         <span>{2}</span>
       </Link>
     )

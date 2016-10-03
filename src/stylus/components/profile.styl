@@ -9,54 +9,7 @@
     color black
     font-size: 72px
     
-  &_messages
-    position relative
-    
-    &_lenght
-      width 40px
-      height 24px
-      color black
-      display block
-      float left
-      font-size: 18px
-      color black
-      top 7px
-      z-index -1
-      left -15px
-      text-align right
-      padding-right 9px
-      font-family FuturaPTHeavy
-      position relative
-      background color_green
-      
-    &_new
-      position relative
-      background none
-      color black
-      line-height 30px
-      font-size 18px
-      font-family FuturaPTBold
-      float right
-      margin-top 17px
 
-      &:before
-        left -8px
-        bottom 6px
-        width 90%
-    
-    & a
-      &:hover
-      &:visited
-      &:active
-        color color_green
-    
-    & h2
-      padding-bottom 25px
-      float left
-      font-size: 32px
-      font-family FuturaPTHeavy
-      color #000000
-    
   &_orders
     margin-top 45px
     
@@ -187,8 +140,6 @@
       background url(../../../images/sprites/header_search.png)   no-repeat
       background-size 10px
       background-position calc(100% - 10px) 21px
-      
-
       float right
       
       & input 
@@ -392,7 +343,10 @@
       font-size: 16px
       font-family FuturaPTHeavy
       
+    & textarea
     & input[type='text']
+      resize none
+      outline none
       padding-left 14px
       padding-right 14px
       color: #000000
@@ -515,3 +469,150 @@
         width 100%
         float left
         position relative
+        
+  &_messages
+    position relative
+        
+    &_lenght
+      width 40px
+      height 24px
+      color black
+      display block
+      float left
+      font-size: 18px
+      color black
+      top 7px
+      z-index -1
+      left -15px
+      text-align right
+      padding-right 9px
+      font-family FuturaPTHeavy
+      position relative
+      background color_green
+      
+    &_new
+      position relative
+      background none
+      color black
+      line-height 30px
+      font-size 18px
+      font-family FuturaPTBold
+      float right
+      margin-top 17px
+
+      &:before
+        left -8px
+        bottom 6px
+        width 90%
+    
+    & a
+      &:hover
+      &:visited
+      &:active
+        color color_green
+    
+    & h2
+      padding-bottom 25px
+      float left
+      font-size: 32px
+      font-family FuturaPTHeavy
+      color #000000
+      
+    &_input
+      & input 
+        font-size 16px!important
+        line-height 30px!important
+        padding-left 5px!important
+        padding-right 5px!important
+    
+
+    &_callback
+      font-family FuturaPTBold
+      font-size 16px
+      line-height 32px
+      margin-top 60px
+      float left
+      padding-left 25px
+      color black
+
+
+    &_filelist
+      float left
+      width 100%
+      clear left
+      margin-top 20px
+      & span
+        float left
+        font-size 14px
+        font-family FuturaPTBook
+        clear left
+
+    &_append
+      margin-top 25px
+      float left
+      clear left
+      width 100%
+
+    &_attach
+      background url(../../../images/sprites/profile_attach.png)   no-repeat
+      background-position left center
+      line-height 40px
+      padding-left 20px
+      font-family FuturaPTBook
+      font-size 16px
+
+    &_send
+      line-height: 40px
+      font-family: FuturaPTBold
+      color white
+      transition: 150ms all ease-in
+      padding-left: 18px
+      padding-right: 18px
+      text-transform uppercase
+      font-size 12px
+      background color_green
+
+    &_checkbox
+      clear left
+      width 100%
+      float left
+      margin-top 20px
+      
+      & label
+        opacity 1!important
+
+      & span
+        color black
+        font-size: 16px
+        margin-left 8px
+        line-height 24px
+        font-family FuturaPTBook
+
+    &_textarea
+      margin-top 26px
+      
+      & textarea
+        font-size 16px
+        border 1px solid rgba(0,0,0,0.1)
+      
+    &_block
+      margin-top 60px
+      width 100%
+      float left
+      background white
+      border 2px solid #fafafa
+      padding 25px 
+      
+      & .profile_orders_dropdown
+        float left
+        width 100%
+        height 50px
+        clear left
+      
+      & h2
+        padding-bottom 0px
+        font-size 16px
+        line-height 26px
+        color #000000
+        font-family FuturaPTBold
+    

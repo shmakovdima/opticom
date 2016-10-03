@@ -1,0 +1,131 @@
+@import '../sprite.styl'
+@import '../variables.styl'
+
+.cart
+  &_header
+    padding-top 180px
+    
+  &_links
+    margin-top 50px
+    position relative
+    float left
+    
+  &_trash
+  &_add
+  &_print
+  &_excel
+    padding-left 35px
+    background-color none
+    float left
+    clear left
+    font-size: 18px
+    line-height 20px
+    position relative
+    font-family FuturaPTMedium
+    margin-bottom 10px
+    
+  &_trash
+    background url(../../../images/sprites/basket_remove.png) no-repeat
+    
+  &_print
+    background url(../../../images/sprites/basket_print.png) no-repeat
+    
+  &_excel
+    background url(../../../images/sprites/basket_excel.png) no-repeat
+
+  &_add
+    background url(../../../images/sprites/basket_add.png) no-repeat
+
+  &_total
+    position relative
+    &_cost
+      font-family FuturaPTHeavy
+      color #000000
+      font-size: 22px
+      line-height 26px
+      float left
+      clear right
+      width 100%
+      
+    
+      
+
+
+    &_vendors
+    &_waiting
+      margin-top 15px
+
+    &_waiting
+      max-width 130px
+
+    &_vendors
+    &_qual
+    &_waiting
+      font-size 15px
+      line-height 20px
+      font-family FuturaPTBook
+      float left
+      clear left
+  
+    &_button
+      width 130px
+      float left
+      margin-top 20px
+    
+  &_tocatalog
+    color #0c0c0c
+    font-family LeksaPro
+    font-size: 18px
+    position relative
+    display block
+    width auto
+    float left
+    margin-top -15px
+    margin-left 32px
+    
+  &_title
+    color: #000000
+    padding-left 32px
+    position relative
+    display block
+    float left
+    font-size: 30px
+    font-family FuturaPTHeavy
+    
+    &:before
+      padding-left 7px
+      top 5px
+      line-height 26px
+      left 0px
+      z-index -1
+      font-size: 15px
+      content ''
+      position absolute
+      display block
+      background-color: #f0f0f0
+      width: 48px
+      height: 24px
+    
+    & + &
+      margin-left 100px
+      
+    &:nth-child(1):before
+      content '1'
+
+    &:nth-child(2):before
+      content '2'
+    &:nth-child(3):before
+      content '3'
+
+
+    &.active
+      top -40px
+      font-size: 72px
+      
+      &:before
+        background-color color_green
+        width 64px
+        height 40px
+        padding-left 9px
+        line-height 40px
+        font-size: 28px

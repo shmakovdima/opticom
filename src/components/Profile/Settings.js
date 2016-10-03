@@ -61,7 +61,6 @@ class ProfileSettings extends Component {
   }
 
   setCurCompany(key) {
-    //alert(key)
     this.setState({
       select_company: key
     })

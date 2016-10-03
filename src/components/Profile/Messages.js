@@ -17,6 +17,7 @@ import getDate from '../function/getDate'
 import { bindActionCreators } from 'redux'
 import {connect } from 'react-redux'
 import {DropdownButton, MenuItem} from 'react-bootstrap'
+import $ from 'jquery'
 
 class Message extends Component {
 
@@ -26,10 +27,6 @@ class Message extends Component {
     var title = this.props.item.message
     var date = getDate(this.props.item.date)
     var item = this.props.item
-
-
-
-
 
 
     return(
@@ -53,8 +50,21 @@ class ProfileMessages extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sendto: 'person'
+      sendto: 'person',
+      FileList: []
     };
+  }
+
+  changeFiles() {
+
+    this.setState({
+      FileList: (document.getElementById('append_file')) ? document.getElementById('append_file').files : []
+
+    })
+  }
+
+  addFile() {
+    $('#append_file').click()
   }
 
 
@@ -91,8 +101,12 @@ class ProfileMessages extends Component {
   }
 
 
-  render() {
+  
 
+
+  render() {
+    
+    console.log(FileList)
   
     var New = []
     var Readed = []
@@ -137,6 +151,17 @@ class ProfileMessages extends Component {
     }
 
 
+  var FileNames = []
+  var FileList = this.state.FileList
+
+  for (var i = 0; i < FileList.length; i++) {
+    var file = FileList[i];
+    FileNames.push(file.name)
+  }
+
+
+
+  console.log(FileList)
   return(
       <div className='profile'>
         <section className='profile_sets_header'>
@@ -197,7 +222,7 @@ class ProfileMessages extends Component {
 
               
               </div>
-              <div className='col20-lg-offset-2 col20-lg-5 col20-md-offset-2 col20-md-5'>
+              <div className='col20-lg-offset-2 col20-lg-6 col20-md-offset-2 col20-md-6'>
                 <div className='profile_messages_block'>
                   <h2>Есть вопросы? Напишите нам</h2>
 
@@ -214,25 +239,39 @@ class ProfileMessages extends Component {
                       </div>
                     </div>
                     <div className='profile_block'>
-                      <div>
-                        <input type='text'/>
+                      <div className='profile_messages_input'>
+                        <input placeholder='Тема' type='text'/>
                       </div>
-                      <div>
-                        <textarea></textarea>
+                      <div className='profile_messages_textarea'>
+                        <textarea placeholder='Ваше сообщение'></textarea>
                       </div>
-                      <div>
-                        <input type='checkbox'/>
-                        <label></label>
+                      <div className='profile_messages_checkbox'>
+                        <input id='callback' type='checkbox'/>
+                        <label htmlFor='callback'></label>
+                        <span>Перезвоните мне</span>
                       </div>
-                      <div>
-                        <button>Прикрепить файл</button>
-                        <button>Отправить</button>
+
+                      <div className='profile_messages_append'>
+                        <input onChange={::this.changeFiles} id='append_file' type='file' multiple/>
+                        <button className='profile_messages_attach' onClick={::this.addFile}>Прикрепить файл</button>
+                        <button className='pull-right profile_messages_send'>Отправить</button>
+                      </div>
+                      <div className='profile_messages_filelist'>
+                        {
+                          FileNames.map(function(item){
+                            return(
+                              <span>{item}</span>
+                            )
+
+                          })
+
+                        } 
                       </div>
                       
                       
                     </div>
                 </div>
-                <span>
+                <span className='profile_messages_callback'>
                   <span>Или звоните</span>
                   <br/>
                   <a href='tel:+7-495-980-06-48' title='Телефон'>+7-495-980-06-48</a>

@@ -1,5 +1,3 @@
-
-
 import '../../stylus/components/profile.styl';
 
 import {Link} from 'react-router'
