@@ -8,9 +8,17 @@ import * as pageActions from '../../actions/emptyCart'
 import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
+import CartItem from '../SubItems/Item/CartItem'
 
 class Cart extends Component {
+
+  
+
   render(){
+
+
+    var CartItems = this.props.Cart
+
     return(
       <div>
         <HeaderLight/>
@@ -32,6 +40,17 @@ class Cart extends Component {
           <div className='container'>
             <div className='row'>
               <div className='col20-lg-14 col20-md-14'>
+                <div>
+                  {
+                    CartItems.map(function(item, key){
+                      return(
+                        <CartItem item={item} key={key}/>
+                      )
+
+                    })
+                  }
+                </div>
+
               </div>
               <div className='col20-lg-offset-2 col20-lg-4 col20-md-offset-2 col20-md-4'>
                 <div className='profile_right'>
