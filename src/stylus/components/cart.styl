@@ -1,7 +1,65 @@
 @import '../sprite.styl'
 @import '../variables.styl'
 
+
 .cart
+  
+  &_date
+    position relative
+    padding-left 34px
+    float left
+    padding-top 15px
+    
+    &_row
+      
+
+      & input
+      & input.form-control
+        border none
+        max-width 250px
+        line-height 35px
+        box-shadow none
+        border-bottom 1px solid rgba(0, 0, 0, 0.1)
+      
+      & + &
+        margin-top 15px
+
+    &_title
+      width 70px
+      float left
+      line-height 35px
+      font-size 16px
+      font-family FuturaPTBook
+      color #b8b8b8
+
+
+  &_address
+    &_title
+      float left
+      clear left
+      line-height 56px
+      font-size: 16px
+      font-family FuturaPTHeavy    
+    &_content
+      font-size: 16px
+      font-family FuturaPTBook
+      line-height 24px
+      clear left
+      float left
+    
+    &_change
+      float right
+      &.greenlighted
+        position relative
+        margin-top -42px
+        font-size 18px
+        color black
+        font-family FuturaPTBold
+        &:before
+          height 35%
+          left -5px
+          width 85%
+
   &_header
     padding-top 180px
     
@@ -47,10 +105,6 @@
       clear right
       width 100%
       
-  
-      
-
-
     &_vendors
     &_waiting
       margin-top 15px
@@ -129,3 +183,7 @@
         padding-left 9px
         line-height 40px
         font-size: 28px
+        
+    &.delivery
+      & + &
+        margin-left 80px

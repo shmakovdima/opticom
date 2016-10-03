@@ -12,13 +12,12 @@ import CartItem from '../SubItems/Item/CartItem'
 
 class Cart extends Component {
 
-  
+  emptyCart(){
+    this.props.pageActions.emptyCart([])
+  }
 
   render(){
-
-
     var CartItems = this.props.Cart
-
     return(
       <div>
         <HeaderLight/>
@@ -70,7 +69,7 @@ class Cart extends Component {
                   </Link>
                 </div>
                 <div className='cart_links'>
-                  <button className='cart_trash greenborderbottom'>
+                  <button className='cart_trash greenborderbottom' onClick={::this.emptyCart}>
                     <span>Очистить корзину
                     </span>
                     </button>

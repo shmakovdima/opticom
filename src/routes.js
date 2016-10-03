@@ -13,13 +13,15 @@ import NotFound from './components/NotFound'
 
 
 import Cart from './components/Cart/Cart'
+import Delivery from './components/Cart/Delivery'
+
+
 import ProfileSets from './components/Profile/Sets'
 import ProfileSettings from './components/Profile/Settings'
 import ProfileMyItems from './components/Profile/myItems'
 import ProfileOrders from './components/Profile/myOrders'
 import ProfileSpecial from './components/Profile/Special'
 import ProfileMessages from './components/Profile/Messages'
-
 import Profile from './components/Profile'
 
 export const routes = (
@@ -34,6 +36,7 @@ export const routes = (
 
 
       <Route path='cart' component={Cart}/>
+      <Route path='delivery' component={Delivery}/>
       <Route path='profile' component={Profile}>
         <IndexRoute component={ProfileSettings} />
         <Route path='sets' component={ProfileSets} />
