@@ -35,7 +35,7 @@ class CategorySlider extends Component {
 
   showMenu(){
     $('body').addClass('overflow');
-    this.props.showMenu(!this.props.show_menu)
+    this.props.pageActions.showMenu(!this.props.show_menu)
   }
 
   render() {
@@ -62,8 +62,6 @@ class CategorySlider extends Component {
     
     return(
       <div>
-
-
         <div className='catalog_header_slider_block'>
           <div className='container'>
             <div className='row'>
