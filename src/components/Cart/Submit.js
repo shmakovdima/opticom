@@ -34,7 +34,75 @@ class Submit extends Component {
         <section>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-14 col20-md-14'>
+              <div className='col20-lg-15 col20-md-15'>
+
+                <div className='col20-lg-offset-2 col20-md-offset-2 cart_submit_padding'>
+                  <div className='profile_block'>
+
+                    <div className='row'>
+                      <div className='profile_block_row'>
+                        <span className='col-xs-3 inputlabel'>Имя и фамилия</span>
+                        <span className='col-xs-9 spanlabel'>Максим Глубоков</span>
+                      </div>
+                      <div className='profile_block_row'>
+                        <span className='col-xs-3 inputlabel'>Мобильный телефон</span>
+                        <span className='col-xs-9 spanlabel'>+7 (922) 921-92-11</span>
+                      </div>
+                      <div className='profile_block_row'>
+                        <span className='col-xs-3 inputlabel'>Электронная почта</span>
+                        <span className='col-xs-9 spanlabel'>some@mail.com</span>
+                      </div>
+                    </div>
+
+
+                    <div className='row'>
+                      <div className='profile_block_row'>
+                        <span className='col-xs-3 inputlabel'>Адрес доставки</span>
+                        <span className='col-xs-9 spanlabel'>
+                          Покров, Ленина 45
+                          <br/>
+                          Владимирская область, 601122
+                        </span>
+                      </div>
+                    </div>
+
+
+                    <div className='row'>
+                      <div className='profile_block_row'>
+                        <span className='col-xs-3 inputlabel'>Время доставки</span>
+                        <span className='col-xs-9 spanlabel'>
+                          11 сентября 2016, с 9:00 до 16:00
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className='row'>
+                      <div className='profile_block_row'>
+                        <span className='col-xs-3 inputlabel'>Предпочитаемая оплата</span>
+                        <span className='col-xs-9 spanlabel'>
+                          Банковский счет
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className='row'>
+                      <div className='profile_block_row'>
+                        <span className='col-xs-3 inputlabel'>Комментарий</span>
+                        <span className='col-xs-9 spanlabel'>
+                          Промо-продукция, важна целостность упаковки
+                        </span>
+                      </div>
+                    </div>
+                        
+                       
+                       
+
+          
+
+                  </div>
+
+                </div>
+
                 <div>
                   {
                     CartItems.map(function(item, key){
@@ -47,7 +115,7 @@ class Submit extends Component {
                 </div>
 
               </div>
-              <div className='col20-lg-offset-2 col20-lg-4 col20-md-offset-2 col20-md-4'>
+              <div className='col20-lg-offset-1 col20-lg-4 col20-md-offset-2 col20-md-4'>
                 <div className='profile_right'>
                   <h2>Итого</h2>
                   <span className='cart_total_cost'>18 056 ₽</span>

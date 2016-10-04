@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import HeaderLight from './Headers/HeaderLight'
-
-export default class Home extends Component {
+import HeaderDark from '../components/Headers/HeaderDark'
+import AllIsReady from './SubItems/Catalog/AllIsReady'
+import Interesed from './SubItems/Catalog/Interesed'
+import CategorySlider from './SubItems/CategorySlider'
+export default class Catalog extends Component {
   render() {
     return (
       <div>
-        <HeaderLight/>
-        <div className='row'>
-          <div className='col-md-12'>Раздел /</div>
-        </div>
+        <HeaderDark/>
+        <CategorySlider/>
+        <AllIsReady/>  
+        <Interesed/>
       </div>
     )
   }

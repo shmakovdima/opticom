@@ -1,6 +1,3 @@
-require('!style!css!slick-carousel/slick/slick.css'); 
-require('!style!css!slick-carousel/slick/slick-theme.css');
-
 import '../stylus/components/slick.styl';
 import '../stylus/components/category.styl';
 import {connect } from 'react-redux'
