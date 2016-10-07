@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 //import {Link} from 'react-router'
 
 import '../stylus/components/ecology.styl';
-import HeaderLight from '../components/Headers/HeaderLight'
+import HeaderDark from '../components/Headers/HeaderDark'
 
 
 class EcologyItem extends Component {
@@ -11,20 +11,39 @@ class EcologyItem extends Component {
 
   render() {
 
-    var bg = {backgroundImage: 'url(http://' + window.location.host + '/' + 'images/home/eco_page.png)'}
+    var bg = {backgroundImage: 'url(http://' + window.location.host + '/' + 'images/press/eco_page.png)'}
     return (
       <div>
-        <HeaderLight/>
+        
         <section className='ecology_header' style={bg}>
+            <HeaderDark/>
             <div className='container'>
               <div className='row'>
                
-                <div className='col20-lg-19 col20-lg-offset-1 col20-md-19 col20-md-offset-1 col20-sm-9 '>
-                  <h1>База эко знаний</h1>
+               
+                <div className='col20-lg-14 col20-lg-offset-3 col20-md-14 col20-md-offset-3 col20-sm-9 '>
+
+
+                  <ol className='breadcrumb'>
+                    <li className='breadcrumb-item'>
+                      <a>База эко-знаний</a>
+                    </li>
+                    <li className='breadcrumb-item'>
+                      <span>Новости</span>
+                    </li>
+                      
+                    
+                  </ol>
+
+                  <h1>Экологическая маркировка и упаковка: критерии, ограничения, возможности</h1>
                 </div>
               </div>
+            </div>
+          </section>
+          <section>
+            <div className='container'>
               <div className='row'>
-                <div className='col20-lg-15 col20-md-15 col-sm-10 col-xs-12'>
+                <div className='col20-lg-12 col20-lg-offset-3 col20-md-12 col20-md-offset-3 col-sm-10 col-xs-12 ecology_content'>
                   <p>
                   20 июня компания «ОптиКом» приняла участие в обсуждении экологической ответственности бизнеса на молодежной образовательной конференции в Санкт-Петербурге «Экологическая ответственность бизнеса: состояние и перспективы».
                   </p>
