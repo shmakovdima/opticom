@@ -1,5 +1,6 @@
 const initialState = {
   windowWidth:0,
+  windowTop:0,
 
   lovedItems: new Array(),
 
@@ -53,6 +54,7 @@ const initialState = {
       link: 'optiline',
       title: 'Оптилайн',
       image: 'icon_optiline.png',
+      imagegreen: 'icon_optiline_green.png',
       count: '19',
       childrens: [ 
         {
@@ -139,6 +141,7 @@ const initialState = {
       link: 'eco_goods',
       title: 'Эко-товары',
       image: 'icon_eco.png',
+      imagegreen: 'icon_eco_green.png',
       count: '12',
       childrens: [
 
@@ -148,6 +151,7 @@ const initialState = {
       link: 'boxes',
       title: 'Коробки и контейнеры',
       image: 'icon_boxes.png',
+      imagegreen: 'icon_boxes_green.png',
       count: '21',
       childrens: [
 
@@ -157,6 +161,7 @@ const initialState = {
       link: 'disposable_dishes',
       title: 'Одноразовая посуда',
       image: 'icon_pos.png',
+      imagegreen: 'icon_pos_green.png',
       count: '17',
       childrens: [
 
@@ -165,6 +170,7 @@ const initialState = {
     {
       link: 'stationery',
       title: 'Концелярские товары',
+      imagegreen: 'icon_canctov_green.png',
       image: 'icon_canctov.png',
       count: '21',
       childrens: [
@@ -175,6 +181,7 @@ const initialState = {
       link: 'slice',
       title: 'Пленка',
       image: 'icon_plen.png',
+      imagegreen: 'icon_plen_green.png',
       count: '32',
       childrens: [
 
@@ -184,6 +191,7 @@ const initialState = {
       link: 'packets',
       title: 'Пакеты и сумки',
       image: 'icon_packet.png',
+      imagegreen: 'icon_packet_green.png',
       count: '3',
       childrens: [
 
@@ -193,6 +201,7 @@ const initialState = {
       link: 'trays',
       title: 'Лотки и подложки',
       image: 'icon_lotki.png',
+      imagegreen: 'icon_lotki_green.png',
       count: '16',
       childrens: [
       ]
@@ -201,6 +210,7 @@ const initialState = {
       link: 'goods_for_trade',
       title: 'Товары для торговли',
       image: 'icon_torgov.png',
+      imagegreen: 'icon_torgov_green.png',
       count: '18',
       childrens: [
       ]
@@ -209,6 +219,7 @@ const initialState = {
       link: 'serving_goods',
       title: 'Товары для сервировки',
       image: 'icon_serv.png',
+      imagegreen: 'icon_serv_green.png',
       count: '45',
       childrens: [
       ]
@@ -217,6 +228,7 @@ const initialState = {
       link: 'cooking_goods',
       title: 'Товары для приготовления пищи',
       image: 'icon_prig.png',
+      imagegreen: 'icon_prig_green.png',
       count: '18',
       childrens: [
       ]
@@ -225,6 +237,7 @@ const initialState = {
       link: 'hygiene_products',
       title: 'Гигиеническая продукция',
       image: 'icon_higien.png',
+      imagegreen: 'icon_higien_green.png',
       count: '12',
       childrens: [
       ]
@@ -233,6 +246,7 @@ const initialState = {
       link: 'household_chemicals',
       title: 'Бытовая Химия',
       image: 'icon_him.png',
+      imagegreen: 'icon_him_green.png',
       count: '65',
       childrens: [
       ]
@@ -241,6 +255,7 @@ const initialState = {
       link: 'prof_chemistry',
       title: 'Проф. Химия',
       image: 'icon_profhim.png',
+      imagegreen: 'icon_profhim_green.png',
       count: '16',
       childrens: [
       ]
@@ -249,6 +264,7 @@ const initialState = {
       link: 'overall',
       title: 'Спецодежда',
       image: 'icon_specwear.png',
+      imagegreen: 'icon_specwear_green.png',
       count: '27',
       childrens: [
       ]
@@ -257,6 +273,7 @@ const initialState = {
       link: 'packaging_materials',
       title: 'Упаковочные материалы',
       image: 'icon_up.png',
+      imagegreen: 'icon_up_green.png',
       count: '17',
       childrens: [
       ]
@@ -264,6 +281,7 @@ const initialState = {
     {
       link: 'cleaning_goods',
       title: 'Товары для уборки',
+      imagegreen: 'icon_clining_green.png',
       image: 'icon_clining.png',
       count: '17',
       childrens: [
@@ -272,6 +290,7 @@ const initialState = {
     {
       link: 'electrical_goods',
       title: 'Электротовары',
+      imagegreen: 'icon_electro_green.png',
       image: 'icon_electro.png',
       count: '17',
       childrens: [
@@ -280,6 +299,7 @@ const initialState = {
     {
       link: 'office_equipment',
       title: 'Офисная техника и расходники',
+      imagegreen: 'icon_tech_green.png',
       image: 'icon_tech.png',
       count: '17',
       childrens: [
@@ -288,6 +308,7 @@ const initialState = {
     {
       link: 'kitchenware',
       title: 'Кухонные принадлежности',
+      imagegreen: 'icon_kitche_green.png',
       image: 'icon_kitche.png',
       count: '17',
       childrens: [
@@ -296,6 +317,7 @@ const initialState = {
     {
       link: 'goods',
       title: 'Хозтовары',
+      imagegreen: 'icon_hoztov_green.png',
       image: 'icon_hoztov.png',
       count: '17',
       childrens: [
@@ -304,6 +326,7 @@ const initialState = {
     {
       link: 'textile',
       title: 'Текстиль',
+      imagegreen: 'icon_textil_green.png',
       image: 'icon_textil.png',
       count: '17',
       childrens: [
@@ -313,6 +336,7 @@ const initialState = {
       link: 'shares',
       title: 'Акции',
       image: 'icon_scidki.png',
+      imagegreen: 'icon_scidki_green.png',
       count: '17',
       childrens: [
       ]
@@ -320,6 +344,7 @@ const initialState = {
     {
       link: 'new_arrivals',
       title: 'Новые поступления',
+      imagegreen: 'icon_new_green.png',
       image: 'icon_new.png',
       count: '17',
       childrens: [
@@ -2345,6 +2370,8 @@ export default function pageData(state = initialState,action) {
       return {...state, lovedItems: action.payload}
     case 'SET_WINDOWWIDTH':
       return {...state, windowWidth: action.payload}
+    case 'SET_WINDOWTOP':
+      return {...state, windowTop: action.payload}
     default:
       return state;
   }

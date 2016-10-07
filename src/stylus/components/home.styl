@@ -1,0 +1,336 @@
+@import '../variables.styl'
+
+.home
+  &_header
+    width 100%
+    margin-top 0px
+    height 100vh
+    position fixed
+    background url(../../images/home/home_background.png) no-repeat
+    background-position center
+    background-size cover
+    
+    & .container
+      position relative
+    
+    &.normal
+      position absolute
+      
+    &_down
+      position absolute
+      width 38px
+      left 100px
+      top 530px
+      height 0px
+      cursor pointer
+      overflow hidden
+      background url(../../images/home/home_down.png) no-repeat
+      height 121px
+      transition 600ms all ease-in
+      opacity 1
+
+
+      &.active
+        height 121px
+        
+        &:hover
+        &:active
+          opacity 0.7
+
+    &_moon
+      position absolute
+      width 102px
+      height 100px
+      transform: scale(0.7)
+      background url(../../images/home/moon.png) no-repeat
+      
+    &_sun
+      width 186px
+      z-index 3
+      height 180px
+      position absolute
+      transform: scale(0.7)
+      background url(../../images/home/sun.png) no-repeat
+
+    &_text
+      z-index 5
+      position relative
+      width 280px
+      padding 0px
+      
+      &.text3
+        opacity 0.3
+        position: absolute
+        left: 140px
+
+    & h2
+      color white
+      font-family FuturaPTMedium
+      font-size 36px
+      line-height 36px
+      padding-bottom 18px
+
+    & p
+      color white
+      opacity 0.7
+      font-family LeksaPro
+      font-size: 14px
+      line-height 20px
+
+  &_preferences
+    position relative
+    margin-top 0px
+    padding-top 10px
+    padding-bottom 100px
+    
+
+    
+    & p
+      margin-top 30px
+      position relative
+      float left
+      clear left
+      font-size 16px
+      font-family LeksaPro
+      color: #0c0c0c
+      line-height 24px
+      
+
+    &_press
+      margin-top 50px
+      position relative
+      
+      & .home_preferences_title
+        margin-top 80px
+        position relative
+        clear right
+        
+      & p
+        font-size 16px
+        line-height: 22px
+        max-width 285px
+      
+      &_image
+        position absolute
+        width 256px
+        right 70px
+      
+        height 334px
+        background url(../../images/home/press.png) no-repeat
+        
+      &_speakers
+        margin-top 30px
+        z-index 2
+        font-size: 24px
+        font-family FuturaPTBold
+        line-height 28px
+        float right
+        clear right
+        position relative
+        max-width 250px
+      
+    &_future
+      top -50px
+      
+      &_button
+        text-align left
+        position relative
+        margin-top 140px
+        font-size: 24px
+        background none
+        color black
+        font-family FuturaPTBold
+        float left
+        clear left
+      
+      & .home_preferences_title
+        font-size 36px
+        line-height 38px
+
+
+        &:before
+          height 20%
+          bottom 0px
+          
+      & p
+        left 20px
+        font-size 16px
+        line-height 24px
+        max-width 240px
+      
+    &_social
+      
+      & .home_preferences_title
+        position relative
+        margin-top 50px
+      
+        &:before
+          bottom 0px
+          height 25%
+          
+      & p
+        margin-top 55px
+        position relative
+        float left
+        clear left
+        left 30px
+        width 280px
+        font-size 20px
+        font-family FuturaPTBook
+        line-height 28px
+      
+      &_image
+        background url(../../images/home/social.png) no-repeat
+        width 310px
+        left 150px
+        position absolute
+        height 245px
+      
+    &_ecology
+      top 165px
+      
+      &_images
+        width 100%
+        margin-top 30px
+        
+        & img
+          margin-left 30px
+
+      & p
+        font-size: 24px
+        max-width 300px
+        font-family FuturaPTBold
+        color black
+
+    &_base
+      top -100px
+      
+      & p
+        max-width 178px
+     
+      
+      &_image
+        margin-top 45px
+        position relative
+        float left
+        clear left
+        width 233px
+        height 159px
+        background url(../../images/home/base.png) no-repeat
+      
+
+      .home_preferences_title
+        color white
+        
+        & .greenlighted:before
+          height 50%
+          width 80%
+          bottom 0px
+
+
+    &_clients
+      
+      &_6500
+        position relative
+        float left
+        font-size 90px
+        clear left
+        line-height 90px
+        margin-top 40px
+        font-family FuturaPTBook
+        
+
+      &_riteil
+        position relative
+        float left
+        clear left
+        margin-top 40px
+        text-transform uppercase
+        color: rgba(86, 85, 85, 0.7)
+        font-size 13px
+        padding-right 5px
+        line-height 20px
+        font-family FuturaPTBook
+        
+        & .adding
+          &:before
+            content '•'
+            color color_green
+        
+      &_adds
+        top 0px
+        margin-top 0px
+        max-width 180px
+        position relative
+        float left
+        clear left
+        font-size: 21px
+        font-family FuturaPTBook
+        line-height 25px
+
+      &_image
+        left 70px
+        background url(../../images/home/6500.png) no-repeat
+        top -40px
+        position absolute
+        width 310px
+        height 294px
+    
+    &_title
+      text-transform uppercase
+      color black
+      float left
+      clear right
+      font-size: 24px
+      line-height 28px
+      font-family FuturaPTBold
+      
+      &:before
+        height 45%
+        width 80%
+    
+    
+  &_slider
+    position relative
+    
+    .catalog_header_slider_loadmore
+      color black
+    
+
+    .catalog_header_slider
+      padding-top 0px 
+    
+    & .catalog
+      &_header
+        &_slider
+          z-index 100
+          &_item
+            
+            &_image
+              cursor pointer
+
+            &_count
+              color #84949a
+
+            &_title
+              color black
+              cursor pointer
+              
+              &:hover
+              &:active
+                color color_green
+  &_planet
+    position absolute
+    width 100%
+    height 800px
+    top 30px
+    left 0px
+    transform: scale(0.65)
+
+  &_main
+    background #fafafa url(../../images/home/home_bg.png) center 40px no-repeat
+    z-index 2
+    top 100vh
+    top 1000px
+    position relative
+    width 100%

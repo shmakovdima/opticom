@@ -6,6 +6,7 @@ import $ from 'jquery'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as pageActions from '../actions/setWindowWidth'
+import * as pageActionTop from '../actions/setWindowTop'
 
 
 
@@ -15,16 +16,23 @@ class App extends Component {
     this.props.pageActions.setWindowWidth($('body').width())
   }
 
+  updateTop(){
+    this.props.pageActionTop.setWindowTop($('body').scrollTop())
+  }
+
   componentWillMount() {
     this.updateDimensions()
+    this.updateTop()
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.updateDimensions.bind(this))
+    window.addEventListener('scroll', this.updateTop.bind(this))
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateDimensions.bind(this))
+    window.removeEventListener('scroll', this.updateTop.bind(this))
   }
 
   render() {
@@ -39,31 +47,16 @@ class App extends Component {
 
 function mapStateToProps (state) {
   return {
-    windowWidth: state.pageData.windowWidth
+    windowWidth: state.pageData.windowWidth,
+    windowTop: state.pageData.windowTop
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(pageActions, dispatch)
+    pageActions: bindActionCreators(pageActions, dispatch),
+    pageActionTop: bindActionCreators(pageActionTop, dispatch)
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
-
-
-    {/*
-      <div>
-        <div>
-          <h1>
-            <Link to='/'>App</Link>
-          </h1>
-          <ul>
-            <li><Link to='/admin'>Admin</Link></li>
-            <li><Link to='/list'>List</Link></li>
-          </ul>
-          {this.props.children}
-        </div>
-        <Footer/>
-      </div>
-        */}

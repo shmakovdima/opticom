@@ -49,8 +49,6 @@ class Catalog_Group extends Component {
 
 class Catalog extends Component {
 
-
-
   constructor(props) {
     super(props);
     this.state = {

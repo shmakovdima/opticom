@@ -36,7 +36,7 @@ class CatalogHeader extends Component {
           </div>
         </div>
 
-        <CategorySlider/>
+        <CategorySlider greenMode={false}/>
       </section>
     )
   }

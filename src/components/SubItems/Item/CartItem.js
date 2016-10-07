@@ -176,7 +176,8 @@ class CartItem extends Component {
       if ('packaging' in this.props.item.buyed) textcount = this.props.item.buyed.packaging+ ' ' + wordend(this.props.item.buyed.packaging, ['упаковка','упаковки','упаковок'])
     } 
 
-    var submit = this.props.submit
+    var submit = (this.props.submit) ? true : false
+
 
     const titleshow = wordlenght(title, 50)
 
@@ -205,18 +206,18 @@ class CartItem extends Component {
                 <If condition={submit==false}>
                   <Then>
                     <div>
-                      
-                        <button className={item_order_buttons_one} onClick={::this.setOne}>штуки</button>
-                        <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
-                      </div>
-                      <div className='item_cart_buttonbody text-center'>
-                        <div className='item_cart_buttoninput'>
-                          <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                          <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
-                          <button className='item_order_plus' onClick={::this.setPlus}>+</button>
+                      <div>
+                          <button className={item_order_buttons_one} onClick={::this.setOne}>штуки</button>
+                          <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
                         </div>
-                      </div>  
-                    
+                        <div className='item_cart_buttonbody text-center'>
+                          <div className='item_cart_buttoninput'>
+                            <button className='item_order_minus' onClick={::this.setMinus}>-</button>
+                            <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
+                            <button className='item_order_plus' onClick={::this.setPlus}>+</button>
+                          </div>
+                        </div>  
+                      </div>
 
                   </Then>
                   <Else>

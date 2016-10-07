@@ -10,18 +10,18 @@ import { bindActionCreators } from 'redux'
 
 class Carousel_Item extends Component {
   render() {
-    const image = '/images/categories/'+this.props.Category.image
+    const image = (this.props.greenMode) ? '/images/categories/'+this.props.Category.imagegreen : '/images/categories/'+this.props.Category.image
     const title = this.props.Category.title
     const count = this.props.Category.count + ' ' + wordend(this.props.Category.count,['товар','товара','товаров'])
     const link = '/'+this.props.Category.link
 
     return(
       <div className='catalog_header_slider_item '>
-        <Link title={title} to={'catalog/'+link}>
+        <Link title={title} to={'catalog'+link}>
           <div style={{backgroundImage: 'url(' + image + ')'}} className='catalog_header_slider_item_image'>
           </div>
         </Link>
-        <Link title={title} to={'catalog/'+link} className='catalog_header_slider_item_title'>
+        <Link title={title} to={'catalog'+link} className='catalog_header_slider_item_title'>
           {title}
         </Link>
         <span className='catalog_header_slider_item_count'>{count}</span>
@@ -53,7 +53,7 @@ class CategorySlider extends Component {
     const windowWidth = this.props.windowWidth
     const Categories = this.props.Categories
 
-
+    var greenMode = this.props.greenMode
     
     let slidernumber = 0
 
@@ -76,7 +76,7 @@ class CategorySlider extends Component {
                   </div>
                   {
                     Categories.map(function(item) {
-                      return (<div><Carousel_Item Category={item} key={++slidernumber}/></div>)
+                      return (<div><Carousel_Item greenMode={greenMode} Category={item} key={++slidernumber}/></div>)
                     })
                   }
                 </Slider>
