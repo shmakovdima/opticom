@@ -23,6 +23,16 @@ import ProfileOrders from './components/Profile/myOrders'
 import ProfileSpecial from './components/Profile/Special'
 import ProfileMessages from './components/Profile/Messages'
 import Profile from './components/Profile'
+import Press from './components/Press/Press'
+
+import PressNews from './components/Press/PressNews'
+import PressProjects from './components/Press/PressProjects'
+import PressKit from './components/Press/PressKit'
+import PressSmi from './components/Press/PressSmi'
+import PressPhoto from './components/Press/PressPhoto'
+
+import Ecology from './components/Ecology'
+import EcologyItem from './components/EcologyItem'
 
 export const routes = (
   <div>
@@ -39,6 +49,18 @@ export const routes = (
       <Route path='delivery' component={Delivery}/>
       <Route path='submit' component={Submit}/>
 
+      <Route path='ecology' component={Ecology}/>
+      <Route path='ecology/test' component={EcologyItem}/>
+
+
+      <Route path='press' component={Press}>
+        <IndexRoute component={PressNews} />
+        <Route path='news' component={PressNews} />
+        <Route path='projects' component={PressProjects} />
+        <Route path='kit' component={PressKit} />
+        <Route path='smi' component={PressSmi} />
+        <Route path='photo' component={PressPhoto} />
+      </Route>
 
       <Route path='profile' component={Profile}>
         <IndexRoute component={ProfileSettings} />
@@ -47,7 +69,7 @@ export const routes = (
         <Route path='orders' component={ProfileOrders} />
         <Route path='special' component={ProfileSpecial} />
         <Route path='messages' component={ProfileMessages} />
-        
+      
       </Route>
 
 

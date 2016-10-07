@@ -4,6 +4,430 @@ const initialState = {
 
   lovedItems: new Array(),
 
+  Ecology: {
+    Data: [
+      {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Новость'],
+        link: 'ecology/test',
+        image: 'images/press/eco_item.png',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      },
+        {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Статья', 'Уроки'],
+        link: 'ecology/test',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      },
+          
+      {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Новость'],
+        link: 'ecology/test',
+        image: 'images/press/eco_item.png',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      }
+
+    ],
+    loadMore: {
+      final: true,
+      Data: [
+
+
+      {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Новость'],
+        link: 'ecology/test',
+        image: 'images/press/eco_item.png',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      },
+        {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Статья', 'Уроки'],
+        link: 'ecology/test',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      },
+          
+      {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Новость'],
+        link: 'ecology/test',
+        image: 'images/press/eco_item.png',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      },
+      {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Новость'],
+        link: 'ecology/test',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      },
+        {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Статья', 'Уроки'],
+        link: 'ecology/test',
+        image: 'images/press/eco_item.png',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      },
+          
+      {
+        title: 'Практические инструменты сокращения затрат на уборку',
+        type: ['Новость'],
+        link: 'ecology/test',
+        text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
+      }
+
+
+
+      ]
+    }
+
+
+  },
+
+  PressPhoto: [
+    {
+      category: 'Наш офис',
+      Photos: [
+        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,
+                {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        },
+                {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+         ,       {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        },
+                {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        },
+                {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        , {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+      ]
+    },
+    {
+      category: 'Наш склад и автопарк',
+      Photos: [
+        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,
+                {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        },
+                {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+         ,       {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        },
+                {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        },
+                {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        ,        {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+        , {
+          image: 'images/press/photo.png',
+          title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
+        }
+
+      ]
+    }
+  ],
+
+  PressSmi: {
+    Data: [
+      {
+        date: '2016-03-21',
+        title: 'Новое утро: какой отбеливатель для белья выбрать?' ,
+        image: 'images/press/smi/1.png',
+        link: 'http://yandex.ru',
+        where: 'НТВ, Александр Даниленко'
+      },
+      {
+        date: '2016-03-21',
+        title: 'Новое утро: чем опасны универсальные моющие средства?' ,
+        image: 'images/press/smi/1.png',
+        link: 'http://yandex.ru',
+        where: 'НТВ, Александр Даниленко'
+      },
+      {
+        date: '2016-03-21',
+        title: 'Циклическая экономика на пороге России' ,
+        image: 'images/press/smi/1.png',
+        link: 'http://yandex.ru',
+        where: 'НТВ, Александр Даниленко'
+      },
+      {
+        date: '2016-03-21',
+        title: 'Разделяй и собирай!' ,
+        image: 'images/press/smi/1.png',
+        link: 'http://yandex.ru',
+        where: 'НТВ, Александр Даниленко'
+      }
+    ],
+    loadMore: {
+      final: true,
+      Data: [
+
+            {
+        date: '2016-03-21',
+        title: 'Новое утро: какой отбеливатель для белья выбрать?' ,
+        image: 'images/press/smi/1.png',
+        link: 'http://yandex.ru',
+        where: 'НТВ, Александр Даниленко'
+      },
+      {
+        date: '2016-03-21',
+        title: 'Новое утро: чем опасны универсальные моющие средства?' ,
+        image: 'images/press/smi/1.png',
+        link: 'http://yandex.ru',
+        where: 'НТВ, Александр Даниленко'
+      },
+      {
+        date: '2016-03-21',
+        title: 'Циклическая экономика на пороге России' ,
+        image: 'images/press/smi/1.png',
+        link: 'http://yandex.ru',
+        where: 'НТВ, Александр Даниленко'
+      },
+      {
+        date: '2016-03-21',
+        title: 'Разделяй и собирай!' ,
+        image: 'images/press/smi/1.png',
+        link: 'http://yandex.ru',
+        where: 'НТВ, Александр Даниленко'
+      }
+
+
+      ]
+    }
+
+  },
+
+  PressKit: [
+    {
+      title: 'Информация о компании 2016',
+      link: 'info'
+    },
+    {
+      title: 'Презентация Оптиком',
+      link: 'info'
+    },
+    {
+      title: 'Информация о компании 2015',
+      link: 'info'
+    },
+    {
+      title: 'Экопрограммы',
+      link: 'info'
+    }
+
+
+  ],
+
+  PressProjects: [
+    {
+      title: 'Благотворительный фонд «Я Есть!»' ,
+      image: 'images/press/I.png',
+      link: 'projects',
+      text: 'Мы принимаем активное участие в благотворительных акциях наших друзей — БФ «Я есть!» Благотворительный фонд Ксении Алферовой и Егора Бероева поддержки детей с особенностями развития "Я есть!" регулярно организует мероприятия, помогающие воспитанникам специализированных учреждений познавать окружающий мир и становиться полноценными членами современного общества.'
+    },
+        {
+      title: 'Детский дом-интернат №8' ,
+      image: 'images/press/moscow.png',
+      link: 'projects',
+      text: 'Наши маленькие друзья — воспитанники детского дома-интерната №8.Добрые и удивительные дети с особенностями развития, так горячо любимые нами, нуждаются во внимании и заботе. Главная проблема воспитанников ДДИ №8 - это отсутсвие контакта со внешним миром.'
+    },
+    {
+      title: 'Благотворительный фонд «Детский мир»' ,
+      image: 'images/press/childworld.png',
+      link: 'projects',
+      text: 'Для нас стало традицией участие в предновогодней акции «Подари новогоднее чудо», организатором которой выступает благотворительный фонд «Детский мир». Цель мероприятия — собрать подарки для нуждающихся детей более чем из 350 социальных учреждений по всей России, многодетных семей, детей-инвалидов.'
+    },
+    {
+      title: 'Дом трудолюбия «НОЙ»' ,
+      image: 'images/press/noi.png',
+      link: 'projects',
+      text: 'Для тех, кто оказался заложником обстоятельств и по тем или иным причинам остался без крыши над головой, в Москве есть межрегиональная общественная организация социальной адаптации лиц без определенного места жительства «ДОМ ТРУДОЛЮБИЯ «НОЙ» (ДОМ «НОЙ»).ГК «ОптиКом» оказывает посильный вклад в существование Дома.'
+    },
+    {
+      title: 'Школа-интернат с.Широки Буерак' ,
+      image: 'images/press/internat.png',
+      link: 'projects',
+      text: 'Одними из наших горячо любимых друзей являются воспитанники ГКОУ «Специальная (коррекционная) школа-интернат VIII вида с. Ш.Буерак» - дети-сироты и дети, оставшиеся без попечения родителей, с ограниченными возможностями здоровья. ГК «ОптиКом» регулярно оказывает посильную помощь в содержании учреждения, а также проводит для воспитанников праздничные и спортивные мероприятия, позволяющие им познавать окружающий мир и таким образом бороться с недоверием к "внешнему миру".'
+    },
+    {
+      title: 'Музей предпринимателей, меценатов и благотворителей' ,
+      image: 'images/press/museum.png',
+      link: 'projects',
+      text: 'Среди наших друзей — «Музей предпринимателей, меценатов и благотворителей», представляющий особый интерес для современного общества. Однако, музей нуждается в поддержке и содействии.'
+    }
+
+  ],
+
+  PressNews: {
+    Data: [
+      {
+        link: 'pressitem',
+        title: 'Профстандарт: что делать в HoReCa?',
+        image: 'images/press/1.png',
+        imagehover: 'images/press/1.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Отмечены лучшие «зеленые» офисы Москвы',
+        image: 'images/press/2.png',
+        imagehover: 'images/press/2.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Экологическая ответственность бизнеса: состояние и перспективы',
+        image: 'images/press/3.png',
+        imagehover: 'images/press/3.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Экологическая маркировка и упаковка: критерии, ограничения, возможности',
+        image: 'images/press/4.png',
+        imagehover: 'images/press/4.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Экологическая маркировка и упаковка: критерии, ограничения, возможности',
+        image: 'images/press/5.png',
+        imagehover: 'images/press/5.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Весь процесс производства упаковки на одной площадке',
+        image: 'images/press/6.png',
+        imagehover: 'images/press/6.png'
+      }
+
+    ],
+    loadMore: {
+      final: true,
+      Data: [
+
+      {
+        link: 'pressitem',
+        title: 'Профстандарт: что делать в HoReCa?',
+        image: 'images/press/1.png',
+        imagehover: 'images/press/1.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Отмечены лучшие «зеленые» офисы Москвы',
+        image: 'images/press/2.png',
+        imagehover: 'images/press/2.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Экологическая ответственность бизнеса: состояние и перспективы',
+        image: 'images/press/3.png',
+        imagehover: 'images/press/3.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Экологическая маркировка и упаковка: критерии, ограничения, возможности',
+        image: 'images/press/4.png',
+        imagehover: 'images/press/4.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Экологическая маркировка и упаковка: критерии, ограничения, возможности',
+        image: 'images/press/5.png',
+        imagehover: 'images/press/5.png'
+      },
+            {
+        link: 'pressitem',
+        title: 'Весь процесс производства упаковки на одной площадке',
+        image: 'images/press/6.png',
+        imagehover: 'images/press/6.png'
+      }
+
+      ]
+    }
+  },
+
   FooterLinks: [
     {
       title: 'Компания',
@@ -19,11 +443,11 @@ const initialState = {
     },
     {
       title: 'Пресс-центр',
-      href:  'press-room'
+      href: 'press/news'
     }
     ,{
       title: 'Блог',
-      href: 'blog'
+      href: 'ecoblog'
     },{
       title: 'Отвественность',
       href: 'responsibility'

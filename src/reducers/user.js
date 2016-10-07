@@ -1,7 +1,7 @@
 const initialState = {
   only_eco: false,
   show_menu: false,
-  isLogged: true,
+  isLogged: false,
   name: 'Анастасия Длиннофамильная',
 
 

@@ -4,6 +4,7 @@ import AllIsReady from './SubItems/Catalog/AllIsReady'
 import Interesed from './SubItems/Catalog/Interesed'
 import CategorySlider from './SubItems/CategorySlider'
 import {connect } from 'react-redux'
+import Footer from './Footer'
 //import { If, Then, Else } from 'react-if';
 
 import $ from 'jquery'
@@ -19,7 +20,6 @@ class Home extends Component {
       breakpoint: 900
     }
   }
-
 
   componentDidMount() {
 
@@ -332,9 +332,6 @@ class Home extends Component {
             </div>            
           </section>
 
-
-
-
           <div className='home_slider'>
             <div className='container'>
               <div className='row'>
@@ -345,6 +342,7 @@ class Home extends Component {
           </div>
           <AllIsReady/>  
           <Interesed/>
+          <Footer/>
         </div>
       </div>
     )

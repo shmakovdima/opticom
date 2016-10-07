@@ -7,6 +7,40 @@
   float left
   position relative
   
+  &_pressnews
+    position absolute
+    height inherit!important
+    padding-bottom 30px!important
+    bottom -30px
+    padding-left 40px!important
+    top inherit!important
+    
+    & .ready
+      &_title
+        font-size 18px
+    
+    &_item
+      padding-bottom 56px
+    
+    &_bg
+      position absolute
+      top 0px
+      left 0px
+      height 100%
+      width 75%
+      z-index -1
+      transition 150ms all ease-in
+      background color_green
+    
+  &:hover
+    height inherit!important
+      
+    .ready
+      &_pressnews
+        &_bg
+          background color_green
+          background color_gradient
+  
   &_main:nth-child(odd)
     .ready
       &_addons

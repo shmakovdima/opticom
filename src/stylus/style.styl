@@ -396,6 +396,8 @@ input[type='radio']
 
 .greenlighted_left  
 .header_link_active
+.ecology_category a.active 
+.ecology_category span.active
   z-index 1
   position relative
   display inline
@@ -535,6 +537,17 @@ input[type='radio']
   &:active:before
     opacity 1
     height 45%
+    
+.underlined
+  display inline
+  position relative
+  z-index 1
+  border-bottom 2px solid color_green
+
+  &:hover
+  &:active
+    border-bottom 2px solid color_gradient
+  
  
 section
   margin-top 100px

@@ -81,7 +81,7 @@
     position relative
     margin-top 0px
     padding-top 10px
-    padding-bottom 100px
+    padding-bottom 150px
     
 
     
@@ -144,8 +144,8 @@
         clear left
       
       & .home_preferences_title
-        font-size 36px
-        line-height 38px
+        font-size 32px
+        line-height 34px
 
 
         &:before
@@ -188,6 +188,7 @@
       
     &_ecology
       top 165px
+      padding-bottom 30px
       
       &_images
         width 100%
@@ -293,12 +294,39 @@
   &_slider
     position relative
     
+    & .slick
+      &-prev
+      &-next
+
+        
+        &:before
+          display none
+        
+      &-next
+        background url(../../../images/sprites/arrow_right.png) center no-repeat!important
+        
+        &.slick-disabled
+          margin-top -12px
+          transform rotate(180deg)!important
+          background url(../../../images/sprites/arrow_left_disabled.png) center no-repeat!important
+  
+      &-prev
+        z-index 50
+        margin-top 0px
+        transform rotate(180deg)!important
+        right 28px!important
+        background url(../../../images/sprites/arrow_right.png) center no-repeat!important
+        
+        &.slick-disabled
+          transform none!important
+          background url(../../../images/sprites/arrow_left_disabled.png) center no-repeat!important
+    
     .catalog_header_slider_loadmore
       color black
     
 
     .catalog_header_slider
-      padding-top 0px 
+      padding-top 20px 
     
     & .catalog
       &_header
