@@ -155,7 +155,7 @@ class Item extends Component {
     const {setLove} = this.props.pageActions
     const description = this.props.item.description
 
-    const link = this.props.item.link
+    const link = 'http://' + window.location.host + '/' + this.props.item.link
     const title = this.props.item.title
     const image = this.props.item.image
     const vendorcode = this.props.item.vendorcode
