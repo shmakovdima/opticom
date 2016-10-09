@@ -144,10 +144,12 @@ class Item extends Component {
 
   setMinus() {
     if (this.state.one==false) {
+      if (this.state.alotorder == 0) return;
       this.setState({
         alotorder: --this.state.alotorder
       }) 
     }else{
+      if (this.state.oneorder == 0) return;
       this.setState({
         oneorder: --this.state.oneorder
       }) 

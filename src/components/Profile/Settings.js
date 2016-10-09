@@ -182,6 +182,9 @@ class ProfileSettings extends Component {
                     return(<Adress item={item}/>)
                   })  
                 }
+                <div className='profile_right_company_add'>
+                      <button className='greenborderbottom'><span >Добавить новый адрес</span></button>
+                    </div>
                 </div>
               </div>
               <div className='profile_block'>

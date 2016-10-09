@@ -32,7 +32,7 @@ class Catalog_Group extends Component {
           Items.map(function(item, key){
             if ((only_eco == true) && (item.eco!=true)) return false;
             return(
-              <div className=''>
+              <div className='col20-lg-4 col20-md-4 col-sm-4'>
                 <Item itemgor={itemgor} item={item} key={key}/>
               </div>
             )
@@ -85,12 +85,12 @@ class Catalog extends Component {
         <section className='category_section'>
           <div className='container'>
     
-              <Accordion>
+              <Accordion defaultActiveKey={0}>
                 {
                   categoryArray.map(function(item,key){
                     var Items = item
                     return(
-                      <Panel header={item.title} eventKey={key}>
+                      <Panel header={item.title} eventKey={key} >
                         <div className='buttons hidden-sm hidden-xs'>
                           <If condition={showgor==false}>
                             <Then>
@@ -123,7 +123,7 @@ class Catalog extends Component {
                         </If>
 
                         </div>
-                        <div>                        
+                        <div className='item_nopadding'>                        
                          <Catalog_Group only_eco={only_eco} itemgor={showgor} items={Items}/>
                         </div>
                         <div>

@@ -22,7 +22,7 @@ class SpecialOffer extends Component {
             </h2>
           </div>
         </div>
-        <div className='container'>
+        <div className='container item_nopadding'>
           <div className='row'>
             <div className='col20-lg-1 '></div>
             {

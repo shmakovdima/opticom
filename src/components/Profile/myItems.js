@@ -219,11 +219,11 @@ class myItems extends Component {
                   <div className='profile_items_tabs buyed'>
                     <If condition={search==''}>
                       <Then>
-                        <Accordion>
+                        <Accordion defaultActiveKey={0}>
                           {
                             Buyed.map(function(item,key){
                               return(
-                                <Panel header={item.title} eventKey={key}>
+                                <Panel header={item.title} eventKey={key} >
                                   <div className='profile_items_panel'>
                                     <ItemGor search={search} item={item.items}/>
                                   </div>

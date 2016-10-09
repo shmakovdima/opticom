@@ -931,19 +931,11 @@ const initialState = {
         href: 'catalog/subcatalog/category',
         image: 'images/itempage/needed.png'
       }
-      ,     
-      {
-        title: 'Средство для мытья посуды Manudish Lemon',
-        href: 'catalog/subcatalog/category',
-        image: 'images/itempage/needed.png'
-      }
-
-
     ],
 
     allSetReady:[
       {
-        title: 'Не для вашей гостиницы или отеля',
+        title: 'Для вашей гостиницы или отеля',
         count: '13',
         link: 'readyset/forhotel',
         image: 'images/ready_item/catalog_allready_hotel.png',

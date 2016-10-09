@@ -9,8 +9,8 @@
 
 .item
   margin-bottom 10px
-  width 250px
-  max-width 250px
+  width 254px
+  max-width 254px
   position relative
   float left
   width 100%
@@ -20,6 +20,10 @@
   cursor pointer
   min-height 450px
   
+  &_nopadding
+    & .col20-lg-4
+      padding-left 0px
+      padding-right 0px
   
   &_hide
     &_gor
@@ -36,7 +40,7 @@
 
   &_slide
     float left
-    margin-right 25px
+    margin-right 2px
     position relative
     min-height 500px
     
@@ -265,12 +269,11 @@
   &_gor
     .item
       margin-top 0px
-      
       margin-bottom 0px
       width 100%
       max-width 10000px
       min-width 0px
-      min-height 219px
+      min-height 213px
       
       &_eco
         position absolute
@@ -384,6 +387,7 @@
       &:active
         .item          
           &_under
+            top 0px
             left -15px
             right -15px
             width calc(100% + 30px)
@@ -968,7 +972,7 @@
     position relative
     float left
     background-color white
-    padding 20px
+    padding 17px
     background-position center 20px
     background-repeat no-repeat
     min-height 220px
@@ -979,6 +983,7 @@
       bottom 30px
       font-family FuturaPTMedium
       color #000000
+      max-width calc(100% - 34px)
       font-size: 14px
 
   &_fulldesc

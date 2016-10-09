@@ -61,7 +61,7 @@ class Interesed extends Component {
             </h2>
           </div>
         </div>
-        <div className='container'>
+        <div className='container nopadding'>
           <div className='row'>
             <Slider  {...settings}>
               {

@@ -192,12 +192,9 @@ class ProfileOrders extends Component {
               <div className='col20-lg-5 col20-lg-offset-1 col20-md-5 col20-md-offset-1 hidden-sm '>
                 <div className='profile_right profile_orders_top'>
                   <h3 className='profile_orders_title'>Адрес доставки</h3>
-
-
                     <div className='profile_orders_dropdown'>
                       <div className='profile_orders_dropdown_block'>
                        <DropdownButton title={dropdownAddress} id='bg-nested-dropdown'>
-                          
                           <MenuItem onClick={self.setAddress.bind(self, 'Все')} eventKey={0}>Все</MenuItem>
                           {
                             Adresses.map(function(item, key){
