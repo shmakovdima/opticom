@@ -1,12 +1,13 @@
 {
-  "name": "react-router-ru-tutorial",
+  "name": "Opticom",
   "version": "1.0.0",
-  "description": "React-router RU tutorial",
+  "description": "Opticom",
   "main": "index.js",
   "scripts": {
-    "start": "node bin/server.js"
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 bin/server.js",
+    "stop": "forever stop bin/server.js"
   },
-  "author": "Maxim Patsianskiy",
+  "author": "Dmitry Shmakov",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
