@@ -962,7 +962,8 @@ const initialState = {
 
     Loved: [
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'И Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
@@ -988,7 +989,8 @@ const initialState = {
         ]
       },
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
@@ -1014,7 +1016,8 @@ const initialState = {
         ]
       },
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
@@ -1040,7 +1043,8 @@ const initialState = {
         ]
       },
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
@@ -1066,7 +1070,8 @@ const initialState = {
         ]
       },
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
@@ -1092,7 +1097,8 @@ const initialState = {
         ]
       },
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
@@ -1118,7 +1124,8 @@ const initialState = {
         ]
       },
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
@@ -1144,7 +1151,8 @@ const initialState = {
         ]
       },
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',
@@ -1170,7 +1178,8 @@ const initialState = {
         ]
       },
       {
-        id: 9,
+        id: 29,
+        loved: true,
         title: 'Средство для мытья посуды Manudish Lemon Super, канистра 5 литров ...',
         eco: false,
         link: 'catalog/testsubcategory/testcategory/testitem',

@@ -44,7 +44,7 @@ class Footer extends Component {
           <div className='container footer_addons'>
             <div className='row'>
               <div className='col-md-4 col-xs-6 text-left'>
-                © 1999-2016 ГК «Оптиком»
+                © «Оптиком»
               </div>
               <div className='col-md-4 col-xs-6 text-center text-right-xs text-right-sm'>
                 <a title='Мы в ВКонтакте' href='https://vk.com/gk_opticom' className='footer_vk'></a>

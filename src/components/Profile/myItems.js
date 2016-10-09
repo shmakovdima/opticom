@@ -206,12 +206,15 @@ class myItems extends Component {
                       <input placeholder='ПОИСК ПО ПОКУПЛЕННЫМ' ref='search' type='text' onKeyUp={::this.searchInput}/>
                    </div>
 
-                   <DropdownButton title={dropdownmode} id='bg-nested-dropdown'>
-                      <MenuItem onClick={::this.setMonth} eventKey='1'>По месяцам</MenuItem>
-                      <MenuItem onClick={::this.setCategory} eventKey='2'>По категориям</MenuItem>
-                   </DropdownButton>
 
-
+                    <If condition={search==''}>
+                      <Then>
+                       <DropdownButton title={dropdownmode} id='bg-nested-dropdown'>
+                          <MenuItem onClick={::this.setMonth} eventKey='1'>По месяцам</MenuItem>
+                          <MenuItem onClick={::this.setCategory} eventKey='2'>По категориям</MenuItem>
+                       </DropdownButton>
+                      </Then>
+                      </If>
                   </div>
                   <div className='profile_items_tabs buyed'>
                     <If condition={search==''}>

@@ -38,6 +38,7 @@ export const routes = (
   <div>
     <Route path='/' component={App}>      
       <IndexRoute component={Home} />
+      
       <Route path='catalog' component={Catalog} />
       <Route path='catalog/subcatalog' component={SubCategory} />
       <Route path='catalog/subcategory' component={SubCategory} />

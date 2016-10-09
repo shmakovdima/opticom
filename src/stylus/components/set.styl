@@ -96,6 +96,7 @@
     padding-left 60px
     padding-bottom 20px
     right -120px
+    transition 300ms all ease-in 
     
     & ul
       
@@ -144,11 +145,12 @@
     position absolute
     left 34px
     display block
-    visibility hidden
+    opacity 0
     background url(../../images/sprites/profile_refresh.png)  no-repeat
     top 34px
     width 14px
     height 14px
+    transition 400ms all ease-in
 
   &_title
     max-width 260px
@@ -268,7 +270,8 @@
     .ready
       
       &_edit
-        visibility visible
+        opacity 1
+        transition 100ms all ease-in
         
       &_title
         &_adds

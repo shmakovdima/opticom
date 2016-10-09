@@ -5,7 +5,7 @@ import {Link} from 'react-router'
 import wordlenght from '../../function/wordlenght'
 import cutnumber from '../../function/cutnumber'
 import wordend from '../../function/wordend'
-
+import { If, Then, Else } from 'react-if';
 
 
 Date.prototype.getMonthName = function() {
@@ -43,6 +43,8 @@ export default class Order extends Component {
       var status = this.props.item.status
       var statusClassName = 'item_orderblock_status'
       var statusText = ''
+
+
       
       switch(status){
         case 'active':
@@ -83,9 +85,21 @@ export default class Order extends Component {
               </div>
 
               <div className='item_orderblock_editblock'>
-                <button className='item_orderblock_refresh' onClick={::this.refreshOrder}></button>
-                <button className='item_orderblock_remove' onClick={::this.removeOrder}></button>
-                <Link className='item_orderblock_edit' to={editlink} title='Изменить'></Link>
+                 
+                <If condition={status!='ready'}>
+                  <Then>
+                    <div>
+                      <button className='item_orderblock_refresh' onClick={::this.refreshOrder}></button>
+                      <button className='item_orderblock_remove' onClick={::this.removeOrder}></button>   
+                      <Link className='item_orderblock_edit' to={editlink} title='Изменить'></Link>
+                    </div>
+                  </Then>
+                  <Else>
+                    <button className='item_orderblock_refresh' onClick={::this.refreshOrder}></button>
+                  </Else>
+                </If>
+
+                
               </div>
             </div>
           </div>

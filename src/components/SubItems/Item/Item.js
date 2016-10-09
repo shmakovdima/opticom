@@ -59,17 +59,42 @@ $.fn.ForceNumericOnly =function(){
 
 
 class LoveButton extends Component {
-  changeLove() {
+
+  constructor(props) {
+    super(props);
+    var loveindicator = this.props.data.item.loved
+
+    console.log('loveindicator' + loveindicator)
+
+    if (loveindicator==true) {
+      this.changeLove(loveindicator)
+    } 
+
+  }
+
+  changeLove(loveindicator) {
     let array = JSON.parse(JSON.stringify(this.props.data.lovedItems))
     let id = this.props.data.item.id
+
     if (array.indexOf(id) == -1) {
       this.props.setLove(array.concat(id))
     }else{
       console.log('indexof' + array.indexOf(id))
       this.props.setLove(array.removeByValue(id))
     }    
+
+    if (loveindicator==true) {
+      if (array.indexOf(id) == -1) {
+        this.props.setLove(array.concat(id))
+      }
+    }
+
+
   } 
   render() {
+
+    
+
     let loved = 'item_love pull-left'
     let id = this.props.data.item.id
     let array = JSON.parse(JSON.stringify(this.props.data.lovedItems))

@@ -29,7 +29,7 @@ class MountPhone extends Component {
 
 class MountTime extends Component {
   componentDidMount() {
-    $('.timepicker').mask('99:99');
+    //$('.timepicker').mask('99:99');
     //$('.timepicker').setMask({mask: 'time', defaultValue: 'hh:mm'});
   }
 
@@ -142,29 +142,24 @@ class Delivery extends Component {
                           <br/>
                           Владимирская область, 601122
                         </span>
-
-
-
                       </div>
                     </div>
-                    
                 </div>
 
               <div className='profile_block'>
                 <h2>Время доставки</h2>
                 <div className='row'>
                   <div className='col-xs-12'>
-                    <input onChange={::this.changeSetDate} id='cash' value='faster' type='radio' name='deliverytime'/>
-                    <label htmlFor='cash'></label>
+                    <input onChange={::this.changeSetDate} id='faster' value='faster' type='radio' name='deliverytime'/>
+                    <label htmlFor='faster'></label>
                     <span className='radiolabel'>Как можно скорее</span>
                   </div>
                 </div>
                 <div className='row'>
                   <div className='col-xs-12'>
-                    <input onChange={::this.changeSetDate} id='bank' value='set' type='radio' name='deliverytime'/>
-                    <label htmlFor='bank'></label>
+                    <input onChange={::this.changeSetDate} id='set' value='set' type='radio' name='deliverytime'/>
+                    <label htmlFor='set'></label>
                     <span className='radiolabel'>Выбрать</span>
-
                   </div>
                   <If condition={this.state.settime}>
                     <Then>

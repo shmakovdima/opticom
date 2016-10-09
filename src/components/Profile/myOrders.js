@@ -21,7 +21,6 @@ class ProfileOrders extends Component {
     }
   }
 
-
  loadMore(){
     var newData = JSON.parse(JSON.stringify(this.props.myOrders.OrdersMore.Data));
     var oldData = JSON.parse(JSON.stringify(this.state.Data));
@@ -90,12 +89,10 @@ class ProfileOrders extends Component {
     var Ready = []
     var Adresses = []
 
-
-
     var dropdownAddress = this.state.currentAddress
 
     Orders.map(function(item){
-
+      
       if (Adresses.indexOf(item.address) == -1) Adresses.push(item.address)
 
 
