@@ -154,12 +154,10 @@ class CartItem extends Component {
     if (this.props.item.discount == false) {
       cost = (<div className='item_bottom'>
         <span className='item_cost'>{textcost}</span>
-        <span className='item_cost_description'>{additiontext}</span>
-       
+        <span className='item_cost_description'>{additiontext}</span>   
       </div>)
     }else{
       const discountcost = cutnumber(this.props.item.cost.discountone)+ ' ₽'
-
       cost = (<div className='item_bottom'>
         <span className='item_discount'>{textcost}</span>
         <span className='item_cost'>{discountcost}</span>
@@ -168,6 +166,9 @@ class CartItem extends Component {
     }
 
     var textcount = ''
+
+    var onecost = (this.props.item.discount == false) ? this.props.item.cost.one : this.props.item.cost.discountone 
+    var alotcost =  (this.props.item.discount == false) ? this.props.item.cost.packaging : this.props.item.cost.discountpackaging
 
     console.log(textcount)
 
@@ -180,11 +181,15 @@ class CartItem extends Component {
 
 
     const titleshow = wordlenght(title, 50)
+    const titleshow_hover = wordlenght(title, 100)
 
-
-   
     return(
-      <div className='item_gor item_cart'>        
+      <div className='item_gor item_cart'>
+        <span className='hidden item_onecount'>{this.state.oneorder}</span> 
+        <span className='hidden item_alotcount'>{this.state.alotorder}</span>
+
+        <span className='hidden item_onecost'>{onecost}</span>    
+        <span className='hidden item_alotcost'>{alotcost}</span>        
         <div className='item '>
           <div className='item_under'>
             <div className='item_image_block'>
@@ -194,12 +199,15 @@ class CartItem extends Component {
             </div>
             <div className='item_title_block'>
               <Link className='item_title text-left' to={link} title={title}>{titleshow}</Link>
+              <Link className='item_title hover text-left' to={link} title={title}>{titleshow_hover}</Link>
               <span className='item_vendorcode'>{vendorcode}</span>
             </div>
-
-            <div className='item_cart_remove' onClick={::this.removeItem}>
-            </div> 
-
+            <If condition={this.props.remove == true}>
+              <Then>
+                <div className='item_cart_remove' onClick={::this.removeItem}></div> 
+              </Then>
+            </If>
+              
              {cost}
             <div className='item_order_body item_hide_gor pull-right'>
               <div className='item_order_buttons'>
@@ -231,7 +239,6 @@ class CartItem extends Component {
                 
             </div>
 
-
             <div className='item_order'>
               <div className='item_order_buttons'>
                 <button className={item_order_buttons_one} onClick={::this.setOne}>штуки</button>
@@ -244,9 +251,6 @@ class CartItem extends Component {
               </div>
 
             </div>
-
-
-
           </div>
         </div>
       </div>

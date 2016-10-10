@@ -10,6 +10,16 @@ import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 import CartItem from '../SubItems/Item/CartItem'
 
+
+class MountCost extends Component {
+  render(){
+    return(
+      <div>
+      </div>
+    )
+  }
+}
+
 class Cart extends Component {
 
   emptyCart(){
@@ -43,7 +53,7 @@ class Cart extends Component {
                   {
                     CartItems.map(function(item, key){
                       return(
-                        <CartItem submit={false} item={item} key={key}/>
+                        <CartItem remove={true} submit={false} item={item} key={key}/>
                       )
 
                     })
@@ -92,6 +102,7 @@ class Cart extends Component {
             </div>
           </div>
         </section>
+        <MountCost/>
       </div>
 
     )

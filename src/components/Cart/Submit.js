@@ -107,7 +107,7 @@ class Submit extends Component {
                   {
                     CartItems.map(function(item, key){
                       return(
-                        <CartItem submit={true} item={item} key={key}/>
+                        <CartItem remove={false} submit={true} item={item} key={key}/>
                       )
 
                     })

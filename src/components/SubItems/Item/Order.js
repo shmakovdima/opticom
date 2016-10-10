@@ -66,6 +66,7 @@ export default class Order extends Component {
             <div className='item_under'>
               <div className='item_orderblock'>
                  <Link className='item_orderblock_title' to={link} title={title}>{wordlenght(title,50)}</Link>
+                 
                  <span className='item_orderblock_category'>{category}</span>
                 <span className='item_orderblock_address'>{address}</span>
               </div>

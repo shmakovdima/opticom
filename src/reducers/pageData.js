@@ -1245,7 +1245,7 @@ const initialState = {
   }
   ,
   subCategory: {
-    title: 'Кухня'
+    title: 'Профессиональная химия'
     ,
     popularSet: [
       {
@@ -1254,17 +1254,18 @@ const initialState = {
         description: 'Канцелярские товары, Бытовая химия…',
         count: '13',
         link: 'readyset/forhotel',
-        image: 'images/ready_item/catalog_allready_hotel.png',
-        hoverimage: 'images/ready_item/catalog_allready_hotel.png',
-        textleft: '+ 24'
+        image: 'images/ready_item/subcategory_popular.png',
+        hoverimage: 'images/ready_item/subcategory_popular.png',
+        textleft: '+ 104'
       },
       {
         title: 'В зеленый офис ежемесячно',
         count: '23',
         cost: '35720',
         link: 'readyset/greenoffice',
-        image: 'images/ready_item/catalog_allready_greenoffice.png',
-        hoverimage: 'images/ready_item/catalog_allready_greenoffice.png'
+        image: 'images/ready_item/subcategory_popular.png',
+        hoverimage: 'images/ready_item/subcategory_popular.png',
+        textleft: '+ 104'
       }
     
     ]
@@ -1275,8 +1276,8 @@ const initialState = {
         title: 'Для вашей гостиницы или отеля',
         count: '13',
         link: 'readyset/forhotel',
-        image: 'images/ready_item/catalog_allready_hotel.png',
-        hoverimage: 'images/ready_item/catalog_allready_hotel.png',
+        image: 'images/ready_item/subcategory_popular.png',
+        hoverimage: 'images/ready_item/subcategory_popular.png',
         textleft: '+ 24',
         rubrics: [
           'Ручная мойка посуды',
@@ -1389,11 +1390,7 @@ const initialState = {
         title: 'Каталог',
         link: 'catalog'
       }
-      , 
-      {
-        title: 'Подкаталог',
-        link: 'subcatalog'
-      }
+     
     ]
   }
 

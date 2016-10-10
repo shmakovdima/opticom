@@ -210,6 +210,9 @@ class Item extends Component {
 
     if (this.state.one==false) additiontext = 'за одну упаковку'
 
+    if ((this.state.one==false) && (this.state.alotorder>0)) additiontext+=', отложено '+this.state.alotorder
+    if ((this.state.one==true) && (this.state.oneorder >0)) additiontext+=', отложено '+this.state.oneorder
+
 
     var textcost = cutnumber(this.props.item.cost.one) + ' ₽'
   
@@ -235,6 +238,7 @@ class Item extends Component {
     let windowWidth = this.props.windowWidth
 
     const titleshow = wordlenght(title, 50)
+    const titleshow_hover = wordlenght(title, 80)
 
 
     const itemgor = (this.props.itemgor && (windowWidth>991))  ? 'item_gor' : ''
@@ -252,6 +256,8 @@ class Item extends Component {
             </div>
             <div className='item_title_block'>
               <Link className='item_title text-left' to={link} title={title}>{titleshow}</Link>
+              <Link className='item_title hover text-left' to={link} title={title}>{titleshow_hover}</Link>
+
               <span className='item_vendorcode'>{vendorcode}</span>
             </div>
              {cost}
@@ -269,9 +275,6 @@ class Item extends Component {
                 </div>
               </DropdownButton>
             </div>
-
-
-           
 
             <div className='item_desription'>
               {

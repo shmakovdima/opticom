@@ -58,13 +58,16 @@
     height 32px
     background url(../../../images/sprites/item_eco.png) no-repeat
 
-  &_title 
+  &_title
     margin-top 10px
     line-height 22px
     color black
     font-family FuturaPTHeavy
     font-size 18px
     float left
+    
+    &.hover
+      display none
     
     &:hover
     &:active
@@ -73,7 +76,7 @@
   &_bottom
     transition 150ms all ease-in 
     position absolute
-    padding-top 60px
+    padding-top 40px
     bottom 25px
     
   &_discount
@@ -248,12 +251,17 @@
       &_bottom
         bottom inherit
         position relative
-        padding-top 60px
+        padding-top 40px
         clear left
         
       &_desription
         height auto
         opacity 1
+        
+      &_title
+        display none
+        &.hover
+          display block
 
       &_cost
         &_description
@@ -703,7 +711,7 @@
         
         &_under
           padding 35px
-          min-height 162px
+          min-height 173px
           
         &:hover
           .item

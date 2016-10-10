@@ -8,7 +8,7 @@ import '../stylus/components/subcategory.styl';
 import {Link} from 'react-router'
 import React, { Component } from 'react'
 import HeaderLight from '../components/Headers/HeaderLight'
-import CategoryHeader from './SubItems/Category/CategoryHeader'
+import SubCategoryHeader from './SubItems/SubCategory/SubCategoryHeader'
 import {connect} from 'react-redux'
 import ReadyPopular from './SubItems/Item/ReadyPopular'
 import ReadySelect from './SubItems/Item/ReadySelect'
@@ -24,7 +24,7 @@ class SubCategory extends Component {
     return (
       <div>
         <HeaderLight/>
-        <CategoryHeader categoryData={subCategory}/>
+        <SubCategoryHeader categoryData={subCategory}/>
         <section className='subcategory_section'>
           <div className='container'>
             <div className='row'>

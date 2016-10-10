@@ -281,16 +281,26 @@
 
 .ready.readyselect
   margin-bottom 100px
+  width 100%
   
   &:hover
     display block
     .ready
+      &_title
+        max-width 300px
+        display block
+        min-width 250px
+        
+        & > span:last-child
+          clear none
+
       &_addons
         height 100%
         padding-left 50px
         top 0px
         width 100%
         left 0px!important
+      
         
         & ul
           display block
