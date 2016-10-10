@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Footer from '../components/Footer'
-
+import browser from 'detect-browser'
 import $ from 'jquery'
 
 import { connect } from 'react-redux'
@@ -17,7 +17,12 @@ class App extends Component {
   }
 
   updateTop(){
-    this.props.pageActionTop.setWindowTop($('body').scrollTop())
+
+    if (browser.name=='firefox') {
+      this.props.pageActionTop.setWindowTop($('html').scrollTop());
+    }else{
+      this.props.pageActionTop.setWindowTop($('body').scrollTop());
+    }
   }
 
   componentWillMount() {

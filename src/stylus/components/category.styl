@@ -186,9 +186,30 @@
   
 
   .category
+    
+
+    &_section
+      & .panel-heading a
+        &:before
+          top 9px
+          transform rotate(0deg)
+          right 15px
+          left inherit
+          right 0px
+        
+        &[aria-expanded="true"]:before
+          transform rotate(270deg)
+          
+        
+      & .panel-title > a
+        margin-left 0px
+        padding-right 50px
+        display block
+
     &_header
       padding-top 90px
       
+
       &_picture
         position absolute
         height 186px
@@ -201,6 +222,9 @@
       
       &_showmore
         font-size 15px
+        
+        &:after
+          display none
       
       & h1
         font-size 36px

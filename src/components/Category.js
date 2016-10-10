@@ -6,6 +6,7 @@ import React, { Component } from 'react'
 import HeaderLight from '../components/Headers/HeaderLight'
 import CategoryHeader from './SubItems/Category/CategoryHeader'
 import Interesed from './SubItems/Category/Interested'
+import MobileSlider from './SubItems/MobileSlider'
 
 import Item from './SubItems/Item/Item'
 import { If, Then, Else } from 'react-if';
@@ -19,37 +20,46 @@ class Catalog_Group extends Component {
     const Items = this.props.items.items
     let itemgor = this.props.itemgor
     const windowWidth = this.props.windowWidth
-
     const only_eco = this.props.only_eco
+
 
     if (windowWidth<991) {
       itemgor = false
     }
+    console.log('windowWidth' + windowWidth)
 
     return(
        <div>
-        {
-          Items.map(function(item, key){
-            if ((only_eco == true) && (item.eco!=true)) return false;
-            return(
-              <If condition={itemgor==false}>
-                <Then>
-                  <div className='col20-lg-4 col20-md-4 col-sm-4'>
-                    <Item itemgor={itemgor} item={item} key={key}/>
-                  </div>
-                </Then>
-                <Else>
-                  <div>
-                    <Item itemgor={itemgor} item={item} key={key}/>
-                  </div>
-                </Else>
-              </If>
-              
-            )
-            
-          })
-
-        }
+         <If condition={windowWidth<768}>
+            <Then>
+              <div>
+                <MobileSlider eco={true} data={Items}/>
+               </div>
+            </Then>
+            <Else>
+              <div>
+              {
+                Items.map(function(item, key){
+                  if ((only_eco == true) && (item.eco!=true)) return false;
+                  return( 
+                    <If condition={itemgor==false}>
+                      <Then>
+                        <div className='col20-lg-4 col20-md-4 col-sm-4'>
+                          <Item itemgor={itemgor} item={item} key={key}/>
+                        </div>
+                      </Then>
+                      <Else>
+                        <div>
+                          <Item itemgor={itemgor} item={item} key={key}/>
+                        </div>
+                      </Else>
+                    </If>
+                  )
+                })
+              }
+              </div>
+            </Else>
+          </If>
       </div>
 
     )
@@ -87,7 +97,7 @@ class Catalog extends Component {
     const isLogged = this.props.isLogged
 
     const showgormargin = (showgor) ?  '' : 'category_nologged_margin'
-
+    let windowWidth = this.props.windowWidth
     return (
       <div>
         <HeaderLight/>
@@ -95,7 +105,7 @@ class Catalog extends Component {
         <section className='category_section'>
           <div className='container'>
     
-              <Accordion defaultActiveKey={0}>
+              <Accordion defaultActiveKey={2}>
                 {
                   categoryArray.map(function(item,key){
                     var Items = item
@@ -115,26 +125,22 @@ class Catalog extends Component {
                                 </button>
                               </div>
                             </Then>
-                          
                           <Else>
-                            <Then>
-                              <div>
-                                <button onClick={::self.setNorm} className='category_norm pull-right'>
-                                  <div>
-                                  </div>
-                                </button>
-                              <button onClick={::self.setGor} className='category_gor pull-right  active'>
+                            <div>
+                              <button onClick={::self.setNorm} className='category_norm pull-right'>
                                 <div>
                                 </div>
                               </button>
+                            <button onClick={::self.setGor} className='category_gor pull-right  active'>
+                              <div>
                               </div>
-                            </Then>
+                            </button>
+                            </div>
                           </Else>
                         </If>
-
                         </div>
                         <div className='item_nopadding'>                        
-                         <Catalog_Group only_eco={only_eco} itemgor={showgor} items={Items}/>
+                          <Catalog_Group only_eco={only_eco} windowWidth = {windowWidth} itemgor={showgor} items={Items}/>
                         </div>
                         <div>
                           <If condition={isLogged == false}>
@@ -161,8 +167,9 @@ class Catalog extends Component {
           
           </div>
         </section>
-
-        <Interesed/>
+        <div className='hidden-xs'>
+          <Interesed />
+        </div>
       </div>
     )
   }
@@ -173,7 +180,8 @@ function mapStateToProps (state) {
   return {
     categoryData: state.pageData.categoryData,
     only_eco: state.user.only_eco,
-    isLogged: state.user.isLogged
+    isLogged: state.user.isLogged,
+    windowWidth: state.pageData.windowWidth
   }
 }
 

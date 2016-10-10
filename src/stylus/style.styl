@@ -666,7 +666,21 @@ h3
 
     
 @media (max-width: 768px)
+
+  .collapse
+    display block
+    height 0px
+    overflow hidden
+    &.in
+      height auto
+      overflow visible
+      display block
+      
   
+  .container
+    padding-left 25px
+    padding-right 25px
+
   .breadcrumb
     margin-bottom 5px
     &-item 

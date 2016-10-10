@@ -82,10 +82,6 @@ class Interesed extends Component {
                         </div>)
                       })
                     }
-                  
-                        
-                      
-                 
                   </Slider>
                 </Then>
                 <Else>
