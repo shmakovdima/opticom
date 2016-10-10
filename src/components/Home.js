@@ -5,6 +5,7 @@ import Interesed from './SubItems/Catalog/Interesed'
 import CategorySlider from './SubItems/CategorySlider'
 import {connect } from 'react-redux'
 import Footer from './Footer'
+import {Link} from 'react-router'
 //import { If, Then, Else } from 'react-if';
 
 import $ from 'jquery'
@@ -322,8 +323,8 @@ class Home extends Component {
                   <button className='home_preferences_future_button greenlighted'>НАПИШИТЕ<br/>НАМ</button>
                 </div>
                 <div className='col20-lg-6 home_preferences_press'>
-                  <span className='home_preferences_title greenlighted pull-right'>ПРЕСС-ЦЕНТР
-                  </span>
+                  <Link to='/press' title='ПРЕСС-ЦЕНТР' className='home_preferences_title greenlighted pull-right'>ПРЕСС-ЦЕНТР
+                  </Link>
                   <span className='home_preferences_press_speakers'>Спикеры компании — постоянные участники конференций в России и за рубежом</span>
                   <div className='home_preferences_press_image'></div>
                   <p>Более 3500 слушателей посетили наши выступления и мастер-классы в прошлом году</p>

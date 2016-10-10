@@ -447,7 +447,7 @@ const initialState = {
     }
     ,{
       title: 'Блог',
-      href: 'ecoblog'
+      href: 'blog'
     },{
       title: 'Отвественность',
       href: 'responsibility'
@@ -1242,7 +1242,21 @@ const initialState = {
 
     ]
 
-  }
+  },
+
+  Sets: [
+    {
+      title: 'В зеленый офис ежемесячно',
+      count: '23',
+      cost: '35720',
+      link: 'readyset/greenoffice',
+      image: 'images/ready_item/subcategory_popular.png',
+      hoverimage: 'images/ready_item/subcategory_popular.png',
+      textleft: '+ 104'
+    }
+
+  ]
+
   ,
   subCategory: {
     title: 'Профессиональная химия'

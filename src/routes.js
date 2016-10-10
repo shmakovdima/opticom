@@ -11,7 +11,6 @@ import ItemPage from './components/ItemPage'
 import Home from './components/Home'
 import NotFound from './components/NotFound'
 
-
 import Cart from './components/Cart/Cart'
 import Delivery from './components/Cart/Delivery'
 import Submit from './components/Cart/Submit'
@@ -34,6 +33,9 @@ import PressPhoto from './components/Press/PressPhoto'
 import Ecology from './components/Ecology'
 import EcologyItem from './components/EcologyItem'
 
+
+import PopularSet from './components/PopularSet'
+
 export const routes = (
   <div>
     <Route path='/' component={App}>      
@@ -50,8 +52,10 @@ export const routes = (
       <Route path='delivery' component={Delivery}/>
       <Route path='submit' component={Submit}/>
 
-      <Route path='ecology' component={Ecology}/>
-      <Route path='ecology/test' component={EcologyItem}/>
+      <Route path='blog' component={Ecology}/>
+      <Route path='blog/test' component={EcologyItem}/>
+
+      <Route path='allisready' component={PopularSet}/>
 
 
       <Route path='press' component={Press}>
