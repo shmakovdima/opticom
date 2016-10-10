@@ -9,7 +9,7 @@ import wordlenght from '../../function/wordlenght'
 
 import cutnumber from '../../function/cutnumber'
 
-import { DropdownButton, MenuItem} from 'react-bootstrap'
+//import { DropdownButton, MenuItem} from 'react-bootstrap'
 
 import $ from 'jquery'
 
@@ -176,7 +176,9 @@ class Item extends Component {
 
   render() {
     
-    var dropdownmode = (this.state.one) ? 'поштучно' : 'упаковки' 
+    const windowWidth = this.props.windowWidth
+    const itemgor = (this.props.itemgor && (windowWidth>991))  ? 'item_gor' : ''
+    //var dropdownmode = (this.state.one) ? 'поштучно' : 'упаковки' 
 
     const data = this.props
     const {setLove} = this.props.pageActions
@@ -214,34 +216,83 @@ class Item extends Component {
     if ((this.state.one==true) && (this.state.oneorder >0)) additiontext+=', отложено '+this.state.oneorder
 
 
-    var textcost = cutnumber(this.props.item.cost.one) + ' ₽'
-  
+    var textcost, textcostgor 
+
+    if (this.state.one==true) {
+      textcost = this.props.item.cost.one
+      textcostgor = textcost * this.state.oneorder
+    }else{
+      textcost = this.props.item.cost.packaging
+      textcostgor = textcost * this.state.alotorder
+    }
+    textcost = cutnumber(textcost) + ' ₽'
+    console.log('itemgor ' + itemgor)
+
     var cost;
 
-    if (this.props.item.discount == false) {
-      cost = (<div className='item_bottom'>
-        <span className='item_cost'>{textcost}</span>
-        <span className='item_cost_description'>{additiontext}</span>
-        <button className='item_hide_gor item_order_button'>в корзину</button>
-      </div>)
-    }else{
-      const discountcost = cutnumber(this.props.item.cost.discountone)+ ' ₽'
+    if ((itemgor!='item_gor')) {
+      if (this.props.item.discount == false) {
+        cost = (<div className='item_bottom'>
+          <span className='item_cost'>{textcost}</span>
+          <span className='item_cost_description'>{additiontext}</span>
+          <button className='item_hide_gor item_order_button'>в корзину</button>
+        </div>)
+      }else{
 
-      cost = (<div className='item_bottom'>
-        <span className='item_discount'>{textcost}</span>
-        <span className='item_cost'>{discountcost}</span>
-        <span className='item_cost_description'>{additiontext}</span>
-        <button className='item_hide_gor item_order_button'>в корзину</button>
-      </div>)
+        let discountcost;
+        if (this.state.one==true) {
+          discountcost = cutnumber(this.props.item.cost.discountone)+ ' ₽'
+        }else{
+          discountcost = cutnumber(this.props.item.cost.discountpackaging)+ ' ₽'
+        }
+
+        
+        cost = (<div className='item_bottom'>
+          <span className='item_discount'>{textcost}</span>
+          <span className='item_cost'>{discountcost}</span>
+          <span className='item_cost_description'>{additiontext}</span>
+          <button className='item_hide_gor item_order_button'>в корзину</button>
+        </div>)
+      }
+    }
+    else {
+
+
+      additiontext = (this.state.one==true) ? 'за шт.' : 'за уп.'
+
+      if (this.props.item.discount == false) {
+        cost = (<div className='item_bottom'>
+          <span className='item_cost'>{cutnumber(textcostgor) + ' ₽'}</span>
+          <span className='item_cost_description'>{textcost + ' ' + additiontext}</span>
+          <button className='item_hide_gor item_order_button'>в корзину</button>
+        </div>)
+      }else{
+
+        let discountcost;
+        if (this.state.one==true) {
+          discountcost = cutnumber(this.props.item.cost.discountone * this.state.oneorder)+ ' ₽'
+        }else{
+          discountcost = cutnumber(this.props.item.cost.discountpackaging * this.state.alotorder)+ ' ₽'
+        }
+
+        cost = (<div className='item_bottom'>
+          <span className='item_discount'>{cutnumber(textcostgor) + ' ₽'}</span>
+          <span className='item_cost'>{discountcost}</span>
+          <span className='item_cost_description'>{textcost + ' ' + additiontext}</span>
+          <button className='item_hide_gor item_order_button'>в корзину</button>
+        </div>)
+      }
+
+
     }
 
-    let windowWidth = this.props.windowWidth
+
 
     const titleshow = wordlenght(title, 50)
     const titleshow_hover = wordlenght(title, 80)
 
 
-    const itemgor = (this.props.itemgor && (windowWidth>991))  ? 'item_gor' : ''
+    
 
     return(
       <div className={itemgor}>        
@@ -261,12 +312,8 @@ class Item extends Component {
               <span className='item_vendorcode'>{vendorcode}</span>
             </div>
              {cost}
-            <div className='item_order_body item_hide_gor pull-right'>
-                <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
-                <button className='item_order_plus' onClick={::this.setPlus}>+</button>
-            </div>
 
+        {/*
             <div className='item_dropdown item_hide_gor pull-right'>
               <DropdownButton title={dropdownmode} id='bg-nested-dropdown'>
                 <div>
@@ -276,6 +323,7 @@ class Item extends Component {
               </DropdownButton>
             </div>
 
+          */}
             <div className='item_desription'>
               {
                description.map(function(item) {

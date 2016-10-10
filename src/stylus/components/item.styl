@@ -315,9 +315,17 @@
 
       &_cost
         clear none
+        float right
         
         &_description
-          display none
+          position absolute
+          width 150px
+          text-align right
+          right 0px
+          top 100px
+          clear both
+          float right
+        //  display none
       
       &_title
         margin-top 40px
@@ -337,7 +345,11 @@
         
 
       &_order
-        display none
+        display block
+        float left
+        margin-top 33px
+        margin-left 7%
+        width 15%
         
 
         &_button
@@ -349,22 +361,18 @@
           top: 101px
 
         &_body
-          width 100px
-          margin-top 33px
-          margin-right 11%
-          
-        
-
-          & input
-          & button
-            float left
+          width 150px
+          clear left
+          text-align center
             
           & button
             text-align center
             width 30px
+            float none
             background none
 
           & input
+            float none
             font-family FuturaPTHeavy
             line-height 40px
             text-align center
@@ -404,6 +412,11 @@
             transition none!important
             clear none
             padding-top 40px
+            
+          &_cost
+            &_description
+              display block
+              top 70px
             
           &_order
             &_button
@@ -702,8 +715,6 @@
     
     &.item_gor
       margin-top 30px
-  
-    
     
       & .item
         min-height 162px

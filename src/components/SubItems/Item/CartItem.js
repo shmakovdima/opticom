@@ -63,8 +63,8 @@ class CartItem extends Component {
     super(props);
     this.state = {
       one: true,
-      oneorder: 0,
-      alotorder: 0
+      oneorder: ('one' in this.props.item.buyed) ? this.props.item.buyed.one : 0,
+      alotorder: ('packaging' in this.props.item.buyed) ? this.props.item.buyed.packaging  : 0
     };
   }
 
@@ -86,15 +86,16 @@ class CartItem extends Component {
 
   setMinus() {
     if (this.state.one==false) {
+      if (this.state.alotorder == 0) return;
       this.setState({
         alotorder: --this.state.alotorder
       }) 
     }else{
+      if (this.state.oneorder == 0) return;
       this.setState({
         oneorder: --this.state.oneorder
       }) 
-    }
-  }
+    }  }
 
   setChange() {
 
@@ -184,13 +185,9 @@ class CartItem extends Component {
     const titleshow_hover = wordlenght(title, 100)
 
     return(
-      <div className='item_gor item_cart'>
-        <span className='hidden item_onecount'>{this.state.oneorder}</span> 
-        <span className='hidden item_alotcount'>{this.state.alotorder}</span>
-
-        <span className='hidden item_onecost'>{onecost}</span>    
-        <span className='hidden item_alotcost'>{alotcost}</span>        
-        <div className='item '>
+      <div data-alotcost={alotcost} data-onecost={onecost}  data-alotorder={this.state.alotorder} data-oneorder={this.state.oneorder} className='item_gor item_cart'>
+           
+        <div className='item'>
           <div className='item_under'>
             <div className='item_image_block'>
               {newitem}

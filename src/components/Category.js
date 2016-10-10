@@ -32,9 +32,19 @@ class Catalog_Group extends Component {
           Items.map(function(item, key){
             if ((only_eco == true) && (item.eco!=true)) return false;
             return(
-              <div className='col20-lg-4 col20-md-4 col-sm-4'>
-                <Item itemgor={itemgor} item={item} key={key}/>
-              </div>
+              <If condition={itemgor==false}>
+                <Then>
+                  <div className='col20-lg-4 col20-md-4 col-sm-4'>
+                    <Item itemgor={itemgor} item={item} key={key}/>
+                  </div>
+                </Then>
+                <Else>
+                  <div>
+                    <Item itemgor={itemgor} item={item} key={key}/>
+                  </div>
+                </Else>
+              </If>
+              
             )
             
           })

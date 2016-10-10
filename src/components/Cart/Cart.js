@@ -10,15 +10,7 @@ import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 import CartItem from '../SubItems/Item/CartItem'
 
-
-class MountCost extends Component {
-  render(){
-    return(
-      <div>
-      </div>
-    )
-  }
-}
+import MountCost from './MountCost'
 
 class Cart extends Component {
 
@@ -65,12 +57,13 @@ class Cart extends Component {
                 <div className='profile_right'>
                   <h2>Итого</h2>
                   <span className='cart_total_cost'>18 056 ₽</span>
-                  <span className='cart_total_vendors'>24 артикула</span>
+                  <span className='cart_total_vendors'></span>
                   <span className='cart_total_qual'>
                     <span>32 ед.</span>
                     <span> • </span>
                     <span>4 уп.</span>                  
                   </span>
+                  
                   <span className='cart_total_waiting'>
                     Ожидаемая дата поставки — 24 мая
                   </span>

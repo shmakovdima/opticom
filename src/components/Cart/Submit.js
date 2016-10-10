@@ -9,6 +9,7 @@ import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 import CartItem from '../SubItems/Item/CartItem'
+import MountCost from './MountCost'
 
 class Submit extends Component {
 
@@ -152,6 +153,7 @@ class Submit extends Component {
             </div>
           </div>
         </section>
+        <MountCost/>
       </div>
 
     )
