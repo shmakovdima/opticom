@@ -60,7 +60,7 @@ class CatalogHeader extends Component {
                 }
 
               </ol>
-              <div className='hidden-lg hidden-md hidden-sm category_header_picture'></div>
+              <div className='hidden-lg hidden-md hidden-sm category_header_picture sub'></div>
               <h1 className='sub'>{title}</h1>
               
               <div>

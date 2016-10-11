@@ -237,9 +237,26 @@
 @media (max-width: 768px)
   .header
     padding-top 50px
+    z-index 3
+    
+
+    
+    &_usermenu
+      position fixed
+      
+      width 100vw
+      height 100vh
+      top 0px
+      max-width 100%
+      
+      &_close
+        right 25px
+        top 35px
+
+
     &_logo
-      width 103px
-      height 31px
+      width 109px
+      height 32px
       background url(../../images/sprites/mobile_header_dark_logo.png) no-repeat
       background-size contain
       

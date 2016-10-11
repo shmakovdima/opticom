@@ -71,13 +71,20 @@ class Header extends Component {
     const showuser = this.state.showuser
     const isLogged = this.props.isLogged
 
+    if (showuser==true) {
+      $('body').addClass('overflow');
+    }else{
+      $('body').removeClass('overflow');
+    }
+
     return (
         <div className='container'>
           <Link className='header_logo pull-left' to='/'></Link>
           <button className='header_menu pull-left pull-right-xs' onClick={::this.showMenu}></button>
+          
           <ul className='header_links pull-left hidden-xs'>
             {
-              this.props.FooterLinks.map(function(item, index) {
+              this.props.HeaderLinks.map(function(item, index) {
                 return <HeaderLink data={item} key={index}/>
               })
             }
@@ -88,7 +95,6 @@ class Header extends Component {
                 </li>
               </Then>
             </If>
-
 
           </ul>
           <div>
@@ -132,7 +138,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps (state) {
   return {
-    FooterLinks: state.pageData.HeaderLinks,
+    HeaderLinks: state.pageData.HeaderLinks,
     showMenu: state.user.show_menu,
     name: state.user.name,
     isLogged: state.user.isLogged

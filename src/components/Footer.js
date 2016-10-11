@@ -26,6 +26,7 @@ class Footer extends Component {
 
   render() {
     const FooterLinks = this.props.FooterLinks
+    const HeaderLinks = this.props.HeaderLinks
     return(
       <div>
         <footer className='footer'>
@@ -60,7 +61,7 @@ class Footer extends Component {
           </div>
 
         </footer>
-        <Menu/>
+        <Menu HeaderLinks={HeaderLinks}/>
       </div>
     )
   }
@@ -68,6 +69,7 @@ class Footer extends Component {
 
 function mapStateToProps (state) {
   return {
+    HeaderLinks: state.pageData.HeaderLinks,
     FooterLinks: state.pageData.FooterLinks
   }
 }

@@ -28,9 +28,9 @@ class SubCategory extends Component {
         <section className='subcategory_section'>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-4 col20-md-6 col-sm-12 hidden-xs'>
-                <span className='subcategory_popular_link'>
-                  <span>Попробуйте </span>
+              <div className='col20-lg-4 col20-md-6 col-sm-12'>
+                <span className='subcategory_popular_link '>
+                  <span>Попробуйте наши </span>
                   <Link to='allisready' title='Популярные наборы' className='greenborderbottom'>
                     <span>популярные&shy;</span>
                     <wbr/> 
@@ -38,6 +38,7 @@ class SubCategory extends Component {
                   </Link>
 
                 </span>
+
               </div>
               {
                 popularSet.map(function(item, key) {
@@ -61,7 +62,7 @@ class SubCategory extends Component {
                 <span>подходит вам</span>
               </h2>
 
-              <h2 className='col-xs-12 col20-lg-offset-1 hidden-lg hidden-md hidden-sm'>
+              <h2 className='col-xs-12 col20-lg-offset-1 hidden-lg hidden-md hidden-sm mobile_font_27'>
                 <span>Выбирайте, то что  </span>
                 <wbr/>
                 <span>подходит вам</span>
@@ -86,12 +87,6 @@ class SubCategory extends Component {
     )
   }
 }
-
-
-
-
-
-
 
 
 

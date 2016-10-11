@@ -4,14 +4,12 @@ import '../stylus/components/menu.styl';
 import {Link} from 'react-router'
 import { bindActionCreators } from 'redux'
 import * as pageActions from '../actions/showMenu'
-import { If, Then } from 'react-if';
+import { If, Then, Else } from 'react-if';
 import $ from 'jquery'
-
-
+import * as pageActionsLogin from '../actions/setLogged'
+import {DropdownButton, MenuItem} from 'react-bootstrap'
 
 class SubCat extends Component{
-
-
   hideMenu(){
     $('body').removeClass('overflow');
     this.props.setMenu.showMenu(false)
@@ -41,7 +39,6 @@ class SubCat extends Component{
       </ul>     
     )
   }
-
 }
 
 class Menu extends Component {
@@ -49,8 +46,25 @@ class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      curcategory: 0
+      curcategory: 0,
+      mobilemenu: true,
+      curaddress: '',
+      curoffice: ''
     }
+  }
+
+
+
+  showCategory() {
+    this.setState({
+      mobilemenu: !this.state.mobilemenu
+    })
+  }
+
+  exitLogin() {
+    this.setState({showuser: false})
+    this.props.pageActionsLogin.setLogged(!this.props.isLogged)
+    this.hideMenu()
   }
 
   hideMenu(){
@@ -58,14 +72,47 @@ class Menu extends Component {
     this.props.pageActions.showMenu(!this.props.show_menu)
   }
 
+  setAddress(address){
+    this.setState({
+      curaddress: address
+    })
+  }
+
+  setOffice(office){
+    this.setState({
+      curoffice: office
+    })
+  }
+
+  setPlaceholder() {
+    if ($('.menu_search').val() == 'Поиск') {
+        $('.menu_search').val('')
+        $('.menu_search').removeClass('placeholder')
+      }
+   
+  }
+
+  removePlaceholder() {
+    setTimeout(function(){
+
+      if ($('.menu_search').val() == '') {
+        $('.menu_search').val('Поиск')
+        $('.menu_search').addClass('placeholder')
+      }
+    }, 200)
+    
+  }
 
   hideCat() {
     $('.menu_green').removeClass('active');
     $('.menu_block').removeClass('notactive')
   }
 
-  setCat(id){
+  showCats(){
+    this.setState({mobilemenu: !this.state.mobilemenu})
+  }
 
+  setCat(id){
     $('.menu_green').addClass('active');
 
     $('.menu_block').addClass('notactive')
@@ -79,8 +126,13 @@ class Menu extends Component {
 
     const show_menu = this.props.show_menu
     const Categories = this.props.Categories
+    const mobilemenu = this.state.mobilemenu
+
+    const windowWidth = this.props.windowWidth
+    const mobile = (windowWidth < 768) ? true : false
 
     var CutCategory = this.props.Categories[this.state.curcategory].childrens
+    const HeaderLinks = this.props.HeaderLinks
 
     var curcat = this.state.curcategory
     var setCat = this.setCat
@@ -88,55 +140,145 @@ class Menu extends Component {
 
     var titleCur = this.props.Categories[this.state.curcategory].title
 
+    const isLogged = this.props.isLogged
     const setMenu = this.props.pageActions
+
+    var Addresses = ['Петропавловск-Камчатский', 'Москва']
+
+    var Offices = ['Головной офис', 'Местный офис']
+
+    if (this.state.curaddress == '') this.setState({curaddress: Addresses[0]})
+    if (this.state.curoffice == '') this.setState({curoffice: Offices[0]})
+
+    const dropdownAddress = this.state.curaddress
+    const dropdownOffice = this.state.curoffice
+
+
     
     return(
       <div>   
         <If condition = {show_menu==true}>
           <Then>
-            <div className='menu'>   
-              <div className='menu_overflow'>
-                <div className='col20-lg-6 col20-md-8 col20-sm-8'>
-                  <div className='menu_block'>
-                    <h2>Каталог</h2>
-                    <div>
-                      {
-                        Categories.map(function(item, key){
-                          return(<button  onClick={setCat.bind(self, key)} className={'menu_mainlink text-left '+ (key == curcat ? 'active' : '') } to={item.link} title={item.title}>
-                            {item.title}
-                            <div></div>
-                          </button>)
-                        })
-                      }
+            <div className='menu'>
+              <If condition={((mobile==true) && mobilemenu)}>
+                <Then>
+                  <div className='menu_overflow menu_mobile'>
+                    <div className='container'>
+                      <div className='row'>
 
+                        <div className='col-xs-12'>
+                          <input type='text' onBlur={::this.removePlaceholder} onFocus={::this.setPlaceholder} defaultValue='Поиск' className='menu_search placeholder'/>
+                        </div>
+
+                        <div className='col-xs-12 menu_mobile_links'>
+                          <button className='menu_showcategory' onClick={::this.showCats}></button>
+                          <ul>
+                            {
+                              HeaderLinks.map(function(item) {
+                                return (
+                                 <li>
+                                    <Link onClick={::self.hideMenu} className='' activeClassName='active'  to={'/'+item.href} title={item.title}>{item.title}</Link>
+                                  </li>
+                                )
+                              })
+                            }
+
+                            <If condition={isLogged==false}>
+                              <Then>
+                                <li>
+                                  <a className='greenlighted_left' onClick={::this.exitLogin}>Вход</a>
+                                </li>
+                              </Then>
+                            </If>
+                          </ul>
+
+                        </div>
+                        <div className='col-xs-12 menu_dropdowns'>
+                          <a className='menu_phone' title='Наш телефон' href='tel:+7-495-980-06-48'>+7-495-980-06-48</a>
+                          
+                          <div className='dropdown_block'>
+                            <DropdownButton title={dropdownAddress} id='bg-nested-dropdown'>       
+                              {
+                                Addresses.map(function(item, key){
+                                  return(
+                                    <MenuItem onClick={self.setAddress.bind(self, item)} eventKey={key}>{item}</MenuItem>
+                                  )
+                                })
+                              }
+                            </DropdownButton>
+                          </div>
+
+                          <div className='dropdown_block'>
+                            <DropdownButton title={dropdownOffice} id='bg-nested-dropdown2'>
+                      
+                              {
+                                Offices.map(function(item, key){
+                                  return(
+                                    <MenuItem onClick={self.setOffice.bind(self, item)} eventKey={key}>{item}</MenuItem>
+                                  )
+                                })
+                              }
+                            </DropdownButton>
+                          </div>
+                        </div>
+
+                        <div className='col-xs-12 menu_call'>
+                          <button className='btn'>Перезвоните мне</button>
+                        </div>
+
+                        <div className='col-xs-12 menu_write'>
+                          <button className='btn'>Написать сообщение</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className='col20-lg-14 col20-md-12  col20-sm-12 menu_green'>
-                  <div className='menu_links'>
+                </Then>
+                <Else>
+                  <div className='menu_overflow'>
+                    <div className='col20-lg-6 col20-md-8 col20-sm-8'>
+                      <div className='menu_block'>
+                        <h2>
+                        <button onClick={::this.showCats} className='hidden-lg hidden-md hidden-sm menu_prev'></button>
+                        Каталог</h2>
+                        <div>
+                          {
+                            Categories.map(function(item, key){
+                              return(<button  onClick={setCat.bind(self, key)} className={'menu_mainlink text-left '+ (key == curcat ? 'active' : '') } to={item.link} title={item.title}>
+                                {item.title}
+                                <div></div>
+                              </button>)
+                            })
+                          }
 
+                        </div>
+                      </div>
+                    </div>
+                    <div className='col20-lg-14 col20-md-12  col20-sm-12 menu_green'>
+                      <div className='menu_links'>
+                        <h3 className='hidden-lg col-xs-12 hidden-md hidden-sm'>{titleCur}
+                          <button onClick={::this.hideCat} className='hidden-lg hidden-md hidden-sm menu_prev'></button>
+                        </h3>
+                        {
+                          CutCategory.map(function(item){
+                            return(
+                              <div className='col-lg-6 col-md-6 col-sm-6 col-xs-12'>
+                                <div className='menu_subcategory'>
+                                  <Link onClick={::self.hideMenu} to={'/'+item.link} title={item.title}>{item.title}</Link>
+                                </div>
+                                <SubCat setMenu={setMenu} data={item} />
+                              </div>
+                              )
+                            })
+                        }
 
-                    <h3 className='hidden-lg col-xs-12 hidden-md hidden-sm'>{titleCur}
-                      <button onClick={::this.hideCat} className='hidden-lg hidden-md hidden-sm menu_prev'></button>
-                    </h3>
-                    {
-                      CutCategory.map(function(item){
-                        return(
-                          <div className='col-lg-6 col-md-6 col-sm-6 col-xs-12'>
-                            <div className='menu_subcategory'>
-                              <Link onClick={::self.hideMenu} to={'/'+item.link} title={item.title}>{item.title}</Link>
-                            </div>
-                            <SubCat setMenu={setMenu} data={item} />
-                          </div>
-                          )
-                        })
-                    }
+                      </div>
 
+                    </div>
+                    
                   </div>
-
-                </div>
-                <button onClick={::this.hideMenu} className='menu_close'></button>
-              </div>
+                </Else>
+              </If>   
+              <button onClick={::this.hideMenu} className='menu_close'></button>
             </div>
           </Then>
         </If>
@@ -149,14 +291,17 @@ class Menu extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(pageActions, dispatch)
+    pageActions: bindActionCreators(pageActions, dispatch),
+    pageActionsLogin: bindActionCreators(pageActionsLogin, dispatch)
   }
 }
 
 function mapStateToProps (state) {
   return {
     Categories: state.pageData.Categories,
-    show_menu: state.user.show_menu
+    show_menu: state.user.show_menu,
+    windowWidth: state.pageData.windowWidth,
+    isLogged: state.user.isLogged
   }
 }
 

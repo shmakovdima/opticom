@@ -1,5 +1,6 @@
 @import '../sprite.styl'
 @import '../variables.styl'
+
 .menu
   position fixed
   top 0px
@@ -10,6 +11,47 @@
   height 100vh
   background rgba(255, 255, 255, 0.95)
   
+  &_search
+    padding 4px 8px
+    padding-top 0px
+    width 100%
+    color black
+    line-height 22px
+    border-bottom 1px solid black
+    font-size 21px
+    font-family FuturaPTHeavy
+    background url(../../../images/sprites/menu_search.png) calc(100% - 8px) center no-repeat  
+    background-size 14px
+  
+    &.placeholder
+      font-family FuturaPTHeavy
+      font-size 21px
+      color rgba(0,0,0, 0.3)
+      
+      
+  &_showcategory
+    width 16px
+    height 14px
+    position absolute
+    right 15px
+    top 21px
+    background url(../../../images/sprites/menu_category.png) center left no-repeat
+    background-size 16px 14px
+
+  &_mobile
+    position relative
+    padding-top 90px
+    padding-bottom 90px
+  
+    &_links
+      width 100%
+      position relative
+      margin-top 40px
+      & a
+        line-height: 50px
+        font-size 24px
+        font-family FuturaPTMedium
+
   &_ul
     padding-top 10px
     padding-bottom 30px
@@ -59,6 +101,7 @@
     
     & h2
       h3
+      position relative
       padding-bottom 50px
     
   &_green
@@ -142,7 +185,14 @@
     
 @media (max-width:768px)
   .menu
-    background linear-gradient(0deg, #59a1ad 0%, #98c04d 100%)  
+    background linear-gradient(0deg, #59a1ad 0%, #98c04d 100%)
+    
+    & .btn
+      & + .btn
+        margin-top 30px
+        
+    &_write
+      margin-top 20px   
     
     h2
     h3
@@ -187,20 +237,84 @@
       &.notactive
         display none
         
+    &_dropdowns
+      position relative
+      margin-top 60px
+      
+      & .dropdown_block
+        width 100%
+        min-height 38px
+        position relative
+        margin-top 10px
+        
+        & .dropdown
+          width 100%
+          position absolute
+          padding-bottom 5px
+          line-height 16px
+          border-bottom 1px solid black
+          
+          &-menu li
+            padding-bottom 0px
+       
+          & .btn.btn-default.dropdown-toggle
+            padding-bottom 0px
+            padding-top 0px
+            padding-left 5px
+            padding-right 5px
+            width 100%
+            height 20px
+            font-size 16px
+            font-family FuturaPTMedium
+            
+            &:hover
+            &:active
+              color black
+            
+          &.open
+            background white
+            z-index 2
+            border-bottom 0px
+            
+            & .btn.btn-default.dropdown-toggle
+              padding-top 10px
+              padding-left 20px
+              padding-bottom 10px
+              height inherit
+      
+    &_phone
+      font-family FuturaPTHeavy
+      line-height 23px
+      width auto
+      clear both
+      font-size 20px
+      position relative
+      display block
+      margin-bottom 30px
+      
+    &_call
+      margin-top 40px
+        
     &_prev
       width 10px
       height 16px
       position absolute
       left -10px
-      top 4px
+      top 6px
       background url(../../../images/sprites/mobile_menu_left.png) center no-repeat  
       background-size contain
-      
+   
+    & h2
+      position relative
+      & .menu
+        &_prev
+          left -26px
+          top 12px   
 
     &_close
       top 46px
       z-index 20
-      right 35px
+      right 25px
       width 14px
       height 14px
       background url(../../../images/sprites/menu_close_mobile.png) center no-repeat  

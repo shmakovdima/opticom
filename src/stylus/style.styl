@@ -6,6 +6,19 @@
 @import 'components/text-align-media.styl'
 
 
+.btn 
+  background rgba(255, 255, 255, 0.8)
+  height 100px
+  width 100%
+  text-transform uppercase
+  border-radius none
+  height 50px
+  border none
+  border-radius 0px
+  color #72ae87
+  font-family FuturaPTHeavy
+  font-size 15px
+
 .button
   transition 150ms all ease-in
   background-color color_green
@@ -655,8 +668,8 @@ h3
   
   h2
     max-width 600px
-    font-size 48px
-    padding-bottom 30px
+    font-size 30px
+    padding-bottom 10px
  
 .buttons
   position: relative
@@ -664,8 +677,13 @@ h3
   float: left
   z-index 34
 
-    
 @media (max-width: 768px)
+
+  .mobile
+    &_font
+      &_27
+        font-size 27px
+        padding-bottom 30px
 
   .collapse
     display block
@@ -696,10 +714,16 @@ h3
 
   .load
     &_more
-      padding-bottom 50px
+      padding-bottom 0px
       
       button
-        font-size 17px
+        font-size 18px
+        max-width 80px
+        line-height 24px
+        
+        &:before
+          left -8px
+          width 81%
 
   .green_underline
     border-bottom 1px solid color_green
