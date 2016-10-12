@@ -42,6 +42,7 @@ class ReCall extends Component {
     })
   }
 
+
   setPlaceholder() {
     if ($('.menu_search').val() == 'Введите ваш телефон') {
         $('.menu_search').val('')
@@ -78,6 +79,7 @@ class ReCall extends Component {
 
 
 
+
     var offsetLeft = windowWidth
     
     var recallClass = 'header_recall'
@@ -94,7 +96,6 @@ class ReCall extends Component {
 
     offsetLeft = ((windowWidth - containerWidth)/2) + offsetLeft  - 60
 
-    console.log(offsetLeft)
 
     $('body').addClass('overflowrecall')
       $('.header_basket, .header_user , .header_phone').addClass('black')
@@ -110,7 +111,11 @@ class ReCall extends Component {
     var self = this
     return(
       <div>
+
         <div className={recallClass} style={recallWidth}>
+          <div>
+            {this.props.children}
+          </div>
           <div className='header_recall_dropdowns'>
             <div className='dropdown_block'>
               <span className='header_recall_header'>Выберите город</span>
@@ -198,7 +203,7 @@ class Header extends Component {
 
   componentDidMount() {
     var self = this
-    $(document).on('click', 'body', function(){
+    $(document).on('click', '#root', function(){
       if(!$(event.target).closest('.header_recall').length) {
         if($('.header_recall').hasClass('active')) {
           self.setState({shownumber:false})
@@ -206,6 +211,10 @@ class Header extends Component {
       }     
     })
       
+  }
+
+  hideRecall() {
+    this.setState({shownumber:false})
   }
 
   constructor(props) {
@@ -268,7 +277,9 @@ class Header extends Component {
   
     return (
         <div className='container'>
-          <ReCall isOpen={this.state.shownumber} windowWidth = {windowWidth}/>
+          <ReCall  isOpen={this.state.shownumber} windowWidth = {windowWidth}>
+            <div className='header_recall_close'  onClick={::this.hideRecall}></div>
+          </ReCall>
           <Link className='header_logo pull-left' to='/'></Link>
           <button className='header_menu pull-left pull-right-xs' onClick={::this.showMenu}></button>
 
