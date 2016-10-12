@@ -13,7 +13,7 @@ export default class MountCost extends Component {
         var alotcount = 0
         var totalprice = 0
 
-        $('.item_gor').each(function(){
+        $('.item_cart').each(function(){
 
           var costone = parseInt($(this).attr('data-onecost'))
           var costpackage = parseInt($(this).attr('data-alotcost'))

@@ -17,13 +17,14 @@ export default class Catalog extends Component {
   render() {
     return (
       <div>
-        <HeaderDark/>
+        
         <CatalogHeader/>
         
         <Preferences/>
         <SpecialOffer className='hidden-xs'/>    
         <AllIsReady/>
         <Interesed/>
+        <HeaderDark/>
       </div>
     )
   }
