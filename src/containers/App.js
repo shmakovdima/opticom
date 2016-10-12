@@ -51,6 +51,7 @@ class App extends Component {
         {this.props.children}
         <Footer/>
         <Menu HeaderLinks={HeaderLinks}/>
+        <Login/>
       </div>
     )
   }

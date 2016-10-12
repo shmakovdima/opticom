@@ -1583,6 +1583,9 @@ export default function user(state = initialState, action) {
       return {...state, Messages: action.payload}
     case 'EMPTY_CART':
       return {...state, Cart: action.payload}
+    case 'SET_LOGGED_SHOW':
+      return {...state, showLogin: action.payload}
+
     default:
       return state;
   }

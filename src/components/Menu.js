@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 import * as pageActions from '../actions/showMenu'
 import { If, Then, Else } from 'react-if';
 import $ from 'jquery'
-import * as pageActionsLogin from '../actions/setLogged'
+import * as pageActionsLoginShow from '../actions/setLoggedShow'
 import {DropdownButton, MenuItem} from 'react-bootstrap'
 
 class SubCat extends Component{
@@ -60,7 +60,7 @@ class Menu extends Component {
 
   exitLogin() {
     this.setState({showuser: false})
-    this.props.pageActionsLogin.setLogged(!this.props.isLogged)
+    this.props.pageActionsLoginShow.setLoggedShow(!this.props.isLogged)
     this.hideMenu()
   }
 
@@ -83,9 +83,9 @@ class Menu extends Component {
 
   setPlaceholder() {
     if ($('.menu_search').val() == 'Поиск') {
-        $('.menu_search').val('')
-        $('.menu_search').removeClass('placeholder')
-      }
+      $('.menu_search').val('')
+      $('.menu_search').removeClass('placeholder')
+    }
    
   }
 
@@ -290,7 +290,7 @@ class Menu extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     pageActions: bindActionCreators(pageActions, dispatch),
-    pageActionsLogin: bindActionCreators(pageActionsLogin, dispatch)
+    pageActionsLoginShow: bindActionCreators(pageActionsLoginShow, dispatch)
   }
 }
 

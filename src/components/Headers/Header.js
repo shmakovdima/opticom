@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux'
 import { If, Then } from 'react-if';
 import {DropdownButton, MenuItem} from 'react-bootstrap'
 import * as pageActionsLogin from '../../actions/setLogged'
-
+import * as pageActionsLoginShow from '../../actions/setLoggedShow'
 import 'jquery.maskedinput/src/jquery.maskedinput.js'
 
 class MountPhone extends Component {
@@ -218,9 +218,13 @@ class Header extends Component {
     this.setState({shownumber:!this.state.shownumber})
   }
 
+  showLogin() {
+    this.props.pageActionsLoginShow.setLoggedShow(true)
+  }
+
   exitLogin() {
     this.setState({showuser: false})
-    this.props.pageActionsLogin.setLogged(!this.props.isLogged)
+    this.props.pageActionsLogin.setLogged(false)
   }
 
   showMenu(){
@@ -264,7 +268,7 @@ class Header extends Component {
             <If condition={isLogged==false}>
               <Then>
                 <li>
-                  <a className='greenlighted_left' onClick={::this.exitLogin}>Вход</a>
+                  <a className='greenlighted_left' onClick={::this.showLogin}>Вход</a>
                 </li>
               </Then>
             </If>
@@ -304,8 +308,8 @@ class Header extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     pageActions: bindActionCreators(pageActions, dispatch),
-    pageActionsLogin: bindActionCreators(pageActionsLogin, dispatch)
-
+    pageActionsLogin: bindActionCreators(pageActionsLogin, dispatch),
+    pageActionsLoginShow: bindActionCreators(pageActionsLoginShow, dispatch)
   }
 }
 
