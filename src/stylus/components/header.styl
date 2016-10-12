@@ -1,18 +1,23 @@
 @import '../sprite.styl'
 @import '../variables.styl'
-@import 'fonts.styl'
 
 .header
   position absolute
   width 100%
   top 0px
   font-size 13px
-  z-index 2
+  z-index 3
   color white
   transform scaleY(1.0038)
-  padding-top 68px
+  padding-top 60px
   font-family FuturaPTBold
   text-transform uppercase
+  
+  &.fixed
+    position fixed
+    background rgba(0,0,0,0.8)
+    padding-top 15px
+    padding-bottom 15px
   
   &.zindex
     z-index 2
@@ -226,7 +231,7 @@
     margin-top 13px
     width 17%
     padding-left 30px
-    margin-right 5.5%
+    margin-right 3.5%
     line-height 30px
     background url(../../images/sprites/header_dark_search.png) left center no-repeat 
     
@@ -335,7 +340,7 @@
     background-position center
     
 
-  &_light
+  &_light:not(.fixed)
     color black
     
     & input
@@ -398,8 +403,6 @@
     padding-top 50px
     z-index 3
     
-
-    
     &_usermenu
       position fixed
       
@@ -455,7 +458,7 @@
       
 
 
-    &_light
+    &_light:not(.fixed)
       .header
         &_logo
           background url(../../images/sprites/mobile_header_logo.png) no-repeat

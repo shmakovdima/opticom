@@ -23,16 +23,32 @@ class Login extends Component {
   }
 
   setPlaceholder(text) {
-    if ($('.menu_search').val() == text) {
-      $('.menu_search').val('')
-      $('.menu_search').removeClass('placeholder')
+
+    var selector
+    if (text=='Введите ваш логин') {
+      selector = '#login'      
+    }else{
+      selector = '#password'
+    }
+
+    if ($(selector).val() == text) {
+      $(selector).val('')
+      $(selector).removeClass('placeholder')
     }
   }
 
   removePlaceholder(text) {
-    if ($('.menu_search').val() == '') {
-        $('.menu_search').val(text)
-        $('.menu_search').addClass('placeholder')
+
+    var selector
+    if (text=='Введите ваш логин') {
+      selector = '#login'      
+    }else{
+      selector = '#password'
+    }
+    
+    if ($(selector).val() == '') {
+        $(selector).val(text)
+        $(selector).addClass('placeholder')
     }
   }
 
@@ -53,8 +69,8 @@ class Login extends Component {
               <div className='login_block'>
                 <button className='login_close' onClick={::this.hideLogin}></button>
                 <div className='login_enter'>
-                  <input type='text' onBlur={this.removePlaceholder.bind(this, 'Введите ваш логин')} onFocus={this.setPlaceholder.bind(this, 'Введите ваш логин')} defaultValue='Введите ваш логин'/>
-                  <input type='text' onBlur={this.removePlaceholder.bind(this, 'Введите ваш пароль')} onFocus={this.setPlaceholder.bind(this, 'Введите ваш пароль')} defaultValue='Введите ваш пароль'/>
+                  <input id='login' type='text' onBlur={this.removePlaceholder.bind(this, 'Введите ваш логин')} onFocus={this.setPlaceholder.bind(this, 'Введите ваш логин')} defaultValue='Введите ваш логин'/>
+                  <input id='password' type='text' onBlur={this.removePlaceholder.bind(this, 'Введите ваш пароль')} onFocus={this.setPlaceholder.bind(this, 'Введите ваш пароль')} defaultValue='Введите ваш пароль'/>
                 </div>
                 <div className='login_button text-center'>
                   <button className='btn' onClick={::this.setLogin}>войти</button>

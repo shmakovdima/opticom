@@ -228,7 +228,7 @@
   &:hover
   &:active
     
-    z-index 15
+    z-index 1
     
     left 0px
     width 100%
@@ -631,6 +631,28 @@
           padding-bottom 25px
 
   &_cart
+    
+    &:not(.item_gor) .item
+      &_order
+        float left
+        margin-top 10px
+        
+        &_minus
+        &_plus
+          width 40px
+          padding-left 15px
+          padding-right 15px
+          display block
+          text-align center
+          
+        &_plus
+          float right
+          
+        & input
+          float none
+          display inline
+          text-align center
+
     &.item_gor
     
       & .item
@@ -1024,7 +1046,7 @@
   &_fulldesc
     bottom 50px
     right 200px
-    z-index 24
+    z-index 2
     position absolute
 
 
@@ -1088,7 +1110,7 @@
     right 40px
     position absolute
     top 40px
-    z-index 34
+    z-index 1
     
   &_eco.item_eco
     position: absolute

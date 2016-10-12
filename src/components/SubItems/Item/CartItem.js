@@ -125,6 +125,8 @@ class CartItem extends Component {
 
   render() {
     
+
+    var windowWidth = this.props.windowWidth
     const link = this.props.item.link
     const title = this.props.item.title
     const image = this.props.item.image
@@ -190,8 +192,13 @@ class CartItem extends Component {
     const titleshow = wordlenght(title, 50)
     const titleshow_hover = wordlenght(title, 100)
 
+    var classN = 'item_gor item_cart'
+    if (windowWidth<1300) {
+      classN = 'item_cart'
+    }
+
     return(
-      <div data-alotcost={alotcost} data-onecost={onecost}  data-alotorder={this.state.alotorder} data-oneorder={this.state.oneorder} className='item_gor item_cart'>
+      <div data-alotcost={alotcost} data-onecost={onecost}  data-alotorder={this.state.alotorder} data-oneorder={this.state.oneorder} className={classN}>
            
         <div className='item'>
           <div className='item_under'>
@@ -222,7 +229,7 @@ class CartItem extends Component {
                           <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
                         </div>
                         <div className='item_cart_buttonbody text-center'>
-                          <div className='item_cart_buttoninput'>
+                          <div className='item_cart_buttoninput text-center'>
                             <button className='item_order_minus' onClick={::this.setMinus}>-</button>
                             <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
                             <button className='item_order_plus' onClick={::this.setPlus}>+</button>
@@ -247,7 +254,7 @@ class CartItem extends Component {
                 <button className={item_order_buttons_one} onClick={::this.setOne}>штуки</button>
                 <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
               </div>
-              <div className='item_order_body'>
+              <div className='item_order_body text-center'>
                 <button className='item_order_minus' onClick={::this.setMinus}>-</button>
                 <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
                 <button className='item_order_plus' onClick={::this.setPlus}>+</button>

@@ -76,6 +76,8 @@ class ReCall extends Component {
     var isOpen = this.props.isOpen
     var windowWidth = this.props.windowWidth
 
+
+
     var offsetLeft = windowWidth
     
     var recallClass = 'header_recall'
@@ -252,6 +254,17 @@ class Header extends Component {
     if ((showuser==true) && (windowWidth<768)) {
       $('body').addClass('overflow');
     }
+
+    var windowTop = this.props.windowTop
+
+    if (windowTop>44)  
+      {
+        $('.header').addClass('fixed')
+      }else
+      { 
+        $('.header').removeClass('fixed')
+      }
+
   
     return (
         <div className='container'>
@@ -318,6 +331,7 @@ function mapStateToProps (state) {
     HeaderLinks: state.pageData.HeaderLinks,
     showMenu: state.user.show_menu,
     name: state.user.name,
+    windowTop: state.pageData.windowTop,
     isLogged: state.user.isLogged,
     windowWidth: state.pageData.windowWidth
   }

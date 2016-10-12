@@ -40,7 +40,7 @@ class Cart extends Component {
         <section>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-14 col20-md-14'>
+              <div className='col20-lg-14 col20-md-14 col20-sm-15'>
                 <div>
                   {
                     CartItems.map(function(item, key){
@@ -53,7 +53,7 @@ class Cart extends Component {
                 </div>
 
               </div>
-              <div className='col20-lg-offset-2 col20-lg-4 col20-md-offset-1 col20-md-5'>
+              <div className='col20-lg-offset-2 col20-lg-4 col20-md-offset-1 col20-md-5  col20-sm-5'>
                 <div className='profile_right'>
                   <h2>Итого</h2>
                   <span className='cart_total_cost'>18 056 ₽</span>
