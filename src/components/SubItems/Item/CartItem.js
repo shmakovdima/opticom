@@ -61,10 +61,18 @@ class CartItem extends Component {
 
   constructor(props) {
     super(props);
+
+    var oneorder = 0
+    var packaging = 0
+    if (this.props.item.buyed) {
+      oneorder = ('one' in this.props.item.buyed) ? this.props.item.buyed.one : 0
+      packaging = ('packaging' in this.props.item.buyed) ? this.props.item.buyed.packaging  : 0
+    }
+
     this.state = {
       one: true,
-      oneorder: ('one' in this.props.item.buyed) ? this.props.item.buyed.one : 0,
-      alotorder: ('packaging' in this.props.item.buyed) ? this.props.item.buyed.packaging  : 0
+      oneorder: oneorder,
+      alotorder: packaging
     };
   }
 
@@ -117,8 +125,6 @@ class CartItem extends Component {
 
   render() {
     
-
-
     const link = this.props.item.link
     const title = this.props.item.title
     const image = this.props.item.image

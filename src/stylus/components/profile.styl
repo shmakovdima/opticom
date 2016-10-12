@@ -13,6 +13,8 @@
   &_orders
     margin-top 45px
     
+    &.zindex
+      z-index -1
     &_top
       margin-top 60px
 
@@ -32,6 +34,7 @@
           
         & .btn.btn-default.dropdown-toggle
           width 100%
+          text-transform none
           font-size: 18px
 
         & .dropdown
@@ -106,6 +109,9 @@
     padding-bottom 150px
     margin-bottom -170px
     
+    &.zindex
+      z-index -1
+    
     &.special
       top -190px
       margin-bottom -240px
@@ -119,17 +125,22 @@
     &_buyed
       position relative
       float right
-      top -32px
+      top -37px
       
       .dropdown
         float right
         
+        & li.presentation
+          padding-bottom 0px
+        
         .btn.btn-default.dropdown-toggle
           font-size: 18px
+          text-transform none
+          line-height 20px
           font-family FuturaPTHeavy
           
           & .caret
-            margin-top 13px
+            margin-top 10px
       
     &_search
       padding-top 16px
@@ -485,6 +496,9 @@
     &_header
       padding-top 140px
       position relative
+      
+      &.zindex
+        z-index -1
     
     &_popular
       float left

@@ -105,7 +105,7 @@ class Catalog extends Component {
         <section className='category_section'>
           <div className='container'>
     
-              <Accordion defaultActiveKey={2}>
+              <Accordion defaultActiveKey={0}>
                 {
                   categoryArray.map(function(item,key){
                     var Items = item

@@ -68,22 +68,26 @@ class BuyToo extends Component {
         </div>
         <div className='container'>
           <div className='row'>
-
-
              <If condition={windowWidth<=768 }>
                 <Then>
-                  <Slider  {...settings}>
-                    {
-                      Interesed.map(function(item) {
-                        if ((only_eco == true) && (item.eco!=true)) return false;
-                        return (
-                          <div className='item_slide text-center'>
-                            <Item item={item} key={++Interesedkey}/>
-                        </div>)
-                      })
-                    }
-                  
-                  </Slider>
+                  <div className='row'>
+                    <Slider  {...settings}>
+                      
+                          <div className='padding_768'>
+                          </div>
+
+                          {
+                            Interesed.map(function(item) {
+                              if ((only_eco == true) && (item.eco!=true)) return false;
+                              return (
+                                <div className='item_slide text-center'>
+                                  <Item item={item} key={++Interesedkey}/>
+                              </div>)
+                            })
+                          }
+                      
+                    </Slider>
+                  </div>
                 </Then>
                 <Else>
                   <Then>

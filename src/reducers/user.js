@@ -3,8 +3,7 @@ const initialState = {
   show_menu: false,
   isLogged: false,
   name: 'Анастасия Длиннофамильная',
-
-
+  showLogin: false,
   Submit: [
     {
         buyed: {

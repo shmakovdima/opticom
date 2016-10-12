@@ -116,7 +116,7 @@ class Submit extends Component {
                 </div>
 
               </div>
-              <div className='col20-lg-offset-1 col20-lg-4 col20-md-offset-2 col20-md-4'>
+              <div className='col20-lg-offset-1 col20-lg-4 col20-md-offset-1 col20-md-4'>
                 <div className='profile_right'>
                   <h2>Итого</h2>
                   <span className='cart_total_cost'>18 056 ₽</span>

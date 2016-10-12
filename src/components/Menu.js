@@ -16,7 +16,6 @@ class SubCat extends Component{
   }
 
   render(){
-
     var Cat = []
 
     var self = this
@@ -52,8 +51,6 @@ class Menu extends Component {
       curoffice: ''
     }
   }
-
-
 
   showCategory() {
     this.setState({
@@ -144,7 +141,6 @@ class Menu extends Component {
     const setMenu = this.props.pageActions
 
     var Addresses = ['Петропавловск-Камчатский', 'Москва']
-
     var Offices = ['Головной офис', 'Местный офис']
 
     if (this.state.curaddress == '') this.setState({curaddress: Addresses[0]})
@@ -153,8 +149,10 @@ class Menu extends Component {
     const dropdownAddress = this.state.curaddress
     const dropdownOffice = this.state.curoffice
 
+    if (show_menu == true) {
+      $('body').addClass('overflow')
+    }
 
-    
     return(
       <div>   
         <If condition = {show_menu==true}>
@@ -186,7 +184,7 @@ class Menu extends Component {
                             <If condition={isLogged==false}>
                               <Then>
                                 <li>
-                                  <a className='greenlighted_left' onClick={::this.exitLogin}>Вход</a>
+                                  <a  onClick={::this.exitLogin}>Вход</a>
                                 </li>
                               </Then>
                             </If>

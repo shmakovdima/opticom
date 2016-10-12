@@ -178,7 +178,6 @@
     &:nth-child(3):before
       content '3'
 
-
     &.active
       top -40px
       font-size: 72px
@@ -192,5 +191,26 @@
         font-size: 28px
         
     &.delivery
+      padding-top 5px
+      &.active
+        top -35px
+        font-size 60px
+      
       & + &
-        margin-left 80px
+        margin-left 60px
+        
+@media (max-width: 1200px)
+
+ 
+  .cart
+    
+    &_title
+      font-size 16px
+      
+      &.delivery
+        padding-top 15px
+      
+      &.active
+        top -27px
+        font-size 50px
+  

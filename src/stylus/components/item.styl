@@ -635,7 +635,9 @@
     
       & .item
         
-        
+        &_cost
+          &_description
+            top 110px
 
         &_image
           width 150px
@@ -644,9 +646,12 @@
           position absolute
           
         &_order
-          
+          display none
+
           &_body
             margin-top: 45px
+            clear none
+            margin-right 100px
 
           
           &_buttons
@@ -708,6 +713,11 @@
             
         &:hover
           & .item
+            
+            &_cost
+              &_description
+                top 85px
+
             &_bottom
               padding-top 60px
 
@@ -1134,7 +1144,8 @@
 @media (max-width: 768px)
   .readyset h2
   .interesed.buytoo h2
-    font-size: 36px
+    font-size: 27px
+    line-height 30px
     
   .interesed
     h2

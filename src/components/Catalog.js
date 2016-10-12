@@ -17,8 +17,8 @@ export default class Catalog extends Component {
   render() {
     return (
       <div>
-        <HeaderDark/>
         <CatalogHeader/>
+        <HeaderDark/>
         <Preferences/>
         <SpecialOffer className='hidden-xs'/>    
         <AllIsReady/>

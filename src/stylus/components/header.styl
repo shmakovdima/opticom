@@ -7,13 +7,153 @@
   width 100%
   top 0px
   font-size 13px
-  z-index 3
+  z-index 2
   color white
   transform scaleY(1.0038)
   padding-top 68px
   font-family FuturaPTBold
   text-transform uppercase
   
+  &.zindex
+    z-index 2
+  
+  &_recall
+    z-index -1
+    height 100vh
+    position fixed
+    top 0px
+    right 0px
+    background: -webkit-linear-gradient(144deg, #59a1ad 31%, #98c04d 69%)
+    background: -moz-linear-gradient(144deg, #59a1ad 31%, #98c04d 69%)
+    background: -o-linear-gradient(144deg, #59a1ad 31%, #98c04d 69%)
+    background: -ms-linear-gradient(144deg, #59a1ad 31%, #98c04d 69%)
+    background: linear-gradient(-54deg, #59a1ad 31%, #98c04d 69%)
+    box-shadow: 0px 9px 32px 0px rgba(0, 0, 0, 0.46)
+    
+    .btn
+      color color_green
+      height 40px
+      font-size 13px
+      
+      &:hover
+      &:active
+        color black
+  
+    &_questions
+      text-transform none
+      color #000000
+      font-family FuturaPTBold
+      float left
+      position relative
+      font-size 20px
+      line-height 28px
+
+    &_phone
+      color black!important
+      font-family FuturaPTMedium!important
+      font-size 16px!important
+      display block
+      float left
+      position relative
+      margin-top 10px
+      line-height 20px
+    
+      &_input
+        background-image none
+        font-size 16px
+        font-family FuturaPTBook
+        margin-bottom: 10px
+        float: left
+        position: relative
+        
+        &.placeholder
+          font-size 16px
+          font-family FuturaPTBook
+
+    &.active
+      top 0px
+      
+    & .dropdown_block
+      position relative
+      width auto
+      padding-left 50px
+      padding-right 20px
+      max-width 280px
+      min-height 70px
+      
+      &.phone
+        margin-top 30px
+        
+      &.more
+        margin-top 50px
+
+      & .dropdown
+        width 100%
+        top 15px
+        position absolute
+        left 50px
+
+        &-menu 
+          & li
+            padding-bottom 4px
+            & a
+              color black
+              text-transform none
+          
+        & .btn.btn-default.dropdown-toggle .caret
+          float right
+          margin-top 8px
+        
+        & .btn.btn-default.dropdown-toggle
+          left -4px
+          padding-left 4px
+          height 36px
+          padding-right 4px
+          font-size 16px
+          text-transform none
+          width: auto
+          border-bottom: 1px solid black!important
+          margin-bottom: 1px
+          color black
+          min-width 210px
+          font-family FuturaPTMedium
+          
+          & span
+            &:first-child
+              padding-right 5px
+
+          &:hover
+          &:active
+            color color_black
+            
+        &.open
+          z-index 2
+          left 30px
+          width auto
+          
+          & .btn.btn-default.dropdown-toggle
+            padding-right 20px
+            border-bottom none!important
+            padding-left 20px
+          
+      
+      
+    &_dropdowns
+      padding-top 150px
+
+    &_header
+      
+      float left
+      position relative
+      clear both
+      color black
+      font-size 16px
+      font-family FuturaPTBold
+      line-height: 20px
+      display: block
+      text-transform: none
+      width: 100%
+
   & div.container
     position relative
     z-index 2
@@ -106,6 +246,7 @@
         
   &_phone
     font-size 14px
+    position relative
     padding-left 25px
     margin-right 2.1%
     line-height 16px
@@ -119,13 +260,20 @@
     &:visited
       text-decoration none
 
+    &.black
+      background url(../../images/sprites/header_phone.png) no-repeat
+      color black
+      &:active
+      &:hover
+        color black!important
+        
+
   &_basket
     margin-top 17px
     padding-left 30px
     font-family FuturaPTMedium
     position relative
     background url(../../images/sprites/header_dark_basket.png) no-repeat
-    
     width 60px
     height 24px
     font-size 14px
@@ -134,6 +282,13 @@
     & span
       position relative
       line-height 27px
+      
+    &.black
+      background url(../../images/sprites/header_basket_black.png)  left center no-repeat
+      background-size 20px
+      
+      & span
+        color black
 
   &_menu
     position relative
@@ -148,11 +303,15 @@
   &_user
     margin-left 1.8%
     width 14px
+    position relative
     height 15px
     margin-top 22px
     position relative
     background url(../../images/sprites/header_dark_user.png) no-repeat
     position relative
+    
+    &.black
+      background url(../../images/sprites/header_user.png) no-repeat
 
   &_links
     margin-left 3%
@@ -287,13 +446,15 @@
       width 17px
       background url(../../images/sprites/mobile_header_dark_basket.png) no-repeat
       background-size contain
-      
+          
       & span
         font-family FuturaPTBook
         font-size 13px
         float left
         line-height 17px
       
+
+
     &_light
       .header
         &_logo

@@ -6,8 +6,159 @@ import * as pageActions from '../../actions/showMenu'
 import $ from 'jquery'
 import { bindActionCreators } from 'redux'
 import { If, Then } from 'react-if';
-
+import {DropdownButton, MenuItem} from 'react-bootstrap'
 import * as pageActionsLogin from '../../actions/setLogged'
+
+import 'jquery.maskedinput/src/jquery.maskedinput.js'
+
+class MountPhone extends Component {
+  componentDidMount() {
+    $('.phone').mask('+7 (999) 999-9999');
+    $('.menu_search').val('Введите ваш телефон')
+  }
+  render(){
+    return(<div></div>)
+  }
+}
+
+class ReCall extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      curaddress: '',
+      curoffice: ''
+    }
+  }
+
+  setAddress(address){
+    this.setState({
+      curaddress: address
+    })
+  }
+
+  setOffice(office){
+    this.setState({
+      curoffice: office
+    })
+  }
+
+  setPlaceholder() {
+    if ($('.menu_search').val() == 'Введите ваш телефон') {
+        $('.menu_search').val('')
+        $('.menu_search').removeClass('placeholder')
+      }
+   
+  }
+
+  removePlaceholder() {
+    setTimeout(function(){
+
+      if ($('.menu_search').val() == '') {
+        $('.menu_search').val('Введите ваш телефон')
+        $('.menu_search').addClass('placeholder')
+      }
+    }, 200)
+    
+  }
+
+
+  render() {
+
+    var Addresses = ['Петропавловск-Камчатский', 'Москва']
+    var Offices = ['Головной офис', 'Местный офис']
+
+    if (this.state.curaddress == '') this.setState({curaddress: Addresses[0]})
+    if (this.state.curoffice == '') this.setState({curoffice: Offices[0]})
+
+    const dropdownAddress = this.state.curaddress
+    const dropdownOffice = this.state.curoffice
+
+    var isOpen = this.props.isOpen
+    var windowWidth = this.props.windowWidth
+
+    var offsetLeft = windowWidth
+    
+    var recallClass = 'header_recall'
+
+    recallClass+= ((isOpen) && (windowWidth>992)) ? ' active' : '';
+
+
+    if ((isOpen==true) && (windowWidth>992))  {
+      offsetLeft = document.getElementById('recall').offsetLeft
+
+      
+
+    var containerWidth = $('.container').width()
+
+    offsetLeft = ((windowWidth - containerWidth)/2) + offsetLeft  - 60
+
+    console.log(offsetLeft)
+
+    $('body').addClass('overflowrecall')
+      $('.header_basket, .header_user , .header_phone').addClass('black')
+      $('.catalog_header, .profile_orders, .profile_sets_header, .profile_items, .header').addClass('zindex')
+    } else{
+      $('.header_basket, .header_user , .header_phone').removeClass('black')
+      $('body').removeClass('overflowrecall');
+      $('.catalog_header, .profile_orders, .profile_sets_header , .profile_items, .header').removeClass('zindex')
+    }
+
+    var recallWidth = {width: windowWidth - offsetLeft}
+
+    var self = this
+    return(
+      <div>
+        <div className={recallClass} style={recallWidth}>
+          <div className='header_recall_dropdowns'>
+            <div className='dropdown_block'>
+              <span className='header_recall_header'>Выберите город</span>
+              <DropdownButton title={dropdownAddress} id='bg-nested-dropdown'>       
+                {
+                  Addresses.map(function(item, key){
+                    return(
+                      <MenuItem onClick={self.setAddress.bind(self, item)} eventKey={key}>{item}</MenuItem>
+                    )
+                  })
+                }
+              </DropdownButton>
+            </div>
+            <div className='dropdown_block'>
+              <span className='header_recall_header'>Выберите офис</span>
+              <DropdownButton title={dropdownOffice} id='bg-nested-dropdown2'>
+        
+                {
+                  Offices.map(function(item, key){
+                    return(
+                      <MenuItem onClick={self.setOffice.bind(self, item)} eventKey={key}>{item}</MenuItem>
+                    )
+                  })
+                }
+              </DropdownButton>
+            </div>
+            <div className='dropdown_block'>
+              <span className='header_recall_header'>Телефон склада</span>
+              <a className='header_recall_phone' title='Телефон склада' href='tel:+7 (4876) 84-19-82'>+7 (4876) 84-19-82</a>
+            </div>
+            <div className='dropdown_block phone'>
+              <input type='text' onBlur={::this.removePlaceholder} onFocus={::this.setPlaceholder} defaultValue='Введите ваш телефон' className='menu_search placeholder header_recall_phone_input phone'/>
+              <button className='btn'>Перезвоните мне</button>
+            </div>
+            <div className='dropdown_block more'>
+              <span className='header_recall_questions'>Остались вопросы?</span>
+              <button className='btn'>Написать сообщение</button>
+            </div>
+          </div>
+        </div>
+        <MountPhone/>
+      </div>
+    )
+  }
+}
+
+
+
+
+
 
 class HeaderSearch extends Component {
   render() {
@@ -38,13 +189,33 @@ class HeaderCount extends Component {
   }
 }
 
+
+
+
 class Header extends Component {
+
+  componentDidMount() {
+    var self = this
+    $(document).on('click', 'body', function(){
+      if(!$(event.target).closest('.header_recall').length) {
+        if($('.header_recall').hasClass('active')) {
+          self.setState({shownumber:false})
+        }
+      }     
+    })
+      
+  }
 
   constructor(props) {
     super(props);
     this.state = {
-      showuser: false
+      showuser: false,
+      shownumber: false
     };
+  }
+
+  showNumber(){
+    this.setState({shownumber:!this.state.shownumber})
   }
 
   exitLogin() {
@@ -53,7 +224,6 @@ class Header extends Component {
   }
 
   showMenu(){
-    $('body').addClass('overflow');
     this.props.pageActions.showMenu(!this.props.show_menu);
   }
 
@@ -63,6 +233,7 @@ class Header extends Component {
 
   hideUser() {
     this.setState({showuser: false})
+    $('body').removeClass('overflow');
   }
 
   render() {
@@ -71,17 +242,19 @@ class Header extends Component {
     const showuser = this.state.showuser
     const isLogged = this.props.isLogged
 
-    if (showuser==true) {
-      $('body').addClass('overflow');
-    }else{
-      $('body').removeClass('overflow');
-    }
+    const windowWidth = this.props.windowWidth
 
+
+    if ((showuser==true) && (windowWidth<768)) {
+      $('body').addClass('overflow');
+    }
+  
     return (
         <div className='container'>
+          <ReCall isOpen={this.state.shownumber} windowWidth = {windowWidth}/>
           <Link className='header_logo pull-left' to='/'></Link>
           <button className='header_menu pull-left pull-right-xs' onClick={::this.showMenu}></button>
-          
+
           <ul className='header_links pull-left hidden-xs'>
             {
               this.props.HeaderLinks.map(function(item, index) {
@@ -103,7 +276,6 @@ class Header extends Component {
                 <button onClick={::this.showUser} className='header_user pull-right' title='Личный кабинет' to='/user'></button>
               </Then>
             </If>
-
             <If  condition={((showuser == true) && (isLogged == true))}>
               <Then>
                 <div className='header_usermenu'>
@@ -120,9 +292,10 @@ class Header extends Component {
               </Then>
             </If>
             <HeaderCount/>
-            <a href='tel:+74959800648' className='hidden-xs hidden-sm header_phone pull-right'>+7-495-980-06-48</a>
+              <button id = 'recall' onClick={::this.showNumber} className='hidden-xs hidden-sm header_phone pull-right'>+7-495-980-06-48</button>
             <HeaderSearch/>  
           </div>
+
         </div>
     )
   }
@@ -141,7 +314,8 @@ function mapStateToProps (state) {
     HeaderLinks: state.pageData.HeaderLinks,
     showMenu: state.user.show_menu,
     name: state.user.name,
-    isLogged: state.user.isLogged
+    isLogged: state.user.isLogged,
+    windowWidth: state.pageData.windowWidth
   }
 }
 

@@ -282,8 +282,6 @@ class Item extends Component {
           <button className='item_hide_gor item_order_button'>в корзину</button>
         </div>)
       }
-
-
     }
 
 

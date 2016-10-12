@@ -3,11 +3,15 @@ import Footer from '../components/Footer'
 import browser from 'detect-browser'
 import $ from 'jquery'
 
+
+import Menu from '../components/Menu'
+import Login from '../components/Login'
+
+
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as pageActions from '../actions/setWindowWidth'
 import * as pageActionTop from '../actions/setWindowTop'
-
 
 
 class App extends Component {
@@ -41,10 +45,12 @@ class App extends Component {
   }
 
   render() {
+    const HeaderLinks = this.props.HeaderLinks
     return (
       <div>
         {this.props.children}
         <Footer/>
+        <Menu HeaderLinks={HeaderLinks}/>
       </div>
     )
   }
@@ -52,6 +58,7 @@ class App extends Component {
 
 function mapStateToProps (state) {
   return {
+    HeaderLinks: state.pageData.HeaderLinks,
     windowWidth: state.pageData.windowWidth,
     windowTop: state.pageData.windowTop
   }
