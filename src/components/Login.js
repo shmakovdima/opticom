@@ -14,6 +14,7 @@ class Login extends Component {
 
   hideLogin() {
     this.props.pageActionsLoginShow.setLoggedShow(false)
+    $('body').removeClass('overflowlogin');
   }
 
   setLogin() {
@@ -37,6 +38,11 @@ class Login extends Component {
 
   render(){
     const showLogin = this.props.showLogin
+
+    if (showLogin) {
+      $('body').addClass('overflowlogin');
+    }
+
     return(
       <div>
         <If condition={showLogin}>

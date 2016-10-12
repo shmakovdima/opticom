@@ -11,7 +11,7 @@ import {DropdownButton, MenuItem} from 'react-bootstrap'
 
 class SubCat extends Component{
   hideMenu(){
-    $('body').removeClass('overflow');
+    $('body').removeClass('overflow')
     this.props.setMenu.showMenu(false)
   }
 
