@@ -12,8 +12,8 @@ export default class Production extends Component {
           <div className='today_navigation black static' >
             <ul>
               <li><Link activeClassName='active' className='greenlighted_left about' to='today#about'><span>О компании</span></Link></li>
-              <li><Link activeClassName='active' className='greenlighted_left sotr' to='sotr'><span>Сотрудничество</span></Link></li>
-              <li><Link activeClassName='active' className='greenlighted_left prod' to='prod'><span>Производство</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left cooperation' to='sotr'><span>Сотрудничество</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left production' to='production'><span>Производство</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left ecology' to='ecology'><span>Экология</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left social' to='social'><span>Ответственность</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left job' to='today#job'><span>Вакансии</span></Link></li>
