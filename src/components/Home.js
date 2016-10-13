@@ -216,7 +216,7 @@ class Home extends Component {
     return (
       <div>
         <section style={topHome} className='home_header'>
-          <HeaderDark/>Ок
+          <HeaderDark/>
           <div className  = 'home_planet' style={bgImage}>
           </div>
     
