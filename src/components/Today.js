@@ -215,7 +215,7 @@ class Today extends Component {
                       <span className='today_header_description'>
                         Группа ведёт свою деятельность на трёх континентах, объединяя в единую структуру научный центр разработки новых видов упаковки, заготовителей агросырья, производственные и перерабатывающие предприятия.
                       </span>
-                      <Link className='today_header_link' title='Подробнее о группе' to='company'>
+                      <Link className='today_header_link' title='Подробнее о группе' to='cooperation'>
                         <span className='green_underline'>Подробнее о группе</span>
                       </Link>
 
@@ -256,12 +256,6 @@ class Today extends Component {
                           Подробнее о сотрудничестве
                         </span>
                       </Link>
-
-
-
-
-
-
                     </div>
                   
                 </div>
