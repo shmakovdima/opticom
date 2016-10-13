@@ -4,15 +4,13 @@ import HeaderLight from '../../components/Headers/HeaderLight'
 import {connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as pageActions from '../../actions/emptyCart'
-
+import CartRight from './CartRight'
 import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 import CartItem from '../SubItems/Item/CartItem'
-import MountCost from './MountCost'
 
 class Submit extends Component {
-
   render(){
     var CartItems = this.props.Submit
     return(
@@ -118,17 +116,7 @@ class Submit extends Component {
               </div>
               <div className='col20-lg-offset-1 col20-lg-4 col20-md-offset-1 col20-md-4'>
                 <div className='profile_right'>
-                  <h2>Итого</h2>
-                  <span className='cart_total_cost'>18 056 ₽</span>
-                  <span className='cart_total_vendors'>24 артикула</span>
-                  <span className='cart_total_qual'>
-                    <span>32 ед.</span>
-                    <span> • </span>
-                    <span>4 уп.</span>                  
-                  </span>
-                  <span className='cart_total_waiting'>
-                    Ожидаемая дата поставки — 24 мая
-                  </span>
+                  <CartRight/>
                   <Link to='/delivery' title='Далее' className='cart_total_button button'>
                     Далее
                   </Link>
@@ -153,7 +141,6 @@ class Submit extends Component {
             </div>
           </div>
         </section>
-        <MountCost/>
       </div>
 
     )

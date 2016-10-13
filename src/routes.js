@@ -35,6 +35,7 @@ import EcologyItem from './components/EcologyItem'
 
 
 import Sets from './components/Sets/Sets'
+import AddSet from './components/Sets/AddSet'
 
 export const routes = (
   <div>
@@ -56,6 +57,7 @@ export const routes = (
       <Route path='blog/test' component={EcologyItem}/>
 
       <Route path='allisready' component={Sets}/>
+      <Route path='addset' component={AddSet}/>
 
       <Route path='press' component={Press}>
         <IndexRoute component={PressNews} />

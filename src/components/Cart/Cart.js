@@ -9,8 +9,8 @@ import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 import CartItem from '../SubItems/Item/CartItem'
+import CartRight from './CartRight'
 
-import MountCost from './MountCost'
 
 class Cart extends Component {
 
@@ -55,19 +55,8 @@ class Cart extends Component {
               </div>
               <div className='col20-lg-offset-2 col20-lg-4 col20-md-offset-1 col20-md-5  col20-sm-5'>
                 <div className='profile_right'>
-                  <h2>Итого</h2>
-                  <span className='cart_total_cost'>18 056 ₽</span>
-                  <span className='cart_total_vendors'></span>
-                  <span className='cart_total_qual'>
-                    <span>32 ед.</span>
-                    <span> • </span>
-                    <span>4 уп.</span>                  
-                  </span>
-                  
-                  <span className='cart_total_waiting'>
-                    Ожидаемая дата поставки — 24 мая
-                  </span>
-                  <Link to='/delivery' title='Далее' className='cart_total_button button'>
+                  <CartRight/>
+                 <Link to='/delivery' title='Далее' className='cart_total_button button'>
                     Далее
                   </Link>
                 </div>
@@ -95,7 +84,7 @@ class Cart extends Component {
             </div>
           </div>
         </section>
-        <MountCost/>
+        
       </div>
 
     )

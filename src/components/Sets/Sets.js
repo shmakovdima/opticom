@@ -5,6 +5,7 @@ import '../../stylus/components/slick.styl';
 import '../../stylus/components/catalog.styl';
 import '../../stylus/components/category.styl';
 import '../../stylus/components/setspage.styl';
+import '../../stylus/components/cart.styl';
 
 import EcoCheckbox from '../SubItems/Catalog/EcoCheckbox'
 

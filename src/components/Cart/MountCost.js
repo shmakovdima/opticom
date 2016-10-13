@@ -29,7 +29,7 @@ export default class MountCost extends Component {
         var quant = (onecount>0) ? onecount+ ' ед.' : ''
 
         quant+= ((onecount>0) && (alotcount>0)) ? '  •  ' : ''
-        quant+= (alotcount>0) ? alotcount+ ' шт.' : ''
+        quant+= (alotcount>0) ? alotcount+ ' уп.' : ''
 
         console.log(quant)
 
