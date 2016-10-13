@@ -33,9 +33,10 @@ import PressPhoto from './components/Press/PressPhoto'
 import Ecology from './components/Ecology'
 import EcologyItem from './components/EcologyItem'
 
-
 import Sets from './components/Sets/Sets'
 import AddSet from './components/Sets/AddSet'
+
+import Today from './components/Today'
 
 export const routes = (
   <div>
@@ -58,6 +59,8 @@ export const routes = (
 
       <Route path='allisready' component={Sets}/>
       <Route path='addset' component={AddSet}/>
+
+      <Route path='today' component={Today}/>
 
       <Route path='press' component={Press}>
         <IndexRoute component={PressNews} />

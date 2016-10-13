@@ -30,6 +30,8 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.updateTop()
+    this.updateDimensions()
     window.addEventListener('resize', this.updateDimensions.bind(this))
     window.addEventListener('scroll', this.updateTop.bind(this))
   }
@@ -40,7 +42,7 @@ class App extends Component {
   }
 
   render() {
-    this.updateTop()
+    
     const HeaderLinks = this.props.HeaderLinks
     return (
       <div>

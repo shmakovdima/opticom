@@ -6,6 +6,48 @@
 @import 'components/text-align-media.styl'
 
 
+
+.form-control
+  color black
+  border none
+  box-shadow none
+  font-size 16px
+  background none
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+  border-radius 0px
+  font-family FuturaPTBook
+
+  &:hover
+  &:active
+  &:focus
+    box-shadow none
+    border-color black
+
+  &:-ms-input-placeholder
+  &::-moz-placeholder
+  &:-moz-placeholder
+  &::-webkit-input-placeholder
+    font-family FuturaPTBook!important
+    font-size 12px!important
+    color color_black!important
+      
+
+        
+
+textarea
+  resize none
+  
+  &.form-control
+    padding-left: 14px
+    padding-right: 14px
+    border 1px solid rgba(0,0,0,0.1)
+    
+  
+input
+textarea
+  outline none!important
+  
+
 .btn 
   background rgba(255, 255, 255, 0.8)
   height 100px
@@ -24,6 +66,9 @@
   &:hover
   &:active
     color black
+
+//.btn
+ // &.green
 
 .button
   transition 150ms all ease-in

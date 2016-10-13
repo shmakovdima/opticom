@@ -5,22 +5,27 @@ import Interesed from './SubItems/Catalog/Interesed'
 import CategorySlider from './SubItems/CategorySlider'
 import {connect } from 'react-redux'
 import Footer from './Footer'
+import ContactForm from './ContactForm'
 import {Link} from 'react-router'
-//import { If, Then, Else } from 'react-if';
-
 import $ from 'jquery'
-
 import '../stylus/components/home.styl';
 import '../stylus/components/planet.styl';
 
 class Home extends Component {
 
+
   constructor(props) {
     super(props);
     this.state = {
-      breakpoint: 900
+      breakpoint: 900,
+      lgShow: false
     }
   }
+
+  lgShow() {
+    this.setState({lgShow: !this.state.lgShow})
+  }
+
 
   componentDidMount() {
     $('.home_header_down').addClass('active')
@@ -313,7 +318,7 @@ class Home extends Component {
                 <div className='col20-lg-5 col20-md-5 home_preferences_future'>
                   <span className='home_preferences_title greenlighted'>БУДУЩЕЕ <br/>ОПТИКОМ</span>
                   <p>Очередным этапом в развитии компании станет пополнение товарной линейки новыми экологичными товарами и запуск новых мощностей по производству биоупаковки.</p>
-                  <button className='home_preferences_future_button greenlighted'>НАПИШИТЕ<br/>НАМ</button>
+                  <button className='home_preferences_future_button greenlighted close_modal' onClick={::this.lgShow}>НАПИШИТЕ<br/>НАМ</button>
                 </div>
                 <div className='col20-lg-6 col20-md-6 home_preferences_press'>
                   <Link to='/press' title='ПРЕСС-ЦЕНТР' className='home_preferences_title greenlighted pull-right'>ПРЕСС-ЦЕНТР
@@ -337,6 +342,7 @@ class Home extends Component {
           <AllIsReady/>  
           <Interesed/>
           <Footer/>
+          <ContactForm show={this.state.lgShow} onHide={this.lgShow}/>
         </div>
 
       </div>

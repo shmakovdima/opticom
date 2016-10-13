@@ -76,7 +76,6 @@ class AddSet extends Component {
                       return(
                         <CartItem remove={true} submit={false} item={item} key={key}/>
                       )
-
                     })
                   }
                 </div>
