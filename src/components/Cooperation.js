@@ -5,7 +5,8 @@ import '../stylus/components/today.styl';
 import '../stylus/components/press.styl';
 import ContactForm from './ContactForm'
 import { Accordion, Panel } from 'react-bootstrap'
-export default class Contacts extends Component {
+
+export default class Cooperation extends Component {
 
   constructor(props) {
     super(props);

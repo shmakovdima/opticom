@@ -43,7 +43,7 @@ import Ecology from './components/Ecology'
 import Production from './components/Production'
 import Social from './components/Social'
 import Contacts from './components/Contacts'
-
+import Cooperation from './components/Cooperation'
 
 export const routes = (
   <div>
@@ -73,6 +73,7 @@ export const routes = (
       <Route path='production' component={Production}/>
       <Route path='social' component={Social}/>
       <Route path='contact' component={Contacts}/>
+      <Route path='cooperation' component={Cooperation}/>
 
       <Route path='press' component={Press}>
         <IndexRoute component={PressNews} />
