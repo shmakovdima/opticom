@@ -41,6 +41,9 @@ import Today from './components/Today'
 
 import Ecology from './components/Ecology'
 import Production from './components/Production'
+import Social from './components/Social'
+import Contacts from './components/Contacts'
+
 
 export const routes = (
   <div>
@@ -68,6 +71,8 @@ export const routes = (
 
       <Route path='ecology' component={Ecology}/>
       <Route path='production' component={Production}/>
+      <Route path='social' component={Social}/>
+      <Route path='contact' component={Contacts}/>
 
       <Route path='press' component={Press}>
         <IndexRoute component={PressNews} />

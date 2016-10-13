@@ -30,10 +30,68 @@
       & a
         & span
           color black!important
+          
+    &.static
+      position absolute
+      z-index 1
   
   &_contact
     padding-bottom 0px
     
+
+    
+    &form
+      &_block
+        position relative
+        float left
+        margin-top 15px
+        
+        & h3
+          font-size: 24px
+          line-height 36px
+          font-family FuturaPTMedium
+          
+        & a
+        & span
+          font-size: 22px
+          line-height 32px
+          float left 
+          clear left
+        & a
+          padding-top 4px
+          line-height 26px
+        
+        & + div
+          margin-top 37px  
+      
+      &_panel
+        float left
+        clear left
+        margin-top 60px
+        position relative
+        
+        & .panel-title > a
+          color black
+          font-family FuturaPTHeavy
+
+      &_pr
+        margin-top 18px
+        margin-bottom 5px
+        text-transform uppercase
+        float left
+        clear left
+        color:  #98a4a6
+        font-size 12px
+
+      &_phone
+        float left 
+        clear left
+        font-size: 32px
+        
+        &:hover
+        &:active
+          color color_green
+
     &_image
       top -10px
       width 1033px
@@ -236,6 +294,39 @@
         background url(../../images/today/job/nn.png) top left  no-repeat
 
   &_social
+    padding-bottom 0px
+    margin-bottom 0px
+
+    &_href
+      float left
+      clear left
+      margin-top 30px
+      font-size 16px!important
+      font-family FuturaPTBold
+      text-transform uppercase
+
+      &:hover
+      &:active
+        color black!important
+
+      &:before
+        height 30%
+        width 90%
+
+
+
+    &_row
+      margin-top 90px
+    
+    &_p
+      font-family: LeksaPro
+      color:  #000000
+      font-size: 16px
+      line-height: 32px
+      float left
+      clear left
+      max-width 480px
+      margin-top 30px
     
     &_image
       position absolute
@@ -292,6 +383,24 @@
         left 0px
         height 100%
         width 92px
+
+    & .press_projects_overflow
+      
+      & a
+        & span
+          max-width 1200px
+      
+      &:before
+        z-index -1
+        background #ededed
+        content ''
+        position absolute
+        left -35px
+        top -30px
+        height 320px
+        width 200px       
+    
+
 
   &_ecology
     

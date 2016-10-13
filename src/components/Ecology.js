@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import HeaderLight from '../components/Headers/HeaderLight'
 import {Link} from 'react-router'
-export default class Static extends Component {
 
+import '../stylus/components/today.styl';
+import '../stylus/components/press.styl';
+
+
+
+
+export default class Static extends Component {
   render() {
     return (
       <div className='today'>

@@ -463,7 +463,7 @@ const initialState = {
       href: 'blog'
     },{
       title: 'Отвественность',
-      href: 'responsibility'
+      href: 'social'
     },{
       title: 'Экология',
       href: 'ecology'

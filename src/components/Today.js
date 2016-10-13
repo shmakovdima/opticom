@@ -32,7 +32,6 @@ class Today extends Component {
 
   updateTop(){
     var windowTop = this.props.windowTop
-
     var screenHeight = window.innerHeight
     var sotrTop = (document.getElementById('sotr')) ? document.getElementById('sotr').offsetTop : 2129
     var whiteTop = (document.getElementById('prod')) ? document.getElementById('prod').offsetTop : 2129
@@ -57,7 +56,7 @@ class Today extends Component {
       contactTop-=screenHeight
     }
 
-
+    var self = this
     this.prevScroll = windowTop
 
     if ((windowTop>=0) && (windowTop<whiteTop)) {
@@ -88,6 +87,7 @@ class Today extends Component {
 
     console.log('curItem' + curItem)
     console.log('curItems' + this.curItems)
+    console.log('working' + this.working)
 
     if (this.curItems =='') {
       this.curItems = curItem
@@ -96,11 +96,12 @@ class Today extends Component {
         console.log('changing')
 
         this.working = true
-        this.curItems = curItem
+        
         if (curItem!='about') {
           $('.'+curItem).click()
         }
-        setTimeout(this.working =false, 1200)
+        this.curItems = curItem
+        setTimeout(function(){ self.working = false}, 1200)
 
       }
     }
@@ -114,7 +115,7 @@ class Today extends Component {
   componentDidMount(){
     window.addEventListener('wheel', this.updateTop.bind(this))
 
-    $(document).on('click', '.today_navigation a', function(event){
+    $(document).on('click', '.cooperation, .today_navigation a', function(event){
 
         //prevent the default action for the click event
         event.preventDefault();
@@ -208,8 +209,8 @@ class Today extends Component {
                     <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18'>
                      <h1>Группа компаний Оптиком</h1>
                     </div>
-                    <div className='home_header_down'>
-                    </div>
+                    <a href='#sotr' className='cooperation home_header_down'>
+                    </a>
                     <div className='col20-lg-offset-2 col20-lg-18 col20-md-offset-2 col20-md-18'>
                       <span className='today_header_description'>
                         Группа ведёт свою деятельность на трёх континентах, объединяя в единую структуру научный центр разработки новых видов упаковки, заготовителей агросырья, производственные и перерабатывающие предприятия.

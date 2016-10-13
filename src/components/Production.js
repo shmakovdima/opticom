@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import HeaderLight from '../components/Headers/HeaderLight'
 import {Link} from 'react-router'
-
+import '../stylus/components/today.styl';
+import '../stylus/components/press.styl';
 
 export default class Production extends Component {
   render() {
@@ -26,9 +27,8 @@ export default class Production extends Component {
               <div className='container'>
                 <div className='row'>
                     <div className='col20-lg-15'>
-                      <div className='total_white'>
+                      <div className='today_white'>
                       </div>
-                      
                     </div>
                     <div className='col20-lg-19'>
                       <div className='today_sotr_image'>
