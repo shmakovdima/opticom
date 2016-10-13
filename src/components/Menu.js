@@ -82,19 +82,17 @@ class Menu extends Component {
   }
 
   setPlaceholder() {
-    if ($('.menu_search').val() == 'Поиск') {
-      $('.menu_search').val('')
-      $('.menu_search').removeClass('placeholder')
+    if ($('#menu_search').val() == 'Поиск') {
+      $('#menu_search').val('')
+      $('#menu_search').removeClass('placeholder')
     }
-   
   }
 
   removePlaceholder() {
     setTimeout(function(){
-
-      if ($('.menu_search').val() == '') {
-        $('.menu_search').val('Поиск')
-        $('.menu_search').addClass('placeholder')
+      if ($('#menu_search').val() == '') {
+        $('#menu_search').val('Поиск')
+        $('#menu_search').addClass('placeholder')
       }
     }, 200)
     
@@ -165,7 +163,7 @@ class Menu extends Component {
                       <div className='row'>
 
                         <div className='col-xs-12'>
-                          <input type='text' onBlur={::this.removePlaceholder} onFocus={::this.setPlaceholder} defaultValue='Поиск' className='menu_search placeholder'/>
+                          <input type='text' onBlur={::this.removePlaceholder} onFocus={::this.setPlaceholder} defaultValue='Поиск' id='menu_search' className='menu_search placeholder'/>
                         </div>
 
                         <div className='col-xs-12 menu_mobile_links'>

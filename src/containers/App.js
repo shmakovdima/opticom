@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Footer from '../components/Footer'
-import browser from 'detect-browser'
+//import browser from 'detect-browser'
 import $ from 'jquery'
 
 
@@ -21,12 +21,7 @@ class App extends Component {
   }
 
   updateTop(){
-
-    if (browser.name=='firefox') {
-      this.props.pageActionTop.setWindowTop($('html').scrollTop());
-    }else{
-      this.props.pageActionTop.setWindowTop($('body').scrollTop());
-    }
+    this.props.pageActionTop.setWindowTop(window.scrollY || document.documentElement.scrollTop);
   }
 
   componentWillMount() {
@@ -45,6 +40,7 @@ class App extends Component {
   }
 
   render() {
+    this.updateTop()
     const HeaderLinks = this.props.HeaderLinks
     return (
       <div>

@@ -34,7 +34,7 @@ import Ecology from './components/Ecology'
 import EcologyItem from './components/EcologyItem'
 
 
-import PopularSet from './components/PopularSet'
+import Sets from './components/Sets/Sets'
 
 export const routes = (
   <div>
@@ -55,8 +55,7 @@ export const routes = (
       <Route path='blog' component={Ecology}/>
       <Route path='blog/test' component={EcologyItem}/>
 
-      <Route path='allisready' component={PopularSet}/>
-
+      <Route path='allisready' component={Sets}/>
 
       <Route path='press' component={Press}>
         <IndexRoute component={PressNews} />
@@ -74,8 +73,9 @@ export const routes = (
         <Route path='orders' component={ProfileOrders} />
         <Route path='special' component={ProfileSpecial} />
         <Route path='messages' component={ProfileMessages} />
-      
       </Route>
+
+      
 
 
 

@@ -4,26 +4,28 @@ const initialState = {
 
   lovedItems: new Array(),
 
+
+  
   Ecology: {
     Data: [
       {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Новость'],
-        link: 'ecology/test',
+        link: 'blog/test',
         image: 'images/press/eco_item.png',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       },
         {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Статья', 'Уроки'],
-        link: 'ecology/test',
+        link: 'blog/test',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       },
           
       {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Новость'],
-        link: 'ecology/test',
+        link: 'blog/test',
         image: 'images/press/eco_item.png',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       }
@@ -37,34 +39,34 @@ const initialState = {
       {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Новость'],
-        link: 'ecology/test',
+        link: 'blog/test',
         image: 'images/press/eco_item.png',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       },
         {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Статья', 'Уроки'],
-        link: 'ecology/test',
+        link: 'blog/test',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       },
           
       {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Новость'],
-        link: 'ecology/test',
+        link: 'blog/test',
         image: 'images/press/eco_item.png',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       },
       {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Новость'],
-        link: 'ecology/test',
+        link: 'blog/test',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       },
         {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Статья', 'Уроки'],
-        link: 'ecology/test',
+        link: 'blog/test',
         image: 'images/press/eco_item.png',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       },
@@ -72,7 +74,7 @@ const initialState = {
       {
         title: 'Практические инструменты сокращения затрат на уборку',
         type: ['Новость'],
-        link: 'ecology/test',
+        link: 'blog/test',
         text: '7 июля состоялась встреча ключевых партнеров «ОптиКом». В рамках бизнес-завтрака «Эффективные технологии клининга» приглашенные спикеры от ведущих мировых производителей индустрии чистоты.'
       }
 
@@ -1246,6 +1248,57 @@ const initialState = {
 
   Sets: [
     {
+      eco: true,
+      title: 'В зеленый офис ежемесячно',
+      count: '23',
+      cost: '35720',
+      link: 'readyset/greenoffice',
+      image: 'images/ready_item/subcategory_popular.png',
+      hoverimage: 'images/ready_item/subcategory_popular.png',
+      textleft: '+ 104'
+    },
+    {
+      eco: false,
+      title: 'В зеленый офис ежемесячно',
+      count: '23',
+      cost: '35720',
+      link: 'readyset/greenoffice',
+      image: 'images/ready_item/subcategory_popular.png',
+      hoverimage: 'images/ready_item/subcategory_popular.png',
+      textleft: '+ 104'
+    },
+    {
+      eco: true,
+      title: 'В зеленый офис ежемесячно',
+      count: '23',
+      cost: '35720',
+      link: 'readyset/greenoffice',
+      image: 'images/ready_item/subcategory_popular.png',
+      hoverimage: 'images/ready_item/subcategory_popular.png',
+      textleft: '+ 104'
+    },
+    {
+      eco: false,
+      title: 'В зеленый офис ежемесячно',
+      count: '23',
+      cost: '35720',
+      link: 'readyset/greenoffice',
+      image: 'images/ready_item/subcategory_popular.png',
+      hoverimage: 'images/ready_item/subcategory_popular.png',
+      textleft: '+ 104'
+    },
+    {
+      eco: true,
+      title: 'В зеленый офис ежемесячно',
+      count: '23',
+      cost: '35720',
+      link: 'readyset/greenoffice',
+      image: 'images/ready_item/subcategory_popular.png',
+      hoverimage: 'images/ready_item/subcategory_popular.png',
+      textleft: '+ 104'
+    },
+    {
+      eco: false,
       title: 'В зеленый офис ежемесячно',
       count: '23',
       cost: '35720',
@@ -1254,7 +1307,6 @@ const initialState = {
       hoverimage: 'images/ready_item/subcategory_popular.png',
       textleft: '+ 104'
     }
-
   ]
 
   ,

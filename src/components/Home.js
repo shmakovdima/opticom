@@ -212,8 +212,8 @@ class Home extends Component {
     return (
       <div>
         <section style={topHome} className='home_header'>
-          
-          <div className = 'home_planet' style={bgImage}>
+          <HeaderDark/>Ок
+          <div className  = 'home_planet' style={bgImage}>
           </div>
     
           <div className = 'container'>
@@ -256,9 +256,11 @@ class Home extends Component {
               </div>
             </div>
           </div>
-          <HeaderDark/>
+          
         </section>
+
         <div style={topBody} className='home_main'>
+          <HeaderDark/>
           <section className='home_preferences' style={topSection}> 
             <div className='container'>
               <div className='row'>
@@ -336,6 +338,7 @@ class Home extends Component {
           <Interesed/>
           <Footer/>
         </div>
+
       </div>
     )
   }
