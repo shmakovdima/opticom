@@ -348,37 +348,43 @@ const initialState = {
   PressNews: {
     Data: [
       {
+        date: '2016-03-21',
         link: 'pressitem',
         title: 'Профстандарт: что делать в HoReCa?',
         image: 'images/press/1.png',
         imagehover: 'images/press/1.png'
       },
-            {
+      {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Отмечены лучшие «зеленые» офисы Москвы',
         image: 'images/press/2.png',
         imagehover: 'images/press/2.png'
       },
             {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Экологическая ответственность бизнеса: состояние и перспективы',
         image: 'images/press/3.png',
         imagehover: 'images/press/3.png'
       },
             {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Экологическая маркировка и упаковка: критерии, ограничения, возможности',
         image: 'images/press/4.png',
         imagehover: 'images/press/4.png'
       },
             {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Экологическая маркировка и упаковка: критерии, ограничения, возможности',
         image: 'images/press/5.png',
         imagehover: 'images/press/5.png'
       },
             {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Весь процесс производства упаковки на одной площадке',
         image: 'images/press/6.png',
         imagehover: 'images/press/6.png'
@@ -391,18 +397,21 @@ const initialState = {
 
       {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Профстандарт: что делать в HoReCa?',
         image: 'images/press/1.png',
         imagehover: 'images/press/1.png'
       },
             {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Отмечены лучшие «зеленые» офисы Москвы',
         image: 'images/press/2.png',
         imagehover: 'images/press/2.png'
       },
             {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Экологическая ответственность бизнеса: состояние и перспективы',
         image: 'images/press/3.png',
         imagehover: 'images/press/3.png'
@@ -415,12 +424,14 @@ const initialState = {
       },
             {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Экологическая маркировка и упаковка: критерии, ограничения, возможности',
         image: 'images/press/5.png',
         imagehover: 'images/press/5.png'
       },
             {
         link: 'pressitem',
+        date: '2016-03-21',
         title: 'Весь процесс производства упаковки на одной площадке',
         image: 'images/press/6.png',
         imagehover: 'images/press/6.png'
@@ -441,7 +452,7 @@ const initialState = {
     },
     {
       title: 'Производство',
-      href: 'manufacturing'
+      href: 'production'
     },
     {
       title: 'Пресс-центр',

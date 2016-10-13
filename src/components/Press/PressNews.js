@@ -4,6 +4,7 @@ import {Link} from 'react-router'
 import { If, Then } from 'react-if'
 import '../../stylus/components/set.styl';
 import wordlenght from '../function/wordlenght'
+import getDate from '../function/getDate'
 
 class PressNewsItem extends Component {
   render () {
@@ -12,6 +13,7 @@ class PressNewsItem extends Component {
     let link = this.props.data.link
     let title = wordlenght(this.props.data.title, 50)
     let hoverimg = 'http://' + window.location.host + '/' + this.props.data.imagehover
+    let date = getDate(this.props.data.date)
 
     return(
       <div className='ready ready_pressnews_item'>
@@ -19,11 +21,11 @@ class PressNewsItem extends Component {
           <img src={img} className='ready_image' alt={title}/>
           <img src={hoverimg} className='ready_hover' alt={title}/>
           <div className='ready_addons ready_pressnews'>
+              <span className='ready_date'>{date}</span>
               <Link to={link} title={title} className='ready_title'>
                 {title}              
               </Link>
               <div className='ready_pressnews_bg'></div>
-          
             </div>
         </div>
       </div>

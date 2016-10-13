@@ -48,7 +48,6 @@ class Home extends Component {
           $('html, body').animate({
             scrollTop: breakpoint + $('.home_header').height() - 100
           }, 1000)
-
         }
     }
   }

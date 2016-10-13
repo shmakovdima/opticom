@@ -1,152 +1,103 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import {Link} from 'react-router'
-import { If, Then, Else } from 'react-if'
-import '../stylus/components/ecology.styl';
 import HeaderLight from '../components/Headers/HeaderLight'
-
-class EcologyItem extends Component {
-  render(){
-
-    var img = (this.props.data.image) ? {backgroundImage: 'url(http://' + window.location.host + '/' + this.props.data.image + ')'} : false
-    let link = this.props.data.link
-    let text = this.props.data.text
-    let title = this.props.data.title
-    var category = this.props.data.type.join(', ')
-    return(
-
-            <div className='ecology_item'>
-              <If condition={img!=false}>
-                <Then >
-                  <div style={img} className='ecology_item_image'>
-                  </div>
-                </Then>
-                <Else>
-                  <div className='ecology_block_addon'>
-                  </div>
-                </Else>
-              </If>
-              <div className='ecology_block'>
-                <span>{category}</span>
-                <Link to={link} title={title}>{title}</Link>
-                <p>{text}</p>
-
-              </div>
-              
-            </div>
-    )
-  }
-}
-
-
-class Ecology extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loadmore: true,
-      Data: this.props.Ecology.Data
-    }
-  }
-
-  loadMore() {
-    var newData = JSON.parse(JSON.stringify(this.props.Ecology.loadMore.Data));
-    var oldData = JSON.parse(JSON.stringify(this.state.Data));
-    this.setState({
-      Data: oldData.concat(newData)
-    })
-   
-    if (this.props.Ecology.loadMore.final == true) {
-      this.setState({
-        loadmore: false
-    })
-    }
-  }
+import {Link} from 'react-router'
+export default class Static extends Component {
 
   render() {
-
-    var Data = this.state.Data
-
     return (
-      <div>
+      <div className='today'>
         <HeaderLight/>
-        <section className='profile_sets_header ecology'>
-            <div className='container'>
-              <div className='row'>
-               
-                <div className='col20-lg-19 col20-lg-offset-1 col20-md-19 col20-md-offset-1 col20-sm-9 '>
-                  <h1>База эко знаний</h1>
-                </div>
-              </div>
-              <div className='row'>
-                <div className='col20-lg-15 col20-md-15 col-sm-10 col-xs-12'>
-
-                  <div className='col20-lg-18 col20-lg-offset-2 col20-md-18 col20-md-offset-2 col20-sm-9 '>
-                    <p className='ecology_heading'>
-                      Группа компаний «ОптиКом» — лидирующий оператор российского рынка оптовых поставок упаковочных и расходных материалов, товаров хозяйственно-бытового назначения.
-                    </p>
-                  </div>
-
-                {
-                  Data.map(function(item){
-
-                    return(
-                      
-                        <EcologyItem data={item}/>
-    
-                    )
-
-                  })
-
-                }
-                </div>
-                <div className='col20-lg-4 col20-lg-offset-1 col20-md-5 col20-md-offset-1 '>
-                  <div className='ecology_category'>
-                    <span className='active greenlighted_left'>Все</span>
-                    <a className='greenlighted_left'>Статьи</a>
-                    <a className='greenlighted_left'>Уроки</a>
-                    <a className='greenlighted_left'>Новости</a>
-                    <a className='greenlighted_left'>Категория 1</a>
-                  </div>
-                  <div className='ecology_tegs'>
-                    <h3>Теги</h3>
-                    <div>
-                      <a className='green_underline'>Экология</a>
-                      <a className='green_underline'>Уборка</a>
-                      <a className='green_underline'>HoReCa</a>
-                      <a className='green_underline'>Отели</a>
-                      <a className='green_underline'>Офис</a>
-                      <a className='green_underline'>Награды</a>
-
-
-                                         
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>        
-          </section>
-          <div className='container load_more'>
-            <div className='row text-center'>
-              <If condition={this.state.loadmore == true }>
-                 <Then>
-                   <button onClick={::this.loadMore} className='greenlighted'>Показать Еще 10</button>
-                  </Then>
-              </If>
-            </div>
+        <div className='today_head'>
+          <div className='today_navigation black static' >
+            <ul>
+              <li><Link activeClassName='active' className='greenlighted_left about' to='today#about'><span>О компании</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left sotr' to='sotr'><span>Сотрудничество</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left prod' to='prod'><span>Производство</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left ecology' to='ecology'><span>Экология</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left social' to='social'><span>Ответственность</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left job' to='today#job'><span>Вакансии</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left press' to='press'><span>Пресс-центр</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left contact' to='contact'><span>Контакты</span></Link></li>
+            </ul>
           </div>
         </div>
-    )
-  }
+            <section id='ecology'>
+              <div className='container'>
+                <div className='row'>
+                    <div className='col20-lg-15'>
+                      <div className='today_white'>
+                      </div>
+                    </div>
+                    <div className='col20-lg-20'>
+                      <div className='today_ecology_image'>
+                      </div>
+                    </div>
+                   
+                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18'>
+                     <h2>Экология</h2>
+                    </div>
+                    <div className='col20-lg-offset-2 col20-lg-9 col20-md-offset-2 col20-md-10'>
+                      <span className='today_description'>
+                        В своей работе ГК «ОптиКом» опирается на принципы корпоративной экологической ответственности. Мы стремимся к тому, чтобы наша деятельность оказывала минимальное негативное воздействие на окружающую среду.
+                      </span>
+                    </div>
+                    <div className='col20-lg-offset-2 col20-lg-16 col20-md-offset-2 col20-md-18'>
+
+                      <div className='today_ecology_block today_ecology_block_1'>
+                        <Link >
+                          <span className='green_underline'>Экопрограммы</span>
+                        </Link>
+                      </div>
+
+                      <div className='today_ecology_block today_ecology_block_2'>
+                        <Link >
+                          <span className='green_underline'>Зелёный офис</span>
+                        </Link>
+                      </div>
+
+                      <div className='today_ecology_block today_ecology_block_3'>
+                        <Link >
+                          <span className='green_underline'>Зелёные товары</span>
+                        </Link>
+                      </div>
+
+                      <div className='today_ecology_block today_ecology_block_4'>
+                        <Link >
+                          <span className='green_underline'>База Эко Знаний</span>
+                        </Link>
+                      </div>
+
+                      <div className='today_ecology_block today_ecology_block_5'>
+                        <Link >
+                          <span className='green_underline'>Зеленая гостиница</span>
+                        </Link>
+                      </div>
+
+                      <div className='today_ecology_block today_ecology_block_6'>
+                        <Link >
+                          <span className='green_underline'>Зеленый магазин</span>
+                        </Link>
+                      </div>
+
+                      <div className='today_ecology_block today_ecology_block_7'>
+                        <Link >
+                          <span className='green_underline'>Экспертные<br/> материалы</span>
+                        </Link>
+                      </div>
+
+                      <div className='today_ecology_block today_ecology_block_8'>
+                        <Link >
+                          <span className='green_underline'>Кейсы: зеленый<br/> бизнес</span>
+                        </Link>
+                      </div>
+                      
+
+                    </div>
+                  
+                </div>
+              </div>
+          </section>
+        
+      </div>
+    )}
 }
-
-
-function mapStateToProps (state) {
-  return {
-    windowWidth: state.pageData.windowWidth,
-    Ecology: state.pageData.Ecology
-  }
-}
-
-
-export default connect(mapStateToProps)(Ecology)

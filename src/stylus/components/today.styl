@@ -1,0 +1,389 @@
+@import '../variables.styl'
+
+
+
+.today
+  width 100%
+  
+  &_head
+    padding-top 90px
+  
+  &_navigation
+    position fixed
+    z-index 12
+    top 270px
+    right 233px
+    color white!important
+    
+    & a
+      font-size: 12px
+      font-family FuturaPTHeavy
+      line-height 32px
+      text-transform uppercase
+      & span
+        font-family FuturaPTHeavy
+        color white
+
+    &.black
+      color black
+      
+      & a
+        & span
+          color black!important
+  
+  &_contact
+    padding-bottom 0px
+    
+    &_image
+      top -10px
+      width 1033px
+      height 544px
+      position absolute
+      background url(../../images/today/cart.png) center right no-repeat
+
+    &_more
+      float left
+      clear left
+      margin-top 90px
+
+    &_phone
+      float left
+      clear left
+      color:  #000000
+      font-size 40px
+      
+      &:hover
+      &:active
+        color color_green
+  
+    & button
+      margin-top 30px
+      height 56px
+      font-size 18px
+      padding-left 32px
+      padding-right 32px
+      clear left
+      float left
+
+  &_press
+    &_slider
+      margin-top 71px
+      
+      .slick
+        &-prev
+        &-next
+
+          top 300px!important
+          
+    
+
+  &_set
+    width 450px
+  
+  section
+    overflow hidden
+    margin-top 0px
+    
+  &_white
+    z-index -2
+    height: 488px
+    width 100%
+    position absolute
+    top -60px
+    background white
+    max-width 960px
+    
+    &.fixed
+      position fixed
+      top 106px
+      
+    &.hidden
+      display none
+  
+  &_link
+    font-size: 18px
+    line-height 24px
+    font-family FuturaPTBook
+    cursor pointer
+  &_description
+    font-size: 18px
+    line-height: 32px
+    font-family LeksaPro
+
+
+  & ul.ul
+    font-size: 18px
+    font-family LeksaPro
+    line-height 40px
+    float left
+    margin-bottom 40px
+    & li
+      line-height 36px
+      position relative
+      margin-bottom 20px
+      left 23px
+      font-size 18px
+      font-family LeksaPro
+      list-style none
+      
+      &:before
+        left -23px
+        font-size 30px
+        position absolute
+        content '\2022'
+        color color_green
+        position absolute
+  
+  .home_header_down
+    left 20px
+    top 740px
+  
+  section
+    padding-top 170px
+    padding-bottom 150px
+    
+  .row
+    position relative
+
+
+  &_header
+    padding-bottom 150px
+    margin-top -170px
+    width 100%
+    background url(../../images/today/background.png)  no-repeat
+    background-size cover
+    min-height 100vh
+    
+    &_sun
+      position relative
+      top 200px
+      width 180px
+      height 180px
+      background url(../../images/today/sun.png)  no-repeat
+      
+    &_description
+    &_link
+      margin-top 60px
+      display block
+      color white
+      max-width 380px
+      font-family LeksaPro
+      font-size: 18px
+      line-height 32px
+      
+    &_link
+      color white
+      margin-top 45px
+      line-height 24px
+      font-family FuturaPTBook
+      
+      &:visited
+        color white
+
+      &:hover
+      &:active
+        color color_green
+
+      
+  h1
+    max-width 610px
+    margin-top 160px
+    color white
+    font-size 72px
+    line-height 76px
+
+
+  &_planet
+    position absolute
+    z-index 1
+    right 0px
+    height 715px
+    width 677px
+    bottom -495px
+    background url(../../images/today/planet.png) center right  no-repeat
+    background-size contain
+    
+  &_job
+    
+    &_image
+      position absolute
+      right 0px
+      top -100px
+      right -60px
+      width 625px
+      height 645px
+      background url(../../images/today/job.png) center right no-repeat
+    
+    &_block
+      margin-top 85px
+      height 120px
+      width 254px
+      float left
+      position relative
+      
+      & a
+        font-size: 18px
+        position absolute
+        top 100px
+      
+      &_1
+        background url(../../images/today/job/moscow.png) top left  no-repeat
+
+      &_2
+        background url(../../images/today/job/spb.png) top left  no-repeat
+
+      &_3
+        background url(../../images/today/job/nn.png) top left  no-repeat
+
+  &_social
+    
+    &_image
+      position absolute
+      right 0px
+      top 0px
+      width 525px
+      height 645px
+      background url(../../images/today/otvet.png) center right  no-repeat
+      
+
+    &_block
+      width 204px
+      margin-top 64px
+      margin-right 20px
+      height 233px
+      float left
+      position relative
+      
+      &_1
+        background url(../../images/today/otv/I.png) center 30px  no-repeat
+
+      &_2
+        background url(../../images/today/otv/moscowintern.png) center 30px  no-repeat
+        
+      &_3
+        background url(../../images/today/otv/world.png) center 30px  no-repeat
+
+      &_4
+        background url(../../images/today/otv/hose.png) center 30px  no-repeat
+
+      &_5
+        background url(../../images/today/otv/intern.png) center 30px  no-repeat
+
+      &_6
+        background url(../../images/today/otv/mecenat.png) center 30px  no-repeat
+      
+      & a
+        position absolute
+        left 25px
+        width 200px
+        text-align left
+        line-height 28px
+        font-size 18px
+        top 147px
+        &:hover
+        &:active
+          color color_green
+      
+      &:before
+        z-index -1
+        background #ededed
+        content ''
+        position absolute
+        left 0px
+        height 100%
+        width 92px
+
+  &_ecology
+    
+    &_image
+      position absolute
+      right 0px
+      top 60px
+      width 525px
+      background url(../../images/today/ecology.png) center right  no-repeat
+      height 645px
+            
+
+    &_block
+      overflow visible
+      position relative
+      width 200px
+      height 136px
+      margin-top 80px
+      margin-right 10px
+      float left
+      
+      &_1
+        background url(../../images/today/ecology/ecoprogram.png)  no-repeat
+        background-position 30px -20px
+      
+      &_2
+        background url(../../images/today/ecology/greenoffice.png) center center  no-repeat
+
+      &_3
+        background url(../../images/today/ecology/greenitem.png) center center  no-repeat
+
+      &_4
+        background url(../../images/today/ecology/greenbase.png) center center  no-repeat
+
+      &_5
+        background url(../../images/today/ecology/ecoprogram.png)  no-repeat
+        background-position 30px -20px
+
+      &_6
+        background url(../../images/today/ecology/greenmag.png) center center  no-repeat
+      
+      &_7
+        background url(../../images/today/ecology/expert.png) center center  no-repeat
+
+      &_8
+        background url(../../images/today/ecology/cases.png) center center  no-repeat
+
+      & a
+        left 0px
+        position absolute
+        top 100px
+        cursor pointer
+        font-size: 18px
+        line-height 24px
+        
+        &:hover
+        &:active
+          color color_green
+
+  &_sotr
+    padding-top 150px
+    padding-bottom 150px
+    
+    &_image
+      position absolute
+      right 0px
+      top -230px
+      width 625px
+      background url(../../images/today/product.png) center right  no-repeat
+      height 645px
+      
+    &_block
+      width 192px
+      height 192px
+      position relative
+      margin-right 64px
+      float left
+      margin-top 65px
+      
+      & span
+      & a
+        font-family FuturaPTHeavy
+        font-size: 24px
+        position absolute
+        bottom 16px
+        left -15px
+      
+      &_1
+        background url(../../images/today/production/optiline.png) center  no-repeat
+    
+      &_2
+        background url(../../images/today/production/optiline.png) center  no-repeat
+
+      &_3
+        background url(../../images/today/production/optiline.png) center  no-repeat

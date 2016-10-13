@@ -22,6 +22,7 @@ import ProfileOrders from './components/Profile/myOrders'
 import ProfileSpecial from './components/Profile/Special'
 import ProfileMessages from './components/Profile/Messages'
 import Profile from './components/Profile'
+
 import Press from './components/Press/Press'
 
 import PressNews from './components/Press/PressNews'
@@ -30,13 +31,16 @@ import PressKit from './components/Press/PressKit'
 import PressSmi from './components/Press/PressSmi'
 import PressPhoto from './components/Press/PressPhoto'
 
-import Ecology from './components/Ecology'
-import EcologyItem from './components/EcologyItem'
+import Blog from './components/Blog'
+import BlogItem from './components/BlogItem'
 
 import Sets from './components/Sets/Sets'
 import AddSet from './components/Sets/AddSet'
 
 import Today from './components/Today'
+
+import Ecology from './components/Ecology'
+import Production from './components/Production'
 
 export const routes = (
   <div>
@@ -54,13 +58,16 @@ export const routes = (
       <Route path='delivery' component={Delivery}/>
       <Route path='submit' component={Submit}/>
 
-      <Route path='blog' component={Ecology}/>
-      <Route path='blog/test' component={EcologyItem}/>
+      <Route path='blog' component={Blog}/>
+      <Route path='blog/test' component={BlogItem}/>
 
       <Route path='allisready' component={Sets}/>
       <Route path='addset' component={AddSet}/>
 
       <Route path='today' component={Today}/>
+
+      <Route path='ecology' component={Ecology}/>
+      <Route path='production' component={Production}/>
 
       <Route path='press' component={Press}>
         <IndexRoute component={PressNews} />
