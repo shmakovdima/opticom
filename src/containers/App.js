@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Footer from '../components/Footer'
 //import browser from 'detect-browser'
 import $ from 'jquery'
-
+import { If, Then} from 'react-if'
 
 import Menu from '../components/Menu'
 import Login from '../components/Login'
@@ -44,13 +44,26 @@ class App extends Component {
   render() {
     
     const HeaderLinks = this.props.HeaderLinks
+
+    var host = window.location.host
+
+    var ctrHost = true
+
+    if ((host=='change.megamall.ru:2000') || (host!='http://change.megamall.ru:2000') || (host!='www.change.megamall.ru:2000') || (host!='http://www.change.megamall.ru:2000')) {
+      ctrHost = false
+    }
+
     return (
-      <div>
-        {this.props.children}
-        <Footer/>
-        <Menu HeaderLinks={HeaderLinks}/>
-        <Login/>
-      </div>
+      <If condition={ctrHost!=true}>
+        <Then>
+          <div>
+            {this.props.children}
+            <Footer/>
+            <Menu HeaderLinks={HeaderLinks}/>
+            <Login/>
+          </div>
+        </Then>
+      </If>
     )
   }
 }

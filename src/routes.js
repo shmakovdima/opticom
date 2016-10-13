@@ -92,12 +92,6 @@ export const routes = (
         <Route path='special' component={ProfileSpecial} />
         <Route path='messages' component={ProfileMessages} />
       </Route>
-
-      
-
-
-
-      
       <Route path='*' component={NotFound} />
     </Route>
     

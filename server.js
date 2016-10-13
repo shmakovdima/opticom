@@ -19,11 +19,14 @@ const app = express();
 })();
 
 app.get(/.*/, function root(req, res) {
+  console.log(req.get('host'))
   res.sendFile(__dirname + '/index.html');
 });
 
+
+
 const server = http.createServer(app);
-server.listen(process.env.PORT || 2001, function onListen() {
+server.listen(process.env.PORT || 2000, function onListen() {
   const address = server.address();
   console.log('Listening on: %j', address);
   console.log(' -> that probably means: http://localhost:%d', address.port);
