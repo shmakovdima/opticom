@@ -33,9 +33,40 @@ class Carousel_Item extends Component {
 class CategorySlider extends Component {
 
 
+
   showMenu(){
     $('body').addClass('overflow');
     this.props.pageActions.showMenu(!this.props.show_menu)
+  }
+
+  hoverSlider(e) {
+
+    var x = e.pageX
+    var containerWidth = $('#catalog_slider').width()
+
+    var windowWidth = this.props.windowWidth
+
+    var categories = this.props.Categories.length-1
+
+    var checkWidth = (windowWidth-containerWidth)/2
+
+    x = x-checkWidth
+
+    if (x<0) x = 0
+
+    if (x>containerWidth) x = containerWidth
+
+    console.log(Math.round(x/containerWidth * categories))
+
+    if (this.refs.slider) {
+      this.refs.slider.slickGoTo(Math.round(x/containerWidth * categories))
+    }
+
+    console.log('hover')
+  }
+
+  componentDidMount() {
+    $(document).on('mouseover', '#catalog_slider', this.hoverSlider.bind(this))
   }
 
   render() {
@@ -64,9 +95,9 @@ class CategorySlider extends Component {
       <div>
         <div className='catalog_header_slider_block'>
           <div className='container'>
-            <div className='row'>
-              <div className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12  catalog_header_slider slick_white'>
-                <Slider  {...settings}>
+            <div className='row' >
+              <div id='catalog_slider' className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12  catalog_header_slider slick_white'>
+                <Slider ref='slider'  {...settings}>
                   <div  className='hidden-xs' key={slidernumber}>
                     <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                       <span >Показать все </span>
