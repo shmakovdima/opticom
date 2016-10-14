@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Footer from '../components/Footer'
 //import browser from 'detect-browser'
 import $ from 'jquery'
-import { If, Then} from 'react-if'
+import Helmet from 'react-helmet'
 
 import Menu from '../components/Menu'
 import Login from '../components/Login'
@@ -28,9 +28,7 @@ class App extends Component {
 
     var host = window.location.host
 
-
-
-    if ((host=='change.megamall.ru:2000') || (host!='http://change.megamall.ru:2000') || (host!='www.change.megamall.ru:2000') || (host!='http://www.change.megamall.ru:2000')) {
+    if ((host=='change.megamall.ru:2000') || (host=='http://change.megamall.ru:2000') || (host=='www.change.megamall.ru:2000') || (host=='http://www.change.megamall.ru:2000')) {
       document.location.href='http://change.megamall.ru/'
     }
 
@@ -57,16 +55,15 @@ class App extends Component {
 
 
     return (
-      <If condition={ctrHost!=true}>
-        <Then>
+      
           <div>
+            <Helmet title='Оптиком' defaultTitle='My Default Title'/>
             {this.props.children}
             <Footer/>
             <Menu HeaderLinks={HeaderLinks}/>
             <Login/>
           </div>
-        </Then>
-      </If>
+
     )
   }
 }

@@ -19,7 +19,6 @@ const app = express();
 })();
 
 app.get(/.*/, function root(req, res) {
-  console.log(req.get('host'))
   res.sendFile(__dirname + '/index.html');
 });
 
