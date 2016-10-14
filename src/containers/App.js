@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import Footer from '../components/Footer'
-//import browser from 'detect-browser'
+
 import $ from 'jquery'
 import Helmet from 'react-helmet'
 
 import Menu from '../components/Menu'
 import Login from '../components/Login'
-
-
+import {If, Then} from 'react-if'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as pageActions from '../actions/setWindowWidth'
@@ -27,7 +26,6 @@ class App extends Component {
   componentWillMount() {
 
     var host = window.location.host
-
     if ((host=='change.megamall.ru:2000') || (host=='http://change.megamall.ru:2000') || (host=='www.change.megamall.ru:2000') || (host=='http://www.change.megamall.ru:2000')) {
       document.location.href='http://change.megamall.ru/'
     }
@@ -51,17 +49,28 @@ class App extends Component {
   render() {
     
     const HeaderLinks = this.props.HeaderLinks
-
-
+    var host = window.location.host
+    var ctr = false
+    if ((host=='change.megamall.ru:2000') || (host=='http://change.megamall.ru:2000') || (host=='www.change.megamall.ru:2000') || (host=='http://www.change.megamall.ru:2000')) {
+      document.location.href='http://change.megamall.ru/'
+      ctr = true
+    }
 
     return (
       
           <div>
-            <Helmet title='Оптиком' defaultTitle='My Default Title'/>
-            {this.props.children}
-            <Footer/>
-            <Menu HeaderLinks={HeaderLinks}/>
-            <Login/>
+            <If condition={ctr==false}>
+              <Then>
+                <div>
+                  <Helmet title='Оптиком' defaultTitle='My Default Title'/>
+                  {this.props.children}
+                  <Footer/>
+                  <Menu HeaderLinks={HeaderLinks}/>
+                  <Login/>
+                </div>
+              </Then>
+            </If>
+
           </div>
 
     )
