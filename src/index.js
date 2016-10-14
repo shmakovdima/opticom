@@ -20,6 +20,6 @@ if (module.hot) {
 }
 
 render(
-   <Provider store={store}><Router history={browserHistory} routes={routes}/></Provider>,
+   <Provider store={store}><Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)} routes={routes}/></Provider>,
   document.getElementById('root')
 )

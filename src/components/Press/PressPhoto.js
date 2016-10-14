@@ -1,50 +1,127 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router'
-
+import {If, Then} from 'react-if'
+import $ from 'jquery'
+import Slider from 'react-slick'
 
 class Photo extends Component {
+
+  componentDidMount() {
+    var self = this
+    $(document).on('click','.press_lightbox_close', function(){
+      self.closeSlide()
+    });
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      sliderOpen: false,
+      curSlide: 0
+    }
+  }
+
+  closeSlide(){
+    this.setState({
+      sliderOpen: false
+    })
+    $('body').removeClass('overflow')
+  }
+
+  openSlide(key){
+    this.setState({
+      sliderOpen: true,
+      curSlide: key
+    })
+    $('body').addClass('overflow')
+  }
   
   render() {
     var Photos = this.props.Photos
-    var category = this.props.key
-
+    var curSlide = this.state.curSlide
+    var sliderOpen = this.state.sliderOpen
+    //var category = this.props.key
+    var self = this
+    console.log(sliderOpen)
     return(
       <div>
         {
-            Photos.map(function(item){
+            Photos.map(function(item, key){
               let img = 'http://' + window.location.host + '/' + item.image
               let title = item.title
               return(
                 <div className='col-lg-3 col-md-4 col-sm-4 col-xs-12 press_photo_item'>
-                  <a href={img} class='fancybox' rel={category} title={title}>
-                    <img src={img} />
-                  </a>
+                  
+                  <img src={img} alt={title} onClick={self.openSlide.bind(self,key)}/>
+
                   <span className='press_photo_title'>{title}</span>
                 </div>
-
                 )
             })
 
 
         }
-
+        <div>
+          <If condition={sliderOpen==true}>
+            <Then>
+              <PhotosSlider Photos={Photos} curSlide = {curSlide} /> 
+            </Then>
+          </If>
+        </div>
       </div>
-
-
-    )
-                             
+    )                 
   }
 }
 
-class PhotosInit extends Component {
-  componentDidMount() {
-   
-  } 
-     
+class PhotosSlider extends Component {     
   render() {
+
+    var curSlide = this.props.curSlide
+    
+     var settings = 
+     {
+      slidesToShow: curSlide,
+      draggable: true,
+      slidesToScroll: 1,
+      autoplay: false,
+      dots: false,
+      adaptiveHeight: true,
+      infinite: false,
+      speed: 500,
+      centerMode: true,
+      variableWidth: true
+    };
+
+    var data = this.props.Photos
+
     return(
-      <div>
+      <div className='press_lightbox'>
+        <div className='press_lightbox_opacity'>
+        </div>
+        <div className='press_lightbox_body'>
+          <div className='press_lightbox_close'>&times;</div>
+            <div className='press_lightbox_slider'>
+              <Slider  {...settings}>
+
+                {
+                  data.map(function(item) {
+                    let img = 'http://' + window.location.host + '/' + item.imagebig
+                    return (
+                      <div className='press_lightbox_item'>
+                        <img src={img} alt={item.title}/>
+                        <span>{item.title}</span>
+                      </div>              
+                    )
+                  })
+                }
+
+
+
+
+              </Slider>
+            </div>
+        </div>
       </div>
     )
   }
@@ -102,7 +179,7 @@ class PressPhoto extends Component {
 
               
             </div> 
-            <PhotosInit/>       
+                  
           </section>
         </div>
     )

@@ -92,58 +92,81 @@ const initialState = {
       Photos: [
         {
           image: 'images/press/photo.png',
+          imagebig: 'images/press/big_image.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
         ,
-                {
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         },
-                {
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-        ,        {
+        ,
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-        ,        {
+        ,        
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-         ,       {
+         ,       
+         {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         },
-                {
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         },
-                {
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-        ,        {
+        ,
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-        ,        {
+        ,        
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-        ,        {
+        ,        
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-        ,        {
+        ,        
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-        ,        {
+        ,        
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
-        , {
+        , 
+        {
+          imagebig: 'images/press/big_image.png',
           image: 'images/press/photo.png',
           title: 'Зеленый офис: кабинет отдела sddfg dsfdfsf'
         }
