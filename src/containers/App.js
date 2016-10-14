@@ -28,10 +28,9 @@ class App extends Component {
 
     var host = window.location.host
 
-    var ctrHost = true
+
 
     if ((host=='change.megamall.ru:2000') || (host!='http://change.megamall.ru:2000') || (host!='www.change.megamall.ru:2000') || (host!='http://www.change.megamall.ru:2000')) {
-      ctrHost = false
       document.location.href='http://change.megamall.ru/'
     }
 
