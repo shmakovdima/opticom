@@ -25,6 +25,16 @@ class App extends Component {
   }
 
   componentWillMount() {
+
+    var host = window.location.host
+
+    var ctrHost = true
+
+    if ((host=='change.megamall.ru:2000') || (host!='http://change.megamall.ru:2000') || (host!='www.change.megamall.ru:2000') || (host!='http://www.change.megamall.ru:2000')) {
+      ctrHost = false
+      document.location.href='http://change.megamall.ru/'
+    }
+
     this.updateDimensions()
     this.updateTop()
   }
@@ -45,13 +55,7 @@ class App extends Component {
     
     const HeaderLinks = this.props.HeaderLinks
 
-    var host = window.location.host
 
-    var ctrHost = true
-
-    if ((host=='change.megamall.ru:2000') || (host!='http://change.megamall.ru:2000') || (host!='www.change.megamall.ru:2000') || (host!='http://www.change.megamall.ru:2000')) {
-      ctrHost = false
-    }
 
     return (
       <If condition={ctrHost!=true}>
