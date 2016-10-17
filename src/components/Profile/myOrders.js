@@ -37,6 +37,13 @@ class ProfileOrders extends Component {
     }
   }
 
+  dataReset(){
+    this.setState({
+      currentAddress: 'Все',
+      minDate: 634867200000,
+      maxDate: 1897171200000
+    })
+  }
 
   setAddress(address){
     this.setState({
@@ -217,6 +224,12 @@ class ProfileOrders extends Component {
                     <div className='profile_orders_datepicker_block'>
                       <span className='profile_orders_datepicker_span'>По</span>
                       <DatePicker value={maxdate} onChange= {::self.onChangeDate} id = 'maxdate' dateFormat={dateFormat} dayLabels={dayLabels} monthLabels={monthLabels}/>
+                    </div>
+                    <div className='profile_orders_datepicker_reset'>
+                      <button onClick={::this.dataReset} className='greenborderbottom'>
+                        <span>Сбросить фильтр</span>
+
+                        </button>
                     </div>
                    </div>
 

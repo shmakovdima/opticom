@@ -1,45 +1,22 @@
 import '../../stylus/components/profile.styl';
 import '../../stylus/components/item.styl';
 
-import {Link} from 'react-router'
+
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import isValidEmailAddress from '../function/isValidEmailAddress'
 import $ from 'jquery'
+import Adress from './adress'
 import 'jquery.maskedinput/src/jquery.maskedinput.js'
 import { If, Then, Else } from 'react-if';
 import * as pageActions from '../../actions/setCompany'
+import * as pageActionsAddress from '../../actions/addDelivery'
 //var ReactDOM = require('react-dom');
 
-class Adress extends Component {
-  render(){
-
-    let title = (this.props.item.title) ? this.props.item.title : ''
-    let address = (this.props.item.address) ? this.props.item.address : ''
-
-    let editlink = (this.props.item.editlink) ? this.props.item.editlink : ''
-    let sendinvite = (this.props.item.sendinvite) ? this.props.item.sendinvite : ''
-
-    return(
-      <div className='item_gor address'>
-        <div className='item'>
-          <div className='item_under'>
-            <span className='item_title'>{title}</span>
-            <span className='item_address'>{address}</span>
-            <div className='item_address_links'>
-              <Link className='greenborderbottom' to={editlink} title='Редактировать'><span>Редактировать</span></Link>
-              <Link className='greenborderbottom' to={sendinvite} title='Выслать приглашение'><span>Выслать приглашение</span></Link>
-            </div>
-          </div>
-         </div>
-      </div>
-    )
-  }
-}
 
 
-class MountPhone extends Component {
+class MountPhone extends Component {  
   componentDidMount() {
     $('.phone').mask('+7 (999) 999-9999');
   }
@@ -48,17 +25,100 @@ class MountPhone extends Component {
   }
 }
 
+
+
 class ProfileSettings extends Component {
-
-
   constructor(props) {
     super(props);
 
     this.state = {
       select_company: 0,
-      addcompany: false
+      addcompany: false,
+      adresses: (this.props.adresses) ? this.props.adresses : [],
+      addAdress: null
     }
   }
+
+  componentDidMount() {
+    var self = this
+
+    $('.phone').mask('+7 (999) 999-9999');
+
+    $(document).on('change', '.phone', function(e){
+      e.preventDefault();
+      if ($(this).val() == ''){
+        $(this).addClass('error')
+      }
+    });
+    $(document).on('focus', 'input', function(){
+      $(this).removeClass('error');
+
+    });
+
+    $(document).on('change', '.email', function(e){
+      e.preventDefault();
+      if (isValidEmailAddress($(this).val())){
+        $(this).addClass('ok')
+      }else{
+        $(this).removeClass('ok')
+      }
+    })
+
+    $(document).on('click', '.address_edit_save', function(){
+
+        var prevArray = JSON.parse(JSON.stringify(self.state.adresses))
+        var key = $(this).attr('data-key')
+        var Item = {
+          sendinvite: document.getElementById('addressInvite').value,
+          title: document.getElementById('addressName').value,
+          address: document.getElementById('addressValue').value
+        }
+
+        prevArray[key] = Item
+
+        self.setState({
+          adresses: prevArray,
+          addAdress: null
+        })
+
+      $('.profile_right_company_add').removeClass('hidden')
+    })
+
+    $(document).on('click', '.address_edit_cancel', function(){
+      var prevArray = JSON.parse(JSON.stringify(self.state.adresses))
+
+      if ($('.profile_right_company_add').hasClass('hidden')) {
+       self.setState({
+          adresses: prevArray.slice(0, prevArray.length-1),
+          addAdress: null
+        })
+      }
+
+      $('.profile_right_company_add').removeClass('hidden')
+    })
+  }
+
+  addAddressButton(e) {
+    e.preventDefault();
+
+    $('.address_edit_cancel').click()
+
+    var prevArray = this.state.adresses
+
+    
+
+    this.setState({
+      adresses: prevArray.concat({
+        title: '',
+        adress: '',
+        sendinvite: ''
+      }),
+      addAdress: prevArray.length
+    });
+
+    $('.profile_right_company_add').addClass('hidden')
+  }
+
 
   setCurCompany(key) {
     this.setState({
@@ -92,37 +152,17 @@ class ProfileSettings extends Component {
     this.setState({
       addcompany: false
     })
-
   }
 
-  componentDidMount() {
-    $('.phone').mask('+7 (999) 999-9999');
 
-    $(document).on('change', '.phone', function(e){
-      e.preventDefault();
-      if ($(this).val() == ''){
-        $(this).addClass('error')
-      }
-    });
-    $(document).on('focus', 'input', function(){
-      $(this).removeClass('error');
 
-    });
 
-    $(document).on('change', '.email', function(e){
-      e.preventDefault();
-      if (isValidEmailAddress($(this).val())){
-        $(this).addClass('ok')
-      }else{
-        $(this).removeClass('ok')
-      }
-    })
-
-  }
 
   render(){
-    let address = (this.props.SettingsPage.addresses) ? this.props.SettingsPage.addresses : []
+    let adresses = this.state.adresses
     
+    let addAdress = this.state.addAdress
+
     let manager = (this.props.SettingsPage.manager) ? this.props.SettingsPage.manager : []
     let telemarket = (this.props.SettingsPage.telemarket) ? this.props.SettingsPage.telemarket : []
 
@@ -131,6 +171,7 @@ class ProfileSettings extends Component {
     let Companies = (this.props.Companies) ? this.props.Companies : []
 
     var self = this
+
     return(
     <div className='profile'>
       <section className='profile_sets_header'>
@@ -177,14 +218,16 @@ class ProfileSettings extends Component {
               <div className='profile_block'>
                 <h2>Адреса Доставки</h2>
                 <div className='profile_addresses'>
-                {
-                  address.map(function(item){
-                    return(<Adress item={item}/>)
-                  })  
-                }
-                <div className='profile_right_company_add'>
-                      <button className='greenborderbottom'><span >Добавить новый адрес</span></button>
-                    </div>
+                  {
+                    adresses.map(function(item, key){
+                      var edit = false
+                      if (key==addAdress) edit = true;
+                      return(<Adress item={item} keyitem = {key} edit={edit}/>)
+                    })  
+                  }
+                  <div className='profile_right_company_add'>
+                    <button className='greenborderbottom' onClick={::this.addAddressButton}><span >Добавить новый адрес</span></button>
+                  </div>
                 </div>
               </div>
               <div className='profile_block'>
@@ -389,13 +432,15 @@ class ProfileSettings extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(pageActions, dispatch)
+    pageActions: bindActionCreators(pageActions, dispatch),
+    pageActionsAddress: bindActionCreators(pageActionsAddress, dispatch) 
   }
 }
 
 function mapStateToProps (state) {
   return {
     SettingsPage: state.user.SettingsPage,
+    adresses: state.user.AdressDelivery,
     Companies:  state.user.Companies
   }
 }

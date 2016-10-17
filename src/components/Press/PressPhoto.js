@@ -79,7 +79,7 @@ class PhotosSlider extends Component {
 
     var curSlide = this.props.curSlide
     
-     var settings = 
+    var settings = 
      {
       slidesToShow: curSlide,
       draggable: true,

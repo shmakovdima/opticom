@@ -7,6 +7,8 @@ import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 
+import Adress from '../Profile/adress'
+
 import { If, Then } from 'react-if';
 import isValidEmailAddress from '../function/isValidEmailAddress'
 import 'jquery.maskedinput/src/jquery.maskedinput.js'
@@ -43,7 +45,9 @@ class Delivery extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      settime: false
+      settime: false,
+      editAddress: false,
+      Delivery: this.props.Delivery
     };
   }
 
@@ -56,6 +60,7 @@ class Delivery extends Component {
 
 
   componentDidMount() {
+    var self = this
     $('.phone').mask('+7 (999) 999-9999');
 
     $(document).on('change', '.phone', function(e){
@@ -78,6 +83,32 @@ class Delivery extends Component {
       }
     })
 
+    $(document).on('click', '.address_edit_save', function(){
+
+        var prevArray = JSON.parse(JSON.stringify(self.state.Delivery))
+        var key = $(this).attr('data-key')
+        var Item = {
+          sendinvite: document.getElementById('addressInvite').value,
+          title: document.getElementById('addressName').value,
+          address: document.getElementById('addressValue').value
+        }
+
+        prevArray[key] = Item
+
+        self.setState({
+          Delivery: prevArray,
+          editAddress: false
+        })
+
+     
+    })
+
+    $(document).on('click', '.address_edit_cancel', function(){
+       self.setState({
+          addAdress: false
+        })
+      
+    })
   }
 
 
@@ -89,6 +120,10 @@ class Delivery extends Component {
     var dayLabels = ['ПН','ВТ','СР','ЧТ','ПТ','СБ','ВС']
 
     var dateFormat = 'DD.MM.YYYY'
+
+    var Delivery = this.state.Delivery
+
+    var editAddress = this.state.editAddress
 
     return(
       <div>
@@ -131,17 +166,18 @@ class Delivery extends Component {
 
                 <div className='profile_block'>
                     <h2>Адрес доставки</h2>
-                    <Link className = 'cart_address_change greenlighted' to='/changeadress' title='Изменить'>
-                      <span>Изменить</span>
-                    </Link>
-                    <div className='row row_nopadding'>
+                    <div className='row'>
                       <div className='col-xs-12'>
-                        <span className='cart_address_title'>Головной офис</span>
-                        <span className='cart_address_content'>
-                          Покров, Ленина 45
-                          <br/>
-                          Владимирская область, 601122
-                        </span>
+
+                        {
+                          Delivery.map(function(item, key){
+                            var edit = false
+                            if (editAddress) edit = true;
+                            return(<Adress item={item} keyitem = {key} edit={edit}/>)
+                          })  
+                        }
+
+                      
                       </div>
                     </div>
                 </div>
@@ -256,7 +292,8 @@ class Delivery extends Component {
 
 function mapStateToProps (state) {
   return {
-    windowWidth: state.pageData.Cart
+    windowWidth: state.pageData.Cart,
+    Delivery: state.user.Delivery
   }
 }
 

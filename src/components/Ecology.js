@@ -6,8 +6,6 @@ import '../stylus/components/today.styl';
 import '../stylus/components/press.styl';
 
 
-
-
 export default class Static extends Component {
   render() {
     return (

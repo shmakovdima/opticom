@@ -5,9 +5,6 @@ const initialState = {
   name: 'Анастасия Длиннофамильная',
   showLogin: false,
 
-
-
-
   AddSet: {
     title: 'Эко-офис',
     breadcrumbs: [
@@ -197,9 +194,6 @@ const initialState = {
     ]
 
   },
-
-
-
 
   Submit: [
     {
@@ -1665,24 +1659,27 @@ const initialState = {
     ]
   },
 
+  Delivery:[ {
+      title: 'Головной офис',
+      address: 'Покров, Ленина 45, Владимирская область, 601122',
+      sendinvite: '/hz'
+    }],
 
+  AdressDelivery: [
+    {
+      title: 'Головной офис',
+      address: 'Покров, Ленина 45, Владимирская область, 601122',
+      sendinvite: '/hz'
+    },
+    {
+      title: 'Головной офис',
+      address: 'Покров, Ленина 45, Владимирская область, 601122',
+      sendinvite: '/hz'
+    }
+
+  ],
 
   SettingsPage: {
-    addresses: [
-      {
-        title: 'Головной офис',
-        address: 'Покров, Ленина 45, Владимирская область, 601122',
-        editlink: '/hz',
-        sendinvite: '/hz'
-      },
-      {
-        title: 'Головной офис',
-        address: 'Покров, Ленина 45, Владимирская область, 601122',
-        editlink: '/hz',
-        sendinvite: '/hz'
-      }
-
-    ],
     manager: {
       name: 'Елена Боброва',
       phone: '+7-909-672-10-10',
@@ -1768,6 +1765,8 @@ const initialState = {
 
 export default function user(state = initialState, action) {
   switch (action.type) {
+    case 'ADD_DELIVERY':
+      return {...state, AdressDelivery: action.payload}    
     case 'SET_COMPANY':
       return {...state, Companies: action.payload}
     case 'SET_ECO':

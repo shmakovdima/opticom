@@ -427,6 +427,13 @@
       
       .item
         min-height 144px
+        
+        &:hover
+        &:active
+          .item
+            &_title
+              display block
+
         &_under
           padding 30px
           min-height 144px
@@ -455,6 +462,8 @@
             display none
             
             & a
+            & button
+              background none
               color: #000000
               font-family FuturaPTBook
               font-size 18px
@@ -471,6 +480,26 @@
           &_address
             &_links
               display block
+              
+      &.edit
+        .item
+          min-height 242px
+          
+          input 
+            font-size 16px
+            
+            
+            & + input
+              margin-top 20px
+          
+          button
+            margin-left 20px
+            margin-top 40px
+            padding-left 21px
+            padding-right 21px
+
+          &_under
+            min-height 242px
  
   &_orderblock
     width 32%
