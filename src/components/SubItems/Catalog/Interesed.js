@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
+import MobileSlider from '../MobileSlider'
 import { connect } from 'react-redux'
-import Slider from 'react-slick'
+
 import { If, Then, Else } from 'react-if';
 import Item from '../Item/Item'
 
@@ -32,16 +32,6 @@ class Interesed extends Component {
 
 
   render() {
-    var settings = {
-      draggable: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: false,
-      dots: false,
-      infinite: false,
-      speed: 500,
-      variableWidth: true
-    };
 
     let Interesedkey = 4000
     const Interesed = this.state.Data
@@ -70,19 +60,9 @@ class Interesed extends Component {
 
              <If condition={windowWidth<768 }>
                 <Then>
-                  <Slider  {...settings}>
-                    <div className='padding_768'>
-                    </div>
-                    {
-                      Interesed.map(function(item) {
-                        if ((only_eco == true) && (item.eco!=true)) return false;
-                        return (
-                          <div className='item_slide text-center'>
-                            <Item item={item} key={++Interesedkey}/>
-                        </div>)
-                      })
-                    }
-                  </Slider>
+                  <div className='col-xs-12'>
+                    <MobileSlider data={Interesed} only_eco={only_eco} />
+                  </div>
                 </Then>
                 <Else>
                   <Then>

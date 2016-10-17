@@ -1,7 +1,7 @@
 import '../stylus/components/item.styl';
 import '../stylus/components/category.styl';
 
-
+import { If, Then, Else } from 'react-if';
 import {connect } from 'react-redux'
 import React, { Component } from 'react'
 import {Link} from 'react-router'
@@ -58,7 +58,6 @@ class LoveButton extends Component {
 
 
 
-
     if (array.indexOf(id) != -1) loved+=' active'
     return(
       <div>
@@ -81,9 +80,12 @@ class ItemPage extends Component {
     this.state = {
       one: true,
       oneorder: 0,
-      alotorder: 0
+      alotorder: 0,
+      fullOpen: false
     };
   }
+
+
 
   setPlus() {
     if (this.state.one==false) {
@@ -109,8 +111,7 @@ class ItemPage extends Component {
     }
   }
 
-  setChange() {
-
+  setChange(){
 
   }
 
@@ -127,7 +128,11 @@ class ItemPage extends Component {
     $('.btn-group').removeClass('open')
   }
 
-
+  descOpen() {
+    this.setState({
+      fullOpen: !this.state.fullOpen
+    })
+  }
 
 
 
@@ -209,6 +214,10 @@ class ItemPage extends Component {
 
     var boxdescription = this.props.curItem.boxdescription
 
+    var fulldescription = this.state.fullOpen
+
+    var self = this
+
     return(
       <div className='itempage'>
         <HeaderLight/>
@@ -218,12 +227,10 @@ class ItemPage extends Component {
             <div className='row'>
               <div className='category_header_absolute'>
                 <div className='col20-lg-offset-3 col20-md-offset-2 col20-sm-offset-3 col20-lg-17 col20-md-17 col20-sm-17'>
-                <div className='category_header_white'>
-                  <LoveButton data={data} setLove={setLove} />
-                  <Link className='itempage_fulldesc greenborderbottom' to={fulldescriptionlink} title='Подробная информация'>
-                    <span>Подробная информация</span>
-                  </Link>
-                </div>
+                  <div className='category_header_white'>
+                    <LoveButton data={data} setLove={setLove} />
+                    
+                  </div>
               </div>
             </div>
           </div>
@@ -271,6 +278,31 @@ class ItemPage extends Component {
             <div className='col15-lg-6 itempage_pad itempage_pic col15-md-6 col15-sm-6'>
               <div style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}} className='pull-right itempage_image'>
               </div>
+              <div className='itempage_fulldescription'>
+                <If condition={fulldescription==false}>
+                  <Then>
+                    <button onClick={self.descOpen.bind(self)} className='itempage_fulldesc greenborderbottom' title='Подробная информация'>
+                      <span>Подробная информация</span>
+                    </button>
+                  </Then>
+                  <Else>
+                      <div>
+                        <p>Цветная бумага премиум-класса для качественной печати на струйных, лазерных принтерах, копировально-множительной технике.</p>
+                        <p>Имеет микропористое покрытие, точно передает все оттенки, четкость изображения, мгновенно впитывает чернила и обеспечивает высокое разрешение (до 5760 dpi).</p>
+                        <p>Стандартная плотность – 80 г/м2 – обеспечивает скорость и превосходное качество печати при стандартных настройках принтеров любых типов и марок.</p>
+                        <p>Данная бумага подойдет для печати любых документов и листовок. Сочный оттенок (SY40) выделит листы среди прочих. Цвет равномерный, устойчивый к выгоранию.</p>
+                        <p>Продукция имеет международные экологические сертификаты FSC и EU Ecolabel.</p>
+                        <div className='col-xs-12 text-center'>
+                          <button onClick={self.descOpen.bind(self)} className='itempage_fulldesc_close greenborderbottom' title='Подробная информация'>
+                            <span>Скрыть информацию</span>
+                          </button>
+                        </div>
+                      </div>
+                  </Else>
+                </If>
+
+              </div>
+              
             </div>
           </div>
           <div className='row itempage_adddesc'>

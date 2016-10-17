@@ -12,7 +12,6 @@ import 'jquery.maskedinput/src/jquery.maskedinput.js'
 import { If, Then, Else } from 'react-if';
 import * as pageActions from '../../actions/setCompany'
 import * as pageActionsAddress from '../../actions/addDelivery'
-//var ReactDOM = require('react-dom');
 
 
 

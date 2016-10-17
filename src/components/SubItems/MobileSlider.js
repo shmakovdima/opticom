@@ -22,8 +22,6 @@ class MobileSlider extends Component {
     return(
       <div>
         <Slider  {...settings}>
-          <div className='padding_768'>
-          </div>
           {
             data.map(function(item, key) {
               if ((only_eco == true) && (item.eco!=true) && (eco==true)) return false;

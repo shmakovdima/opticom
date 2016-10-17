@@ -5,7 +5,6 @@ import Interesed from './SubItems/Catalog/Interesed'
 import CategorySlider from './SubItems/CategorySlider'
 import {connect } from 'react-redux'
 import Footer from './Footer'
-import ContactForm from './ContactForm'
 import {Link} from 'react-router'
 import $ from 'jquery'
 import '../stylus/components/home.styl';
@@ -17,13 +16,8 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      breakpoint: 900,
-      lgShow: false
+      breakpoint: 900
     }
-  }
-
-  lgShow() {
-    this.setState({lgShow: !this.state.lgShow})
   }
 
 
@@ -214,7 +208,7 @@ class Home extends Component {
     }
 
     return (
-      <div>
+      <div className='home'>
         <section style={topHome} className='home_header'>
           <HeaderDark/>
           <div className  = 'home_planet' style={bgImage}>
@@ -264,11 +258,10 @@ class Home extends Component {
         </section>
 
         <div style={topBody} className='home_main'>
-          <HeaderDark/>
           <section className='home_preferences' style={topSection}> 
             <div className='container'>
               <div className='row'>
-                <div className='col20-lg-9 col20-md-9 home_preferences_clients'>
+                <div className='col20-lg-9 col20-md-10 col20-sm-10 home_preferences_clients'>
                   <div className='home_preferences_clients_image'></div>
                   <span className='home_preferences_title greenlighted'>КЛИЕНТЫ</span>
                   <span className='home_preferences_clients_6500'>6 500</span>
@@ -285,9 +278,8 @@ class Home extends Component {
                     <br/>
                     <span> БИЗНЕС ЦЕНТРЫ</span>          
                   </span>
-                  
                 </div>
-                <div className='col20-lg-5 col20-md-5 home_preferences_base'>
+                <div className='col20-lg-5 col20-md-10 col20-sm-10 home_preferences_base'>
                   <span className='home_preferences_title '>
                     <span>База <br/> экологических</span>
                     <br/>
@@ -298,7 +290,7 @@ class Home extends Component {
                     и использовании экономичной 
                     продукции</p>
                 </div>
-                <div className='col20-lg-6 col20-md-6 home_preferences_ecology'>
+                <div className='col20-lg-6 col20-md-10 col20-sm-10 home_preferences_ecology'>
                   <span className=' home_preferences_title greenlighted pull-right'>ЭКОЛОГИЯ</span>
                   <p>ГК Оптиком - обладатель международных сертификатов в области экологии и бережного производства</p>
                   <div className='home_preferences_ecology_images pull-right'>
@@ -307,19 +299,17 @@ class Home extends Component {
                     <img className='pull-right' src='images/home/ecology_1.png'/>
                   </div>
                 </div>
-              </div>
-              <div className='row'>
-                <div className='col20-lg-9 col20-md-9 home_preferences_social'>
+                <div className='col20-lg-9 col20-sm-10 col20-md-10 home_preferences_social'>
                   <span className='home_preferences_title greenlighted'>СОЦИАЛЬНАЯ <br/>ОТВЕТСТВЕННОСТЬ</span>
                   <div className='home_preferences_social_image'></div>
                   <p>Поддерживаем <br/>10 благотворительных проектов, и постоянно ищем новые возможности сделать мир лучше!</p>
                 </div>
-                <div className='col20-lg-5 col20-md-5 home_preferences_future'>
+                <div className='col20-lg-5 col20-sm-10 col20-md-10 home_preferences_future'>
                   <span className='home_preferences_title greenlighted'>БУДУЩЕЕ <br/>ОПТИКОМ</span>
                   <p>Очередным этапом в развитии компании станет пополнение товарной линейки новыми экологичными товарами и запуск новых мощностей по производству биоупаковки.</p>
-                  <button className='home_preferences_future_button greenlighted close_modal' onClick={::this.lgShow}>НАПИШИТЕ<br/>НАМ</button>
+                  <button className='home_preferences_future_button greenlighted close_modal'>НАПИШИТЕ<br/>НАМ</button>
                 </div>
-                <div className='col20-lg-6 col20-md-6 home_preferences_press'>
+                <div className='col20-lg-6 col20-sm-10 col20-md-10 home_preferences_press'>
                   <Link to='/press' title='ПРЕСС-ЦЕНТР' className='home_preferences_title greenlighted pull-right'>ПРЕСС-ЦЕНТР
                   </Link>
                   <span className='home_preferences_press_speakers'>Спикеры компании — постоянные участники конференций в России и за рубежом</span>
@@ -341,7 +331,7 @@ class Home extends Component {
           <AllIsReady/>  
           <Interesed/>
           <Footer/>
-          <ContactForm show={this.state.lgShow} onHide={this.lgShow}/>
+          
         </div>
 
       </div>

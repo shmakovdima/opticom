@@ -83,7 +83,7 @@
     padding-top 10px
     padding-bottom 150px
     
-
+  
     
     & p
       margin-top 30px
@@ -356,9 +356,41 @@
     transform: scale(0.65)
 
   &_main
+    
     background #fafafa url(../../images/home/home_bg.png) center 40px no-repeat
     z-index 2
     top 100vh
     top 1000px
     position relative
     width 100%
+    
+    &_header
+      display none
+
+@media (max-width: 1200px)
+  .home
+    &_preferences
+      &_clients
+        top 0px
+      
+      &_future
+        padding-top 50px
+        top 0px
+        clear left
+        padding-bottom 65px
+
+      &_ecology
+        top 0px
+        padding-bottom 50px
+        
+@media (max-width: 992px)
+  .home
+    &_preferences
+      &_clients
+        overflow hidden
+        &_image
+          
+          z-index -1
+          
+      &_social
+        overflow hidden

@@ -266,13 +266,18 @@ class Header extends Component {
 
     var windowTop = this.props.windowTop
 
-    if (windowTop>44)  
+    if ($('.home').length==0){
+
+      if (windowTop>44)  
       {
         $('.header').addClass('fixed')
-      }else
+      }
+        else
       { 
         $('.header').removeClass('fixed')
-      }
+      }   
+    }
+
 
   
     return (

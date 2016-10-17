@@ -1066,6 +1066,7 @@
   &_fulldesc
   &_box
   &_car
+  &_fulldesc_close
     background url(../../../images/sprites/itempage_info.png) left center no-repeat
     font-family FuturaPTDemi
     font-size 22px
@@ -1073,11 +1074,24 @@
     color black
     
   &_fulldesc
-    bottom 50px
-    right 200px
     z-index 2
-    position absolute
+    position relative
+    
+  &_fulldesc_close
+    font-size 22px
+    margin-top 30px
+    background none
 
+  &_fulldescription
+    float left
+    margin-top 250px
+    position relative
+    
+    & p
+      font-size: 18px
+      color:  #0c0c0c
+      & + p
+        margin-top 20px
 
   &_box
     float left
@@ -1130,6 +1144,8 @@
   &_image
     min-height 324px
     width 100%
+    float left
+    position relative
     margin-top 110px
     background-repeat no-repeat
     background-position center
@@ -1175,6 +1191,9 @@
     font-size: 56px
     padding-bottom 20px
     
+  & .col20-lg-4
+    padding-left 0px
+    padding-right 0px
 
 @media (max-width: 1200px)
   .itempage

@@ -8,11 +8,23 @@ import { If, Then, Else } from 'react-if';
 import $ from 'jquery'
 import * as pageActionsLoginShow from '../actions/setLoggedShow'
 import {DropdownButton, MenuItem} from 'react-bootstrap'
+import ContactForm from './ContactForm'
+
 
 class SubCat extends Component{
   hideMenu(){
     $('body').removeClass('overflow')
     this.props.setMenu.showMenu(false)
+  }
+
+  componentDidMount() {
+    $(document).on('click', '.close_modal', function(){
+
+    })
+  }
+
+  lgShow() {
+    this.setState({lgShow: !this.state.lgShow})
   }
 
   render(){
@@ -48,8 +60,21 @@ class Menu extends Component {
       curcategory: 0,
       mobilemenu: true,
       curaddress: '',
-      curoffice: ''
+      curoffice: '',
+      show: false
     }
+  }
+
+  componentDidMount() {
+    var self = this
+    $(document).on('click', '.contact_close', function(){
+      self.setState({show: false})
+    })
+
+    $(document).on('click', '.close_modal', function(){
+      self.setState({show: true})
+    })
+
   }
 
   showCategory() {
@@ -152,7 +177,8 @@ class Menu extends Component {
     }
 
     return(
-      <div>   
+      <div> 
+        <ContactForm show={this.state.show}/>  
         <If condition = {show_menu==true}>
           <Then>
             <div className='menu'>
@@ -223,7 +249,7 @@ class Menu extends Component {
                         </div>
 
                         <div className='col-xs-12 menu_write'>
-                          <button className='btn'>Написать сообщение</button>
+                          <button className='btn close_modal'>Написать сообщение</button>
                         </div>
                       </div>
                     </div>
@@ -279,6 +305,7 @@ class Menu extends Component {
           </Then>
         </If>
       </div>
+
     )
   }
 
