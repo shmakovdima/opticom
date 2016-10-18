@@ -111,7 +111,7 @@ class CategorySlider extends Component {
                     })
                   }
                 </Slider>
-                <div className='hidden-md hidden-lg hidden-sm'>
+                <div className='hidden-md hidden-lg hidden-sm home_hidden'>
                   <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                     <span >Показать все категории</span>
                   </button>

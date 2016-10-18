@@ -1,4 +1,5 @@
 import '../stylus/components/item.styl';
+import '../stylus/components/itempage.styl';
 import '../stylus/components/category.styl';
 
 import { If, Then, Else } from 'react-if';
@@ -6,7 +7,7 @@ import {connect } from 'react-redux'
 import React, { Component } from 'react'
 import {Link} from 'react-router'
 import HeaderLight from '../components/Headers/HeaderLight'
-
+import Slider from 'react-slick'
 import cutnumber from './function/cutnumber'
 
 import { bindActionCreators } from 'redux'
@@ -227,7 +228,7 @@ class ItemPage extends Component {
             <div className='row'>
               <div className='category_header_absolute'>
                 <div className='col20-lg-offset-3 col20-md-offset-2 col20-sm-offset-3 col20-lg-17 col20-md-17 col20-sm-17'>
-                  <div className='category_header_white'>
+                  <div className='category_header_white hidden-xs'>
                     <LoveButton data={data} setLove={setLove} />
                     
                   </div>
@@ -235,7 +236,7 @@ class ItemPage extends Component {
             </div>
           </div>
           <div className='row'>
-            <div className='itempage_pad col20-lg-offset-1 col15-lg-8  col15-md-8 col15-sm-8'>
+            <div className='itempage_pad col20-lg-offset-1 col15-lg-8 col15-md-8 col15-sm-8 col20-xs-20'>
               <ol className='breadcrumb'>
                 {
                   breadcrumbs.map(function(item) {
@@ -249,12 +250,18 @@ class ItemPage extends Component {
                   })
                 }
               </ol>
-              <h1 className='itempage_title'>{Eco}{title}</h1>
+              <h1 className='itempage_title'><span className='hidden-xs'>{Eco}</span>{title}</h1>
+
+
+              <div style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}} className='col-xs-12 itempage_image hidden-sm hidden-md hidden-lg'>
+                {Eco}
+              </div>
+
+
               <div className='col20-lg-offset-2'>
                 <span className='itempage_vendorcode'>{vendorcode}</span>
                 <span className='itempage_description'>{description}</span>
                 {cost}
-
 
                 <div className='item_order'>
                   <div className='item_order_buttons'>
@@ -275,8 +282,8 @@ class ItemPage extends Component {
 
               
             </div>
-            <div className='col15-lg-6 itempage_pad itempage_pic col15-md-6 col15-sm-6'>
-              <div style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}} className='pull-right itempage_image'>
+            <div className='col15-lg-6 itempage_pad itempage_pic col15-md-6 col15-sm-6 hidden-xs'>
+              <div style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}} className='pull-right itempage_image '>
               </div>
               <div className='itempage_fulldescription'>
                 <If condition={fulldescription==false}>
@@ -300,9 +307,7 @@ class ItemPage extends Component {
                       </div>
                   </Else>
                 </If>
-
               </div>
-              
             </div>
           </div>
           <div className='row itempage_adddesc'>

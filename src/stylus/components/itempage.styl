@@ -1,0 +1,262 @@
+@import '../variables.styl'
+
+
+.itempage
+  
+  .category_header
+    .item_order
+      height auto
+      position relative
+      width 228px
+      clear left
+
+  .category_header 
+    margin-top -40px
+    
+    &_white
+      min-height 760px
+    
+    h1
+      color: #000000
+      font-size 52px
+      line-height 60px
+      font-family FuturaPTHeavy
+      
+  &_adddesc
+    margin-top 100px
+    
+    h3
+      font-size: 32px
+      
+  &_addons
+    margin-top 40px
+    font-size: 20px
+    
+    a
+      float left
+      clear left
+      padding-left 45px 
+      display block
+
+    a + a
+      margin-top 10px
+      
+  &_add
+    position relative
+    width 100%
+    margin-top 30px
+
+  &_addings
+    width 32.3%
+    margin-right 0.8%
+    position relative
+    float left
+    background-color white
+    padding 17px
+    background-position center 20px
+    background-repeat no-repeat
+    min-height 220px
+    margin-bottom 10px
+    
+    & a
+      position absolute
+      bottom 30px
+      font-family FuturaPTMedium
+      color #000000
+      max-width calc(100% - 34px)
+      font-size: 14px
+
+  &_fulldesc
+  &_box
+  &_car
+  &_fulldesc_close
+    background url(../../../images/sprites/itempage_info.png) left center no-repeat
+    font-family FuturaPTDemi
+    font-size 22px
+    padding-left 35px
+    color black
+    
+  &_fulldesc
+    z-index 2
+    position relative
+    
+  &_fulldesc_close
+    font-size 22px
+    margin-top 30px
+    background none
+
+  &_fulldescription
+    float left
+    margin-top 250px
+    position relative
+    
+    & p
+      font-size: 18px
+      color:  #0c0c0c
+      & + p
+        margin-top 20px
+
+  &_box
+    float left
+    margin-top 45px
+    font-size 16px
+    position relative
+    background url(../../../images/sprites/itempage_box.png) left center no-repeat
+    
+  &_car
+    left -45px
+    padding-left 45px
+    display block
+    background url(../../../images/sprites/itempage_car.png) left center no-repeat
+    font-family FuturaPTBook
+    font-size 18px
+    
+    & a
+      font-family FuturaPTMedium
+
+  &_bottom.item_bottom
+    position relative
+    margin-top 40px
+    float left
+    clear left
+    
+    .item_discount
+      position relative
+      font-size 30px
+      text-decoration none
+      font-family FuturaPTMedium
+      
+      &:before
+        border-bottom: 4px solid #ee2828
+        position: absolute
+        content: ""
+        width: 100%
+        height: calc(50% + 2px)
+
+
+
+    .item_cost
+      margin-top 20px
+      font-size 40px
+      color: #000000
+      
+  &_pad
+    padding-top 80px
+    //min-height 324px
+      
+  &_image
+    min-height 324px
+    width 100%
+    float left
+    position relative
+    margin-top 110px
+    background-repeat no-repeat
+    background-position center
+    background-size contain
+
+  &_love.item_love
+    right 40px
+    position absolute
+    top 40px
+    z-index 1
+    
+  &_eco.item_eco
+    position: absolute
+    left: -30px
+    margin-top: 12px
+    
+  &_description
+    clear left
+    font-family: LeksaPro
+    color:  #0c0c0c
+    font-size: 18px
+    clear left
+    float left
+    line-height: 32px
+    text-align: left
+    margin-top 34px
+    max-width 400px
+
+  &_vendorcode
+    float left
+    font-family: FuturaPTBook
+    color: #000000
+    margin-top 25px
+    font-size: 24px
+    line-height: 28px
+    text-align: left
+
+@media (max-width: 1200px)
+  .itempage
+    .category_header
+      h1
+        font-size 40px
+        line-height 46px
+        
+    &_image
+      background-size cover
+      
+    &_fulldesc
+      right 70px
+      
+    &_addings
+      width 49.0%
+      
+@media (max-width: 768px)
+  .itempage
+    .category_header
+      
+      .item_order
+        width 260px
+
+      .item_order_body button
+        padding-left 10px
+        padding-right 10px
+        
+      .item_order_plus
+        float left !important
+        
+      .item_order input
+        float left
+        
+      .item_order_button
+        float right!important
+        width: calc(100% - 100px)!important
+
+      h1
+        font-size 20px
+        line-height 26px
+        
+    &_vendorcode
+    &_description
+      font-size 16px
+      font-family FuturaPTBook
+        
+    &_description
+      margin-top 18px
+      
+    &_discount
+      clear none
+      font-size 24px
+      
+    .itempage_bottom.item_bottom .item_cost
+      font-size 34px
+      clear none
+      margin-top -2px
+      margin-left 30px
+
+
+    &_box
+      font-size 12px
+      margin-top 20px
+
+
+    &_image
+      background-color white
+      margin-top 35px
+      min-height 200px
+      background-size contain
+      
+    &_eco.item_eco
+      left inherit
+   

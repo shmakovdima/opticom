@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
-import Slider from 'react-slick'
 import { If, Then, Else } from 'react-if';
 import Item from '../Item/Item'
+
+import MobileSlider from '../MobileSlider'
 
 class BuyToo extends Component {
 
@@ -32,18 +33,6 @@ class BuyToo extends Component {
 
 
   render() {
-    var settings = {
-      draggable: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: false,
-      dots: false,
-      infinite: false,
-      speed: 500,
-      variableWidth: true
-    };
-
-
 
     let Interesedkey = 4000
     const Interesed = this.props.buyToo
@@ -66,27 +55,12 @@ class BuyToo extends Component {
             </h2>
           </div>
         </div>
-        <div className='container'>
+        <div className='container '>
           <div className='row'>
              <If condition={windowWidth<=768 }>
                 <Then>
-                  <div className='row'>
-                    <Slider  {...settings}>
-                      
-                          <div className='padding_768'>
-                          </div>
-
-                          {
-                            Interesed.map(function(item) {
-                              if ((only_eco == true) && (item.eco!=true)) return false;
-                              return (
-                                <div className='item_slide text-center'>
-                                  <Item item={item} key={++Interesedkey}/>
-                              </div>)
-                            })
-                          }
-                      
-                    </Slider>
+                  <div className='col-xs-12'>
+                    <MobileSlider data={Interesed}/>
                   </div>
                 </Then>
                 <Else>
