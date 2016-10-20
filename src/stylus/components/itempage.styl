@@ -203,6 +203,9 @@
       width 49.0%
       
 @media (max-width: 768px)
+
+  
+
   .itempage
     .category_header
       
@@ -224,9 +227,36 @@
         width: calc(100% - 100px)!important
 
       h1
-        font-size 20px
+        font-size 18px
         line-height 26px
-        
+     
+    &_add
+     position relative
+     height 260px
+     margin-right 8px
+     
+    &_addings
+      margin-right 8px
+
+    &_adddesc
+      margin-top 50px
+      overflow hidden
+      
+      & h3
+        font-size 22px
+        line-height 26px
+      
+      .col20-lg-19
+        padding 0px
+
+      .col20-lg-offset-1
+        margin-left 0px
+     
+    &_slider
+      overflow hidden
+      left 0px
+      position absolute
+
     &_vendorcode
     &_description
       font-size 16px
@@ -239,12 +269,17 @@
       clear none
       font-size 24px
       
-    .itempage_bottom.item_bottom .item_cost
+    &_bottom.item_bottom .item_cost
       font-size 34px
       clear none
       margin-top -2px
       margin-left 30px
 
+    &_addings
+      width 60vw
+
+    &_pad
+      width 100%
 
     &_box
       font-size 12px

@@ -139,6 +139,20 @@ class ItemPage extends Component {
 
   render(){
 
+    var settings = {
+      draggable: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: false,
+      dots: false,
+      infinite: false,
+      speed: 500,
+      variableWidth: true
+    };
+
+    const windowWidth = this.props.windowWidth
+
+
     const allSetReady = this.props.curItem.allSetReady
 
     const buyToo = this.props.curItem.BuyToo
@@ -236,7 +250,7 @@ class ItemPage extends Component {
             </div>
           </div>
           <div className='row'>
-            <div className='itempage_pad col20-lg-offset-1 col15-lg-8 col15-md-8 col15-sm-8 col20-xs-20'>
+            <div className='itempage_pad col20-lg-offset-1 col15-xs-15 col15-lg-8 col15-md-8 col15-sm-8 '>
               <ol className='breadcrumb'>
                 {
                   breadcrumbs.map(function(item) {
@@ -258,7 +272,7 @@ class ItemPage extends Component {
               </div>
 
 
-              <div className='col20-lg-offset-2'>
+              <div className='col20-lg-offset-1'>
                 <span className='itempage_vendorcode'>{vendorcode}</span>
                 <span className='itempage_description'>{description}</span>
                 {cost}
@@ -315,19 +329,47 @@ class ItemPage extends Component {
               <div className='col20-lg-offset-1 col20-lg-19'>
                 <div className='col-md-6 col-lg-6 col-sm-6'>
                   <h3>С этим товаром вам понадобятся</h3>
-                  <div className='itempage_add'>
-                  {
-                    AdditionItems.map(function(item){    
-                     
-                      return(
-                        <div className='span4 itempage_addings'  style={{backgroundImage: 'url(http://' + window.location.host + '/'+item.image + ')'}}>
-                          <Link to={item.image} title={item.href}>{item.title}</Link>
-                        </div>
+                  <If condition={windowWidth>768}>
+                    <Then>
 
-                      )
-                    })
-                  }
-                  </div>
+                      <div className='itempage_add'>
+                        {
+                          AdditionItems.map(function(item){    
+                           
+                            return(
+                              <div className='span4 itempage_addings'  style={{backgroundImage: 'url(http://' + window.location.host + '/'+item.image + ')'}}>
+                                <Link to={item.image} title={item.href}>{item.title}</Link>
+                              </div>
+
+                            )
+                          })
+                        }
+                      </div>
+
+
+                    </Then>
+                    <Else>
+                      <div className='itempage_add'>
+                        <div className='itempage_slider'>
+                          <Slider  {...settings}>
+                            {
+                              AdditionItems.map(function(item){    
+                               
+                                return(
+                                  <div className='span4 itempage_addings'  style={{backgroundImage: 'url(http://' + window.location.host + '/'+item.image + ')'}}>
+                                    <Link to={item.image} title={item.href}>{item.title}</Link>
+                                  </div>
+
+                                )
+                              })
+                            }
+                          </Slider>
+                        </div>
+                      </div>
+                    </Else>
+                  </If>
+
+                      
 
                 </div>
                 <div className='col-md-5 col-lg-5 col-sm-5 pull-right'>
