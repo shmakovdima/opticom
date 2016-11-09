@@ -64,7 +64,7 @@ export const routes = (
       <Route path='blog' component={Blog}/>
       <Route path='blog/test' component={BlogItem}/>
 
-      <Route path='allisready' component={Sets}/>
+      <Route path='sets' component={Sets}/>
       <Route path='addset' component={AddSet}/>
 
       <Route path='today' component={Today}/>
@@ -72,7 +72,7 @@ export const routes = (
       <Route path='ecology' component={Ecology}/>
       <Route path='production' component={Production}/>
       <Route path='social' component={Social}/>
-      <Route path='contact' component={Contacts}/>
+      <Route path='contacts' component={Contacts}/>
       <Route path='cooperation' component={Cooperation}/>
 
       <Route path='press' component={Press}>

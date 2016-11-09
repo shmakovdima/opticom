@@ -1,26 +1,23 @@
-import React, { Component } from 'react'
-import HeaderLight from '../components/Headers/HeaderLight'
-import {Link} from 'react-router'
+import React, { Component } from 'react';
+import HeaderLight from '../components/Headers/HeaderLight';
+import {Link} from 'react-router';
 import '../stylus/components/today.styl';
 import '../stylus/components/press.styl';
-import ContactForm from './ContactForm'
-import { Accordion, Panel } from 'react-bootstrap'
+
+import { Accordion, Panel } from 'react-bootstrap';
+
+
 export default class Contacts extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      lgShow: false,
       curCart: 0
     }
   }
 
   curMap(key) {
     this.setState({curCart: key})
-  }
-
-  lgShow() {
-    this.setState({lgShow: !this.state.lgShow})
   }
 
   render() {
@@ -40,7 +37,7 @@ export default class Contacts extends Component {
               <li><Link activeClassName='active' className='greenlighted_left social' to='social'><span>Ответственность</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left job' to='today#job'><span>Вакансии</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left press' to='press'><span>Пресс-центр</span></Link></li>
-              <li><Link activeClassName='active' className='greenlighted_left contact' to='contact'><span>Контакты</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left contact' to='contacts'><span>Контакты</span></Link></li>
             </ul>
           </div>
         </div>
@@ -62,7 +59,7 @@ export default class Contacts extends Component {
                       <a className='today_contactform_phone' href='tel:+7-495-980-06-48'>+7-495-980-06-48</a>
                       <span className='today_contactform_pr'>PR-служба</span>
                       <a className='today_contactform_phone' href='tel:+7-495-911-20-41'>+7-495-911-20-41</a>
-                      <button className='close_modal button' onClick={::this.lgShow}>Написать нам</button>
+                      <button className='close_modal button' >Написать нам</button>
                     
                       <div className='today_contactform_panel'>
                         <Accordion defaultActiveKey={0}>
@@ -135,14 +132,13 @@ export default class Contacts extends Component {
                       </div>
                     </div>
                     <div className='pull-right col20-lg-13'>  
-                          <div className={curMap}></div>
-
+                      <div className={curMap}></div>
                     </div>
                   </div>
 
               </div>
           </section>
-          <ContactForm show={this.state.lgShow} onHide={this.lgShow}/>
+          
         
       </div>
     )}

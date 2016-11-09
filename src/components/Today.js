@@ -531,7 +531,7 @@ class Today extends Component {
                     <div className='col20-lg-offset-2 col20-lg-14 col20-md-offset-2 col20-md-14'>
                       <a className='today_contact_phone' href='tel: +7-495-980-06-48' title='Наш телефон'>+7-495-980-06-48</a>
                       <button className='close_modal button'>Написать нам</button>
-                      <Link className='today_link today_contact_more' title='Пресса' to='press'>
+                      <Link className='today_link today_contact_more' title='Контакты' to='contacts'>
                           <span className='green_underline'>Контакты других подразделений</span>
                       </Link>
                     </div>

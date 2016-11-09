@@ -77,9 +77,6 @@ class ReCall extends Component {
     var isOpen = this.props.isOpen
     var windowWidth = this.props.windowWidth
 
-
-
-
     var offsetLeft = windowWidth
     
     var recallClass = 'header_recall'
@@ -268,7 +265,7 @@ class Header extends Component {
 
     if ($('.home').length==0){
 
-      if (windowTop>44)  
+      if (windowTop>34)  
       {
         $('.header').addClass('fixed')
       }

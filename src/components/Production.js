@@ -19,7 +19,7 @@ export default class Production extends Component {
               <li><Link activeClassName='active' className='greenlighted_left social' to='social'><span>Ответственность</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left job' to='today#job'><span>Вакансии</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left press' to='press'><span>Пресс-центр</span></Link></li>
-              <li><Link activeClassName='active' className='greenlighted_left contact' to='contact'><span>Контакты</span></Link></li>
+              <li><Link activeClassName='active' className='greenlighted_left contact' to='contacts'><span>Контакты</span></Link></li>
             </ul>
           </div>
         </div>
