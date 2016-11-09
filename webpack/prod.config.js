@@ -22,21 +22,7 @@ module.exports = {
 
   plugins: [
 
-     /*new SpritesmithPlugin({
-        src: {
-            cwd: path.resolve('./images/planet'),
-            glob: '*.png'
-        },
-        target: {
-            image: path.resolve('src/images/planet_sprite.png'),
-            css: path.resolve('src/stylus/planet-sprite.styl')
-        },
-        apiOptions: {
-            cssImageRef: "-sprite.png"
-        }
-      }),
-      */
-
+    
 
     new webpack.DefinePlugin({
       'process.env': {

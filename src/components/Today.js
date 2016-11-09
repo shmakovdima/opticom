@@ -1,36 +1,67 @@
 import React, { Component } from 'react'
 import '../stylus/components/home.styl';
-import { connect } from 'react-redux'
-import Slider from 'react-slick'
+import { connect } from 'react-redux';
+import Slider from 'react-slick';
 import '../stylus/components/set.styl';
-import ContactForm from './ContactForm'
-import getDate from './function/getDate'
-import HeaderDark from '../components/Headers/HeaderDark'
-//import {SectionsContainer, Section} from 'react-fullpage';
-import {Scrollspy} from 'react-scrollspy'
-import $ from 'jquery'
-import {Link} from 'react-router'
-import wordlenght from './function/wordlenght'
+import getDate from './function/getDate';
+import HeaderDark from '../components/Headers/HeaderDark';
+import {Scrollspy} from 'react-scrollspy';
+import $ from 'jquery';
+import {Link} from 'react-router';
+import wordlenght from './function/wordlenght';
 import '../stylus/components/today.styl';
+
+require('es6-promise').polyfill();
+
+
+function scrollTo(element, to, duration) {
+    
+    var start = element.scrollTop,
+        change = to - start,
+        increment = 20;
+
+    var animateScroll = function(elapsedTime) {        
+        elapsedTime += increment;
+        var position = easeInOut(elapsedTime, start, change, duration);                        
+        element.scrollTop = position; 
+        if (elapsedTime < duration) {
+            setTimeout(function() {
+                animateScroll(elapsedTime);
+            }, increment);
+        }
+    };
+
+    animateScroll(0);
+}
+
+function easeInOut(currentTime, start, change, duration) {
+    currentTime /= duration / 2;
+    if (currentTime < 1) {
+        return change / 2 * currentTime * currentTime + start;
+    }
+    currentTime -= 1;
+    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
+}
+
 
 class Today extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      lgShow: false,
       curItem: '',
-      working: false,
       prevScroll: this.props.windowTop
     }
     this.curItems = ''
     this.prevScroll = this.props.windowTop
-    this.working = false
+    this.block = false
   }
 
-  
 
   updateTop(){
+    console.log(this.block)
+    if (this.block == true) return false;
+    
     var windowTop = this.props.windowTop
     var screenHeight = window.innerHeight
     var sotrTop = (document.getElementById('sotr')) ? document.getElementById('sotr').offsetTop : 2129
@@ -40,8 +71,6 @@ class Today extends Component {
     var socialTop = (document.getElementById('social')) ? document.getElementById('social').offsetTop: 3989
     var ecologyTop = (document.getElementById('ecology')) ? document.getElementById('ecology').offsetTop: 2988
     var pressTop = (document.getElementById('press')) ? document.getElementById('press').offsetTop : 5858
-
-    //var prevScroll = this.state.prevScroll
 
     var curItem = ''
     
@@ -56,12 +85,17 @@ class Today extends Component {
       contactTop-=screenHeight
     }
 
-    var self = this
-    this.prevScroll = windowTop
 
-    if ((windowTop>=0) && (windowTop<whiteTop)) {
+    
+
+    if ((windowTop>=0) && (windowTop<sotrTop)) {
       curItem = 'about'
     } 
+
+    if ((sotrTop>=sotrTop) && (windowTop<whiteTop)) {
+      curItem = 'sotr'
+    } 
+
     if ((windowTop>=whiteTop) && (windowTop<ecologyTop)) {
       curItem = 'prod'
     } 
@@ -84,43 +118,37 @@ class Today extends Component {
       curItem = 'contact'
     }
 
-
-    console.log('curItem' + curItem)
-    console.log('curItems' + this.curItems)
-    console.log('working' + this.working)
-
     if (this.curItems =='') {
       this.curItems = curItem
     }else{
-      if ((this.curItems != curItem ) && (this.working!=true)) {
-        console.log('changing')
-
-        this.working = true
-        
-        if (curItem!='about') {
+      if ((this.curItems != curItem )) {
+        if ((curItem!='about') && (curItem != 'sotr') ) {
           $('.'+curItem).click()
+          console.log('double')
+        }else{
+          if ((curItem=='sotr') && (this.prevScroll<=windowTop)) {
+            $('.'+curItem).click()
+          }
         }
-        this.curItems = curItem
-        setTimeout(function(){ self.working = false}, 1200)
-
+        this.curItems = curItem;
       }
     }
 
+    this.prevScroll = windowTop
+
   }
 
-
-  lgShow() {
-    this.setState({lgShow: !this.state.lgShow})
-  }
   componentDidMount(){
-    window.addEventListener('wheel', this.updateTop.bind(this))
+    window.addEventListener('scroll', this.updateTop.bind(this))
 
-    $(document).on('click', '.cooperation, .today_navigation a', function(event){
+    var self = this
 
-        //prevent the default action for the click event
-        event.preventDefault();
-        event.stopPropagation()
+    $(document).on('click', '.cooperation, .today_navigation a', function(e){
 
+        self.block = true;
+
+        e.preventDefault();
+        e.stopPropagation();
         //get the full url - like mysitecom/index.htm#home
         var full_url = this.href;
 
@@ -132,17 +160,14 @@ class Today extends Component {
         var target_offset = $('#'+trgt).offset();
         var target_top = target_offset.top;
 
-        //goto that anchor by setting the body scroll top to anchor top
-        $('html, body').animate({scrollTop: target_top}, 700);
+
+        scrollTo(document.body, target_top, 300)
+
     });
-
-
-
-
-
   }
 
   render() {
+
     var Data = this.props.PressNews.Data
     var windowTop = this.props.windowTop
 
@@ -155,8 +180,6 @@ class Today extends Component {
     var pressTop = (document.getElementById('press')) ? document.getElementById('press').offsetTop : 5858
     
     var classWhite = 'today_white'
-
-    
 
     if (windowTop>whiteTop) {
       classWhite+=' fixed'
@@ -175,9 +198,6 @@ class Today extends Component {
       speed: 500,
       variableWidth: true
     };
-
-
-
 
 
     return(
@@ -489,10 +509,7 @@ class Today extends Component {
 
                       <Link className='today_link' title='Пресса' to='press'>
                         <span className='green_underline'>Посмотреть все материалы</span>
-
                       </Link>
-
-
                     </div>   
                 </div>
               </div>
@@ -500,8 +517,6 @@ class Today extends Component {
 
 
           <section id = 'contact' className='today_contact'>
-            
-
               <div className='container'>
                 <div className='row'>
                     <div className='col20-lg-offset-4 col20-lg-14 col20-md-offset-3 col20-md-14'>
@@ -515,7 +530,7 @@ class Today extends Component {
                     </div>
                     <div className='col20-lg-offset-2 col20-lg-14 col20-md-offset-2 col20-md-14'>
                       <a className='today_contact_phone' href='tel: +7-495-980-06-48' title='Наш телефон'>+7-495-980-06-48</a>
-                      <button className='close_modal button' onClick={::this.lgShow}>Написать нам</button>
+                      <button className='close_modal button'>Написать нам</button>
                       <Link className='today_link today_contact_more' title='Пресса' to='press'>
                           <span className='green_underline'>Контакты других подразделений</span>
                       </Link>
@@ -523,12 +538,6 @@ class Today extends Component {
                 </div>
               </div>
           </section>
-
-
-          <ContactForm show={this.state.lgShow} onHide={this.lgShow}/>
-
-          
-
       </div>
     )
   }
@@ -537,9 +546,9 @@ class Today extends Component {
 class PressNewsItem extends Component {
   render () {
 
-    let img = 'http://' + window.location.host + '/' + this.props.data.image
-    let link = this.props.data.link
-    let title = wordlenght(this.props.data.title, 50)
+    let img = 'http://' + window.location.host + '/' + this.props.data.image;
+    let link = this.props.data.link;
+    let title = wordlenght(this.props.data.title, 50);
     let hoverimg = 'http://' + window.location.host + '/' + this.props.data.imagehover
     let date = getDate(this.props.data.date)
 
