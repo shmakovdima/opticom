@@ -48,8 +48,7 @@
     &_moon
     &_sun
       position absolute
-      transform: scale(0.7)
-      transition 100ms all ease-in
+      transform scale(0.7)
 
     &_moon 
       width 102px
@@ -63,7 +62,7 @@
       background url(../../images/home/sun.png) no-repeat
 
     &_text
-      transition 100ms all ease-in
+      transition 100ms opacity ease-in
       z-index 2
       position relative
       width 280px
@@ -358,13 +357,6 @@
               &:hover
               &:active
                 color color_green
-  &_planet
-    position absolute
-    width 100%
-    height 800px
-    top 30px
-    left 0px
-    transform: scale(0.65)
 
   &_main
     
