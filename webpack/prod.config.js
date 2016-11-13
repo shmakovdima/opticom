@@ -5,38 +5,36 @@ const path = require('path');
 //const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
-  devtool: 'source-map',
-
-  entry: ['bootstrap-loader/extractStyles'],
-
+  devtool: 'cheap-module-eval-source-map',
+  entry: [
+    'bootstrap-loader',
+    'webpack-hot-middleware/client',
+    './src/index',
+  ],
   output: {
-    publicPath: 'dist/',
+    publicPath: '/dist/',
   },
 
   module: {
-    loaders: [{
-      test: /\.scss$/,
-      loader: 'style!css!postcss-loader!sass',
-    }],
+
   },
 
   plugins: [
 
-    
-
+  
+  
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"',
+        NODE_ENV: '"development"',
       },
-      __DEVELOPMENT__: false,
+      __DEVELOPMENT__: true,
     }),
     new ExtractTextPlugin('bundle.css'),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
     }),
   ],
 };

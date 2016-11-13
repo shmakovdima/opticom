@@ -45,7 +45,7 @@ class ProfileSets extends Component {
           <div className='row'>
               <div className='col-lg-4 col-md-4 col-sm-6 col-xs-12'>
                 <div className='profile_sets_white2'></div>
-                <Link className='profile_sets_create' to='/createset' title='Coздать новый шаблон'>
+                <Link className='profile_sets_create' to='/addset' title='Coздать новый шаблон'>
                   <span>Создать новый</span>
                   <br/>
                   <span className='greenlighted'>набор</span>

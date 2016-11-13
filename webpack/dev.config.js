@@ -16,16 +16,11 @@ module.exports = {
   },
 
   module: {
-    loaders: [{
-      test: /\.scss$/,
-      loader: 'style!css?localIdentName=[path][name]--[local]!postcss-loader!sass',
-    }],
+
   },
 
   plugins: [
 
-  
-  
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"development"',

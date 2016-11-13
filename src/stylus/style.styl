@@ -320,23 +320,34 @@ textarea
 .breadcrumb
   padding-left 0px
   background none
+  line-height 16px
   margin-top 40px
   color color_gray_more
   
   &-item
     a
+      position relative
+      
       color color_gray_more!important
       font-family FuturaPTBook
       font-size 16px
-  
-  & > li + li:before
-    content '•'
-    background none
-    padding 3px 12px
-    font-size 20px
-    position relative
-    display inline-block
-    color color_gray_more
+
+  & > li + li
+    
+    & a
+      position relative
+      display inline-block
+      top 2px
+    
+    &:before
+      content '•'
+      background none
+      padding 3px 12px
+      font-size 20px
+      top 3px
+      position relative
+      display inline-block
+      color color_gray_more
 
 .slick
   &-slider

@@ -85,18 +85,12 @@ class ReCall extends Component {
 
 
     if ((isOpen==true) && (windowWidth>992))  {
-      offsetLeft = document.getElementById('recall').offsetLeft
-
-      
-
-    var containerWidth = $('.container').width()
-
-    offsetLeft = ((windowWidth - containerWidth)/2) + offsetLeft  - 60
-
-
-    $('body').addClass('overflowrecall')
-      $('.header_basket, .header_user , .header_phone').addClass('black')
-      $('.catalog_header, .profile_orders, .profile_sets_header, .profile_items, .header').addClass('zindex')
+      offsetLeft = document.getElementById('recall').offsetLeft;
+      var containerWidth = $('.container').width();
+      offsetLeft = ((windowWidth - containerWidth)/2) + offsetLeft  - 60;
+      $('body').addClass('overflowrecall');
+      $('.header_basket, .header_user , .header_phone').addClass('black');
+      $('.catalog_header, .profile_orders, .profile_sets_header, .profile_items, .header').addClass('zindex');
     } else{
       $('.header_basket, .header_user , .header_phone').removeClass('black')
       $('body').removeClass('overflowrecall');

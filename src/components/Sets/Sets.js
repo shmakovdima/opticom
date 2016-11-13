@@ -42,7 +42,6 @@ class Sets extends Component {
               <ol className='breadcrumb'>
                 {
                   breadcrumbs.map(function(item) {
-
                     breadcrumb_link+=item.link+'/'
                     return(
                       <li className='breadcrumb-item'>
@@ -60,11 +59,7 @@ class Sets extends Component {
               <div>
                 <span className='sets_header_description'>Выберите один из готовых наборов, и вы сможете всегда изменить его состав под свою потребность</span>
               </div>
-             
             </div>
-
-
-
           </div>
         </div>
       </section>
