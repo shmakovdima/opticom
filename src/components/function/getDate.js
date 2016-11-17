@@ -12,8 +12,10 @@ Date.prototype.getFullMinutes = function () {
 };
 
 
+
+
 export default function getDate(date) {
-  var curDate = new Date(date)
+  var curDate = dateFromISO8601(date)
   var now = new Date()
   var today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).valueOf()
   var other = curDate.valueOf()
