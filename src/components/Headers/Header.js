@@ -143,7 +143,7 @@ class ReCall extends Component {
             </div>
             <div className='dropdown_block more'>
               <span className='header_recall_questions'>Остались вопросы?</span>
-              <button className='btn'>Написать сообщение</button>
+              <button className='btn close_modal'>Написать сообщение</button>
             </div>
           </div>
         </div>
@@ -152,10 +152,6 @@ class ReCall extends Component {
     )
   }
 }
-
-
-
-
 
 
 class HeaderSearch extends Component {

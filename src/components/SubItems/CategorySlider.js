@@ -1,4 +1,3 @@
-import Slider from 'react-slick'
 import wordend from '../function/wordend'
 import React, { Component } from 'react'
 import {Link} from 'react-router'
@@ -6,6 +5,7 @@ import {connect } from 'react-redux'
 import $ from 'jquery'
 import * as pageActions from '../../actions/showMenu'
 import { bindActionCreators } from 'redux'
+import '../../stylus/components/categoryslider.styl';
 
 
 class Carousel_Item extends Component {
@@ -32,7 +32,54 @@ class Carousel_Item extends Component {
 
 class CategorySlider extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      curSlide: 0,
+      slideLength: 0      
+    }
+  }
 
+  leftSlide(){
+    this.setSlide(this.state.curSlide-1)
+  }
+
+  rightSlide(){
+    this.setSlide(this.state.curSlide+1)
+  }
+
+  setSlide(newSlide){
+
+    console.log('newSlide' + newSlide)
+    if (newSlide<0) newSlide = 0;
+    if (newSlide>=(this.state.slideLength-1)) newSlide = this.state.slideLength-1;
+
+    if (newSlide<1) {
+      $('.categoryslider_left').addClass('disabled')
+    }else{
+      $('.categoryslider_left').removeClass('disabled')
+    }
+
+    this.setState({
+      curSlide: Math.round(newSlide)
+    })
+
+    let left = newSlide * $('.categoryslider_slide').width();
+    let containerWidth = $('.categoryslider').width();
+    let lentWidth = $('.categoryslider_line').width();
+
+    if (left>=(lentWidth-containerWidth)) {
+      left = lentWidth-containerWidth;
+      $('.categoryslider_right').addClass('disabled')
+    }else{
+      $('.categoryslider_right').removeClass('disabled')
+    }
+
+
+    $('.categoryslider_line').css({
+        left: -left
+    })
+  }
 
   showMenu(){
     $('body').addClass('overflow');
@@ -40,13 +87,11 @@ class CategorySlider extends Component {
   }
 
   hoverSlider(e) {
-
     var x = e.pageX
-    var containerWidth = $('#catalog_slider').width()
+    console.log(x)
+    var containerWidth = $('.categoryslider').width()
 
     var windowWidth = this.props.windowWidth
-
-    var categories = this.props.Categories.length-1
 
     var checkWidth = (windowWidth-containerWidth)/2
 
@@ -56,62 +101,78 @@ class CategorySlider extends Component {
 
     if (x>containerWidth) x = containerWidth
 
-    console.log(Math.round(x/containerWidth * categories))
+    let curSlide = (x/containerWidth * this.state.slideLength)
+    console.log(curSlide)
 
     if (this.refs.slider) {
-      this.refs.slider.slickGoTo(Math.round(x/containerWidth * categories))
+      //this.refs.slider.slickGoTo(Math.round(x/containerWidth * categories))
     }
-
-    console.log('hover')
+    this.setSlide(curSlide)
   }
 
   componentDidMount() {
-    $(document).on('mouseover', '#catalog_slider', this.hoverSlider.bind(this))
+
+    var self = this
+    $(document).on('mousemove', '#catalog_slider', this.hoverSlider.bind(this))
+    
+    $(window).load(function(){
+
+      self.setState({
+        slideLength: $('.categoryslider_slide').length
+      })
+
+      $(document).on('click','.categoryslider_left', function(){
+        self.leftSlide()
+      })
+
+      $(document).on('click','.categoryslider_right', function(){
+        self.rightSlide()
+      })
+     
+    })
   }
 
   render() {
-    var settings = {
-      draggable: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: false,
-      dots: false,
-      infinite: false,
-      speed: 500,
-      variableWidth: true
-    };
-
-    const windowWidth = this.props.windowWidth
+    //const windowWidth = this.props.windowWidth
     const Categories = this.props.Categories
 
     var greenMode = this.props.greenMode
     
     let slidernumber = 0
 
-    console.log(windowWidth);
-    console.log(Categories);
-    
     return(
       <div>
         <div className='catalog_header_slider_block'>
           <div className='container'>
+                  <div className='categoryslider_left disabled'></div>
+                  <div className='categoryslider_right'></div> 
             <div className='row' >
+             
               <div id='catalog_slider' className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12  catalog_header_slider slick_white'>
-                <Slider ref='slider'  {...settings}>
-                  <div  className='hidden-xs' key={slidernumber}>
-                    <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
-                      <span >Показать все </span>
-                      <wbr/>
-                      <span >категории</span>
-                    </button>
+
+                  <div className='categoryslider'>
+                    
+                    <div className='categoryslider_line'>
+                      <div className='hidden-xs categoryslider_slide'>
+                        <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
+                          <span >Показать все </span>
+                          <wbr/>
+                          <span >категории</span>
+                        </button>
+                      </div>
+                      {
+                        Categories.map(function(item) {
+                          return (<div className='categoryslider_slide'><Carousel_Item greenMode={greenMode} Category={item} key={++slidernumber}/></div>)
+                        })
+                      }
+                    </div>
+                    
+                   
+
+                    
                   </div>
-                  {
-                    Categories.map(function(item) {
-                      return (<div><Carousel_Item greenMode={greenMode} Category={item} key={++slidernumber}/></div>)
-                    })
-                  }
-                </Slider>
-                <div className='hidden-md hidden-lg hidden-sm home_hidden'>
+
+                <div className='hidden-md hidden-lg hidden-sm home_hidden '>
                   <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                     <span >Показать все категории</span>
                   </button>

@@ -1,0 +1,66 @@
+.categoryslider
+  height 160px
+  
+  &_line
+    white-space nowrap
+    position absolute
+    transition right 400ms linear
+    transition left 400ms linear
+
+  &_slide
+    display inline-block
+    position relative
+    vertical-align top
+    
+    & a
+      white-space normal
+      
+  &_left
+  &_right
+    cursor pointer
+    display block
+    z-index 250
+    transition 150ms all ease-in
+    width 17px
+    height 26px
+    top 220px
+    position absolute
+    right 25px
+
+  
+  &_right
+    background url(../../../images/sprites/arrow_right.png) center no-repeat
+
+    &.disabled
+      transform rotate(180deg)
+      background url(../../../images/sprites/arrow_left_disabled.png) center no-repeat
+      
+
+  &_left
+    top 230px
+    transform rotate(180deg)
+    right 53px
+    background url(../../../images/sprites/arrow_right.png) center no-repeat
+    
+    &.disabled
+      transform none
+      background url(../../../images/sprites/arrow_left_disabled.png) center no-repeat
+      
+
+.catalog_header
+  .categoryslider
+    &_left
+    &_right
+      top 300px
+      
+    &_left
+      top 310px
+      background url(../../../images/sprites/catalog_slider_right.png) center no-repeat
+      
+      &.disabled
+        background url(../../../images/sprites/catalog_slider_left_disable.png) center no-repeat
+      
+    &_right
+      background url(../../../images/sprites/catalog_slider_right.png) center no-repeat
+      &.disabled
+        background url(../../../images/sprites/catalog_slider_left_disable.png) center no-repeat

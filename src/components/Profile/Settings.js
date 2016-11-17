@@ -57,8 +57,10 @@ class ProfileSettings extends Component {
     $(document).on('change', '.email', function(e){
       e.preventDefault();
       if (isValidEmailAddress($(this).val())){
+        console.log('not valid')
         $(this).addClass('ok')
       }else{
+        console.log('valid')
         $(this).removeClass('ok')
       }
     })
@@ -103,8 +105,6 @@ class ProfileSettings extends Component {
     $('.address_edit_cancel').click()
 
     var prevArray = this.state.adresses
-
-    
 
     this.setState({
       adresses: prevArray.concat({
@@ -240,7 +240,7 @@ class ProfileSettings extends Component {
                 </div>
                 <div className='row'>
                   <div className='col-xs-12'>
-                    <input id='bank' value='bank' type='radio' name='paymenttype'/>
+                    <input id='bank' value='bank' type='radio' name='paymenttype' checked/>
                     <label htmlFor='bank'></label>
                     <span className='radiolabel'>Банковский счёт</span>
                   </div>

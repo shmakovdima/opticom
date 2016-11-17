@@ -101,9 +101,10 @@ class Home extends Component {
     var bgImage = {backgroundPosition: 'center '+ '-'+ curCard * 450 + 'px'}
 
   
-    var topBody 
+    var topBody = {top: breakpoint + homeHeight}
     var topHome
     var topSection = {top: 100}
+
 
     if (scrollTop < breakpoint) {
 
@@ -117,7 +118,7 @@ class Home extends Component {
 
       console.log('fullstep' + fullstep);
 
-      topBody = {top: scrollTop + homeHeight}
+      
       topHome = {top: 'inherit'}
       topSection = {top: 100}
 
@@ -202,8 +203,6 @@ class Home extends Component {
 
       text1= {top: 160}
       topHome = { top: -(scrollTop - breakpoint)}
-      topBody = { top: breakpoint + homeHeight}
-
     }
 
     return (
