@@ -203,7 +203,7 @@ class Item extends Component {
 
     var newitem
     if (this.props.item.new == true) {
-      newitem = (<span className='item_new'>Новинка</span>)
+      newitem = (<span className='item_new'></span>)
     }
 
     var additiontext = 'за одну штуку'
