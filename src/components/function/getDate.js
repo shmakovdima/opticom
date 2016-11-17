@@ -14,16 +14,16 @@ Date.prototype.getFullMinutes = function () {
 };
 
 
-
-
 export default function getDate(date) {
-  var curDate = moment(date, 'YYYY-MM-DD HH:mm:ss');
+  var curDate = moment(date, 'YYYY-MM-DD HH:mm:ss').toDate();
   var now = new Date()
+  console.log( curDate.getDate())
+
   var today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).valueOf()
   var other = curDate.valueOf()
   if (other < today - 86400000) { // 24*60*60*1000
       // раньше чем вчера
-    return(curDate.getDay()+ ' '+curDate.getMonthName() + ' ' + curDate.getFullYear())
+    return(curDate.getDate()+ ' '+curDate.getMonthName() + ' ' + curDate.getFullYear())
   } else if (other < today) {
     return('Вчера')
       // вчера

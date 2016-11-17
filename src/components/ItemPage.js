@@ -292,8 +292,7 @@ class ItemPage extends Component {
                 <span className='itempage_box'>{boxdescription}</span>
 
               </div>
-
-              
+           
             </div>
             <div className='col15-lg-6 itempage_pad itempage_pic col15-md-6 col15-sm-6 hidden-xs'>
               <div style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}} className='pull-right itempage_image '>
