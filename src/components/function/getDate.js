@@ -1,4 +1,4 @@
-import * from 'moment'
+import moment from 'moment'
 
 Date.prototype.getMonthName = function() {
     var month = ['Января','Февраля','Марта','Апреля','Мая','Июня',
