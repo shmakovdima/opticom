@@ -1,3 +1,5 @@
+import 'moment'
+
 Date.prototype.getMonthName = function() {
     var month = ['Января','Февраля','Марта','Апреля','Мая','Июня',
     'Июля','Августа','Сентября','Октября','Ноября','Декабря'];
@@ -15,7 +17,7 @@ Date.prototype.getFullMinutes = function () {
 
 
 export default function getDate(date) {
-  var curDate = dateFromISO8601(date)
+  var curDate = moment(date, "YYYY-MM-DD hh:mm:ss");
   var now = new Date()
   var today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).valueOf()
   var other = curDate.valueOf()
