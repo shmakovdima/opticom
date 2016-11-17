@@ -13,8 +13,6 @@ import cutnumber from '../../function/cutnumber'
 
 import $ from 'jquery'
 
-
-
 Array.prototype.removeByValue = function(item){
   var itemIndex = -1;
   for (var index = 0; index < this.length; index++)
@@ -340,7 +338,7 @@ class Item extends Component {
               </div>
               <div className='item_order_body'>
                 <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
+                <input type='text' className='item_order_input' onChange={::this.setChange} value={inputValue} defaultValue={inputValue}/>
                 <button className='item_order_plus' onClick={::this.setPlus}>+</button>
                 <button className='item_order_button'>В корзину</button>
               </div>

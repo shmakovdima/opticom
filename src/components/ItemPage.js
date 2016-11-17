@@ -57,8 +57,6 @@ class LoveButton extends Component {
     let id = this.props.data.curItem.id
     let array = JSON.parse(JSON.stringify(this.props.data.lovedItems))
 
-
-
     if (array.indexOf(id) != -1) loved+=' active'
     return(
       <div>
@@ -243,7 +241,7 @@ class ItemPage extends Component {
               <div className='category_header_absolute'>
                 <div className='col20-lg-offset-3 col20-md-offset-2 col20-sm-offset-3 col20-lg-17 col20-md-17 col20-sm-17'>
                   <div className='category_header_white hidden-xs'>
-                    <LoveButton data={data} setLove={setLove} />
+                    
                     
                   </div>
               </div>
@@ -269,6 +267,7 @@ class ItemPage extends Component {
 
               <div style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}} className='col-xs-12 itempage_image hidden-sm hidden-md hidden-lg'>
                 {Eco}
+
               </div>
 
 
@@ -299,6 +298,7 @@ class ItemPage extends Component {
             <div className='col15-lg-6 itempage_pad itempage_pic col15-md-6 col15-sm-6 hidden-xs'>
               <div style={{backgroundImage: 'url(http://' + window.location.host + '/'+image + ')'}} className='pull-right itempage_image '>
               </div>
+              <LoveButton data={data} setLove={setLove} />
               <div className='itempage_fulldescription'>
                 <If condition={fulldescription==false}>
                   <Then>

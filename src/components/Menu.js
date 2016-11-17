@@ -19,7 +19,6 @@ class SubCat extends Component{
 
   componentDidMount() {
     $(document).on('click', '.close_modal', function(){
-
     })
   }
 

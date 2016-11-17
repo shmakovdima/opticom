@@ -20,7 +20,6 @@ class Home extends Component {
     }
   }
 
-
   componentDidMount() {
     $('.home_header_down').addClass('active')
   }
@@ -49,22 +48,13 @@ class Home extends Component {
   render() {
 
 
-    var text3init = {
-      top: 880,
-      opacity: 0
-    } 
-
-    var text3 = text3init
 
     var text1init = {top: 280} 
-
     var text1 = text1init
-
     var suninit = {
       top: 500,
       right: 139
     }
-
     var sun = suninit
 
     var mooninit = {
@@ -80,10 +70,16 @@ class Home extends Component {
     }
 
     var text2 = text2init
-    
 
+    var text3init = {
+      top: 700,
+      opacity: 0.3
+    } 
+
+    var text3 = text3init
+    
     var breakpoint = (this.state.breakpoint) ? this.state.breakpoint : 800
-    console.log(breakpoint)
+    //console.log(breakpoint)
     var cardlenght = breakpoint / 30
  
 
@@ -91,13 +87,13 @@ class Home extends Component {
 
     if (homeHeight == null) homeHeight = 1000
 
-    console.log(homeHeight)
+    //console.log(homeHeight)
 
     var scrollTop = this.props.windowTop
-    console.log(scrollTop)
+    //console.log(scrollTop)
 
     var curCard =  Math.round(scrollTop / cardlenght)
-    console.log('curCard ' + curCard)
+    //console.log('curCard ' + curCard)
 
 
     if (curCard > 29) curCard = 29
@@ -111,29 +107,23 @@ class Home extends Component {
 
     if (scrollTop < breakpoint) {
 
-      var halfstep = scrollTop/(breakpoint/2)
-      var fullstep = (scrollTop/breakpoint)
+      var halfstep = (scrollTop/breakpoint)*2;
+      if  (halfstep>1) halfstep = 1;
+      //console.log('halfstep' + halfstep);
+
+      var fullstep = ((scrollTop-breakpoint/2)/(breakpoint/2))
+
+      var fullrealstep = scrollTop/breakpoint
+
+      console.log('fullstep' + fullstep);
 
       topBody = {top: scrollTop + homeHeight}
       topHome = {top: 'inherit'}
       topSection = {top: 100}
 
-
-      text1 = {top: text1init.top - 120 * fullstep}
-      console.log('text1')
-      console.log(text1)
+      text1 = {top: text1init.top - 120 * fullrealstep}
 
       if (scrollTop <= (breakpoint/2)) {
-        text2 = {
-          opacity: text2init.opacity + 0.7 * halfstep,
-          top: text2init.top - 220 * halfstep
-        } 
-
-        text3 = {
-          top: text3init.top - 220 * halfstep,
-          opacity: text3init.opacity + 0.3 * halfstep
-        } 
-
         moon = {
           top: mooninit.top -  40 * halfstep,
           left: mooninit.left + 30 * halfstep
@@ -144,9 +134,19 @@ class Home extends Component {
           right: suninit.right - 10 * halfstep
         }
 
+        text2 = {
+          opacity: text2init.opacity + 0.7 * halfstep,
+          top: text2init.top - 220 * halfstep
+        } 
+
+        text3 = {
+          top: text3init.top - 60 * halfstep,
+          opacity: text3init.opacity + 0.7 * fullrealstep
+        } 
+
       }else{
           moon = {
-            top: mooninit.top -  40 - 30 *fullstep ,
+            top: mooninit.top -  40 - 30 * fullstep ,
             left: mooninit.left + 30 + 40 * fullstep
           }
           sun = {
@@ -154,8 +154,8 @@ class Home extends Component {
             right: suninit.right - 10 + 70 * fullstep        
           }
           text3 = {
-            top: text3init.top - 220 - 120 * fullstep,
-            opacity: text2init.opacity + 0.7 * fullstep
+            top: text3init.top - 60 - 140 * fullstep,
+            opacity: text2init.opacity + 0.7 * fullrealstep
           } 
 
           text2 = {
@@ -167,7 +167,6 @@ class Home extends Component {
       if (scrollTop >= (breakpoint - breakpoint/10)) {
 
         var step = (breakpoint - breakpoint/10)
-
 
         topSection = {
           top: 100 - 150 * ((scrollTop-step)/(breakpoint-step))
@@ -192,7 +191,7 @@ class Home extends Component {
       }
 
       text3 = {
-        top: text3init - 340,
+        top: text3init - 360,
         opacity: 1
       }
 
