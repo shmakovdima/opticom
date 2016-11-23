@@ -11,8 +11,6 @@ import '../stylus/components/home.styl';
 import '../stylus/components/planet.styl';
 
 class Home extends Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
@@ -47,44 +45,44 @@ class Home extends Component {
 
   render() {
 
+    // init positions
 
+    //default > 1300px
+
+    const windowWidth = this.props.windowWidth
 
     var text1init = {top: 280} 
+    
+
+    var suninit = { top: 500, right: 139}
+    
+
+    var mooninit = {top: 200, left: 290}
+    
+
+    var text2init = {top: 700, opacity: 0.3 }
+    
+
+    var text3init = {top: 700, opacity: 0.3 }
+    
+    var planetclass = 'col20-lg-18 col20-lg-offset-1'
+
+
+    if (windowWidth<1300) {
+      suninit = { top: 500, right: 100}
+      planetclass = 'col20-lg-20'
+    }
+
     var text1 = text1init
-    var suninit = {
-      top: 500,
-      right: 139
-    }
     var sun = suninit
-
-    var mooninit = {
-      top: 200,
-      left: 290
-    }
-
     var moon = mooninit
-
-    var text2init = {
-      top: 700,
-      opacity: 0.3
-    }
-
     var text2 = text2init
-
-    var text3init = {
-      top: 700,
-      opacity: 0.3
-    } 
-
     var text3 = text3init
     
     var breakpoint = (this.state.breakpoint) ? this.state.breakpoint : 800
-    //console.log(breakpoint)
+
     var cardlenght = breakpoint / 30
- 
-
     var homeHeight = $('.home_header').height()
-
     if (homeHeight == null) homeHeight = 1000
 
     //console.log(homeHeight)
@@ -220,7 +218,7 @@ class Home extends Component {
             <div className='home_header_down' onClick = {::this.scrollTop}>
             </div>
             <div className='row'>
-              <div className='col20-lg-18 col20-lg-offset-1'>
+              <div className={planetclass}>
                 <div className='col20-lg-6 home_header_text' style={text1}>
                   <h2>Предлагаем
                     <br/>
@@ -232,7 +230,7 @@ class Home extends Component {
                     деятельности компаний
                     </p>
                 </div>
-                <div className='col20-lg-6 home_header_text pull-right' style={text2}>
+                <div className='col20-lg-6 col-md-8 home_header_text home_header_text_2 pull-right' style={text2}>
                   <h2>Исследуем
                     <br/>
                     и производим</h2>
@@ -341,7 +339,8 @@ class Home extends Component {
 
 function mapStateToProps (state) {
   return {
-    windowTop: state.pageData.windowTop
+    windowTop: state.pageData.windowTop,
+    windowWidth: state.pageData.windowWidth
   }
 }
 

@@ -64,6 +64,7 @@
     &_text
       transition 100ms opacity ease-in
       z-index 2
+      float left
       position relative
       width 280px
       padding 0px
@@ -370,8 +371,27 @@
     &_header
       display none
 
+@media (max-width: 1300px)
+  .home
+    &_header  
+      &_down
+        left 50px
+        
 @media (max-width: 1200px)
   .home
+    &_planet
+      transform scale(1)
+     
+    &_header  
+      &_moon
+      &_sun
+        position absolute
+        transform scale(0.5)
+        
+      &_text
+        &_2
+          width 230px
+
     &_preferences
       &_clients
         top 0px
