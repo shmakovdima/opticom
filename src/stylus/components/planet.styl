@@ -13,3 +13,20 @@
   .home
     &_planet
       transform scale(1.0)
+     
+    &_header  
+      &_moon
+      &_sun
+        transform scale(0.5)
+      
+@media (max-width: 998px)
+  .home
+    &_planet
+      transform scale(0.65)
+      
+    &_header  
+      &_moon
+      	display none
+      
+      &_sun
+      	transform scale(0.25)

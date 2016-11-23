@@ -230,7 +230,7 @@ class Home extends Component {
                     деятельности компаний
                     </p>
                 </div>
-                <div className='col20-lg-6 col-md-8 home_header_text home_header_text_2 pull-right' style={text2}>
+                <div className='col20-lg-6 col-md-7 home_header_text home_header_text_2 pull-right' style={text2}>
                   <h2>Исследуем
                     <br/>
                     и производим</h2>
@@ -275,7 +275,7 @@ class Home extends Component {
                     <span> БИЗНЕС ЦЕНТРЫ</span>          
                   </span>
                 </div>
-                <div className='col20-lg-5 col20-md-10 col20-sm-10 home_preferences_base'>
+                <div className='col20-lg-5 col20-md-8 col20-lg-offset-0 col20-md-offset-2 col20-sm-10 col20-sm-offset-2 col20-sm-8 home_preferences_base'>
                   <span className='home_preferences_title '>
                     <span>База <br/> экологических</span>
                     <br/>
@@ -286,8 +286,8 @@ class Home extends Component {
                     и использовании экономичной 
                     продукции</p>
                 </div>
-                <div className='col20-lg-6 col20-md-10 col20-sm-10 home_preferences_ecology'>
-                  <span className=' home_preferences_title greenlighted pull-right'>ЭКОЛОГИЯ</span>
+                <div className='col20-lg-6 col20-md-8 col20-sm-10 home_preferences_ecology'>
+                  <span className=' home_preferences_title greenlighted'>ЭКОЛОГИЯ</span>
                   <p>ГК Оптиком - обладатель международных сертификатов в области экологии и бережного производства</p>
                   <div className='home_preferences_ecology_images pull-right'>
                     <img className='pull-right' src='images/home/ecology_3.png'/>
@@ -295,18 +295,18 @@ class Home extends Component {
                     <img className='pull-right' src='images/home/ecology_1.png'/>
                   </div>
                 </div>
-                <div className='col20-lg-9 col20-sm-10 col20-md-10 home_preferences_social'>
+                <div className='col20-lg-9 col20-sm-10 col20-lg-offset-0 col20-md-offset-2 col20-sm-offset-0 col20-md-8 home_preferences_social'>
                   <span className='home_preferences_title greenlighted'>СОЦИАЛЬНАЯ <br/>ОТВЕТСТВЕННОСТЬ</span>
                   <div className='home_preferences_social_image'></div>
                   <p>Поддерживаем <br/>10 благотворительных проектов, и постоянно ищем новые возможности сделать мир лучше!</p>
                 </div>
-                <div className='col20-lg-5 col20-sm-10 col20-md-10 home_preferences_future'>
+                <div className='col20-lg-5 col20-sm-8 col20-md-10 home_preferences_future'>
                   <span className='home_preferences_title greenlighted'>БУДУЩЕЕ <br/>ОПТИКОМ</span>
                   <p>Очередным этапом в развитии компании станет пополнение товарной линейки новыми экологичными товарами и запуск новых мощностей по производству биоупаковки.</p>
                   <button className='home_preferences_future_button greenlighted close_modal'>НАПИШИТЕ<br/>НАМ</button>
                 </div>
                 <div className='col20-lg-6 col20-sm-10 col20-md-10 home_preferences_press'>
-                  <Link to='/press' title='ПРЕСС-ЦЕНТР' className='home_preferences_title greenlighted pull-right'>ПРЕСС-ЦЕНТР
+                  <Link to='/press' title='ПРЕСС-ЦЕНТР' className='home_preferences_title greenlighted'>ПРЕСС-ЦЕНТР
                   </Link>
                   <span className='home_preferences_press_speakers'>Спикеры компании — постоянные участники конференций в России и за рубежом</span>
                   <div className='home_preferences_press_image'></div>

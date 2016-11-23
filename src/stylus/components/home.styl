@@ -115,6 +115,7 @@
         margin-top 80px
         position relative
         clear right
+        float right
         
       & p
         font-size 16px
@@ -213,6 +214,9 @@
         max-width 300px
         font-family FuturaPTBold
         color black
+        
+      & .home_preferences_title
+        float right
 
     &_base
       top -100px
@@ -304,6 +308,7 @@
     
   &_slider
     position relative
+    overflow hidden
     
     & .slick
       &-prev
@@ -379,23 +384,35 @@
         
 @media (max-width: 1200px)
   .home
-    &_planet
-      transform scale(1)
-     
-    &_header  
-      &_moon
-      &_sun
-        position absolute
-        transform scale(0.5)
-        
+
+    &_header
       &_text
         &_2
           width 230px
 
     &_preferences
+      
+      &_base p
+        max-width 260px
       &_clients
         top 0px
-      
+        
+      &_press
+        
+        &_speakers
+          float left
+          clear left
+          left 50px
+
+        &_image
+          left 0px
+          right inherit
+          
+        & .home_preferences_title
+          float left
+          clear left
+          left 50px
+          
       &_future
         padding-top 50px
         top 0px
@@ -406,8 +423,16 @@
         top 0px
         padding-bottom 50px
         
+        & .home_preferences_title
+          float left
+
+
 @media (max-width: 992px)
   .home
+    &_header
+      &_text
+        max-width 210px
+        
     &_preferences
       &_clients
         overflow hidden
