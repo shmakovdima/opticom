@@ -91,12 +91,9 @@ class LoveButton extends Component {
   } 
   render() {
 
-    
-
     let loved = 'item_love pull-left'
     let id = this.props.data.item.id
     let array = JSON.parse(JSON.stringify(this.props.data.lovedItems))
-
 
     const eco = this.props.data.item.eco
 
@@ -154,9 +151,23 @@ class Item extends Component {
     }
   }
 
-  setChange() {
+  setChange(e) {
+    e.preventDefault()
 
+    let value = parseInt(e.target.value)
 
+  
+    if ((value <= 0) || (value=='') || (isNaN(value))) value = 0;
+
+    if (this.state.one==true) {
+      this.setState({
+        oneorder: value
+      })
+    }else{
+      this.setState({
+        alotorder: value
+      })
+    }
   }
 
   setOne() {
@@ -309,17 +320,6 @@ class Item extends Component {
             </div>
              {cost}
 
-        {/*
-            <div className='item_dropdown item_hide_gor pull-right'>
-              <DropdownButton title={dropdownmode} id='bg-nested-dropdown'>
-                <div>
-                  <MenuItem onClick={::this.setOne} eventKey='1'>поштучно</MenuItem>
-                  <MenuItem onClick={::this.setAlot} eventKey='2'>упаковки</MenuItem>
-                </div>
-              </DropdownButton>
-            </div>
-
-          */}
             <div className='item_desription'>
               {
                description.map(function(item) {

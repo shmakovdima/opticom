@@ -85,15 +85,10 @@ class CategorySlider extends Component {
 
     if (left < 0) left = 0;
 
-    
-
-    if ($('.categoryslider_right').hasClass('disabled')) {
-      
+  
+    if ($('.categoryslider_right').hasClass('disabled')) {     
       left = lentWidth-containerWidth;
-
     }
-
-
 
 
 
