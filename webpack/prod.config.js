@@ -5,7 +5,7 @@ const path = require('path');
 //const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   entry: [
     'bootstrap-loader',
     'webpack-hot-middleware/client',
@@ -21,11 +21,24 @@ module.exports = {
 
   plugins: [
 
+
+    new webpack.optimize.UglifyJsPlugin({
+        minimize: true,
+        comments: false,
+        sourceMap: false,
+        compress: {
+            drop_console: true
+        },
+        mangle: {
+            except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
+        }
+    }),
+
   
   
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"development"',
+        'NODE_ENV': JSON.stringify('production')
       },
       __DEVELOPMENT__: true,
     }),

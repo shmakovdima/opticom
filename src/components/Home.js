@@ -300,10 +300,10 @@ class Home extends Component {
                   <div className='home_preferences_social_image'></div>
                   <p>Поддерживаем <br/>10 благотворительных проектов, и постоянно ищем новые возможности сделать мир лучше!</p>
                 </div>
-                <div className='col20-lg-5 col20-sm-8 col20-md-10 home_preferences_future'>
+                <div className='col20-lg-5 col20-sm-10 col20-md-10 home_preferences_future'>
                   <span className='home_preferences_title greenlighted'>БУДУЩЕЕ <br/>ОПТИКОМ</span>
                   <p>Очередным этапом в развитии компании станет пополнение товарной линейки новыми экологичными товарами и запуск новых мощностей по производству биоупаковки.</p>
-                  <button className='home_preferences_future_button greenlighted close_modal'>НАПИШИТЕ<br/>НАМ</button>
+                  <button className='home_preferences_future_button hidden-sm hidden-xs hidden-md greenlighted close_modal'>НАПИШИТЕ<br/>НАМ</button>
                 </div>
                 <div className='col20-lg-6 col20-sm-10 col20-md-10 home_preferences_press'>
                   <Link to='/press' title='ПРЕСС-ЦЕНТР' className='home_preferences_title greenlighted'>ПРЕСС-ЦЕНТР
@@ -311,6 +311,9 @@ class Home extends Component {
                   <span className='home_preferences_press_speakers'>Спикеры компании — постоянные участники конференций в России и за рубежом</span>
                   <div className='home_preferences_press_image'></div>
                   <p>Более 3500 слушателей посетили наши выступления и мастер-классы в прошлом году</p>
+                </div>
+                <div className='text-center hidden-lg col-xs-12'>
+                  <button className='home_preferences_future_button2 greenlighted close_modal'>НАПИШИТЕ<br/>НАМ</button>
                 </div>
               </div>
             </div>            

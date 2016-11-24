@@ -39,6 +39,8 @@ class CategorySlider extends Component {
       curSlide: 0,
       slideLength: 0      
     }
+
+    this.prevcategory = 0;
   }
 
   leftSlide(){
@@ -76,6 +78,7 @@ class CategorySlider extends Component {
       $('.categoryslider_right').removeClass('disabled')
     }
 
+    if (left < 0) left = 0;
 
     $('.categoryslider_line').css({
         left: -left
