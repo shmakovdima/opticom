@@ -284,7 +284,7 @@ class Header extends Component {
             <If condition={isLogged==false}>
               <Then>
                 <li>
-                  <a className='greenlighted_left' onClick={::this.showLogin}>Вход</a>
+                  <a className='greenlighted_left header_enter' onClick={::this.showLogin}>Вход</a>
                 </li>
               </Then>
             </If>

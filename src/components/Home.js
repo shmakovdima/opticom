@@ -264,7 +264,6 @@ class Home extends Component {
                   <span className='home_preferences_clients_adds'>довольных клиентов развивают свой бизнес с Оптиком</span>
                   <span className='home_preferences_clients_riteil'>
 
-                  
                     <span>сетевой ретейл</span>    
                     <span className='adding'>РОЗНИЦА</span>
                     <span className='adding'>HORECA</span>
@@ -276,18 +275,19 @@ class Home extends Component {
                   </span>
                 </div>
                 <div className='col20-lg-5 col20-md-8 col20-lg-offset-0 col20-md-offset-2 col20-sm-10 col20-sm-offset-2 col20-sm-8 home_preferences_base'>
-                  <span className='home_preferences_title '>
+
+                  <Link to='/blog' title='База экологических знаний' className='home_preferences_title '>
                     <span>База <br/> экологических</span>
                     <br/>
                     <span className='greenlighted'>знаний</span>
-                  </span>
+                  </Link>
                   <div className='home_preferences_base_image'></div>
                   <p>Мы готовы поделиться своим опытом в производстве
                     и использовании экономичной 
                     продукции</p>
                 </div>
                 <div className='col20-lg-6 col20-md-8 col20-sm-10 home_preferences_ecology'>
-                  <span className=' home_preferences_title greenlighted'>ЭКОЛОГИЯ</span>
+                  <Link to='/ecology' className=' home_preferences_title greenlighted' title='ЭКОЛОГИЯ'>ЭКОЛОГИЯ</Link>
                   <p>ГК Оптиком - обладатель международных сертификатов в области экологии и бережного производства</p>
                   <div className='home_preferences_ecology_images pull-right'>
                     <img className='pull-right' src='images/home/ecology_3.png'/>
@@ -296,12 +296,12 @@ class Home extends Component {
                   </div>
                 </div>
                 <div className='col20-lg-9 col20-sm-10 col20-lg-offset-0 col20-md-offset-2 col20-sm-offset-0 col20-md-8 home_preferences_social'>
-                  <span className='home_preferences_title greenlighted'>СОЦИАЛЬНАЯ <br/>ОТВЕТСТВЕННОСТЬ</span>
+                  <Link to='/social' title='СОЦИАЛЬНАЯ ОТВЕТСТВЕННОСТЬ' className='home_preferences_title greenlighted'>СОЦИАЛЬНАЯ <br/>ОТВЕТСТВЕННОСТЬ</Link>
                   <div className='home_preferences_social_image'></div>
                   <p>Поддерживаем <br/>10 благотворительных проектов, и постоянно ищем новые возможности сделать мир лучше!</p>
                 </div>
                 <div className='col20-lg-5 col20-sm-10 col20-md-10 home_preferences_future'>
-                  <span className='home_preferences_title greenlighted'>БУДУЩЕЕ <br/>ОПТИКОМ</span>
+                  <Link to='/future' title='БУДУЩЕЕ ОПТИКОМ' className='home_preferences_title greenlighted'>БУДУЩЕЕ <br/>ОПТИКОМ</Link>
                   <p>Очередным этапом в развитии компании станет пополнение товарной линейки новыми экологичными товарами и запуск новых мощностей по производству биоупаковки.</p>
                   <button className='home_preferences_future_button hidden-sm hidden-xs hidden-md greenlighted close_modal'>НАПИШИТЕ<br/>НАМ</button>
                 </div>
