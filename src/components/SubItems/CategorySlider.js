@@ -40,7 +40,7 @@ class CategorySlider extends Component {
       slideLength: 0      
     }
 
-    this.prevcategory = 0;
+    this.prevCategory = 0;
   }
 
   leftSlide(){
@@ -66,23 +66,41 @@ class CategorySlider extends Component {
     this.setState({
       curSlide: Math.round(newSlide)
     })
+    
 
     let left = newSlide * $('.categoryslider_slide').width();
     let containerWidth = $('.categoryslider').width();
     let lentWidth = $('.categoryslider_line').width();
 
-    if (left>=(lentWidth-containerWidth)) {
+
+
+    if (left>(lentWidth-containerWidth)) {
       left = lentWidth-containerWidth;
+     
       $('.categoryslider_right').addClass('disabled')
+     
     }else{
       $('.categoryslider_right').removeClass('disabled')
     }
 
     if (left < 0) left = 0;
 
+    
+
+    if ($('.categoryslider_right').hasClass('disabled')) {
+      
+      left = lentWidth-containerWidth;
+
+    }
+
+
+
+
+
     $('.categoryslider_line').css({
         left: -left
     })
+    
   }
 
   showMenu(){
@@ -91,6 +109,8 @@ class CategorySlider extends Component {
   }
 
   hoverSlider(e) {
+    e.preventDefault()
+    e.stopPropagation()
     var x = e.pageX
     console.log(x)
     var containerWidth = $('.categoryslider').width()
