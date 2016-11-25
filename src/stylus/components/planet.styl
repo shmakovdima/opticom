@@ -30,3 +30,19 @@
       
       &_sun
       	transform scale(0.25)
+       
+@media (max-width: 768px)
+  .home
+    &_planet
+      z-index 15
+      top -7px
+      width 150%
+      left -27.5%
+      transform scale(0.6)
+    
+    &_header  
+      &_moon
+      &_sun
+        display block
+        transform scale(0.5)
+
