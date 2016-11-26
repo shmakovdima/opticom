@@ -57,11 +57,12 @@ class Menu extends Component {
     super(props);
     this.state = {
       curcategory: 0,
-      mobilemenu: true,
       curaddress: '',
       curoffice: '',
       show: false
     }
+
+    this.mobileMenu = true
   }
 
   componentDidMount() {
@@ -73,14 +74,9 @@ class Menu extends Component {
     $(document).on('click', '.close_modal', function(){
       self.setState({show: true})
     })
-
   }
 
-  showCategory() {
-    this.setState({
-      mobilemenu: !this.state.mobilemenu
-    })
-  }
+
 
   exitLogin() {
     this.setState({showuser: false})
@@ -90,7 +86,7 @@ class Menu extends Component {
 
   hideMenu(){
     $('body').removeClass('overflow');
-    this.props.pageActions.showMenu(!this.props.show_menu)
+    this.props.pageActions.showMenu(false)
   }
 
   setAddress(address){
@@ -128,7 +124,8 @@ class Menu extends Component {
   }
 
   showCats(){
-    this.setState({mobilemenu: !this.state.mobilemenu})
+    this.mobileMenu = !this.mobileMenu
+    this.forceUpdate()
   }
 
   setCat(id){
@@ -143,9 +140,20 @@ class Menu extends Component {
 
   render() {
 
-    const show_menu = this.props.show_menu
+    var show_menu = this.props.show_menu
+
+    var mobileMenu = this.mobileMenu
+
+    if ((show_menu == 'category') && (this.mobileMenu == true)) {
+      this.mobileMenu = false
+      this.props.pageActions.showMenu(true)
+    }
+    
+
+
+
     const Categories = this.props.Categories
-    const mobilemenu = this.state.mobilemenu
+    
 
     const windowWidth = this.props.windowWidth
     const mobile = (windowWidth < 768) ? true : false
@@ -181,7 +189,7 @@ class Menu extends Component {
         <If condition = {show_menu==true}>
           <Then>
             <div className='menu'>
-              <If condition={((mobile==true) && mobilemenu)}>
+              <If condition={((mobile==true) && mobileMenu)}>
                 <Then>
                   <div className='menu_overflow menu_mobile'>
                     <div className='container'>

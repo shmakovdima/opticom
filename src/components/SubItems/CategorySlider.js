@@ -103,6 +103,11 @@ class CategorySlider extends Component {
     this.props.pageActions.showMenu(!this.props.show_menu)
   }
 
+  showCategory() {
+    $('body').addClass('overflow');
+    this.props.pageActions.showMenu('category')
+  }
+
   hoverSlider(e) {
     e.preventDefault()
     e.stopPropagation()
@@ -208,12 +213,12 @@ class CategorySlider extends Component {
                         
                       </div>
 
-                    <div className='hidden-md hidden-lg hidden-sm home_hidden '>
+                    <div className='hidden-md hidden-lg hidden-sm '>
                       <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                         <span >Показать все категории</span>
                       </button>
-                       <h3 className='catalog_header_consult'>Нужна консультация?</h3>
-                      <Link className='catalog_header_consult_link' to='/order' title='Пригласить торгового представителя'>
+                       <h3 className='catalog_header_consult home_hidden '>Нужна консультация?</h3>
+                      <Link className='catalog_header_consult_link home_hidden ' to='/order' title='Пригласить торгового представителя'>
                         <span className='green_underline opacity'>Пригласить торгового представителя</span>
                       </Link>
                     </div>
@@ -240,12 +245,12 @@ class CategorySlider extends Component {
                           })
                         }
                       </Slider>
-                      <div className='hidden-md hidden-lg hidden-sm'>
-                        <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
+                      <div className='hidden-md hidden-lg hidden-sm '>
+                        <button onClick={::this.showCategory} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                           <span >Показать все категории</span>
                         </button>
-                         <h3 className='catalog_header_consult'>Нужна консультация?</h3>
-                        <Link className='catalog_header_consult_link' to='/order' title='Пригласить торгового представителя'>
+                         <h3 className='catalog_header_consult addintion'>Нужна консультация?</h3>
+                        <Link className='catalog_header_consult_link addintion' to='/order' title='Пригласить торгового представителя'>
                           <span className='green_underline opacity'>Пригласить торгового представителя</span>
                         </Link>
                       </div>

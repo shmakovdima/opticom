@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import HeaderDark from '../components/Headers/HeaderDark'
+import HeaderHome from '../components/Headers/HeaderHome'
 import AllIsReady from './SubItems/Catalog/AllIsReady'
 import Interesed from './SubItems/Catalog/Interesed'
 import CategorySlider from './SubItems/CategorySlider'
@@ -301,7 +302,9 @@ class Home extends Component {
         </section>
 
         <div style={topBody} className='home_main'>
+
           <section className='home_preferences' style={topSection}> 
+            <HeaderHome/>
             <div className='container'>
               <If condition={windowWidth>768}>
                 <Then>

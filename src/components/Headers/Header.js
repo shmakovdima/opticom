@@ -255,7 +255,7 @@ class Header extends Component {
 
     if ($('.home').length==0){
 
-      if (windowTop>34)  
+      if ((windowTop>34) &&  (!$('.header').hasClass('header_home')))
       {
         $('.header').addClass('fixed')
       }

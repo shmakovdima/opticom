@@ -6,13 +6,23 @@
   width 100%
   top 0px
   font-size 13px
-  z-index 2
+  z-index 10
   color white
   transform scaleY(1.0038)
   padding-top 50px
   font-family FuturaPTBold
   text-transform uppercase
   -webkit-transform: inherit
+  
+  &_home
+    visibility hidden
+    opacity 0
+    z-index -10!important
+    transition 150ms all ease-in
+    &.active
+      visibility visible
+      z-index 1000!important
+      opacity 1
   
   &_enter
     cursor pointer
@@ -24,8 +34,6 @@
     padding-bottom 15px
     z-index: 101
   
-  &.zindex
-    z-index 12
   
   &_recall
     overflow hidden
@@ -303,6 +311,7 @@
     height 24px
     font-size 14px
     line-height 20px
+    transition none
 
     & span
       position relative
