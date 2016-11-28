@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "forever start --minUptime 1000 --spinSleepTime 1000 bin/server.js",
-    "build": "node bin/server.js",
+    "build": "forever start --minUptime 1000 --spinSleepTime 1000 bin/server.js",
     "stop": "forever stop bin/server.js"
   },
   "author": "Dmitry Shmakov",

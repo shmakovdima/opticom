@@ -141,21 +141,29 @@ class Menu extends Component {
   render() {
 
     var show_menu = this.props.show_menu
+    const windowWidth = this.props.windowWidth
 
     var mobileMenu = this.mobileMenu
 
+
+    console.log('before')
+
     if ((show_menu == 'category') && (this.mobileMenu == true)) {
+      console.log('here')
       this.mobileMenu = false
-      this.props.pageActions.showMenu(true)
-    }
+    }  
+    console.log('this.mobileMenu ' + this.mobileMenu)
     
 
+    if (show_menu == 'category') {
+      this.props.pageActions.showMenu(true)
+    }
 
 
     const Categories = this.props.Categories
     
 
-    const windowWidth = this.props.windowWidth
+    
     const mobile = (windowWidth < 768) ? true : false
 
     var CutCategory = this.props.Categories[this.state.curcategory].childrens

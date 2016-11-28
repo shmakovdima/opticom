@@ -53,7 +53,6 @@ class CategorySlider extends Component {
 
   setSlide(newSlide){
 
-    console.log('newSlide' + newSlide)
     if (newSlide<0) newSlide = 0;
     if (newSlide>=(this.state.slideLength-1)) newSlide = this.state.slideLength-1;
 
@@ -112,7 +111,6 @@ class CategorySlider extends Component {
     e.preventDefault()
     e.stopPropagation()
     var x = e.pageX
-    console.log(x)
     var containerWidth = $('.categoryslider').width()
 
     var windowWidth = this.props.windowWidth
@@ -126,7 +124,7 @@ class CategorySlider extends Component {
     if (x>=containerWidth) x = containerWidth
 
     let curSlide = (x/containerWidth * this.state.slideLength)
-    console.log(curSlide)
+
 
     if (this.refs.slider) {
       //this.refs.slider.slickGoTo(Math.round(x/containerWidth * categories))

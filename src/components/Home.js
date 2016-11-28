@@ -202,6 +202,7 @@ class Home extends Component {
         topHome = {top: '-1px'}
         halfstep = (scrollTop/breakpoint)*2;
         if  (halfstep>1) halfstep = 1;
+        topSection = {top: 0}
 
         fullstep = ((scrollTop-breakpoint/2)/(breakpoint/2))
         //var fullrealstep = scrollTop/breakpoint
@@ -230,7 +231,7 @@ class Home extends Component {
 
       }else{
         topSection = {
-          top: ((scrollTop-breakpoint)<200) ? -50 + 50 *(scrollTop-breakpoint)/200  : 0
+          top: 0
         }
 
         text1 = {

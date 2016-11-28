@@ -265,8 +265,6 @@ class Header extends Component {
       }   
     }
 
-
-  
     return (
         <div className='container'>
           <ReCall  isOpen={this.state.shownumber} windowWidth = {windowWidth}>
