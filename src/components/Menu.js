@@ -74,6 +74,14 @@ class Menu extends Component {
     $(document).on('click', '.close_modal', function(){
       self.setState({show: true})
     })
+
+
+    var Addresses = ['Петропавловск-Камчатский', 'Москва']
+    var Offices = ['Головной офис', 'Местный офис']
+
+    if (this.state.curaddress == '') this.setState({curaddress: Addresses[0]})
+    if (this.state.curoffice == '') this.setState({curoffice: Offices[0]})
+
   }
 
 
@@ -180,9 +188,6 @@ class Menu extends Component {
 
     var Addresses = ['Петропавловск-Камчатский', 'Москва']
     var Offices = ['Головной офис', 'Местный офис']
-
-    if (this.state.curaddress == '') this.setState({curaddress: Addresses[0]})
-    if (this.state.curoffice == '') this.setState({curoffice: Offices[0]})
 
     const dropdownAddress = this.state.curaddress
     const dropdownOffice = this.state.curoffice

@@ -62,14 +62,22 @@ class ReCall extends Component {
     
   }
 
-
-  render() {
+  componentDidMount() {
 
     var Addresses = ['Петропавловск-Камчатский', 'Москва']
     var Offices = ['Головной офис', 'Местный офис']
 
     if (this.state.curaddress == '') this.setState({curaddress: Addresses[0]})
     if (this.state.curoffice == '') this.setState({curoffice: Offices[0]})
+  }
+
+
+  render() {
+
+    var Addresses = ['Петропавловск-Камчатский', 'Москва']
+    var Offices = ['Головной офис', 'Местный офис']
+
+
 
     const dropdownAddress = this.state.curaddress
     const dropdownOffice = this.state.curoffice

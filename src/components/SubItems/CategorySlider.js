@@ -35,42 +35,39 @@ class Carousel_Item extends Component {
 class CategorySlider extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      curSlide: 0,
-      slideLength: 0      
-    }
-
+    this.slideLength = 0;
+    this.curSlide = 0;
     this.prevCategory = 0;
   }
 
   leftSlide(){
-    this.setSlide(this.state.curSlide-1)
+    this.setSlide(this.curSlide-1);
   }
 
   rightSlide(){
-    this.setSlide(this.state.curSlide+1)
+    this.setSlide(this.curSlide+1);
   }
 
   setSlide(newSlide){
 
+    console.log('newSlide ' + newSlide);
+
     if (newSlide<0) newSlide = 0;
-    if (newSlide>=(this.state.slideLength-1)) newSlide = this.state.slideLength-1;
+
+    if (newSlide>=(this.slideLength-1)) newSlide = this.slideLength-1;
 
     if (newSlide<1) {
-      $('.categoryslider_left').addClass('disabled')
+      $('.categoryslider_left').addClass('disabled');
     }else{
-      $('.categoryslider_left').removeClass('disabled')
+      $('.categoryslider_left').removeClass('disabled');
     }
 
-    this.setState({
-      curSlide: Math.round(newSlide)
-    })
-    
+    this.curSlide = Math.round(newSlide);
 
+  
     let left = newSlide * $('.categoryslider_slide').width();
     let containerWidth = $('.categoryslider').width();
     let lentWidth = $('.categoryslider_line').width();
-
 
 
     if (left>(lentWidth-containerWidth)) {
@@ -89,11 +86,11 @@ class CategorySlider extends Component {
       left = lentWidth-containerWidth;
     }
 
-
-
     $('.categoryslider_line').css({
         left: -left
-    })
+    });
+
+
     
   }
 
@@ -108,8 +105,14 @@ class CategorySlider extends Component {
   }
 
   hoverSlider(e) {
+
+
+
     e.preventDefault()
     e.stopPropagation()
+
+
+
     var x = e.pageX
     var containerWidth = $('.categoryslider').width()
 
@@ -123,7 +126,7 @@ class CategorySlider extends Component {
 
     if (x>=containerWidth) x = containerWidth
 
-    let curSlide = (x/containerWidth * this.state.slideLength)
+    let curSlide = (x/containerWidth * this.slideLength)
 
 
     if (this.refs.slider) {
@@ -137,14 +140,19 @@ class CategorySlider extends Component {
 
   componentDidMount() {
 
+
+
     var self = this
-    $(document).on('mousemove', '#catalog_slider', this.hoverSlider.bind(this))
+
+    document.getElementById('catalog_slider_id').addEventListener('mousemove', self.hoverSlider.bind(self), false);
+
+
+  
+    //$(document).on('mousemove', '.catalog_slider_id', self.hoverSlider.bind(self))
     
     $(window).load(function(){
 
-      self.setState({
-        slideLength: $('.categoryslider_slide').length
-      })
+      self.slideLength = $('.categoryslider_slide').length
 
       $(document).on('click','.categoryslider_left', function(){
         self.leftSlide()
@@ -156,6 +164,17 @@ class CategorySlider extends Component {
      
     })
   }
+
+  componentWillUnmount() {
+
+
+
+    var self = this
+
+    document.getElementById('catalog_slider_id').removeEventListener('mousemove', self.hoverSlider.bind(self), false);
+  }
+
+
 
   render() {
     const Categories = this.props.Categories;
@@ -187,7 +206,7 @@ class CategorySlider extends Component {
                 <div className='categoryslider_right'></div> 
                 <div className='row' >
                  
-                  <div id='catalog_slider' className='col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12  catalog_header_slider slick_white'>
+                  <div id='catalog_slider_id' className='catalog_slider_id col20-lg-18 col20-lg-offset-1 col20-md-18 col20-md-offset-1 col-sm-12  catalog_header_slider slick_white'>
 
                       <div className='categoryslider'>
                         

@@ -14,8 +14,6 @@ export default class Ready extends Component  {
     classn = classn[classn.length-1]
     classn = 'ready_' + classn 
 
-    this.setState({id: classn})
-
     this.state = {
       height: 0,
       id: classn

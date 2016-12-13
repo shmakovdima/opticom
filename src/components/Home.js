@@ -98,7 +98,6 @@ class Home extends Component {
     var topSection = {top: 100}
 
 
-
     if (windowWidth > 768) {
       if (scrollTop < breakpoint) {
 

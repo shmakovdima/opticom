@@ -293,13 +293,8 @@ class Item extends Component {
       }
     }
 
-
-
     const titleshow = wordlenght(title, 50)
     const titleshow_hover = wordlenght(title, 80)
-
-
-    
 
     return(
       <div className={itemgor}>        
@@ -340,7 +335,7 @@ class Item extends Component {
                 <button className='item_order_minus' onClick={::this.setMinus}>-</button>
                 <input type='text' className='item_order_input' onChange={::this.setChange} value={inputValue} defaultValue={inputValue}/>
                 <button className='item_order_plus' onClick={::this.setPlus}>+</button>
-                <button className='item_order_button'>В корзину</button>
+                <button className='item_order_button'></button>
               </div>
             </div>
           </div>

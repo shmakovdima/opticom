@@ -19,6 +19,7 @@
   cursor pointer
   min-height 450px
   
+  
   &_nopadding
     & .col20-lg-4
       padding-left 0px
@@ -117,32 +118,31 @@
     & button
       background transparent
       float left
-      padding-left 8px
-      padding-right 8px
+      padding-left 12px
+      padding-right 12px
       
     &_button
       text-transform uppercase
       line-height 40px
+      height 40px
       color white
-      width calc(100% - 70px)
+      width calc(100% - 130px)
       float right!important
       padding-top 0px
       font-size 12px!important
       font-family FuturaPTBold
-      background color_green!important
+      background color_green url(../../../images/sprites/item_basket.png) no-repeat center!important
       transition 150ms all ease-in
       
       &:hover
-        background #98c04d!important
-        background: -webkit-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
-        background: -moz-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
-        background: -o-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
-        background: -ms-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
-        background-image: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%)!important
-      
+        background #98c04d url(../../../images/sprites/item_basket.png)
+        background-repeat no-repeat
+        background-position center
+
+
     & input
       float left
-      width 20px
+      width 60px
       text-align center
       line-height 40px
       height 40px
@@ -191,16 +191,6 @@
     height 12px
     width 56px
     background url(../../../images/sprites/item_new.png) no-repeat  
-    /*  
-    color transparent!important
-    -webkit-background-clip text
-    background-clip text
-    background-image: -webkit-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
-    background-image: -moz-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
-    background-image: -o-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
-    background-image: -ms-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
-    background-image: linear-gradient(-90deg, #4d9bc0 0%, #98c04d 100%)
-    */
       
   &_image
     position relative
@@ -364,6 +354,20 @@
           width: 130px
           right: -20px
           top: 101px
+          background color_green!important
+          
+
+          &:hover
+            background: -webkit-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
+            background: -moz-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
+            background: -o-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
+            background: -ms-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)!important
+            background: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%)!important
+
+
+
+
+
 
         &_body
           width 150px
@@ -921,26 +925,12 @@
       & button
         background transparent
         float left
-        padding-left 10px
-        padding-right 10px
-        
-      &_button
-        text-transform uppercase
-        line-height 40px
-        color white
-        padding-right inherit!important
-        padding-left inherit!important
-        float right!important
-        padding-top 0px
-        font-size 12px!important
-        font-family FuturaPTBold
-        background color_green!important
-        transition 150ms all ease-in
-        width calc(100% - 80px)
-        
+        padding-left 12px
+        padding-right 12px
+                
       & input
         float left
-        width 40px
+        width 60px
         text-align center
         line-height 40px
         height 40px
@@ -981,29 +971,8 @@
       height 150px
       width 100%
       
-@media (max-width: 550px)
-  .item
 
-    &_order
-      
-    
-      input
-        float none
-        margin 0 auto
-        display inline
-        
-      &_body
-        text-align center
-        button
-          padding-left 30px
-          padding-right 30px
-      
 
-      &_plus
-        float right!important
-      &_button
-        width 100%!important
-        float left!important
         
 
 
