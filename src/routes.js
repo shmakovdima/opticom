@@ -45,6 +45,9 @@ import Social from './components/Social'
 import Contacts from './components/Contacts'
 import Cooperation from './components/Cooperation'
 
+import Future from './components/Future'
+
+
 export const routes = (
   <div>
     <Route path='/' component={App}>      
@@ -74,6 +77,8 @@ export const routes = (
       <Route path='social' component={Social}/>
       <Route path='contacts' component={Contacts}/>
       <Route path='cooperation' component={Cooperation}/>
+
+      <Route path='future' component={Future}/>
 
       <Route path='press' component={Press}>
         <IndexRoute component={PressNews} />
