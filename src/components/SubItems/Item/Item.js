@@ -154,7 +154,13 @@ class Item extends Component {
   setChange(e) {
     e.preventDefault()
 
-    let value = parseInt(e.target.value)
+    let inputValue = e.target.value
+    inputValue = inputValue.replace(/\s/g, '')
+    let value = parseInt(inputValue)
+
+    if (value > 999999) {
+      value = Math.floor(value/10)
+    }
 
   
     if ((value <= 0) || (value=='') || (isNaN(value))) value = 0;
@@ -221,8 +227,8 @@ class Item extends Component {
 
     if (this.state.one==false) additiontext = 'за одну упаковку'
 
-    if ((this.state.one==false) && (this.state.alotorder>0)) additiontext+=', отложено '+this.state.alotorder
-    if ((this.state.one==true) && (this.state.oneorder >0)) additiontext+=', отложено '+this.state.oneorder
+    if ((this.state.one==false) && (this.state.alotorder>0)) additiontext+=', отложено ' + cutnumber(this.state.alotorder)
+    if ((this.state.one==true) && (this.state.oneorder >0)) additiontext+=', отложено ' + cutnumber(this.state.oneorder)
 
 
     var textcost, textcostgor 
@@ -333,7 +339,7 @@ class Item extends Component {
               </div>
               <div className='item_order_body'>
                 <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                <input type='text' className='item_order_input' onChange={::this.setChange} value={inputValue} defaultValue={inputValue}/>
+                <input type='text' className='item_order_input' onChange={::this.setChange} value={cutnumber(inputValue)} defaultValue={cutnumber(inputValue)}/>
                 <button className='item_order_plus' onClick={::this.setPlus}>+</button>
                 <button className='item_order_button'></button>
               </div>

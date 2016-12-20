@@ -5,21 +5,46 @@ import {connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as pageActions from '../../actions/emptyCart'
 
+
+
 import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 import CartItem from '../SubItems/Item/CartItem'
 import CartRight from './CartRight'
 
+import Sticky  from 'sticky-js';
+import setHeightLeftBlock from '../function/setHeightLeftBlock';
 
 class Cart extends Component {
+
+
+  constructor(props){
+    super(props);
+    this.sticky = new Sticky('.sticky_container');
+  }
+
+
+  componentDidUpdate() {
+    setHeightLeftBlock(this);
+    
+  }
+
+
+  componentDidMount(){
+    setHeightLeftBlock(this);
+
+  }
 
   emptyCart(){
     this.props.pageActions.emptyCart([])
   }
 
   render(){
+   
     var CartItems = this.props.Cart
+    this.sticky.update();
+
     return(
       <div>
         <HeaderLight/>
@@ -40,7 +65,7 @@ class Cart extends Component {
         <section>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-14 col20-md-14 col20-sm-15'>
+              <div className='col20-lg-14 col20-md-14 col20-sm-15' id = 'leftPart'>
                 <div>
                   {
                     CartItems.map(function(item, key){
@@ -53,32 +78,36 @@ class Cart extends Component {
                 </div>
 
               </div>
-              <div className='col20-lg-offset-2 col20-lg-4 col20-md-offset-1 col20-md-5  col20-sm-5'>
-                <div className='profile_right'>
-                  <CartRight/>
-                 <Link to='/delivery' title='Далее' className='cart_total_button button'>
-                    Далее
-                  </Link>
-                </div>
-                <div className='cart_links'>
-                  <button className='cart_trash greenborderbottom' onClick={::this.emptyCart}>
-                    <span>Очистить корзину
-                    </span>
-                    </button>
-                  <Link className='cart_add greenborderbottom' to='addtoset' title='Добавить в набор '>
-                    <span>Добавить в набор
-                    </span>
-                   </Link>
-                  <Link className='cart_print greenborderbottom' to='print' title='Распечатать'>
-                    <span>
-                    Распечатать
-                    </span>
-                  </Link>
-                  <Link className='cart_excel greenborderbottom' to='excel' title='Выгрузить в Excel (.xls)'>
-                    <span>
-                    Выгрузить в Excel (.xls)
-                    </span>
-                  </Link>   
+              <div className='col20-lg-offset-2 col20-lg-4 col20-md-offset-1 col20-md-5  col20-sm-5' data-sticky-container id = 'rightPart'>
+                <div className='sticky_container' data-margin-top='100' data-sticky-for="768">
+                  <div  className='sticky'>
+                    <div className='profile_right' >
+                      <CartRight/>
+                     <Link to='/delivery' title='Далее' className='cart_total_button button'>
+                        Далее
+                      </Link>
+                    </div>
+                    <div className='cart_links'>
+                      <button className='cart_trash greenborderbottom' onClick={::this.emptyCart}>
+                        <span>Очистить корзину
+                        </span>
+                        </button>
+                      <Link className='cart_add greenborderbottom' to='addtoset' title='Добавить в набор '>
+                        <span>Добавить в набор
+                        </span>
+                       </Link>
+                      <Link className='cart_print greenborderbottom' to='print' title='Распечатать'>
+                        <span>
+                        Распечатать
+                        </span>
+                      </Link>
+                      <Link className='cart_excel greenborderbottom' to='excel' title='Выгрузить в Excel (.xls)'>
+                        <span>
+                        Выгрузить в Excel (.xls)
+                        </span>
+                      </Link>   
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,7 +125,8 @@ class Cart extends Component {
 function mapStateToProps (state) {
   return {
     Cart: state.user.Cart,
-    windowWidth: state.pageData.Cart
+    windowWidth: state.pageData.windowWidth,
+    windowTop: state.pageData.windowTop
   }
 }
 

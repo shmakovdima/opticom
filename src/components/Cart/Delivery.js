@@ -3,12 +3,14 @@ import '../../stylus/components/profile.styl'
 import HeaderLight from '../../components/Headers/HeaderLight'
 import {connect } from 'react-redux'
 
+import setHeightLeftBlock from '../function/setHeightLeftBlock992'
+
 import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 
 import Adress from '../Profile/adress'
-
+import Sticky  from 'sticky-js';
 import { If, Then } from 'react-if';
 import isValidEmailAddress from '../function/isValidEmailAddress'
 import 'jquery.maskedinput/src/jquery.maskedinput.js'
@@ -49,6 +51,7 @@ class Delivery extends Component {
       editAddress: false,
       Delivery: this.props.Delivery
     };
+    this.sticky = new Sticky('.sticky_container');
   }
 
   changeSetDate() {
@@ -59,7 +62,18 @@ class Delivery extends Component {
   }
 
 
+  componentDidUpdate() {
+    setHeightLeftBlock(this);
+    
+  }
+
+
+
+
   componentDidMount() {
+
+    setHeightLeftBlock(this);
+
     var self = this
     $('.phone').mask('+7 (999) 999-9999');
 
@@ -113,7 +127,7 @@ class Delivery extends Component {
 
 
   render(){
-
+    this.sticky.update();
 
     var monthLabels = ['Январь','Февраль','Март','Апрель','Май','Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь']
 
@@ -143,7 +157,7 @@ class Delivery extends Component {
         <section>
           <div className='container'>
             <div className='row'>
-              <div className='col-lg-offset-2 col20-lg-10 col-md-offset-2 col20-md-10'>
+              <div className='col-lg-offset-2 col20-lg-10 col-md-offset-2 col20-md-10' id='leftPart'>
                 <div className='profile_block'>
                   <h2>Получатель</h2>
                     <div className='row'>
@@ -259,24 +273,27 @@ class Delivery extends Component {
                  <MountPhone/>
 
               </div>
-              <div className='col20-lg-offset-1 col20-lg-4 col20-md-offset-1 col20-md-4'>
-                <div className='profile_right'>
-                  <h2>Итого</h2>
-                  <span className='cart_total_cost'>18 056 ₽</span>
-                  <span className='cart_total_vendors'>24 артикула</span>
-                  <span className='cart_total_qual'>
-                    <span>32 ед.</span>
-                    <span> • </span>
-                    <span>4 уп.</span>                  
-                  </span>
-                  <span className='cart_total_waiting'>
-                    Ожидаемая дата поставки — 24 мая
-                  </span>
-                  <Link to='/submit' title='Далее' className='cart_total_button button'>
-                    Далее
-                  </Link>
+              <div className='col20-lg-offset-1 col20-xs-20 col20-sm-20 col20-lg-4 col20-md-offset-1 col20-md-4' id='rightPart' data-sticky-container>
+                <div className='sticky_container' data-margin-top='100' data-sticky-for='992'>
+                  <div  className='sticky'>
+                    <div className='profile_right'>
+                      <h2>Итого</h2>
+                      <span className='cart_total_cost'>18 056 ₽</span>
+                      <span className='cart_total_vendors'>24 артикула</span>
+                      <span className='cart_total_qual'>
+                        <span>32 ед.</span>
+                        <span> • </span>
+                        <span>4 уп.</span>                  
+                      </span>
+                      <span className='cart_total_waiting'>
+                        Ожидаемая дата поставки — 24 мая
+                      </span>
+                      <Link to='/submit' title='Далее' className='cart_total_button button'>
+                        Далее
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-
 
               </div>
             </div>
@@ -292,7 +309,7 @@ class Delivery extends Component {
 
 function mapStateToProps (state) {
   return {
-    windowWidth: state.pageData.Cart,
+    windowWidth: state.pageData.windowWidth,
     Delivery: state.user.Delivery
   }
 }

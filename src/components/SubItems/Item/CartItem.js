@@ -105,10 +105,31 @@ class CartItem extends Component {
       }) 
     }  }
 
-  setChange() {
+  setChange(e) {
+    e.preventDefault()
 
+    let inputValue = e.target.value
+    inputValue = inputValue.replace(/\s/g, '')
+    let value = parseInt(inputValue)
 
+    if (value > 999999) {
+      value = Math.floor(value/10)
+    }
+
+  
+    if ((value <= 0) || (value=='') || (isNaN(value))) value = 0;
+
+    if (this.state.one==true) {
+      this.setState({
+        oneorder: value
+      })
+    }else{
+      this.setState({
+        alotorder: value
+      })
+    }
   }
+
 
   setOne() {
     this.setState({
@@ -231,7 +252,7 @@ class CartItem extends Component {
                         <div className='item_cart_buttonbody text-center'>
                           <div className='item_cart_buttoninput text-center'>
                             <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                            <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
+                            onChange={::this.setChange} value={cutnumber(inputValue)} defaultValue={cutnumber(inputValue)}
                             <button className='item_order_plus' onClick={::this.setPlus}>+</button>
                           </div>
                         </div>  
@@ -255,8 +276,9 @@ class CartItem extends Component {
                 <button className={item_order_buttons_alot} onClick={::this.setAlot}>упаковки</button>
               </div>
               <div className='item_order_body text-center'>
+
                 <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
+                <input pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={cutnumber(inputValue)} defaultValue={cutnumber(inputValue)}/>
                 <button className='item_order_plus' onClick={::this.setPlus}>+</button>
               </div>
 

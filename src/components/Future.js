@@ -27,7 +27,7 @@ export default class Future extends Component {
               <div className='container'>
                 <div className='row'>
 
-                 <div className='today_ecology_image'>
+                 <div className='l '>
                   </div>
 
                   <div className='col20-lg-9 col20-lg-offset-1 col-md-5 col-sm-5 col-xs-12'>

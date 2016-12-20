@@ -10,9 +10,32 @@ import '../../stylus/components/cart.styl';
 import {Link} from 'react-router'
 import CartItem from '../SubItems/Item/CartItem'
 
+
+import Sticky  from 'sticky-js';
+import setHeightLeftBlock from '../function/setHeightLeftBlock';
+
 class Submit extends Component {
+
+
+  constructor(props){
+    super(props);
+    this.sticky = new Sticky('.sticky_container');
+  }
+
+
+  componentDidUpdate() {
+    setHeightLeftBlock(this);
+    
+  }
+
+
+  componentDidMount(){
+    setHeightLeftBlock(this);
+  }
+
   render(){
-    var CartItems = this.props.Submit
+    var CartItems = this.props.Submit;
+    this.sticky.update();
     return(
       <div>
         <HeaderLight/>
@@ -33,7 +56,7 @@ class Submit extends Component {
         <section>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-15 col20-md-15'>
+              <div className='col20-lg-15 col20-md-15 col20-sm-15 col20-xs-20' id = 'leftPart'>
 
                 <div className='col20-lg-offset-2 col20-md-offset-2 cart_submit_padding'>
                   <div className='profile_block'>
@@ -114,28 +137,32 @@ class Submit extends Component {
                 </div>
 
               </div>
-              <div className='col20-lg-offset-1 col20-lg-4 col20-md-offset-1 col20-md-4'>
-                <div className='profile_right'>
-                  <CartRight/>
-                  <Link to='/delivery' title='Далее' className='cart_total_button button'>
-                    Далее
-                  </Link>
-                </div>
-                <div className='cart_links'>
-                  <Link className='cart_add greenborderbottom' to='addtoset' title='Добавить в набор '>
-                    <span>Добавить в набор
-                    </span>
-                   </Link>
-                  <Link className='cart_print greenborderbottom' to='print' title='Распечатать'>
-                    <span>
-                    Распечатать
-                    </span>
-                  </Link>
-                  <Link className='cart_excel greenborderbottom' to='excel' title='Выгрузить в Excel (.xls)'>
-                    <span>
-                    Выгрузить в Excel (.xls)
-                    </span>
-                  </Link>   
+              <div className='col20-lg-offset-1 col20-lg-4 col20-md-offset-1 col20-md-4 col20-sm-5 col20-xs-20' id = 'rightPart' data-sticky-container>
+                <div className='sticky_container' data-margin-top='100' data-sticky-for='768'>
+                  <div  className='sticky'>
+                    <div className='profile_right'>
+                      <CartRight/>
+                      <Link to='' title='Далее' className='cart_total_button button'>
+                        Далее
+                      </Link>
+                    </div>
+                    <div className='cart_links'>
+                      <Link className='cart_add greenborderbottom' to='addtoset' title='Добавить в набор '>
+                        <span>Добавить в набор
+                        </span>
+                       </Link>
+                      <Link className='cart_print greenborderbottom' to='print' title='Распечатать'>
+                        <span>
+                        Распечатать
+                        </span>
+                      </Link>
+                      <Link className='cart_excel greenborderbottom' to='excel' title='Выгрузить в Excel (.xls)'>
+                        <span>
+                        Выгрузить в Excel (.xls)
+                        </span>
+                      </Link>   
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -152,7 +179,7 @@ class Submit extends Component {
 function mapStateToProps (state) {
   return {
     Submit: state.user.Submit,
-    windowWidth: state.pageData.Cart
+    windowWidth: state.pageData.windowWidth
   }
 }
 

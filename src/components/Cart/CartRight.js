@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
 import MountCost from './MountCost'
-export default class CartRight extends Component {
+import {connect } from 'react-redux'
+
+
+
+
+
+
+class CartRight extends Component {
+
+
   render(){
+
     return(
-      <div>
+      <div >
         <h2>Итого</h2>
         <span className='cart_total_cost'>18 056 ₽</span>
         <span className='cart_total_vendors'></span>
@@ -21,3 +31,14 @@ export default class CartRight extends Component {
     )
   }
 }
+
+
+function mapStateToProps (state) {
+  return {
+    windowTop: state.pageData.windowTop,
+    windowWidth: state.pageData.windowWidth
+  }
+}
+
+
+export default connect(mapStateToProps)(CartRight)
