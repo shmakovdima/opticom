@@ -15,7 +15,7 @@ class EcologyItem extends Component {
     var category = this.props.data.type.join(', ')
     return(
 
-            <div className='ecology_item'>
+            <div className='ecology_item col20-xs-20'>
               <If condition={img!=false}>
                 <Then >
                   <div style={img} className='ecology_item_image'>
@@ -73,14 +73,14 @@ class Ecology extends Component {
             <div className='container'>
               <div className='row'>
                
-                <div className='col20-lg-19 col20-lg-offset-1 col20-md-19 col20-md-offset-1 col20-sm-9 '>
+                <div className='col20-lg-19 col20-lg-offset-1 col20-md-19 col20-md-offset-1 col20-sm-20 col20-xs-20 '>
                   <h1>База эко знаний</h1>
                 </div>
               </div>
               <div className='row'>
-                <div className='col20-lg-15 col20-md-15 col-sm-10 col-xs-12'>
+                <div className='col20-lg-15 col20-md-20 col20-sm-20 col20-xs-20'>
 
-                  <div className='col20-lg-18 col20-lg-offset-2 col20-md-18 col20-md-offset-2 col20-sm-9 '>
+                  <div className='col20-lg-18 col20-lg-offset-2 col20-md-18 col20-md-offset-2 col20-sm-20 col20-xs-20 '>
                     <p className='ecology_heading'>
                       Группа компаний «ОптиКом» — лидирующий оператор российского рынка оптовых поставок упаковочных и расходных материалов, товаров хозяйственно-бытового назначения.
                     </p>
@@ -99,7 +99,7 @@ class Ecology extends Component {
 
                 }
                 </div>
-                <div className='col20-lg-4 col20-lg-offset-1 col20-md-5 col20-md-offset-1 '>
+                <div className='col20-lg-4 col20-lg-offset-1 col20-md-20 col20-sm-20 col20-xs-20'>
                   <div className='ecology_category'>
                     <span className='active greenlighted_left'>Все</span>
                     <a className='greenlighted_left'>Статьи</a>

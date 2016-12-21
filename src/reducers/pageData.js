@@ -467,7 +467,7 @@ const initialState = {
   FooterLinks: [
     {
       title: 'Компания',
-      href: 'company'
+      href: 'today'
     },
     {
       title: 'Сотрудничество',

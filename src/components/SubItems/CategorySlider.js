@@ -50,7 +50,8 @@ class CategorySlider extends Component {
 
   setSlide(newSlide){
 
-    console.log('newSlide ' + newSlide);
+
+
 
     if (newSlide<0) newSlide = 0;
 
@@ -88,10 +89,7 @@ class CategorySlider extends Component {
 
     $('.categoryslider_line').css({
         left: -left
-    });
-
-
-    
+    }); 
   }
 
   showMenu(){
@@ -106,34 +104,31 @@ class CategorySlider extends Component {
 
   hoverSlider(e) {
 
-
-
     e.preventDefault()
     e.stopPropagation()
 
-
-
     var x = e.pageX
+
+    console.log(x);
+
+
     var containerWidth = $('.categoryslider').width()
 
     var windowWidth = this.props.windowWidth
 
     var checkWidth = (windowWidth-containerWidth)/2
 
-    x = x-checkWidth
+    x = x - checkWidth
 
     if (x<=0) x = 0
 
     if (x>=containerWidth) x = containerWidth
 
-    let curSlide = (x/containerWidth * this.slideLength)
+    var curSlide = (x/containerWidth * this.slideLength)
 
-
-    if (this.refs.slider) {
-      //this.refs.slider.slickGoTo(Math.round(x/containerWidth * categories))
-    }
 
     if (curSlide<=0) curSlide = 0
+
 
     this.setSlide(curSlide)
   }
@@ -142,17 +137,38 @@ class CategorySlider extends Component {
 
 
 
-    var self = this
+    var self = this;
+    self.slideLength = $('.categoryslider_slide').length;
 
-    document.getElementById('catalog_slider_id').addEventListener('mousemove', self.hoverSlider.bind(self), false);
+
+    var screen = document.getElementById('catalog_slider_id');
+    if(screen) {
+      screen.removeEventListener('mousemove', self.hoverSlider.bind(self), false);
+      screen.addEventListener('mousemove', self.hoverSlider.bind(self), false);
+    }
 
 
   
     //$(document).on('mousemove', '.catalog_slider_id', self.hoverSlider.bind(self))
     
+    $(window).resize(function(){
+      self.slideLength = $('.categoryslider_slide').length;
+    });
+
     $(window).load(function(){
 
-      self.slideLength = $('.categoryslider_slide').length
+      var screen = document.getElementById('catalog_slider_id');
+
+
+
+      if(screen) {
+        screen.removeEventListener('mousemove', self.hoverSlider.bind(self), false);
+        screen.addEventListener('mousemove', self.hoverSlider.bind(self), false);
+      }
+
+
+
+      self.slideLength = $('.categoryslider_slide').length;
 
       $(document).on('click','.categoryslider_left', function(){
         self.leftSlide()
@@ -165,13 +181,16 @@ class CategorySlider extends Component {
     })
   }
 
+
+
   componentWillUnmount() {
 
-
-
     var self = this
-
-    document.getElementById('catalog_slider_id').removeEventListener('mousemove', self.hoverSlider.bind(self), false);
+    var screen = document.getElementById('catalog_slider_id');
+    if (screen) {
+      screen.removeEventListener('mousemove', self.hoverSlider.bind(self), false);
+    }
+    
   }
 
 
@@ -214,7 +233,7 @@ class CategorySlider extends Component {
                           <div className='hidden-xs categoryslider_slide'>
                             <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                               <span >Показать все </span>
-                              <wbr/>
+                              <br/>
                               <span >категории</span>
                             </button>
                           </div>
@@ -252,7 +271,7 @@ class CategorySlider extends Component {
                         <div  className='hidden-xs' key={slidernumber}>
                           <button onClick={::this.showMenu} className='text-left catalog_header_slider_loadmore greenborderbottom'>
                             <span >Показать все </span>
-                            <wbr/>
+                            <br/>
                             <span >категории</span>
                           </button>
                         </div>

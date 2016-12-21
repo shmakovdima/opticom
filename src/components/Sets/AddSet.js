@@ -28,7 +28,7 @@ class AddSet extends Component {
         <div className='container'>
           <div className='row'>
             <div className='category_header_absolute'>
-              <div className='sets_header_picture'>
+              <div className='sets_header_picture hidden-xs hidden-sm'>
               </div>
             </div>
           </div>

@@ -22,8 +22,9 @@ class Sets extends Component {
 
     let Sets = this.props.Sets
     var breadcrumb_link = ''
-    let breadcrumbs = [{link: 'catelog', title:'Каталог'}]
+    let breadcrumbs = [{link: 'catalog', title:'Каталог'}]
     let only_eco = this.props.only_eco
+
     return (
       <div>
         <HeaderLight/>
@@ -53,11 +54,11 @@ class Sets extends Component {
 
               </ol>
               <h1 className='sub'>Популярные наборы</h1>
-              <div className='pull-right'>
-               <EcoCheckbox />
+              <div className ='hidden-xs pull-right'>
+               <EcoCheckbox  />
               </div>
               <div>
-                <span className='sets_header_description'>Выберите один из готовых наборов, и вы сможете всегда изменить его состав под свою потребность</span>
+                <span className='sets_header_description col20-sm-12 col20-xs-20'>Выберите один из готовых наборов, и вы сможете всегда изменить его состав под свою потребность</span>
               </div>
             </div>
           </div>
@@ -90,7 +91,8 @@ class Sets extends Component {
 function mapStateToProps (state) {
   return {
     Sets: state.pageData.Sets,
-    only_eco: state.user.only_eco
+    only_eco: state.user.only_eco,
+    windowWidth: state.pageData.windowWidth
   }
 }
 

@@ -19,8 +19,8 @@ class PressSmiItem extends Component {
   
     return(
       <div className='press_news_item'>
-        <div style={img} className='press_news_image pull-left'></div>
-        <div className='pull-right press_news_block'>
+        <div style={img} className='press_news_image hidden-xs pull-left'></div>
+        <div className='press_news_block'>
           <span className='press_news_date'>{date}</span>
           <Link className='press_news_link' to={link} title={title}>
 
@@ -94,7 +94,7 @@ class PressSmi extends Component {
                   Data.map(function(item){
 
                     return(
-                      <div className='col20-lg-9 col20-lg-offset-1 col-md-6 col-sm-6 col-xs-12'>
+                      <div className='col20-lg-9 col20-lg-offset-1 col-md-6 col-sm-12 col-xs-12'>
                         <PressSmiItem data={item}/>
                       </div>
                     )

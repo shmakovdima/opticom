@@ -196,7 +196,7 @@ class ProfileOrders extends Component {
                
 
               </div>
-              <div className='col20-lg-5 col20-lg-offset-1 col20-md-5 col20-md-offset-1 hidden-sm '>
+              <div className='col20-lg-5 col20-lg-offset-1 col20-md-5 col20-md-offset-1 hidden-sm hidden-xs'>
                 <div className='profile_right profile_orders_top'>
                   <h3 className='profile_orders_title'>Адрес доставки</h3>
                     <div className='profile_orders_dropdown'>

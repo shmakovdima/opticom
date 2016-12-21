@@ -18,7 +18,7 @@ class ProfileSets extends Component {
             <div className='profile_sets_white'></div>
             <div className='col20-lg-9 col20-lg-offset-1 col20-md-9 col20-md-offset-1 col20-sm-9 '>
               <h1>Наборы</h1>
-              <span className='profile_sets_popular'>Популярные</span>
+              <span className='profile_sets_popular'>Популярные наборы</span>
             </div>
             <div className='profile_sets_popular_block'>
               {

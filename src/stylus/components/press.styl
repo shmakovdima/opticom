@@ -119,6 +119,8 @@
 
     & img
       max-width 100%
+      float left
+      position relative
     
     & + &
       margin-top 70px
@@ -128,10 +130,14 @@
       font-family FuturaPTMedium
       line-height 23px
       color black
+      position relative
+      float left
+      clear left
       padding-top 10px
 
     & h2
       font-size: 24px
+      line-height 80px
       padding-bottom 20px
       font-family FuturaPTHeavy
       
@@ -239,6 +245,7 @@
 
     & p
       color: #000000
+      margin-bottom 50px
       font-family LeksaPro
       font-size 16px
       line-height 32px
@@ -289,6 +296,8 @@
     & a
       display block
       float left
+      margin-top 7px
+      margin-bottom 7px
       position relative
       text-transform uppercase
       font-size 12px
@@ -310,3 +319,42 @@
           bottom 1px
           right -10px
   
+@media(max-width: 768px)
+  .press
+    
+    &_projects
+      &_item
+        margin-bottom 100px
+    
+    &_news
+      
+      &_date
+        float left
+      
+      &_where
+        position: relative;
+        margin-top: 30px;
+        float: left;
+        width: 100%;
+      
+      &_block
+        width 100%
+      &_link
+        font-size: 18px;
+        line-height: 28px;
+        
+      &_where
+        line-height: 22px;
+        font-size: 16px;
+
+    &_future
+
+      h1
+        font-size 36px
+        line-height 40px
+        
+      .profile_sets_header 
+        padding-top 75px
+        
+    & section
+      overflow hidden

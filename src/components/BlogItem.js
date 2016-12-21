@@ -21,7 +21,7 @@ class EcologyItem extends Component {
               <div className='row'>
                
                
-                <div className='col20-lg-14 col20-lg-offset-3 col20-md-14 col20-md-offset-3 col20-sm-9 '>
+                <div className='col20-lg-14 col20-lg-offset-3 col20-md-14 col20-md-offset-3 col20-sm-20 col20-xs-20'>
 
 
                   <ol className='breadcrumb'>
@@ -43,7 +43,7 @@ class EcologyItem extends Component {
           <section>
             <div className='container'>
               <div className='row'>
-                <div className='col20-lg-12 col20-lg-offset-3 col20-md-12 col20-md-offset-3 col-sm-10 col-xs-12 ecology_content'>
+                <div className='col20-lg-12 col20-lg-offset-3 col20-md-12 col20-md-offset-3 col20-sm-20 col20-xs-20 ecology_content'>
                   <p>
                   20 июня компания «ОптиКом» приняла участие в обсуждении экологической ответственности бизнеса на молодежной образовательной конференции в Санкт-Петербурге «Экологическая ответственность бизнеса: состояние и перспективы».
                   </p>
@@ -60,7 +60,7 @@ class EcologyItem extends Component {
                   </ul>
 
                 </div>
-                <div className='col20-lg-4 col20-lg-offset-1 col20-md-5 col20-md-offset-1 '>
+                <div className='col20-lg-4 col20-lg-offset-1 col20-md-5 col20-md-offset-1 col20-sm-20 col20-xs-20'>
                   <div className='ecology_category'>
                     <span className='active greenlighted_left'>Все</span>
                     <a className='greenlighted_left'>Статьи</a>

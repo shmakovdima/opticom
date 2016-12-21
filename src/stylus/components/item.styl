@@ -276,7 +276,9 @@
       width 100%
       max-width 10000px
       min-width 0px
-      min-height 213px
+      min-height 215px
+      
+
       
       &_eco
         position absolute
@@ -411,7 +413,9 @@
           float left
       
       &_under
-        min-height 210px
+        min-height 213px
+        border-top none
+        border-bottom none
 
       &:hover
       &:active
@@ -768,7 +772,6 @@
             
             & button
               line-height 30px
-              width 30px
               
             & input
               height 30px
@@ -847,6 +850,41 @@
           
 @media (max-width: 768px)
 
+  .item_gor.address .item_under
+    min-height: 210px;
+
+  .item_gor.address .item
+    min-height 230px
+
+  .item_gor.address:hover .item_under
+    min-height 229px
+    left 0px
+    width calc(100% + 34px)
+
+  .item_gor.address
+    .item:hover
+      .item_under
+        left 0px
+        right 0px
+        width calc(100% + 24px)
+
+  .item_orderitem.item_gor .item:hover .item_under
+    left 0px
+    right 0px
+    width calc(100% + 24px)
+        
+  .item_orderitem.item_gor 
+    & .item
+    & .item_under
+      min-height 230px
+      
+  .item
+    &:hover
+
+        
+      .item_orderitem.item_gor .item
+        min-height 210px
+
   .item
     transition none!important
     position relative
@@ -855,6 +893,56 @@
     margin-bottom 20px
     margin-top 20px
     width calc(100vw - 75px)
+    
+    &_orderblock
+      width 50%
+      min-height 130px
+      height auto
+      
+
+      &_statusblock
+        float left
+        clear left
+        width 50%
+        
+      &_dateblock
+        width 50%
+        
+      &_date
+        text-align right
+        float right
+      
+      &_costblock
+        margin-top 20px
+        text-align right
+        width 50%
+        
+      &_cost
+        float right
+        clear both
+        
+      &_vendors
+        float right
+        clear both
+    
+    &_message
+      float left
+      position relative
+      width 100%
+      
+      & .item
+        &:hover
+          .item
+            &_under
+              display inherit
+              left 0px
+              right 0px
+              width calc(100% + 24px)
+      
+      &.item_gor 
+        min-height: 198px;
+        & .item_under
+          min-height: 198px;
     
 
     &_under
@@ -974,12 +1062,6 @@
       margin-top 60px
       height 150px
       width 100%
-      
-
-
-        
-
-
 
 .readyset
 .interesed.buytoo

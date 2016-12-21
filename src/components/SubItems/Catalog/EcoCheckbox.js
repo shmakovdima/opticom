@@ -12,6 +12,13 @@ class EcoCheckbox_Block extends Component {
   }
 
   render() {
+
+    var windowWidth = this.props.windowWidth
+
+    if (windowWidth < 768) {
+      this.props.setEco(false)
+    }
+
     let checked = this.props.only_eco ? 'checked' : ''
     return (
       <div className='ecocheckbox'>
@@ -42,7 +49,8 @@ class EcoCheckbox extends Component {
 
 function mapStateToProps (state) {
   return {
-    only_eco: state.user.only_eco
+    only_eco: state.user.only_eco,
+    windowWidth: state.pageData.windowWidth
   }
 }
 

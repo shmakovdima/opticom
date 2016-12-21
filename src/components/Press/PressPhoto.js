@@ -139,7 +139,7 @@ class PressPhoto extends Component {
             <div className='container'>
               <div className='row'>
                 <div className='profile_sets_white'></div>
-                <div className='col20-lg-9 col20-lg-offset-1 col20-md-9 col20-md-offset-1 col20-sm-9 '>
+                <div className='col20-lg-15 col20-lg-offset-1 col20-md-14 col20-md-offset-1 col20-sm-20 '>
                   <h1>Преcc-центр</h1>
                 </div>
               </div>
@@ -165,7 +165,7 @@ class PressPhoto extends Component {
                     return(
                       <div className='press_photo'>
                         <div className='row'>
-                          <div className='col20-lg-19 col20-lg-offset-1 col20-md-19 col20-md-offset-1 col20-sm-20'>
+                          <div className='col20-lg-19 col20-lg-offset-1 col20-md-19 col20-md-offset-1 col20-sm-20 col20-xs-20'>
                             <h2>{item.category}</h2>
                           </div>  
                         </div>

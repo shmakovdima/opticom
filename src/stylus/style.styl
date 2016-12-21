@@ -326,8 +326,10 @@ textarea
   
   &-item
     a
+      line-height 40px
+      height 40px
       position relative
-      
+      display: inline-block;
       color color_gray_more!important
       font-family FuturaPTBook
       font-size 16px
@@ -337,17 +339,21 @@ textarea
     & a
       position relative
       display inline-block
-      top 2px
+      
     
     &:before
       content '•'
       background none
       padding 3px 12px
       font-size 20px
+      line-height 40px
+      height 40px
       top 3px
       position relative
       display inline-block
       color color_gray_more
+
+
 
 .slick
   &-slider
@@ -379,6 +385,11 @@ input
 .sticky 
   position: relative;
   overflow: hidden;
+  visibility hidden
+  
+  
+  &.active
+    visibility visible
 
 body
   padding 0px
@@ -791,16 +802,20 @@ h3
 
   .breadcrumb
     margin-bottom 5px
+    
     &-item 
       & a
         font-size 12px
         
     & > 
-      & li 
-        & + li:before
-          font-size 10px
-          padding 3px 7px
-
+      & li                 
+        & + li
+          
+          &:before
+            top 0px
+            font-size 10px
+            padding 3px 7px
+          
 
   .load
     &_more

@@ -86,7 +86,6 @@ class Today extends Component {
     }
 
 
-    
 
     if ((windowTop>=0) && (windowTop<sotrTop)) {
       curItem = 'about'
@@ -139,7 +138,12 @@ class Today extends Component {
   }
 
   componentDidMount(){
-    window.addEventListener('scroll', this.updateTop.bind(this))
+
+    $(window).load(function(){
+      window.addEventListener('scroll', this.updateTop.bind(this));
+    })
+
+    
 
     var self = this
 
@@ -171,7 +175,7 @@ class Today extends Component {
     var Data = this.props.PressNews.Data
     var windowTop = this.props.windowTop
 
-    var classN = 'today_navigation'
+    var classN = 'today_navigation hidden-xs'
     if (windowTop>563) {
       classN+=' black'
     }
@@ -179,7 +183,7 @@ class Today extends Component {
     var whiteTop = (document.getElementById('prod')) ? document.getElementById('prod').offsetTop : 2129
     var pressTop = (document.getElementById('press')) ? document.getElementById('press').offsetTop : 5858
     
-    var classWhite = 'today_white'
+    var classWhite = 'today_white hidden-xs hidden-sm'
 
     if (windowTop>whiteTop) {
       classWhite+=' fixed'
@@ -202,6 +206,22 @@ class Today extends Component {
 
     return(
       <div className='today'>
+
+
+      <div className='today_navigation hidden-xs' >
+         <Scrollspy items={ ['about', 'sotr', 'prod', 'ecology','social', 'job', 'press','contact'  ] } currentClassName='active'>
+          <li><a className='greenlighted_left about' href='#about'><span>О компании</span></a></li>
+          <li><a className='greenlighted_left sotr' href='#sotr'><span>Сотрудничество</span></a></li>
+          <li><a className='greenlighted_left prod' href='#prod'><span>Производство</span></a></li>
+          <li><a className='greenlighted_left ecology' href='#ecology'><span>Экология</span></a></li>
+          <li><a className='greenlighted_left social' href='#social'><span>Ответственность</span></a></li>
+          <li><a className='greenlighted_left job' href='#job'><span>Вакансии</span></a></li>
+          <li><a className='greenlighted_left press' href='#press'><span>Пресс-центр</span></a></li>
+          <li><a className='greenlighted_left contact' href='#contact '><span>Контакты</span></a></li>
+        </Scrollspy>
+      </div>
+
+
       <div className={classN} >
          <Scrollspy items={ ['about', 'sotr', 'prod', 'ecology','social', 'job', 'press','contact'  ] } currentClassName='active'>
           <li><a className='greenlighted_left about' href='#about'><span>О компании</span></a></li>
@@ -222,7 +242,7 @@ class Today extends Component {
                   
                 </div>
                 <div className='row'>
-                    <div className='col20-lg-20'>
+                    <div className='col20-lg-20 col20-xs-20'>
                       <div className='today_header_sun'>
                       </div>
                     </div>
@@ -231,7 +251,7 @@ class Today extends Component {
                     </div>
                     <a href='#sotr' className='cooperation home_header_down'>
                     </a>
-                    <div className='col20-lg-offset-2 col20-lg-18 col20-md-offset-2 col20-md-18'>
+                    <div className='col20-lg-offset-2 col20-lg-18 col20-md-offset-2 col20-md-18 '>
                       <span className='today_header_description'>
                         Группа ведёт свою деятельность на трёх континентах, объединяя в единую структуру научный центр разработки новых видов упаковки, заготовителей агросырья, производственные и перерабатывающие предприятия.
                       </span>
@@ -248,10 +268,10 @@ class Today extends Component {
             <div className='today_sotr' id='sotr'>
               <div className='container'>
                 <div className='row'>
-                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18'>
+                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18 col20-xs-20'>
                      <h2>Сотрудничество</h2>
                     </div>
-                    <div className='col20-lg-offset-2 col20-lg-10 col20-md-offset-2 col20-md-10'>
+                    <div className='col20-lg-offset-2 col20-lg-10 col20-md-offset-2 col20-md-10 col20-xs-20'>
                       <ul className='ul'>
                         <li>
                           Большой ассортимент: свыше 16000 наименований в 20 товарных категориях, складируемых в комплексах общей площадью 23000 м²
@@ -303,7 +323,7 @@ class Today extends Component {
                         В своей работе ГК «ОптиКом» опирается на принципы корпоративной экологической ответственности. Мы стремимся к тому, чтобы наша деятельность оказывала минимальное негативное воздействие на окружающую среду.
                       </span>
                     </div>
-                    <div className='col20-lg-offset-2 col20-lg-18 col20-md-offset-2 col20-md-18'>
+                    <div className='col20-lg-offset-2 col20-lg-18 col20-md-offset-2 col20-md-18 col20-xs-20'>
                       <div className='today_sotr_block today_sotr_block_1'>
                         <span>OptiLine</span>
                       </div>
@@ -321,7 +341,7 @@ class Today extends Component {
           <section id='ecology'>
               <div className='container'>
                 <div className='row'>
-                    <div className='col20-lg-20'>
+                    <div className='col20-lg-20 col20-xs-20'>
                       <div className='today_ecology_image'>
                       </div>
                     </div>
@@ -443,7 +463,7 @@ class Today extends Component {
           <section id='job'>
               <div className='container'>
                 <div className='row'>
-                    <div className='col20-lg-20'>
+                    <div className='col20-lg-20 col20-xs-20'>
                       <div className='today_job_image'>
                       </div>
                     </div>
@@ -485,10 +505,10 @@ class Today extends Component {
           <section id='press'>
               <div className='container'>
                 <div className='row'>
-                    <div className='col20-lg-20'>
+                    <div className='col20-lg-20 col20-xs-20'>
                     </div>
                    
-                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18'>
+                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18 col20-xs-20' >
                      <h2>Пресс-центр</h2>
                     </div>
                     <div className='col20-lg-20 today_press_slider'>
@@ -519,7 +539,7 @@ class Today extends Component {
           <section id = 'contact' className='today_contact'>
               <div className='container'>
                 <div className='row'>
-                    <div className='col20-lg-offset-4 col20-lg-14 col20-md-offset-3 col20-md-14'>
+                    <div className='col20-lg-offset-4 col20-lg-14 col20-md-offset-3 col20-md-14 col20-sm-offset-4 col20-sm-14 col20-xs-offset-3 col20-xs-14'>
                       <div className='today_contact_image'>
                       </div>
                     </div>

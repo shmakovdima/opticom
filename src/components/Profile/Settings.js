@@ -176,40 +176,40 @@ class ProfileSettings extends Component {
       <section className='profile_sets_header'>
         <div className='container'>
           <div className='row'>
-            <div className='col20-lg-9 col20-lg-offset-1 col20-md-9 col20-md-offset-1 col20-sm-9 '>
+            <div className='col20-lg-9 col20-lg-offset-1 col20-md-20'>
               <h1>Наcтройки</h1>
             </div>
           </div>
           <div className='row profile_settings'>
-            <div className='col20-lg-10 col20-lg-offset-2'>
+            <div className='col20-lg-10 col20-lg-offset-2 col20-md-14 col20-sm-20 col20-xs-20'>
               <div className='profile_block'>
                 <h2>Личные данные</h2>
                 <div className='row'>
-                  <span className='col-xs-4 inputlabel'>Логин для входа</span>
-                  <div className='col-xs-8'><input type='text'/></div>
+                  <span className='col-sm-4 col-xs-12 inputlabel'>Логин для входа</span>
+                  <div className='col-sm-8 col-xs-12'><input type='text'/></div>
                 </div>
                 <div className='row'>
-                  <span className='col-xs-4 inputlabel'>Пароль</span>
-                  <div className='col-xs-8'><input type='text'/></div>
+                  <span className='col-sm-4 col-xs-12 inputlabel'>Пароль</span>
+                  <div className='col-sm-8 col-xs-12'><input type='text'/></div>
                 </div>
                 <div className='row'>
-                  <span className='col-xs-4 inputlabel'>Имя и фамилия</span>
-                  <div className='col-xs-8'><input type='text'/></div>
+                  <span className='col-sm-4 col-xs-12 inputlabel'>Имя и фамилия</span>
+                  <div className='col-sm-8 col-xs-12'><input type='text'/></div>
                 </div>
                 <div className='row'>
-                  <span className='col-xs-4 inputlabel'>Должность</span>
-                  <div className='col-xs-8'><input type='text'/></div>
+                  <span className='col-sm-4 col-xs-12 inputlabel'>Должность</span>
+                  <div className='col-sm-8 col-xs-12'><input type='text'/></div>
                 </div>
                 <div className='row'>
-                  <span className='col-xs-4 inputlabel'>Мобильный телефон</span>
-                  <div className='col-xs-8'>
+                  <span className='col-sm-4 col-xs-12 inputlabel'>Мобильный телефон</span>
+                  <div className='col-sm-8 col-xs-12'>
                     <input placeholder='+7' ref='phone' type='text' className='phone' />
                     <span className='error'>Укажите номер</span>
                   </div>
                 </div>
                 <div className='row'>
-                  <span className='col-xs-4 inputlabel'>Электронная почта</span>
-                  <div className='col-xs-8'><input className='email'  ref='email' type='text'/>
+                  <span className='col-sm-4 col-xs-12 inputlabel'>Электронная почта</span>
+                  <div className='col-sm-8 col-xs-12'><input className='email'  ref='email' type='text'/>
                   </div>
                 </div>
 
@@ -279,7 +279,7 @@ class ProfileSettings extends Component {
               </div>
               
             </div>
-            <div className='col20-lg-5 col20-lg-offset-2'>
+            <div className='col20-lg-5 col20-lg-offset-2 col20-md-offset-1 col20-md-5 col20-sm-20 col20-xs-20 profile_margin_top'>
               <div className='profile_right'>
                 <h2>Менеджер</h2>
                 <span className='profile_right_name'>{manager.name}</span>

@@ -30,12 +30,15 @@ class Submit extends Component {
 
 
   componentDidMount(){
+    document.getElementsByClassName('sticky')[0].classList.add('active');
     setHeightLeftBlock(this);
   }
 
   render(){
     var CartItems = this.props.Submit;
+
     this.sticky.update();
+
     return(
       <div>
         <HeaderLight/>
@@ -43,8 +46,8 @@ class Submit extends Component {
           <div className='container'>
             <div className='row'>
               <div className='col-xs-12'>
-                <span className='cart_title'>Корзина</span>
-                <span className='cart_title'>Доставка и оплата</span>
+                <span className='cart_title hidden-xs hidden-sm'>Корзина</span>
+                <span className='cart_title hidden-xs hidden-sm'>Доставка и оплата</span>
                 <span className='cart_title  active'>Подтверждение</span>
               </div>
               <div className='col-xs-12'>
@@ -56,31 +59,31 @@ class Submit extends Component {
         <section>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-15 col20-md-15 col20-sm-15 col20-xs-20' id = 'leftPart'>
+              <div className='col20-lg-15 col20-md-15 col20-sm-15  col20-xs-20 cart_height' id = 'leftPart'>
 
-                <div className='col20-lg-offset-2 col20-md-offset-2 cart_submit_padding'>
+                <div className='col20-lg-offset-2 col20-md-offset-2 col20-lg-18 col20-md-18 col20-xs-20 cart_submit_padding'>
                   <div className='profile_block'>
 
                     <div className='row'>
                       <div className='profile_block_row'>
-                        <span className='col-xs-3 inputlabel'>Имя и фамилия</span>
-                        <span className='col-xs-9 spanlabel'>Максим Глубоков</span>
+                        <span className='col-sm-3 col-xs-12 inputlabel'>Имя и фамилия</span>
+                        <span className='col-sm-9 col-xs-12 spanlabel'>Максим Глубоков</span>
                       </div>
                       <div className='profile_block_row'>
-                        <span className='col-xs-3 inputlabel'>Мобильный телефон</span>
-                        <span className='col-xs-9 spanlabel'>+7 (922) 921-92-11</span>
+                        <span className='col-sm-3 col-xs-12 inputlabel'>Мобильный телефон</span>
+                        <span className='col-sm-9 col-xs-12 spanlabel'>+7 (922) 921-92-11</span>
                       </div>
                       <div className='profile_block_row'>
-                        <span className='col-xs-3 inputlabel'>Электронная почта</span>
-                        <span className='col-xs-9 spanlabel'>some@mail.com</span>
+                        <span className='col-sm-3 col-xs-12 inputlabel'>Электронная почта</span>
+                        <span className='col-sm-9 col-xs-12 spanlabel'>some@mail.com</span>
                       </div>
                     </div>
 
 
                     <div className='row'>
                       <div className='profile_block_row'>
-                        <span className='col-xs-3 inputlabel'>Адрес доставки</span>
-                        <span className='col-xs-9 spanlabel'>
+                        <span className='col-sm-3 col-xs-12 inputlabel'>Адрес доставки</span>
+                        <span className='col-sm-9 col-xs-12 spanlabel'>
                           Покров, Ленина 45
                           <br/>
                           Владимирская область, 601122
@@ -91,8 +94,8 @@ class Submit extends Component {
 
                     <div className='row'>
                       <div className='profile_block_row'>
-                        <span className='col-xs-3 inputlabel'>Время доставки</span>
-                        <span className='col-xs-9 spanlabel'>
+                        <span className='col-sm-3 col-xs-12 inputlabel'>Время доставки</span>
+                        <span className='col-sm-9 col-xs-12 spanlabel'>
                           11 сентября 2016, с 9:00 до 16:00
                         </span>
                       </div>
@@ -100,8 +103,8 @@ class Submit extends Component {
 
                     <div className='row'>
                       <div className='profile_block_row'>
-                        <span className='col-xs-3 inputlabel'>Предпочитаемая оплата</span>
-                        <span className='col-xs-9 spanlabel'>
+                        <span className='col-sm-3 col-xs-12 inputlabel'>Предпочитаемая оплата</span>
+                        <span className='col-sm-9 col-xs-12 spanlabel'>
                           Банковский счет
                         </span>
                       </div>
@@ -109,23 +112,20 @@ class Submit extends Component {
 
                     <div className='row'>
                       <div className='profile_block_row'>
-                        <span className='col-xs-3 inputlabel'>Комментарий</span>
-                        <span className='col-xs-9 spanlabel'>
+                        <span className='col-sm-3 col-xs-12 inputlabel'>Комментарий</span>
+                        <span className='col-sm-9 col-xs-12 spanlabel'>
                           Промо-продукция, важна целостность упаковки
                         </span>
                       </div>
                     </div>
                         
-                       
-                       
-
-          
+ 
 
                   </div>
 
                 </div>
 
-                <div>
+                <div className='cart_fullwidth'>
                   {
                     CartItems.map(function(item, key){
                       return(

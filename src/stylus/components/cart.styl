@@ -4,6 +4,14 @@
 
 .cart
   
+  &_height
+    min-height 550px
+
+  &_fullwidth
+    width 100%
+    position relative
+    float left
+
   &_submit
     &_padding
       padding-bottom 125px
@@ -131,6 +139,7 @@
     &_button
       width 130px
       float left
+      clear left
       margin-top 20px
     
   &_tocatalog
@@ -168,7 +177,7 @@
       height: 24px
     
     & + &
-      margin-left 100px
+      margin-left 50px
       
     &:nth-child(1):before
       content '1'
@@ -201,7 +210,6 @@
         
 @media (max-width: 1200px)
 
- 
   .cart
     
     &_title
@@ -213,4 +221,40 @@
       &.active
         top -27px
         font-size 50px
+        
+      &_height
+        min-height 0px
+ 
+
+@media(max-width: 992px)
+  .cart_title + .cart_title
+    margin-left 0px
+    
+  #rightPart
+    margin-top 40px
+
+  .cart_title.delivery 
+    & + .cart_title.delivery  
+      margin-left 0px   
+      
+  .cart
+    &_tocatalog
+      margin-left 0px
+      
+
+@media(max-width: 768px)
+
+
+
+  .cart
+    
+    &_title.active
+      font-size 30px
+      line-height 44px
+      
+      &.delivery.active
+        font-size 36px
+
+    &_header
+      padding-top 80px  
   

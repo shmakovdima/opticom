@@ -252,7 +252,7 @@ class CartItem extends Component {
                         <div className='item_cart_buttonbody text-center'>
                           <div className='item_cart_buttoninput text-center'>
                             <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                            onChange={::this.setChange} value={cutnumber(inputValue)} defaultValue={cutnumber(inputValue)}
+                            <input pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={cutnumber(inputValue)} defaultValue={cutnumber(inputValue)}/>
                             <button className='item_order_plus' onClick={::this.setPlus}>+</button>
                           </div>
                         </div>  

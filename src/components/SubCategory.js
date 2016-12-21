@@ -31,7 +31,7 @@ class SubCategory extends Component {
               <div className='col20-lg-4 col20-md-6 col-sm-12'>
                 <span className='subcategory_popular_link '>
                   <span>Попробуйте наши </span>
-                  <Link to='allisready' title='Популярные наборы' className='greenborderbottom'>
+                  <Link to='/sets' title='Популярные наборы' className='greenborderbottom'>
                     <span>популярные&shy;</span>
                     <wbr/> 
                     <span>наборы</span>

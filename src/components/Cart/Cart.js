@@ -9,11 +9,11 @@ import * as pageActions from '../../actions/emptyCart'
 
 import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
-import {Link} from 'react-router'
-import CartItem from '../SubItems/Item/CartItem'
-import CartRight from './CartRight'
+import {Link} from 'react-router';
+import CartItem from '../SubItems/Item/CartItem';
+import CartRight from './CartRight';
 
-import Sticky  from 'sticky-js';
+import Sticky from 'sticky-js';
 import setHeightLeftBlock from '../function/setHeightLeftBlock';
 
 class Cart extends Component {
@@ -28,10 +28,12 @@ class Cart extends Component {
   componentDidUpdate() {
     setHeightLeftBlock(this);
     
+    
   }
 
 
   componentDidMount(){
+    document.getElementsByClassName('sticky')[0].classList.add('active');
     setHeightLeftBlock(this);
 
   }
@@ -45,6 +47,9 @@ class Cart extends Component {
     var CartItems = this.props.Cart
     this.sticky.update();
 
+
+
+
     return(
       <div>
         <HeaderLight/>
@@ -53,8 +58,8 @@ class Cart extends Component {
             <div className='row'>
               <div className='col-xs-12'>
                 <span className='cart_title active'>Корзина</span>
-                <span className='cart_title'>Доставка и оплата</span>
-                <span className='cart_title'>Подтверждение</span>
+                <span className='cart_title hidden-xs hidden-sm'>Доставка и оплата</span>
+                <span className='cart_title hidden-xs hidden-sm'>Подтверждение</span>
               </div>
               <div className='col-xs-12'>
                 <Link className='cart_tocatalog green_underline' to='/catalog' title='Вернуться в каталог'>Вернуться в каталог</Link>
@@ -65,7 +70,7 @@ class Cart extends Component {
         <section>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-14 col20-md-14 col20-sm-15' id = 'leftPart'>
+              <div className='col20-lg-14 col20-md-14 col20-sm-15 cart_height' id = 'leftPart'>
                 <div>
                   {
                     CartItems.map(function(item, key){
@@ -79,7 +84,7 @@ class Cart extends Component {
 
               </div>
               <div className='col20-lg-offset-2 col20-lg-4 col20-md-offset-1 col20-md-5  col20-sm-5' data-sticky-container id = 'rightPart'>
-                <div className='sticky_container' data-margin-top='100' data-sticky-for="768">
+                <div className='sticky_container' data-margin-top='100' data-sticky-for='768'>
                   <div  className='sticky'>
                     <div className='profile_right' >
                       <CartRight/>
@@ -87,8 +92,8 @@ class Cart extends Component {
                         Далее
                       </Link>
                     </div>
-                    <div className='cart_links'>
-                      <button className='cart_trash greenborderbottom' onClick={::this.emptyCart}>
+                    <div className='cart_links '>
+                      <button className='cart_trash text-left  greenborderbottom' onClick={::this.emptyCart}>
                         <span>Очистить корзину
                         </span>
                         </button>

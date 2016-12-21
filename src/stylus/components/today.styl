@@ -7,10 +7,11 @@
     padding-top 90px
   
   &_navigation
-    position fixed
+    position absolute
     z-index 12
-    top 270px
-    right 233px
+    top 210px
+    right 180px
+    z-index 1
     color white!important
     
     & a
@@ -24,6 +25,8 @@
 
     &.black
       color black
+      top 270px
+      position fixed
       
       & a
         & span
@@ -135,7 +138,9 @@
           top 300px!important
           
   &_set
-    width 450px
+    z-index 0
+    margin-right 100px
+    max-width 450px
   
   section
     overflow hidden
@@ -255,7 +260,7 @@
 
   &_planet
     position absolute
-    z-index 1
+    z-index 2
     right 0px
     height 715px
     width 677px
@@ -550,7 +555,7 @@
     
     & p
       font-size: 18px
-      line-height: 40px
+      line-height: 36px
       font-family LeksaPro
       position relative
       display block
@@ -600,7 +605,12 @@
       color black
       margin-top 60px
       margin-bottom 50px
-
+      
+section.today_cooperation
+  padding-top 70px!important
+  margin-bottom: 0px;
+  padding-bottom: 40px;
+  
 .map
   height 680px
   width 100%
@@ -615,3 +625,135 @@
 
   &_2
     background url(../../images/today/contact/map.png) no-repeat
+    
+@media(max-width: 1200px) 
+  .today
+    &_navigation
+      right 100px
+
+@media(max-width: 992px) 
+  .today
+    &_margin
+      &_xs
+        &_top
+          margin-top 100px
+    
+    ul.ul
+      padding-bottom 0px
+      margin-bottom 0px
+    
+    &_cooperation
+      
+      h2
+        margin-top 50px
+        margin-bottom 0px
+        padding-bottom 0px
+      
+      h1
+        font-size 32px
+        line-height 40px
+      
+      &_btn
+        float left
+        clear both
+        position relative
+        
+      &_topimage
+        background-position 100px center
+        
+      &_phone
+        float left
+        clear both
+        position relative
+        margin-top 20px
+
+    &_header
+      &_sun
+        top 150px
+      &_link
+        position relative
+        left 100px
+        
+    & .home_header_down
+      top 770px
+      
+    h2
+      padding-bottom 30px
+
+@media(max-width: 850px) 
+  .today
+    
+    &_job
+      &_block
+        width 150px
+        
+    &_social 
+      .press_projects_overflow:before 
+        left: -15px;
+    &_navigation
+      visibility hidden
+      
+    &_planet 
+      background-position calc(100% + 250px) center
+      
+    & section
+      padding-top: 100px;
+      padding-bottom: 0px;
+      
+
+@media(max-width: 768px)
+
+  section.today_cooperation
+    padding-top 20px!important
+
+  .today
+    
+    &_set
+      margin-right 40px
+      
+    &_cooperation
+      h2.second
+        font-size 30px
+        line-height 38px
+        padding-bottom 0px
+        margin-bottom 0px
+      
+@media(max-width: 550px) 
+  .today
+    &_planet 
+      display none
+      
+    & .home_header_down
+      top 850px
+      
+    &_contact
+      &_phone
+        font-size 20px
+      
+@media(max-width: 350px)
+  .today
+    
+    &_header
+      &_sun
+        display none
+    
+    &_set
+      max-width: 90vw;
+      margin-right 5vw;
+
+    &_header
+      
+      &_description
+        margin-top 30px
+        
+      &_link
+        position relative
+        left 0px
+        
+    h1
+      font-size 40px
+      line-height 44px
+      
+
+    & .home_header_down
+      display none

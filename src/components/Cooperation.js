@@ -29,7 +29,7 @@ export default class Cooperation extends Component {
       <div className='today'>
         <HeaderLight/>
         <div className='today_head'>
-          <div className='today_navigation black static cooperation' >
+          <div className='today_navigation hidden-xs hidden-sm static cooperation ' >
             <ul>
               <li><Link activeClassName='active' className='greenlighted_left about' to='today#about'><span>О компании</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left cooperation' to='cooperation'><span>Сотрудничество</span></Link></li>
@@ -50,10 +50,9 @@ export default class Cooperation extends Component {
                     <div className='col-xs-12'>
                       <div className='today_cooperation_topimage'></div>
                     </div>
-                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18'>
+                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18 col20-xs-20'>
                      <h1>Сотрудничество</h1>
                     </div>
-
 
 
                     <div className='col20-lg-offset-2 col20-lg-9 col20-md-offset-2 col20-md-9'>
@@ -92,7 +91,7 @@ export default class Cooperation extends Component {
                       <div className='today_white'>
                       </div>
                     </div>
-                    <div className='col20-lg-offset-1 col20-lg-10 col20-lg-offset-1 col20-md-6'>
+                    <div className='col20-lg-offset-1 col20-lg-10 col20-lg-offset-1 col20-md-10 col20-sm-20 col20-xs-20 today_margin_xs_top'>
                       <h2 className='second'>С нами выгодно!</h2>
                       <div className='col20-lg-offset-2 today_cooperation_pblock'>
                         <p>Наши специалисты работают в сфере государственных заказов уже более 5 лет. Они помогут Вам разобраться в технических характеристиках и описании товаров, представленных в нашем каталоге. Все специалисты прошли обучение на базе нового Федерального Закона «О контрактной системе в сфере закупов товаров, работ, услуг для обсепечения государственных и муниципальных нужд» №44 ФЗ от 5 апреля 2013 года.</p>
@@ -100,7 +99,7 @@ export default class Cooperation extends Component {
                       </div>
                     </div>
 
-                    <div className='pull-right col20-lg-6 col20-md-6'>
+                    <div className='col20-lg-offset-3 col20-lg-6 col20-md-offset-3 col20-md-6 col20-sm-offset-1 col20-sm-19 col20-xs-offset-1 col20-xs-19'>
                       <div className='today_contactform_panel'>
                         <Accordion defaultActiveKey={0}>
                           <Panel header='Госзаказчикам' eventKey={0} >
@@ -134,7 +133,7 @@ export default class Cooperation extends Component {
                     </div>
 
 
-                    <div className='col20-lg-offset-1 col20-lg-10 col20-lg-offset-1 col20-md-6'>
+                    <div className='col20-lg-offset-1 col20-lg-10 col20-md-offset-1 col20-md-19 col20-sm-20 col20-xs-20'>
                       <h2 >Одним из основополагающих принципов группы был и остаётся постулат «Клиент — наше всё!»</h2>
                       <div className='col20-lg-offset-2 today_cooperation_pblock'>
                         <p>Этот принцип реализуется в практике поддержки партнёров, а именно:</p>         
@@ -162,19 +161,19 @@ export default class Cooperation extends Component {
 
                       </div>
                     </div>
-                    <div className='col-xs-12'>
+                    <div className='col20-xs-20'>
                       <div className='today_cooperation_bottomimage'></div>
                     </div>
-                    <div className='today_cooperation_last col20-lg-offset-1 col20-lg-14 col20-md-offset-2 col20-md-13'>
+                    <div className='today_cooperation_last col20-lg-offset-1 col20-lg-14 col20-md-offset-2 col20-md-13 col20-sm-20 col20-xs-20'>
                       <h2 className='second'>
                         Приглашаем партнеров
                       </h2>
-                      <div className='col20-lg-offset-1'>
+                      <div className='col20-lg-offset-1 col20-lg-19 col20-xs-20'>
                         <span className='today_cooperation_pb'>
                           Мы заинтересованы в долгосрочных контактах с производителями и поставщиками следующих категорий товаров:
                         </span>
                         <div className='row today_cooperation_ul'>
-                          <div className='col20-sm-8'>
+                          <div className='col20-sm-8 col20-xs-20'>
                             <ul className='ul'>
                               <li>Барных аксессуаров и товаров для сервировки</li>
                               <li>Гигиенических товаров</li>
@@ -187,7 +186,7 @@ export default class Cooperation extends Component {
 
                             </ul>
                           </div>
-                          <div className='col20-sm-8 col20-sm-offset-2'>
+                          <div className='col20-sm-8 col20-sm-offset-2 col20-xs-20' >
                             <ul className='ul'>
                               <li>Пакетов и сумок</li>
                               <li>Канцелярских товаров</li>
@@ -200,13 +199,23 @@ export default class Cooperation extends Component {
                           </div>
                         </div>
                       </div>
+                      <div className='col20-xs-20 col20-sm-20 hidden-lg hidden-md'>
+                        <a className='today_cooperation_phone' href='tel:+7-495-980-06-48'>
+                          <nobr>+7-495-980-06-48
+                          </nobr>
+                        </a>
+                        <button className='close_modal button today_cooperation_btn' onClick={::this.lgShow}>Написать нам</button>
+                      </div>
 
                     </div>
 
 
-                    <div className=' col20-lg-4 col-md-4'>
+                    <div className='col20-lg-4 col20-md-5 hidden-sm hidden-xs col20-xs-20'>
 
-                      <a className='today_cooperation_phone' href='tel:+7-495-980-06-48'>+7-495-980-06-48</a>
+                      <a className='today_cooperation_phone' href='tel:+7-495-980-06-48'>
+                        <nobr>+7-495-980-06-48
+                        </nobr>
+                      </a>
                       <button className='close_modal button pull-right' onClick={::this.lgShow}>Написать нам</button>
                     </div>
 

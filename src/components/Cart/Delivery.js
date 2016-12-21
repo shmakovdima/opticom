@@ -72,6 +72,8 @@ class Delivery extends Component {
 
   componentDidMount() {
 
+    document.getElementsByClassName('sticky')[0].classList.add('active');
+
     setHeightLeftBlock(this);
 
     var self = this
@@ -127,6 +129,7 @@ class Delivery extends Component {
 
 
   render(){
+
     this.sticky.update();
 
     var monthLabels = ['Январь','Февраль','Март','Апрель','Май','Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь']
@@ -146,9 +149,9 @@ class Delivery extends Component {
           <div className='container'>
             <div className='row'>
               <div className='col-xs-12'>
-                <span className='cart_title  delivery'>Корзина</span>
+                <span className='cart_title  delivery hidden-xs hidden-sm'>Корзина</span>
                 <span className='cart_title  active delivery'>Доставка и оплата</span>
-                <span className='cart_title  delivery'>Подтверждение</span>
+                <span className='cart_title  delivery hidden-xs hidden-sm'>Подтверждение</span>
               </div>
 
             </div>
@@ -157,23 +160,23 @@ class Delivery extends Component {
         <section>
           <div className='container'>
             <div className='row'>
-              <div className='col-lg-offset-2 col20-lg-10 col-md-offset-2 col20-md-10' id='leftPart'>
+              <div className='col-lg-offset-2 col20-lg-10 col-md-offset-2 col20-md-10 col20-sm-20 col20-xs-20' id='leftPart'>
                 <div className='profile_block'>
                   <h2>Получатель</h2>
                     <div className='row'>
-                      <span className='col-xs-4 inputlabel'>Имя и фамилия</span>
-                      <div className='col-xs-8'><input type='text'/></div>
+                      <span className='col-sm-4 col-xs-12 inputlabel'>Имя и фамилия</span>
+                      <div className='col-sm-8 col-xs-12'><input type='text'/></div>
                     </div>
                     <div className='row'>
-                      <span className='col-xs-4 inputlabel'>Мобильный телефон</span>
-                      <div className='col-xs-8'>
+                      <span className='col-sm-4 col-xs-12 inputlabel'>Мобильный телефон</span>
+                      <div className='col-sm-8 col-xs-12'>
                         <input placeholder='+7' ref='phone' type='text' className='phone' />
                         <span className='error'>Укажите номер</span>
                       </div>
                     </div>
                     <div className='row'>
-                      <span className='col-xs-4 inputlabel'>Электронная почта</span>
-                      <div className='col-xs-8'><input className='email'  ref='email' type='text'/>
+                      <span className='col-sm-4 col-xs-12 inputlabel'>Электронная почта</span>
+                      <div className='col-sm-8 col-xs-12'><input className='email'  ref='email' type='text'/>
                       </div>
                     </div>
                 </div>

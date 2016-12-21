@@ -18,7 +18,7 @@ class CatalogHeader extends Component {
               <h1>Каталог</h1>
               <span className='catalog_header_leed'>
                 <span>Более 15 000 товаров</span>
-                <wbr/>
+                <br/>
                 <span> в 24 категориях</span>
               </span>
             </div>
@@ -29,7 +29,7 @@ class CatalogHeader extends Component {
               <h3 className='catalog_header_consult'>Нужна консультация?</h3>
               <Link className='catalog_header_consult_link' to='/order' title='Пригласить торгового представителя'>
                 <span className='green_underline opacity'>Пригласить торгового</span>
-                <wbr/>
+                <br/>
                 <span className='green_underline opacity'>представителя</span>
               </Link>
             </div>

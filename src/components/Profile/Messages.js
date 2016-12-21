@@ -176,16 +176,16 @@ class ProfileMessages extends Component {
         <section className='profile_messages'>
           <div className='container'>
             <div className='row'>
-              <div className='col20-lg-12 col20-md-12'>
+              <div className='col20-lg-12 col20-md-12 col20-xs-20'>
                 <If condition={New.length>0}>
                   <Then>
-                    <div className='profile_orders_block'>
-                      <div className=''>
+                    <div className='profile_orders_block '>
+                      <div className='col20-xs-20'>
                         <h2 className='col-sm-offset-1'>Новые
                           
                         </h2>
                         <span className='profile_messages_lenght'>{newlength}</span>
-                        <button className='profile_messages_new greenlighted' onClick={::this.setAllReaded}>Отметить все как прочитанные</button>
+                        <button className='profile_messages_new greenlighted text-left' onClick={::this.setAllReaded}>Отметить все как прочитанные</button>
                       </div>
 
                       <div>
@@ -203,7 +203,7 @@ class ProfileMessages extends Component {
                 </If>
                 <If condition={Readed.length>0}>
                   <Then>
-                    <div className='profile_orders_block'>
+                    <div className='profile_orders_block '>
                       <div className=''>
                         <h2 className='col-sm-offset-1'>Просмотренные</h2>
                       </div>
@@ -222,7 +222,7 @@ class ProfileMessages extends Component {
 
               
               </div>
-              <div className='col20-lg-offset-2 col20-lg-6 col20-md-offset-2 col20-md-6'>
+              <div className='col20-lg-offset-2 col20-lg-6 col20-md-offset-2 col20-md-6 col20-xs-20'>
                 <div className='profile_messages_block'>
                   <h2>Есть вопросы? Напишите нам</h2>
 

@@ -110,8 +110,29 @@ class ItemPage extends Component {
     }
   }
 
-  setChange(){
+  setChange(e) {
+    e.preventDefault()
 
+    let inputValue = e.target.value
+    inputValue = inputValue.replace(/\s/g, '')
+    let value = parseInt(inputValue)
+
+    if (value > 999999) {
+      value = Math.floor(value/10)
+    }
+
+  
+    if ((value <= 0) || (value=='') || (isNaN(value))) value = 0;
+
+    if (this.state.one==true) {
+      this.setState({
+        oneorder: value
+      })
+    }else{
+      this.setState({
+        alotorder: value
+      })
+    }
   }
 
   setOne() {
@@ -283,7 +304,7 @@ class ItemPage extends Component {
                   </div>
                   <div className='item_order_body'>
                     <button className='item_order_minus' onClick={::this.setMinus}>-</button>
-                    <input disabled pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={inputValue}/>
+                    <input pattern='[0-9]{1,3}' type='text' className='item_order_input' onChange={::this.setChange} value={cutnumber(inputValue)} defaultValue={cutnumber(inputValue)}/>
                     <button className='item_order_plus' onClick={::this.setPlus}>+</button>
                     <button className='item_order_button'></button>
                   </div>
@@ -371,7 +392,7 @@ class ItemPage extends Component {
                       
 
                 </div>
-                <div className='col-md-5 col-lg-5 col-sm-5 pull-right'>
+                <div className='col-md-5 col-lg-5 col-sm-5 '>
                   <span className='itempage_car'>
                     Мы доставляем товары в 83 региона России
                     <br/>
