@@ -175,7 +175,7 @@ class Today extends Component {
     var Data = this.props.PressNews.Data
     var windowTop = this.props.windowTop
 
-    var classN = 'today_navigation hidden-xs'
+    var classN = 'today_navigation hidden-xs hidden-sm'
     if (windowTop>563) {
       classN+=' black'
     }
@@ -208,7 +208,7 @@ class Today extends Component {
       <div className='today'>
 
 
-      <div className='today_navigation hidden-xs' >
+      <div className='today_navigation hidden-xs hidden-sm' >
          <Scrollspy items={ ['about', 'sotr', 'prod', 'ecology','social', 'job', 'press','contact'  ] } currentClassName='active'>
           <li><a className='greenlighted_left about' href='#about'><span>О компании</span></a></li>
           <li><a className='greenlighted_left sotr' href='#sotr'><span>Сотрудничество</span></a></li>
@@ -239,17 +239,14 @@ class Today extends Component {
               <HeaderDark/>
               <div className='container'>
                 <div className='row'>
-                  
-                </div>
-                <div className='row'>
                     <div className='col20-lg-20 col20-xs-20'>
-                      <div className='today_header_sun'>
+                      <div className='today_header_sun hidden-xs hidden-sm'>
                       </div>
                     </div>
                     <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18'>
                      <h1>Группа компаний Оптиком</h1>
                     </div>
-                    <a href='#sotr' className='cooperation home_header_down'>
+                    <a href='#sotr' className='cooperation home_header_down hidden-xs hidden-sm'>
                     </a>
                     <div className='col20-lg-offset-2 col20-lg-18 col20-md-offset-2 col20-md-18 '>
                       <span className='today_header_description'>

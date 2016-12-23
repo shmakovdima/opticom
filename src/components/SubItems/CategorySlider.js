@@ -50,9 +50,6 @@ class CategorySlider extends Component {
 
   setSlide(newSlide){
 
-
-
-
     if (newSlide<0) newSlide = 0;
 
     if (newSlide>=(this.slideLength-1)) newSlide = this.slideLength-1;

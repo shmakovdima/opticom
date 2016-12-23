@@ -12,7 +12,7 @@ export default class Static extends Component {
       <div className='today'>
         <HeaderLight/>
         <div className='today_head'>
-          <div className='today_navigation black static' >
+          <div className='today_navigation black static hidden-xs hidden-sm' >
             <ul>
               <li><Link activeClassName='active' className='greenlighted_left about' to='today#about'><span>О компании</span></Link></li>
               <li><Link activeClassName='active' className='greenlighted_left sotr' to='cooperation'><span>Сотрудничество</span></Link></li>
@@ -37,7 +37,7 @@ export default class Static extends Component {
                       </div>
                     </div>
                    
-                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18'>
+                    <div className='col20-lg-offset-1 col20-lg-18 col20-md-offset-1 col20-md-18 col20-xs-20'>
                      <h2>Экология</h2>
                     </div>
                     <div className='col20-lg-offset-2 col20-lg-9 col20-md-offset-2 col20-md-10'>

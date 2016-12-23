@@ -55,7 +55,7 @@ class PressProjects extends Component {
             <div className='container'>
               <div className='row'>
                 <div className='profile_sets_white'></div>
-                <div className='col20-lg-9 col20-lg-offset-1 col20-md-9 col20-md-offset-1 col20-sm-9 '>
+                <div className='col20-lg-9 col20-lg-offset-1 col20-md-9 col20-md-offset-1 col20-sm-20 '>
                   <h1>Преcc-центр</h1>
                 </div>
               </div>
@@ -77,7 +77,7 @@ class PressProjects extends Component {
                   Data.map(function(item, key){
 
                     return(
-                      <div className='col20-lg-9 col20-lg-offset-1 col-md-6 col-sm-6 col-xs-12'>
+                      <div className='col20-lg-9 col20-lg-offset-1.col-md-6.col-sm-12 col-xs-12'>
                         <PressProjectsItem data={item} key={key}/>
 
                       </div>

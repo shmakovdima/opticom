@@ -131,7 +131,7 @@ export default class Contacts extends Component {
                         </Accordion>
                       </div>
                     </div>
-                    <div className='pull-right col20-lg-13'>  
+                    <div className='pull-right col20-lg-13 hidden-xs hidden-sm'>  
                       <div className={curMap}></div>
                     </div>
                   </div>

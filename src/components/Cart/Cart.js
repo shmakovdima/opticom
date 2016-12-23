@@ -97,7 +97,7 @@ class Cart extends Component {
                         <span>Очистить корзину
                         </span>
                         </button>
-                      <Link className='cart_add greenborderbottom' to='addtoset' title='Добавить в набор '>
+                      <Link className='cart_add greenborderbottom' to='addset' title='Добавить в набор '>
                         <span>Добавить в набор
                         </span>
                        </Link>

@@ -25,34 +25,8 @@ class SubCategory extends Component {
       <div>
         <HeaderLight/>
         <SubCategoryHeader categoryData={subCategory}/>
-        <section className='subcategory_section'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col20-lg-4 col20-md-6 col-sm-12'>
-                <span className='subcategory_popular_link '>
-                  <span>Попробуйте наши </span>
-                  <Link to='/sets' title='Популярные наборы' className='greenborderbottom'>
-                    <span>популярные&shy;</span>
-                    <wbr/> 
-                    <span>наборы</span>
-                  </Link>
 
-                </span>
 
-              </div>
-              {
-                popularSet.map(function(item, key) {
-                  return(
-                    <div className='col20-lg-8 col20-md-7 col-sm-6'>
-                      <ReadyPopular data={item} key={++key} />
-                    </div>
-                  )
-                })
-
-              }
-            </div>
-          </div>
-        </section>
         <section className='subcategory_section'>
           <div className='container'>
             <div className='row'>
@@ -82,7 +56,37 @@ class SubCategory extends Component {
                 }
               </div>
             </div>
-        </section>        
+        </section>  
+        
+        <section className='subcategory_section'>
+          <div className='container'>
+            <div className='row'>
+              <div className='col20-lg-4 col20-md-6 col-sm-12'>
+                <span className='subcategory_popular_link '>
+                  <span>Попробуйте наши </span>
+                  <Link to='/sets' title='Популярные наборы' className='greenborderbottom'>
+                    <span>популярные&shy;</span>
+                    <wbr/> 
+                    <span>наборы</span>
+                  </Link>
+
+                </span>
+
+              </div>
+              {
+                popularSet.map(function(item, key) {
+                  return(
+                    <div className='col20-lg-8 col20-md-7 col-sm-6'>
+                      <ReadyPopular data={item} key={++key} />
+                    </div>
+                  )
+                })
+
+              }
+            </div>
+          </div>
+        </section>
+      
       </div>
     )
   }

@@ -38,7 +38,6 @@ class Login extends Component {
   }
 
   removePlaceholder(text) {
-
     var selector
     if (text=='Введите ваш логин') {
       selector = '#login'      

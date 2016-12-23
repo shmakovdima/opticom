@@ -49,7 +49,7 @@ class Interesed extends Component {
             <div className='Interesed_before'></div>
             <h2 className='col-xs-12 col20-lg-offset-1'>
               <span>Вас могут </span>
-              <wbr/>
+              <br/>
               <span>заинтересовать</span>
             </h2>
           </div>

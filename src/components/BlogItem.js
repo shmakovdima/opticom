@@ -60,7 +60,7 @@ class EcologyItem extends Component {
                   </ul>
 
                 </div>
-                <div className='col20-lg-4 col20-lg-offset-1 col20-md-5 col20-md-offset-1 col20-sm-20 col20-xs-20'>
+                <div className='col20-lg-4 col20-lg-offset-1 col20-md-4 col20-md-offset-1 col20-sm-20 col20-xs-20'>
                   <div className='ecology_category'>
                     <span className='active greenlighted_left'>Все</span>
                     <a className='greenlighted_left'>Статьи</a>
