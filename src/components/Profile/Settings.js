@@ -65,6 +65,19 @@ class ProfileSettings extends Component {
       }
     })
 
+
+    $(document).on('click', '.profile_right_company_block', function(){
+      var block = $(this).find('.profile_right_company_special');
+      if (block.hasClass('hide')) {
+        block.removeClass('hide');
+        $(this).addClass('active');
+      }else{
+        block.addClass('hide');
+        $(this).removeClass('active');
+      }
+
+    });
+
     $(document).on('click', '.address_edit_save', function(){
 
         var prevArray = JSON.parse(JSON.stringify(self.state.adresses))
@@ -169,7 +182,7 @@ class ProfileSettings extends Component {
 
     let Companies = (this.props.Companies) ? this.props.Companies : []
 
-    var self = this
+   
 
     return(
     <div className='profile'>
@@ -297,11 +310,144 @@ class ProfileSettings extends Component {
                 <h2>Компания</h2>
                 <div>
                   {
-                    Companies.map(function(item, key){
+                    Companies.map(function(item){
                       return(
-                        <div onClick = {self.setCurCompany.bind(self, key)} className={ (self.state.select_company==key ? 'active ' :'')+ 'profile_right_company_block'}>
+                        <div className='profile_right_company_block'>
                           <h3>{item.name}</h3>
                           <span>{item.factaddress}</span>
+                          <div className='profile_right_company_special hide'>
+                            <div className='row'>
+                              <If condition={item.uraddress}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      Юридический адрес
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.uraddress}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+
+                              <If condition={item.phone}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      Телефон
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.phone}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+
+
+                              <If condition={item.inn}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      ИНН
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.inn}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+
+                              <If condition={item.kpp}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      КПП
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.kpp}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+
+
+                              <If condition={item.ogrn}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      ОГРН
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.ogrn}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+
+                              <If condition={item.rs}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      Расчётный счёт
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.rs}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+
+                              <If condition={item.namebank}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      Наименование банка
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.namebank}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+
+
+                              <If condition={item.coraccount}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      Кор. счёт
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.coraccount}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+
+
+                              <If condition={item.bik}>
+                                <Then>
+                                  <div className='col-xs-12'>
+                                    <span className='profile_right_company_special_title'>
+                                      БИК
+                                    </span>
+                                   <span className='profile_right_company_special_value'>
+                                      {item.bik}
+                                    </span>
+                                  </div>
+                                
+                                </Then>
+                              </If>
+                            </div>
+                          </div>
                         </div>
                       )
                     })  
@@ -312,7 +458,7 @@ class ProfileSettings extends Component {
                 <If condition={this.state.addcompany==false}>
                   <Then>
                     <div className='profile_right_company_add'>
-                      <button onClick={::this.addCompanyButton} className='greenborderbottom'><span >Добавить компанию</span></button>
+                      <button onClick={::this.addCompanyButton} className='greenborderbottom text-left'><span >Добавить компанию</span></button>
                     </div>
                   </Then>
                   <Else>

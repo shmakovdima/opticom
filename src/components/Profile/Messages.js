@@ -56,7 +56,6 @@ class ProfileMessages extends Component {
   }
 
   changeFiles() {
-
     this.setState({
       FileList: (document.getElementById('append_file')) ? document.getElementById('append_file').files : []
 
@@ -96,8 +95,6 @@ class ProfileMessages extends Component {
     })
 
     this.props.pageActions.setReaded(Messages)
-
-
   }
 
 
@@ -160,8 +157,6 @@ class ProfileMessages extends Component {
   }
 
 
-
-  console.log(FileList)
   return(
       <div className='profile'>
         <section className='profile_sets_header'>

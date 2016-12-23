@@ -109,12 +109,11 @@
         margin-top 80px
     
   &_items
-    overflow: hidden
     padding-top 80px
     top -85px
     z-index 0
     position relative
-    padding-bottom 150px
+    padding-bottom 10px
     margin-bottom -170px
     
     &.zindex
@@ -181,7 +180,7 @@
       padding-top 20px
     
     &_tabs
-      padding-top 50px
+      padding-top 100px
       
       &.buyed
         padding-top 90px
@@ -274,7 +273,27 @@
       padding-top 70px
       float left
       width 100%
-      
+
+      &_special
+        
+        & .col-xs-12 
+          margin-top 20px
+        
+        &_title
+          margin-top 0px!important
+          font-family FuturaPTMedium!important
+          float left
+          clear right
+
+        & span
+          font-family FuturaPTMedium
+          margin-top 0px
+          float left
+          
+          & + span
+            margin-top 5px    
+            clear left
+            float left  
 
       &_block
         cursor pointer
@@ -284,15 +303,31 @@
         padding 20px
         overflow hidden
         float left
+        position relative
+        
+        &:before
+          display block
+          content ''
+          position absolute
+          top 20px
+          width 30px
+          height 30px
+          right 20px
+          background white url(../../../images/sprites/mobile_menu_left.png) center no-repeat
         
         &.active
-          background white url(../../../images/sprites/mobile_menu_left.png) calc(100% - 20px) 27px no-repeat
+          
           background-size 10px
+          
+          &:before
+            transform rotate(270deg)
+          
         
         & h3
           font-size 24px
           padding-right 30px
           text-transform none
+          position relative
           
         & span
           position relative
@@ -683,6 +718,9 @@
 
 
   .profile
+    
+    .today_ecology_image
+      top: -150px;
     
     &_items
       padding-top 45px
