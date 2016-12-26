@@ -55,16 +55,22 @@ class Delivery extends Component {
   }
 
   changeSetDate() {
+
+    
     this.setState({
-      settime: $('#bank').is(':checked')
+      settime: $('#setdate').is(':checked')
     })
-    $('.timepicker').mask('00:00');
+
+    setTimeout(function(){ 
+      $('.timepicker').mask('00:00');
+    },100);
+    
+    
   }
 
 
   componentDidUpdate() {
-    setHeightLeftBlock(this);
-    
+    setHeightLeftBlock(this); 
   }
 
 
@@ -193,8 +199,7 @@ class Delivery extends Component {
                             return(<Adress item={item} keyitem = {key} edit={edit}/>)
                           })  
                         }
-
-                      
+   
                       </div>
                     </div>
                 </div>
@@ -210,8 +215,8 @@ class Delivery extends Component {
                 </div>
                 <div className='row'>
                   <div className='col-xs-12'>
-                    <input onChange={::this.changeSetDate} id='set' value='set' type='radio' name='deliverytime'/>
-                    <label htmlFor='set'></label>
+                    <input onChange={::this.changeSetDate} id='setdate' value='set' type='radio' name='deliverytime'/>
+                    <label htmlFor='setdate'></label>
                     <span className='radiolabel'>Выбрать</span>
                   </div>
                   <If condition={this.state.settime}>
@@ -233,9 +238,6 @@ class Delivery extends Component {
                   </If>
                 </div>
               </div>
-             
-
-
 
               <div className='profile_block'>
                 <h2>Предпочитаемая оплата</h2>
