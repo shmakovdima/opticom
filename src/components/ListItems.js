@@ -18,8 +18,7 @@ import CartRight from '../components/Cart/CartRight'
 class ListItems extends Component {
   render() {
     let Sets = this.props.AddSet.Data
-    var breadcrumb_link = ''
-    let breadcrumbs = this.props.AddSet.breadcrumbs
+
 
     return (
       <div>
@@ -35,26 +34,19 @@ class ListItems extends Component {
           <div className='row'>
             <div className='category_breadcrumb col20-lg-offset-1 col20-lg-19  col15-md-15 col15-sm-15 '>
               <ol className='breadcrumb'>
-                {
-                  breadcrumbs.map(function(item) {
 
-                    breadcrumb_link+=item.link+'/'
-                    return(
-                      <li className='breadcrumb-item'>
-                        <Link to={breadcrumb_link} title={item.title}>{item.title}</Link>
-                      </li>
-                    )
-                  })
-                }
 
               </ol>
-              <h1 className='sub'>Список товаров</h1>
+              <h1 className='sub'>Заказ номер 2</h1>
               
               <div>
                 <span className='sets_header_description'>
-                  Этого набора только экологических товаров хватит для
+                  Создан 24 мая
                   <br/>
-                  ежемесячного обслуживания небольшого офиса
+                  6 артикулов, 125 упаковок
+                  <br/>
+                  <span className='item_orderblock_status active'>В обработке</span>
+                  {/*<span className='item_orderblock_status ready'>Выполнен</span>*/}
                 </span>
               </div>
              

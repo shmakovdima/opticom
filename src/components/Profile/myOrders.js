@@ -215,7 +215,7 @@ class ProfileOrders extends Component {
                        </DropdownButton>
                       </div>
                     </div>
-
+                    <h3 className='profile_orders_title'>Время доставки</h3>
                    <div className='profile_orders_datepicker'>
                     <div className='profile_orders_datepicker_block'>
                       <span className='profile_orders_datepicker_span'>C</span>
