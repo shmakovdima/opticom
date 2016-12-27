@@ -15,6 +15,8 @@ import Cart from './components/Cart/Cart'
 import Delivery from './components/Cart/Delivery'
 import Submit from './components/Cart/Submit'
 
+import ListItems from './components/ListItems'
+
 import ProfileSets from './components/Profile/Sets'
 import ProfileSettings from './components/Profile/Settings'
 import ProfileMyItems from './components/Profile/myItems'
@@ -77,6 +79,8 @@ export const routes = (
       <Route path='social' component={Social}/>
       <Route path='contacts' component={Contacts}/>
       <Route path='cooperation' component={Cooperation}/>
+
+      <Route path='listitems' component={ListItems}/>
 
       <Route path='future' component={Future}/>
 

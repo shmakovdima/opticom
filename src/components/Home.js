@@ -15,7 +15,14 @@ import '../stylus/components/planet.styl';
 class Home extends Component {
 
   componentDidMount() {
-    $('.home_header_down').addClass('active')
+    $(window).load(function(){
+      setTimeout(function(){
+         $('.home_header_down').addClass('active')
+      }, 1500);
+
+     
+    });
+    
   }
 
   scrollTop() {
