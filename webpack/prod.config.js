@@ -7,7 +7,6 @@ const path = require('path');
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: [
-    'bootstrap-loader',
     'webpack-hot-middleware/client',
     './src/index',
   ],
@@ -48,6 +47,7 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
+      $: "jquery",
     }),
   ],
 };

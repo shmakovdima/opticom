@@ -88,6 +88,8 @@ class ProfileMessages extends Component {
   }
 
   setAllReaded(){
+
+
     var Messages = JSON.parse(JSON.stringify(this.props.Messages))
 
     Messages.map(function(item,key){

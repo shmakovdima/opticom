@@ -1,0 +1,853 @@
+@import '../variables.styl'
+
+@import 'components/fonts.styl'
+@import 'components/15colums.styl'
+@import 'components/20colums.styl'
+@import 'components/text-align-media.styl'
+
+
+
+.form-control
+  color black
+  border none
+  box-shadow none
+  font-size 16px
+  background none
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+  border-radius 0px
+  font-family FuturaPTBook
+
+  &:hover
+  &:active
+  &:focus
+    box-shadow none
+    border-color black
+
+  &:-ms-input-placeholder
+  &::-moz-placeholder
+  &:-moz-placeholder
+  &::-webkit-input-placeholder
+    font-family FuturaPTBook!important
+    font-size 12px!important
+    color color_black!important
+      
+
+        
+
+textarea
+  resize none
+  
+  &.form-control
+    padding-left: 14px
+    padding-right: 14px
+    border 1px solid rgba(0,0,0,0.1)
+    
+  
+input
+textarea
+  outline none!important
+  
+
+.btn 
+  background rgba(255, 255, 255, 0.8)
+  height 100px
+  width 100%
+  text-transform uppercase
+  border-radius none
+  height 50px
+  border none
+  border-radius 0px
+  color #72ae87
+  font-family FuturaPTHeavy
+  outline none!important
+  font-size 15px
+  transition 150ms all ease-in
+  
+  &:hover
+  &:active
+    color black
+
+//.btn
+ // &.green
+
+.button
+  transition 150ms all ease-in
+  background-color color_green
+  color white
+  text-transform uppercase
+  line-height 40px
+  font-size 14px
+  font-family FuturaPTBold
+  text-align center
+
+  &:hover
+  &:active
+  &:visited
+    color white
+    background: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%) !important
+
+
+  &.white
+    color black
+    background #f0f0f0
+    
+    &:hover
+    &:active
+    &:visited  
+      color color_green
+      background #f0f0f0!important
+        
+
+
+.input-group
+  width 66%
+  &-addon
+    display none
+  
+.bg-primary
+  background color_green
+  
+#calendar 
+  border-radius none
+
+  & .popover-title
+    background #f0f0f0
+  & .popover.bottom > .arrow
+    border-bottom-color: #f0f0f0
+    
+
+
+.slider
+  .item
+    min-width: 254px
+
+.nav
+  &-tabs
+    outline none!important
+    border none
+    & > li 
+    & > li.active
+        border none!important
+        outline none!important
+        background nine!important
+        padding 0px
+        margin-right 50px
+        display block
+        border-radius none
+        
+
+        & a
+        & a:active
+        & a:focus
+        & a:hover
+          border none
+          opacity 1
+          background none
+          color black!important
+          border none!important
+        
+        &:hover
+        &:active
+        &:focus
+          background none
+          color black!important
+          
+          & a
+          & a:active
+          & a:focus
+          & a:hover
+            border none
+            opacity 1
+            background none
+            color black!important
+            border none!important
+          
+
+        & > a
+          display block
+          padding 0px
+          outline none!important
+          display block
+          background-color transparent!important
+          border none
+          color #000000
+          font-family FuturaPTMedium
+          text-transform uppercase
+          font-size 14px
+
+.btn.btn-default.dropdown-toggle
+  padding-left 0px
+  min-width 110px
+  padding-top 10px
+  text-align left
+  font-family FuturaPTBook
+  padding-left 20px
+  
+  & span:first-child
+    padding-right 20px
+
+  & .caret
+    margin-top 8px
+    float right
+
+.dropdown
+  
+  &-menu
+    margin-top 0px
+    padding-top 0px
+    min-width 100px
+    padding-left 20px
+    border none!important
+    color black
+    box-shadow none
+    position relative
+    clear left
+    
+    & > li
+      & > a
+        padding-left 0px
+        
+        &:hover
+        &:active
+          color color_green
+          background none
+      
+    
+    & li
+      padding-bottom 7px
+      
+      &:focus
+        outline none
+        border none
+        
+        & a
+          padding-left 0px
+          outline none
+          border none
+
+    & .menuitem
+      padding-top 10px
+      padding-left 5px
+      outline none!important
+      border none!important
+      box-shadow none !important
+      
+      &:hover
+        color color_green!important
+
+  &.open
+    z-index 4
+    background white
+    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.21)
+    
+    & .dropdown-toggle
+      font-family FuturaPTHeavy!important
+  
+  
+
+.btn-default
+  padding-left 0px
+  background none!important
+  border none!important
+  font-family FuturaPTBook
+  color rgba(0, 0, 0, 0.8)
+  box-shadow none!important
+  
+  &:hover
+  &:active
+    background none!important
+    box-shadow none!important
+    border none!important
+    color color_green
+
+.panel-group 
+  .panel 
+    & + .panel
+      margin-top 40px
+.panel
+  background-color transparent
+  margin-bottom 40px
+  
+  &-title
+    & > a
+      cursor pointer
+      position relative
+      font-family: FuturaPTHeavy
+      color: rgba(0, 0, 0, 0.9)
+      font-size: 24px
+      margin-left 15px
+
+  &-default
+    border none
+    box-shadow none
+    
+    & > .panel-heading
+      background-color transparent!important
+      border none
+    
+      & + .panel-collapse > .panel-body
+        border-top-color transparent
+
+  &-heading
+    padding 0px
+    background-color none
+    border none
+    
+    & a
+      
+      &:before
+        position: absolute
+        content: ''
+        width: 11px
+        height: 17px
+        transform: rotate(0deg)
+        left: -30px
+        bottom: 5px
+        display: block
+        
+        background: url(../../images/sprites/arrow_right.png) center no-repeat
+        background-size: cover
+      
+      &[aria-expanded="true"]
+        & .buttons
+        &:before
+          transform: rotate(90deg)
+
+    
+  &-body
+    padding-left 0px
+    padding-right 0px
+    
+.breadcrumb
+  padding-left 0px
+  background none
+  line-height 16px
+  margin-top 40px
+  color color_gray_more
+  
+  &-item
+    a
+      line-height 40px
+      height 40px
+      position relative
+      display: inline-block;
+      color color_gray_more!important
+      font-family FuturaPTBook
+      font-size 16px
+
+  & > li + li
+    
+    & a
+      position relative
+      display inline-block
+      
+    
+    &:before
+      content '•'
+      background none
+      padding 3px 12px
+      font-size 20px
+      line-height 40px
+      height 40px
+      top 3px
+      position relative
+      display inline-block
+      color color_gray_more
+
+
+
+.slick
+  &-slider
+    width 100%
+    overflow hidden
+
+*
+  margin 0
+  padding 0
+  
+input
+  outline none!important
+  border none
+  background transparent
+  
+  &:-ms-input-placeholder
+  &::-moz-placeholder
+  &:-moz-placeholder
+  &::-webkit-input-placeholder
+    font-family FuturaPTBook
+    font-size 12px
+    color rgba(132, 148, 154, 0.5) 
+    
+
+  &[type='file']
+    display none
+
+
+.sticky 
+  position: relative;
+  overflow: hidden;
+  visibility hidden
+  
+  
+  &.active
+    visibility visible
+
+body
+  padding 0px
+  margin 0px
+  color black
+  font-family FuturaPTBook
+  min-height 100vh
+  background #fafafa
+  //background linear-gradient(0deg, #fafafa 0%, #ffffff 100%)
+    
+  &.overflow
+  &.overflowrecall
+  &.overflowlogin
+    overflow auto
+
+button
+  border none
+  outline none
+
+a
+  color black
+  transition 150ms all ease-in
+  
+  &.green_underline:hover
+  &.green_underline:active
+    color color_green
+  
+a:hover
+a:active
+a:visited
+a:focus
+  text-decoration none
+  color black
+ 
+ul
+  list-style none 
+  margin-bottom 0px
+  list-style-type: none;
+  list-style-image: none;
+  list-style-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+  
+  & li
+    list-style none;
+    list-style-type: none;
+    list-style-image: none;
+    list-style-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+  
+
+input[type='checkbox'] 
+  display none
+  
+  &+label
+    transition 150ms all ease-in
+    opacity 0.3
+    position relative
+    float left
+    cursor pointer
+    width 24px
+    height 24px
+    display block
+    background url(../../images/sprites/checkbox.png) center no-repeat
+    
+    &:hover
+      opacity 1
+      background url(../../images/sprites/checkbox_hover.png) center no-repeat
+      
+  &:checked + label
+    opacity 1
+    background url(../../images/sprites/checkbox_ok.png) center no-repeat!important
+    
+  &.checkbox2
+    &+label
+      transition 150ms all ease-in
+      opacity 0.3
+      position relative
+      float left
+      margin-right 12px
+      cursor pointer
+      width 24px
+      top -1px
+      height 24px
+      display block
+      background url(../../images/sprites/checkbox-1.png) center no-repeat
+      
+      &:hover
+        opacity 1
+        background url(../../images/sprites/checkbox2_hover.png) center no-repeat
+        
+    &:checked + label
+      opacity 1
+      background url(../../images/sprites/checkbox2_ok.png) center no-repeat!important
+
+input[type='radio'] 
+  display none
+  
+  &+label
+    transition 150ms all ease-in
+    opacity 0.3
+    position relative
+    float left
+    margin-right 10px
+    cursor pointer
+    width 24px
+    height 24px
+    display block
+    background url(../../images/sprites/radio.png) center no-repeat
+    
+    &:hover
+      opacity 1
+      background url(../../images/sprites/radio_hover.png) center no-repeat
+      
+  &:checked + label
+    opacity 1
+    background url(../../images/sprites/radio_selected.png) center no-repeat!important
+
+.radiolabel
+  color: #000000
+  font-size 16px
+  font-family FuturaPTHeavy
+
+.greenlighted_left  
+.header_link_active
+.ecology_category a.active 
+.ecology_category span.active
+  z-index 1
+  position relative
+  display inline
+  
+  &:before
+    opacity 1
+    display block
+    transition 200ms all ease-in
+    z-index -1
+    left -7px
+    bottom 0px
+    background color_green
+    content ''
+    position absolute
+    width 100%
+    height 50%
+  
+.greenborderbottom
+  & span
+    display inline-block
+    position relative
+    padding-bottom 4px
+    
+    &:after
+      transition 150ms all ease-in
+      content ""
+      width 100%
+      bottom 0px
+      position absolute
+      left 0px
+      height 3px
+      background color_green
+     
+  &:hover
+  &:active
+    span
+      &:after
+        height 5px
+        background: -webkit-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
+        background: -moz-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
+        background: -o-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
+        background: -ms-linear-gradient(180deg, #59a1ad 0%, #98c04d 100%)
+        background: linear-gradient(-90deg, #59a1ad 0%, #98c04d 100%)
+
+.greenlighted_left  
+  transition none
+  &:before
+    transition none
+    opacity 0
+    
+  &:hover:before
+  &:active:before
+    opacity 1
+    
+.greenlighted_left.header_link_active
+.greenlighted_left.active
+li.active .greenlighted_left
+  &:before
+    opacity 1
+    
+.greenlighted 
+
+  &:hover:before
+  &:active:before
+    opacity 1
+    
+.greenlighted_left.header_link_active
+  &:before
+    opacity 1
+
+.gradient_underlinehover
+.nav-tabs > li > a
+  position relative
+  display inline-block
+  z-index 1
+  
+  &:before
+    opacity 0
+    display block
+    transition 200ms all ease-in
+    z-index -1
+    right -4px
+    bottom 3px
+    background: -webkit-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background: -moz-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background: -o-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background: -ms-linear-gradient(180deg, #4d9bc0 0%, #98c04d 100%)
+    background: linear-gradient(-90deg, #4d9bc0 0%, #98c04d 100%)
+    content ''
+    position absolute
+    width 100%
+    height 50%
+
+  &:hover:before
+  &:active:before
+    opacity 1
+
+.nav-tabs > li > a
+  &:before
+    bottom 1px
+    height 45%
+  
+
+.nav-tabs > li.active > a
+  &:before
+    opacity 1
+
+.green_underline
+  border-bottom 1px solid color_green
+  
+  &.opacity
+    border-bottom 1px solid color_green_opacity
+    
+    &:hover
+    &:active
+      border-bottom 1px solid color_green
+      
+
+.greenlighted 
+  position relative
+  display inline-block
+  z-index 1
+  
+  &:before
+    opacity 1
+    display block
+    transition 200ms all ease-in
+    z-index -1
+    left -15px
+    bottom 3px
+    background color_green
+  
+    content ''
+    position absolute
+    width 50%
+    height 20%
+
+  &:hover:before
+  &:active:before
+    opacity 1
+    height 45%
+    
+.underlined
+  display inline
+  position relative
+  z-index 1
+  border-bottom 2px solid color_green
+
+  &:hover
+  &:active
+    border-bottom 2px solid color_gradient
+  
+ 
+section
+  margin-top 70px
+
+h1
+h2
+h3
+h4
+h5
+h6
+  margin 0px
+  padding 0px
+  
+h1
+  color white
+  font-size 72px
+  font-family FuturaPTHeavy
+  line-height 64px
+
+h2
+  font-family FuturaPTHeavy
+  color black
+  padding-bottom 60px
+  font-size 62px
+  line-height 60px
+  
+h3
+  font-family FuturaPTBold
+  color black
+
+
+
+.load
+  &_more
+    padding-bottom 40px
+    padding-top 20px
+    z-index 0
+
+    button
+      z-index 0
+      margin-top 50px
+      background transparent
+      text-transform uppercase
+      max-width 160px
+      display inline-block
+      text-align left
+      color black
+      font-size: 24px
+      line-height 32px
+      font-family FuturaPTBold
+
+
+@media (min-width:  1300px)
+  .container
+    width 1280px
+
+@media (max-width: 991px)
+
+  h2
+    font-size 36px
+    line-height 40px
+  h3
+    font-size 24px
+    line-height 28px
+
+  .container
+    padding-left 15px
+    padding-right 15px
+
+.ecocheckbox
+  margin-top 30px
+  min-width 240px
+  
+  &:hover
+    .ecocheckbox-text
+      color color_green  
+      
+    & label
+      background url(../../images/sprites/checkbox_hover.png) center no-repeat
+      opacity 1
+
+  &_block
+    position relative
+    float left
+    margin-left 10px
+  
+  &-text
+    transition 50ms all ease-in
+    cursor pointer
+    color white
+    font-family FuturaPTBook
+    font-size 18px
+    line-height 22px
+    
+.interested_slider
+  position relative
+  overflow hidden
+  padding-top 16px
+  padding-bottom 180px
+  margin-bottom -200px
+  
+  & .item
+    min-width 254px
+    
+    &_slide
+      margin-right 2px
+  
+  h2
+    max-width 600px
+    padding-bottom 10px
+ 
+.buttons
+  position: relative
+  width: 100%
+  float: left
+  z-index 34
+
+@media (max-width: 768px)
+
+  .interesed
+    padding-bottom 190px
+    margin-bottom -190px
+
+  .mobile
+    &_font
+      &_27
+        font-size 27px
+        padding-bottom 30px
+
+  .collapse
+    display block
+    height 0px
+    overflow hidden
+    &.in
+      height auto
+      overflow visible
+      display block
+      
+  
+  .container
+    padding-left 25px
+    padding-right 25px
+
+  .breadcrumb
+    margin-bottom 5px
+    
+    &-item 
+      & a
+        font-size 12px
+        
+    & > 
+      & li                 
+        & + li
+          
+          &:before
+            top 0px
+            font-size 10px
+            padding 3px 7px
+          
+
+  .load
+    &_more
+      padding-bottom 0px
+      
+      button
+        margin-top 20px
+        font-size 18px
+        max-width 80px
+        line-height 24px
+        
+        &:before
+          left -8px
+          width 81%
+
+  .green_underline
+    border-bottom 1px solid color_green
+    
+    &.opacity
+      border-bottom 1px solid color_green_opacity
+      
+      &:hover
+      &:active
+        border-bottom 1px solid color_green
+ 

@@ -1,8 +1,16 @@
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+
 import React, { Component } from 'react'
 import Footer from '../components/Footer'
-
 import $ from 'jquery'
 import Helmet from 'react-helmet'
+
+
+
+
+import '../stylus/components/main_companents.styl';
+
 
 import Menu from '../components/Menu'
 import Login from '../components/Login'

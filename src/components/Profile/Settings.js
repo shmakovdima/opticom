@@ -1,7 +1,9 @@
+import sweetAlert from 'sweetalert' 
+require('!style!css!sweetalert/dist/sweetalert.css'); 
 import '../../stylus/components/profile.styl';
 import '../../stylus/components/item.styl';
 
-
+import '../../stylus/components/sweetal.styl';
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
@@ -25,7 +27,6 @@ class MountPhone extends Component {
 }
 
 
-
 class ProfileSettings extends Component {
   constructor(props) {
     super(props);
@@ -40,6 +41,7 @@ class ProfileSettings extends Component {
 
   componentDidMount() {
     var self = this
+
 
     $('.phone').mask('+7 (999) 999-9999');
 
@@ -147,6 +149,17 @@ class ProfileSettings extends Component {
   }
 
   addCompany(e) {
+
+    if ($('.settings_name').val()=='') {
+      sweetAlert('Ошибка', 'Вы не ввели название компании', 'error');
+      return;
+    }
+    
+    if ($('.settings_adress').val()=='') {
+      sweetAlert('Ошибка', 'Вы не ввели фактический адрес компании', 'error');
+      return;
+    }
+
     e.preventDefault();
     var array = $('.profile_right_company_addblock').serializeArray()
 
@@ -464,9 +477,10 @@ class ProfileSettings extends Component {
                   <Else>
                     <Then>
                       <form ref='companyform'  className='profile_right_company_addblock profile_block' name='addcompany[]'>
+
                           <div className='row'>
                             <div className='col-xs-12'>
-                              <input required placeholder='Название компании' name='name' type='text'/>
+                              <input required placeholder='Название компании' className='settings_name' name='name' type='text'/>
                             </div>
                           </div>
 
@@ -477,7 +491,7 @@ class ProfileSettings extends Component {
                           </div>
                           <div className='row'>
                             <div className='col-xs-12'>
-                              <input required placeholder='Фактический адрес' name='factaddress' type='text'/>
+                              <input required placeholder='Фактический адрес' className='settings_adress' name='factaddress' type='text'/>
                             </div>
                           </div>
 

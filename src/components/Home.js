@@ -90,7 +90,7 @@ class Home extends Component {
 
     if (curCard > 29) curCard = 29
 
-    var bgImage = {backgroundPosition: 'center '+ '-'+ curCard * 450 + 'px'}
+    var bgImage = {backgroundPosition: 'center '+ '-'+ curCard * 446 + 'px'}
 
   
     var topBody = {top: breakpoint + homeHeight}

@@ -181,11 +181,11 @@ class myItems extends Component {
     var search = this.state.search
 
     return(
-      <div className='profile'>
+      <div className='profile profile_items_page'>
         <section className='profile_sets_header'>
            <div className='container'>
             <div className='row'>
-              <div className='col20-lg-9 col20-lg-offset-1 col20-md-9 col20-md-offset-1 col20-sm-9 '>
+              <div className='col20-lg-9 col20-lg-offset-1 col20-md-14 col20-md-offset-1 col20-sm-9 '>
                 <h1>Мои товары</h1>
               </div>
             </div>

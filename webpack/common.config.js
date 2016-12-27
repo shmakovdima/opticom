@@ -39,8 +39,11 @@ const common = {
   },
 
   resolve: {
-    extensions: ['', '.jsx', '.js', '.json', '.scss', '.styl'],
+    extensions: ['', '.jsx', '.js', '.json', '.scss', '.styl', '.css'],
     modulesDirectories: ['node_modules', PATHS.app],
+    alias: {
+      jquery: __dirname+"/../node_modules/jquery/dist/jquery.js" //ссылка на jquery lib
+    }
   },
 
   module: {
@@ -53,44 +56,57 @@ const common = {
         ],
       }
     ],
-    loaders: [{
-      test: /bootstrap-sass\/assets\/javascripts\//,
-      loader: 'imports?jQuery=jquery',
-    }, {
-      test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=application/font-woff',
-    }, {
-      test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=application/font-woff2',
-    }, {
-      test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=application/octet-stream',
-    }, {
-      test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url?limit=10000&mimetype=application/font-otf',
-    }, {
-      test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'file',
-    }, {
-      test: /\.(jpe?g|png|gif|svg)$/i,
       loaders: [
-            'file?hash=sha512&digest=hex&name=[hash].[ext]'
-        ]
-    } 
-    ,{
-      test: /\.js$/,
-      loaders: ['babel-loader'],
-      exclude: /node_modules/,
-    },
-    {
-      test: /\.styl$/,
-      loader: 'style!css!stylus?paths[]=node_modules,paths[]=lib&include css&resolve url'
-    }],
+
+
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
+
+      {
+        test: /bootstrap-styl\/assets\/javascripts\//,
+        loader: 'imports?jQuery=jquery',
+      }, {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff',
+      }, {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-woff2',
+      }, {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/octet-stream',
+      }, {
+        test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/font-otf',
+      }, {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file',
+      }, {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+              'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          ]
+        } 
+      ,{
+        test: /\.js$/,
+        loaders: ['babel-loader'],
+        exclude: /node_modules/,
+      },
+     { 
+        test: /node_modules\/dist\/bootstrap\/js\//, 
+        loader: 'imports?jQuery=jquery',
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style!css!stylus?paths[]=node_modules,paths[]=lib&include css&resolve url',
+      }],
   },
   stylus: {
     define: {
       "import_tree": importTree
-    }
+    },
+    paths: ['node_modules/bootstrap-styl']
   },
 
 

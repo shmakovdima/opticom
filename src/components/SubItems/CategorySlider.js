@@ -203,8 +203,8 @@ class CategorySlider extends Component {
 
     const settings = {
       draggable: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToShow: 2,
+      slidesToScroll: 2,
       autoplay: false,
       dots: false,
       infinite: false,

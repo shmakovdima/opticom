@@ -139,7 +139,7 @@ class ProfileOrders extends Component {
         <section className='profile_sets_header'>
            <div className='container'>
             <div className='row'>
-              <div className='col20-lg-9 col20-lg-offset-1 col20-md-9 col20-md-offset-1 col20-sm-12 '>
+              <div className='col20-lg-9 col20-lg-offset-1 col20-md-14 col20-md-offset-1 col20-sm-20 '>
                 <h1>Мои Заказы</h1>
               </div>
             </div>

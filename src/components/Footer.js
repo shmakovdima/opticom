@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import $ from 'jquery'
 
+import '../stylus/style.styl';
 
 
 class FooterLink extends Component {
