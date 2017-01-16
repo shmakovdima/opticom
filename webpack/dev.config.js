@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   entry: [
     'webpack-hot-middleware/client',
     './src/index',
@@ -20,6 +20,19 @@ module.exports = {
   },
 
   plugins: [
+
+    new webpack.optimize.UglifyJsPlugin({
+        minimize: true,
+        comments: false,
+        sourceMap: false,
+        compress: {
+            drop_console: true
+        },
+        mangle: {
+            except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
+        }
+    }),
+
 
     new webpack.DefinePlugin({
       'process.env': {
