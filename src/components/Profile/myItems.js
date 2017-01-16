@@ -200,7 +200,7 @@ class myItems extends Component {
                 </div>
               </Tab>
               <Tab eventKey={2} title='Купленные'>
-                <div className='profile_items_buyed'>
+                <div className='profile_items_buyed hidden-xs hidden-sm'>
 
                    <div className='profile_items_search'>
                       <input placeholder='ПОИСК ПО ПОКУПЛЕННЫМ' ref='search' type='text' onKeyUp={::this.searchInput}/>

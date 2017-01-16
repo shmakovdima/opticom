@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const path = require('path');
-//const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -12,6 +11,8 @@ module.exports = {
   ],
   output: {
     publicPath: '/dist/',
+    filename: 'bundle.js',
+
   },
 
   module: {
@@ -36,4 +37,3 @@ module.exports = {
     }),
   ],
 };
-

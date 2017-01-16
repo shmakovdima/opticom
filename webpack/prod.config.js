@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const path = require('path');
-//const SpritesmithPlugin = require('webpack-spritesmith');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -12,6 +11,7 @@ module.exports = {
   ],
   output: {
     publicPath: '/dist/',
+    filename: '[name].bundle.js',
   },
 
   module: {
@@ -20,6 +20,14 @@ module.exports = {
 
   plugins: [
 
+
+    function() {
+      this.plugin("done", function(stats) {
+        require("fs").writeFileSync(
+          path.join(__dirname, "...", "stats.json"),
+          JSON.stringify(stats.toJson()));
+      });
+    },
 
     new webpack.optimize.UglifyJsPlugin({
         minimize: true,
@@ -33,8 +41,6 @@ module.exports = {
         }
     }),
 
-  
-  
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')

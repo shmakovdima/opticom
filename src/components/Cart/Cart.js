@@ -4,38 +4,27 @@ import HeaderLight from '../../components/Headers/HeaderLight'
 import {connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as pageActions from '../../actions/emptyCart'
-
-
-
 import '../../stylus/components/profile.styl';
 import '../../stylus/components/cart.styl';
 import {Link} from 'react-router';
 import CartItem from '../SubItems/Item/CartItem';
 import CartRight from './CartRight';
-
 import Sticky from 'sticky-js';
 import setHeightLeftBlock from '../function/setHeightLeftBlock';
 
 class Cart extends Component {
-
-
   constructor(props){
     super(props);
     this.sticky = new Sticky('.sticky_container');
   }
 
-
   componentDidUpdate() {
     setHeightLeftBlock(this);
-    
-    
   }
-
 
   componentDidMount(){
     document.getElementsByClassName('sticky')[0].classList.add('active');
     setHeightLeftBlock(this);
-
   }
 
   emptyCart(){
@@ -43,12 +32,9 @@ class Cart extends Component {
   }
 
   render(){
-   
+
     var CartItems = this.props.Cart
     this.sticky.update();
-
-
-
 
     return(
       <div>
@@ -110,7 +96,7 @@ class Cart extends Component {
                         <span>
                         Выгрузить в Excel (.xls)
                         </span>
-                      </Link>   
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -118,14 +104,12 @@ class Cart extends Component {
             </div>
           </div>
         </section>
-        
+
       </div>
 
     )
   }
-
 }
-
 
 function mapStateToProps (state) {
   return {
@@ -143,6 +127,3 @@ function mapDispatchToProps(dispatch) {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)
-
-
-

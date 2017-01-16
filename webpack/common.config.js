@@ -3,6 +3,7 @@ const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
 const merge = require('webpack-merge');
 
+
 //var SpritesmithPlugin = require('webpack-spritesmith');
 
 const development = require('./dev.config.js');
@@ -35,7 +36,7 @@ const common = {
 
   output: {
     path: PATHS.build,
-    filename: 'bundle.js',
+
   },
 
   resolve: {
@@ -87,14 +88,14 @@ const common = {
         loaders: [
               'file?hash=sha512&digest=hex&name=[hash].[ext]',
           ]
-        } 
+        }
       ,{
         test: /\.js$/,
         loaders: ['babel-loader'],
         exclude: /node_modules/,
       },
-     { 
-        test: /node_modules\/dist\/bootstrap\/js\//, 
+     {
+        test: /node_modules\/dist\/bootstrap\/js\//,
         loader: 'imports?jQuery=jquery',
       },
       {
