@@ -1,8 +1,8 @@
+
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const postcssImport = require('postcss-import');
 const merge = require('webpack-merge');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const development = require('./dev.config.js');
@@ -35,7 +35,7 @@ const common = {
 
   output: {
     path: PATHS.build,
-
+    filename: 'bundle.js',
   },
 
   resolve: {

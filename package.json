@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "autoprefixer-stylus": "^0.10.0",
+    "babel-core": "^6.21.0",
     "babel-polyfill": "^6.20.0",
     "bootstrap": "^3.3.7",
     "bootstrap-stylus": "^0.2.2",

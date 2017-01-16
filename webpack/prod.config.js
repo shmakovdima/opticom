@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const path = require('path');
 
+
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: [
@@ -10,8 +11,7 @@ module.exports = {
     './src/index',
   ],
   output: {
-    publicPath: '/home/opticom/dist/',
-    filename: '[name].bundle.js',
+    publicPath: '/dist/',
   },
 
   module: {
@@ -20,14 +20,6 @@ module.exports = {
 
   plugins: [
 
-
-    function() {
-      this.plugin("done", function(stats) {
-        require("fs").writeFileSync(
-          path.join(__dirname, "...", "stats.json"),
-          JSON.stringify(stats.toJson()));
-      });
-    },
 
     new webpack.optimize.UglifyJsPlugin({
         minimize: true,
@@ -40,6 +32,8 @@ module.exports = {
             except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
         }
     }),
+
+
 
     new webpack.DefinePlugin({
       'process.env': {
